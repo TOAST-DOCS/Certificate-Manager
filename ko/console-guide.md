@@ -9,13 +9,13 @@
 
 * CertificateManager는 알림 그룹 단위로 만료 일자에 따른 알림 주기 설정 및 알림 받을 대상자를 관리합니다.
 
-![alarmgroup-1.png](http://static.toastoven.net/prod_certificate-manager/202001/alarmgroup-1.png)
+![alarmgroup-1.png](http://static.toastoven.net/prod_certificate_manager/202001/alarmgroup-1.png)
 
 #### 알림 그룹 생성
 
 * 알림 그룹 메인 화면에서 '+ 그룹 만들기' 버튼을 클릭하면 다음과 같은 화면이 나옵니다.
 
-![alarmgroup-2.png](http://static.toastoven.net/prod_certificate-manager/202001/alarmgroup-2.png)
+![alarmgroup-2.png](http://static.toastoven.net/prod_certificate_manager/202001/alarmgroup-2.png)
 
 * 알림 그룹 이름을 입력합니다. 알림 그룹 이름은 중복으로 등록하실 수 없습니다.
 * 알림 사용 여부를 입력합니다. 알림 그룹에 속한 사용자에게 만료 일자 알림을 포함한 모든 알림을 발송할지 여부를 선택할 수 있습니다.
@@ -27,18 +27,18 @@
 * 관리 data는 해당 알림 그룹에 연동되어 있는 인증서/도메인/사용자 데이터를 의미합니다.
 * '수정' 버튼을 클릭하여 알림 그룹의 이름 및 알림 사용 여부를 변경할 수 있습니다.
 
-![alarmgroup-3.png](http://static.toastoven.net/prod_certificate-manager/202001/alarmgroup-3.png)
+![alarmgroup-3.png](http://static.toastoven.net/prod_certificate_manager/202001/alarmgroup-3.png)
 
 #### 알림 설정 화면
 
 * 알림 그룹 메인 화면에서 '알림 설정' 버튼을 클릭하면 알림 그룹에 설정되어 있는 만료일 알림 정책이 표시됩니다.
 * 기본값으로는 알림 정책이 설정되어 있지 않습니다. 알림 정책을 추가해야 만료일에 따른 알림을 받아보실 수 있습니다.
 
-![alarmgroup-4.png](http://static.toastoven.net/prod_certificate-manager/202001/alarmgroup-4.png)
+![alarmgroup-4.png](http://static.toastoven.net/prod_certificate_manager/202001/alarmgroup-4.png)
 
 #### 알림 추가
 
-![alarmgroup-5.png](http://static.toastoven.net/prod_certificate-manager/202001/alarmgroup-5.png)
+![alarmgroup-5.png](http://static.toastoven.net/prod_certificate_manager/202001/alarmgroup-5.png)
 
 * 테이블 좌측 하단의 '+' 버튼을 클릭하면 알림 정책을 추가하실 수 있습니다.
 * '알림 시작 D-day'는 인증서/도메인/사용자 데이터의 만료 일자에서 며칠 전부터 알림을 발송할지를 의미합니다.
@@ -48,7 +48,7 @@
 * '알림 시작 D-day' 와 '알림 주기'는 중복해 설정하실 수 없습니다.
 * '완료' 버튼을 클릭하여 설정하신 알림 정책을 저장할 수 있습니다.
 
-![alarmgroup-6.png](http://static.toastoven.net/prod_certificate-manager/202001/alarmgroup-6.png)
+![alarmgroup-6.png](http://static.toastoven.net/prod_certificate_manager/202001/alarmgroup-6.png)
 
 #### 사용자 그룹 연동 화면
 
@@ -56,12 +56,12 @@
 * 기본값으로는 알림 그룹을 생성한 사용자가 추가되어 있습니다.
 * TOAST 프로젝트에 속한 멤버가 알림 그룹의 사용자로 연동될 수 있습니다.
 
-![alarmgroup-7.png](http://static.toastoven.net/prod_certificate-manager/202001/alarmgroup-7.png)
+![alarmgroup-7.png](http://static.toastoven.net/prod_certificate_manager/202001/alarmgroup-7.png)
 
 ##### 사용자 추가
 
-![alarmgroup-8.png](http://static.toastoven.net/prod_certificate-manager/202001/alarmgroup-8.png)
-![alarmgroup-9.png](http://static.toastoven.net/prod_certificate-manager/202001/alarmgroup-9.png)
+![alarmgroup-8.png](http://static.toastoven.net/prod_certificate_manager/202001/alarmgroup-8.png)
+![alarmgroup-9.png](http://static.toastoven.net/prod_certificate_manager/202001/alarmgroup-9.png)
 
 * 상단의 사용자 연동 검색창에서 TOAST 프로젝트에 속한 멤버를 검색하여 추가할 수 있습니다.
 * 'Type' 은 해당 사용자가 지닌 TOAST 프로젝트 권한(ADMIN/MEMBER)을 의미합니다.
@@ -81,7 +81,7 @@
 
 #### 메인 화면
 
-![certificate-1.png](http://static.toastoven.net/prod_certificate-manager/202001/certificate-1.png)
+![certificate-1.png](http://static.toastoven.net/prod_certificate_manager/202001/certificate-1.png)
 
 * 기존에 등록한 인증서의 목록을 확인 및 검색하실 수 있습니다.
 * 만료일의 잔여일을 확인하실 수 있습니다.
@@ -91,7 +91,7 @@
 
 * 인증서 메인 화면에서 '+ 인증서 추가' 버튼을 클릭하면 다음과 같은 화면이 나옵니다.
 
-![certificate-2.png](http://static.toastoven.net/prod_certificate-manager/202001/certificate-2.png)
+![certificate-2.png](http://static.toastoven.net/prod_certificate_manager/202001/certificate-2.png)
 
 * 연동할 알림 그룹을 선택합니다. 알림 그룹이 생성되어 있지 않은 경우 선택 가능한 알림 그룹이 표시되지 않으며, 인증서를 생성할 수 없습니다.
 * 인증서의 이름(CommonName, CN)을 입력합니다. 인증서 이름은 중복으로 등록하실 수 없습니다.
@@ -109,29 +109,29 @@
 * 필드 이름 뒤에 '(자동 수집)'으로 표시된 필드는 인증서 파일로부터 자동 수집된 항목을 의미합니다. 인증서 파일이 등록되지 않은 경우 '-'로 표시됩니다.
 * '수정' 버튼을 클릭하여 인증서 정보를 수정하시거나, 인증서 파일을 (재) 업로드 하실 수 있습니다.
     * 인증서 이름은 수정하실 수 없습니다. 인증서 이름 수정이 필요하신 경우 기존에 등록하신 인증서를 삭제하시고 신규로 생성하셔야 합니다.
-    ![certificate-3.png](http://static.toastoven.net/prod_certificate-manager/202001/certificate-3.png)
+    ![certificate-3.png](http://static.toastoven.net/prod_certificate_manager/202001/certificate-3.png)
 
 #### 인증서 사용 정보, 설치 정보 생성
 
 * 인증서 메인 화면에서 '인증서 사용 정보' 버튼을 클릭하면 인증서 사용 및 설치 정보를 확인하실 수 있습니다.
 * 기본값으로는 아무것도 등록되어 있지 않습니다.
 
-![certificate-4.png](http://static.toastoven.net/prod_certificate-manager/202001/certificate-4.png)
+![certificate-4.png](http://static.toastoven.net/prod_certificate_manager/202001/certificate-4.png)
 
 * '수정' 버튼을 클릭할 경우 아래와 같은 화면을 확인하실 수 있습니다.
 
-![certificate-5.png](http://static.toastoven.net/prod_certificate-manager/202001/certificate-5.png)
+![certificate-5.png](http://static.toastoven.net/prod_certificate_manager/202001/certificate-5.png)
 
 * 우측 상단의 '+ 추가' 버튼을 클릭하게 될 경우 인증서 사용 정보를 등록하는 입력 창이 표시됩니다.
 
-![certificate-6.png](http://static.toastoven.net/prod_certificate-manager/202001/certificate-6.png))
+![certificate-6.png](http://static.toastoven.net/prod_certificate_manager/202001/certificate-6.png))
 
 * 인증서 사용 정보의 이름을 입력합니다.
     * 인증서 유형이 'Single'인 경우 인증서 이름과 동일해야 합니다.
     * 인증서 유형이 'Wildcard'인 경우 '\*'(asterisk)를 제외한 인증서 이름과 동일하거나 '\*'(asterisk)를 제외한 ".[인증서 이름]" 으로 끝나야 합니다.
 * 인증서 사용 정보의 알림 사용 여부를 입력합니다.
 * 인증서 설치 정보를 입력하시고자 하는 경우 인증서 설치 정보 옆의 '+추가' 버튼을 클릭합니다. 이 경우 아래와 같은 창이 표시됩니다.
-    * ![certificate-7.png](http://static.toastoven.net/prod_certificate-manager/202001/certificate-7.png)
+    * ![certificate-7.png](http://static.toastoven.net/prod_certificate_manager/202001/certificate-7.png)
     * IP 주소와 port 번호를 입력합니다. 인증서의 자동 수집을 사용하시는 경우, 입력하신 IP 주소와 port 번호로 인증서를 다운로드해 만료 일자를 비교하게 됩니다.
         * IP 주소가 사설 IP (ex. 192.168.0.1, 172.20.0.1, 10.0.0.1) 인 경우 인증서를 다운로드하지 못해 자동 수집 실패 알림이 발송될 수 있습니다.
 * '완료' 버튼을 클릭하여 설정하신 인증서의 사용 및 설치 정보를 저장하실 수 있습니다.
@@ -141,7 +141,7 @@
 * 인증서 메인 화면에서 '인증서 사용 정보' 버튼을 클릭하면 인증서 사용 및 설치 정보를 확인하실 수 있습니다.
 * 우측 상단의 전체/사용/미사용으로 인증서 사용 정보의 알림 사용 여부 필드를 필터링하셔서 보실 수 있습니다.
 
-![certificate-8.png](http://static.toastoven.net/prod_certificate-manager/202001/certificate-8.png)
+![certificate-8.png](http://static.toastoven.net/prod_certificate_manager/202001/certificate-8.png)
 
 #### pem 파일 포맷
 
@@ -238,7 +238,7 @@ cat my_cert_converting_result_file.pem my_key_rsa_converting_result_file.pem > f
 
 #### 메인 화면
 
-![domain-1.png](http://static.toastoven.net/prod_certificate-manager/202001/domain-1.png)
+![domain-1.png](http://static.toastoven.net/prod_certificate_manager/202001/domain-1.png)
 
 * 기존에 등록한 도메인의 목록을 확인 및 검색하실 수 있습니다.
 * 만료일의 잔여일을 확인하실 수 있습니다.
@@ -248,7 +248,7 @@ cat my_cert_converting_result_file.pem my_key_rsa_converting_result_file.pem > f
 
 * 도메인 메인 화면에서 '+ 도메인 추가' 버튼을 클릭하면 다음과 같은 화면이 나옵니다.
 
-![domain-2.png](http://static.toastoven.net/prod_certificate-manager/202001/domain-2.png)
+![domain-2.png](http://static.toastoven.net/prod_certificate_manager/202001/domain-2.png)
 
 * 연동할 알림 그룹을 선택합니다. 알림 그룹이 생성되어 있지 않은 경우 선택 가능한 알림 그룹이 표시되지 않으며, 도메인을 생성할 수 없습니다.
 * 상위 도메인 이름을 입력합니다. 상위 도메인 이름은 중복으로 등록하실 수 없습니다.
@@ -275,7 +275,7 @@ cat my_cert_converting_result_file.pem my_key_rsa_converting_result_file.pem > f
 * '수정' 버튼을 클릭하여 상위 도메인 정보를 수정하시거나, 등록된 하위 도메인을 삭제 혹은 하위 도메인을 추가하실 수 있습니다.
     * 상위 도메인 이름은 수정하실 수 없습니다. 상위 도메인 이름 수정이 필요하신 경우 기존에 등록하신 도메인을 삭제하시고 신규로 생성하셔야 합니다.
 
-![domain-3.png](http://static.toastoven.net/prod_certificate-manager/202001/domain-3.png)
+![domain-3.png](http://static.toastoven.net/prod_certificate_manager/202001/domain-3.png)
 
 ### 사용자 데이터
 
@@ -284,7 +284,7 @@ cat my_cert_converting_result_file.pem my_key_rsa_converting_result_file.pem > f
 
 #### 메인 화면
 
-![userdata-1.png](http://static.toastoven.net/prod_certificate-manager/202001/userdata-1.png)
+![userdata-1.png](http://static.toastoven.net/prod_certificate_manager/202001/userdata-1.png)
 
 * 기존에 등록한 사용자 데이터의 목록을 확인 및 검색하실 수 있습니다.
 * 만료일의 잔여일을 확인하실 수 있습니다.
@@ -294,7 +294,7 @@ cat my_cert_converting_result_file.pem my_key_rsa_converting_result_file.pem > f
 
 * 사용자 데이터 메인 화면에서 '+ 사용자 데이터 추가' 버튼을 클릭하면 다음과 같은 화면이 나옵니다.
 
-![userdata-2.png](http://static.toastoven.net/prod_certificate-manager/202001/userdata-2.png)
+![userdata-2.png](http://static.toastoven.net/prod_certificate_manager/202001/userdata-2.png)
 
 * 연동할 알림 그룹을 선택합니다. 알림 그룹이 생성되어 있지 않은 경우 선택 가능한 알림 그룹이 표시되지 않으며, 사용자 데이터를 생성할 수 없습니다.
 * 사용자 데이터 이름을 입력합니다. 사용자 데이터 이름은 중복으로 등록하실 수 없습니다.
@@ -307,4 +307,4 @@ cat my_cert_converting_result_file.pem my_key_rsa_converting_result_file.pem > f
 * 사용자 데이터 메인 화면에서 '상세 정보' 버튼을 클릭하면 저장하셨던 사용자 데이터의 정보가 표시됩니다.
 * '수정' 버튼을 클릭하여 사용자 데이터의 정보를 수정하실 수 있습니다.
 
-![userdata-3.png](http://static.toastoven.net/prod_certificate-manager/202001/userdata-3.png)
+![userdata-3.png](http://static.toastoven.net/prod_certificate_manager/202001/userdata-3.png)
