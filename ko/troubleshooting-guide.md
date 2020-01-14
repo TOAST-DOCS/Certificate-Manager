@@ -8,7 +8,7 @@
 
 ### 인증서 파일(.pem) 포맷
 
-* 확장자는 `.pem` 입니다.
+* 확장자는 **.pem** 입니다.
 * 파일에는 인증서 (체인) 정보와 개인키 정보가 포함되어 있습니다.
 
 ``` text
@@ -36,7 +36,7 @@ openssl pkcs12 -in my_certificate_input_file.pfx -nokeys -out my_cert_converting
 openssl pkcs12 -in my_certificate_input_file.pfx -nodes -nocerts -out my_cert_converting_result_file.pem
 ```
 
-* 인증서 형식 변환에 사용되는 `openssl` 명령어는 아래 링크 참고 부탁드립니다.
+* 인증서 형식 변환에 사용되는 **openssl** 명령어는 아래 링크 참고 부탁드립니다.
     * openssl command guide : https://www.openssl.org/docs/manmaster/man1/openssl.html
 * keytool 사용 방법은 아래 링크 참고 부탁드립니다.
     * java-1.6.0 keytool : https://linux.die.net/man/1/keytool-java-1.6.0-openjdk
@@ -45,7 +45,7 @@ openssl pkcs12 -in my_certificate_input_file.pfx -nodes -nocerts -out my_cert_co
 #### (선택) RSA 개인키 형식으로 변환
 
 * 개인 키가 RSA 형식이 아닌 경우 RSA 개인키 형식으로 암호화합니다.
-    * 개인 키 파일을 열었을 때 `-----BEGIN PRIVATE KEY-----` 로 시작하면 RSA 형식이 아닌 개인 키 파일입니다.
+    * 개인 키 파일을 열었을 때 **-----BEGIN PRIVATE KEY-----** 로 시작하면 RSA 형식이 아닌 개인 키 파일입니다.
 
 1. 개인 키를 RSA 개인 키 형식으로 변환하는 경우 다음 명령어를 실행합니다.
 
