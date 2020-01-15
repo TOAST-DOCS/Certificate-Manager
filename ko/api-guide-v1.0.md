@@ -2,19 +2,26 @@
 
 Certificate Manager는 인증서 업로드, 다운로드를 위한 API를 제공합니다. 클라이언트는 콘솔에서 인증서와 인증서 파일을 등록한 후 API를 통해 데이터를 사용할 수 있습니다.
 
+### 기본 정보
+#### EndPoint
+```text
+https://alpha-api-certmanager.cloud.toast.com
+```
+
+#### 제공하는 API 종류
 | Method | URI | 설명 |
 | ------ | --- | --- |
 | POST | /certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files | 등록되어있는 인증서에 파일을 업로드합니다. 파일이 등록되어 있는 경우, 업로드하는 파일로 교체됩니다. |
 | GET | /certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files | 등록되어있는 인증서 파일을 다운로드합니다. |
 
-[API 요청의 경로 변수]
+##### API 요청의 경로 변수
 
 | 값 | 타입 | 설명 |
 | --- | --- | --- |
 | appKey | String | 사용하려는 데이터를 저장하고 있는 TOAST 프로젝트의 앱 키 |
 | certificateName | String | 사용하려는 데이터(인증서)의 이름 |
 
-[API 응답의 데이터 공통 헤더]
+##### API 응답의 데이터 공통 헤더
 
 ``` json
 {
