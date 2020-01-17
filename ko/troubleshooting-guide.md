@@ -36,9 +36,9 @@ openssl pkcs12 -in my_certificate_input_file.pfx -nokeys -out my_cert_converting
 openssl pkcs12 -in my_certificate_input_file.pfx -nodes -nocerts -out my_cert_converting_result_file.pem
 ```
 
-* 인증서 형식 변환에 사용되는 `openssl` 명령어는 아래 링크 참고 부탁드립니다.
+* 인증서 형식 변환에 사용되는 **openssl** 명령어는 아래 링크 참고 부탁드립니다.
     * openssl command guide : [https://www.openssl.org/docs/manmaster/man1/openssl.html](https://www.openssl.org/docs/manmaster/man1/openssl.html)
-* `keytool` 사용 방법은 아래 링크 참고 부탁드립니다.
+* **keytool** 사용 방법은 아래 링크 참고 부탁드립니다.
     * java-1.6.0 keytool : [https://linux.die.net/man/1/keytool-java-1.6.0-openjdk](https://linux.die.net/man/1/keytool-java-1.6.0-openjdk)
     * java-1.7.0 keytool : [https://linux.die.net/man/1/keytool-java-1.7.0-openjdk](https://linux.die.net/man/1/keytool-java-1.7.0-openjdk)
 
