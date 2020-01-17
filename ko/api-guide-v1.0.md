@@ -116,6 +116,22 @@ Content-Type:application/octet-stream
 ...
 -----END RSA PRIVATE KEY-----
 ```
+#### Command Line Interface(CLI) 사용 시
+
+인증서 파일 다운로드 API는 `curl` 명령어를 사용하여 요청하실 수 있습니다.
+
+```sh
+#파일에 쓰기
+curl 'https://alpha-api-certmanager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files' > cert.pem
+
+#파일명 지정
+curl -o cert.pem 'https://alpha-api-certmanager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
+
+#업로드한 파일명 유지
+curl -OJ 'https://alpha-api-certmanager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
+```
+* 기타 curl 명령어 사용 방법은 아래 링크 참고 부탁드립니다.
+  * curl command guide : https://curl.haxx.se/docs/manpage.html
 
 ### 응답 코드
 
