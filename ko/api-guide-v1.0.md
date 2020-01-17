@@ -131,7 +131,7 @@ curl -o cert.pem 'https://alpha-api-certmanager.cloud.toast.com/certmanager/v1.0
 curl -OJ 'https://alpha-api-certmanager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
 ```
 * 기타 curl 명령어 사용 방법은 아래 링크 참고 부탁드립니다.
-  * curl command guide : https://curl.haxx.se/docs/manpage.html
+  * curl command guide : [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)
 
 ### 응답 코드
 
