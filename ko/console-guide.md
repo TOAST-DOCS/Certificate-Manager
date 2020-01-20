@@ -98,7 +98,7 @@
 * **유형**을 선택합니다. Single 은 단일 인증서인 경우이며, Wildcard는 \*(asterisk)로 시작하는 범용 인증서(여러 호스트에서 사용할 수 있는 인증서)를 뜻합니다.
 * 인증서 파일을 등록합니다.
     * 인증서(.pem) 은 개인키와 인증서로 이루어진 pem 파일입니다.
-        * 지원하는 인증서 파일(.pem) 형식은 '[문제 해결 가이드 > 인증서 파일 포맷 변환](http://beta-docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)' 참고 부탁드립니다.
+        * 지원하는 인증서 파일(.pem) 형식은 '[문제 해결 가이드 > 인증서 파일 포맷 변환](http://docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)' 참고 부탁드립니다.
     * 인증서 파일은 선택 필드이며, 차후 등록해도 무방합니다.
     * 인증서 파일 내에 포함된 개인키의 패스프레이즈(passphrase)를 입력합니다.
 * **추가** 버튼을 클릭하여 설정하신 인증서 정보를 저장하실 수 있습니다.
