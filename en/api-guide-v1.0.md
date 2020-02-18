@@ -50,7 +50,7 @@ Certificate Manager에 등록한 인증서에 파일을 업로드 할 때 사용
 #### 요청
 
 ```
-POST /certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
+POST https://beta-api-certmanager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
 ```
 
 [Request Header]
@@ -93,7 +93,7 @@ Certificate Manager에 등록한 인증서 파일을 다운로드 할 때 사용
 #### 요청
 
 ```
-GET /certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
+GET https://beta-api-certmanager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
 ```
 
 #### 응답
