@@ -5,7 +5,7 @@ Certificate Manager는 인증서 업로드, 다운로드를 위한 API를 제공
 ### 기본 정보
 #### EndPoint
 ```text
-https://alpha-api-certmanager.cloud.toast.com
+https://beta-api-certmanager.cloud.toast.com
 ```
 
 #### 제공하는 API 종류
@@ -122,13 +122,13 @@ Content-Type:application/octet-stream
 
 ```sh
 #파일에 쓰기
-curl 'https://alpha-api-certmanager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files' > cert.pem
+curl 'https://beta-api-certmanager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files' > cert.pem
 
 #파일명 지정
-curl -o cert.pem 'https://alpha-api-certmanager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
+curl -o cert.pem 'https://beta-api-certmanager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
 
 #업로드한 파일명 유지
-curl -OJ 'https://alpha-api-certmanager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
+curl -OJ 'https://beta-api-certmanager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
 ```
 * 기타 curl 명령어 사용 방법은 아래 링크 참고 부탁드립니다.
   * curl command guide : [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)
