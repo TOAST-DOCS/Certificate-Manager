@@ -5,7 +5,7 @@ Certificate Managerでは証明書のアップロード、ダウンロードを�
 ### 基本情報
 #### EndPoint
 ```text
-https://alpha-api-certmanager.cloud.toast.com
+https://alpha-api-certificate-manager.cloud.toast.com
 ```
 
 #### 提供するAPI種類
@@ -50,7 +50,7 @@ Certificate Managerに登録した証明書にファイルをアップロード�
 #### リクエスト
 
 ```
-POST https://alpha-api-certmanager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
+POST https://alpha-api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
 ```
 
 [Request Header]
@@ -93,7 +93,7 @@ Certificate Managerに登録した証明書ファイルをダウンロードす�
 #### リクエスト
 
 ```
-GET https://alpha-api-certmanager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
+GET https://alpha-api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
 ```
 
 #### レスポンス
@@ -125,10 +125,10 @@ Content-Type:application/octet-stream
 curl 'https://alpha-api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files' > cert.pem
 
 #ファイル名指定
-curl -o cert.pem 'https://alpha-api-certmanager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
+curl -o cert.pem 'https://alpha-api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
 
 #アップロードしたファイル名を維持
-curl -OJ 'https://alpha-api-certmanager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
+curl -OJ 'https://alpha-api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
 ```
 * その他curlコマンドの使用方法は下記のガイドを参照してください。
   * curl command guide : [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)
