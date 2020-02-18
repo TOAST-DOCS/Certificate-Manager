@@ -13,7 +13,7 @@ Certificate Manager sets notification cycle on each expiration date and manages 
 
 ### Creating Notification Groups
 
-1. Click **+Create Groups** on the main page of notification group, and you'll find a page like below. 
+1. Click **+ Create Groups** on the main page of notification group, and you'll find a page like below. 
 ![alarmgroup-2.png](http://static.toastoven.net/prod_certificate_manager/202001/alarmgroup-2.png)
 2. Enter name for a group. No duplicate name is allowed. 
 3. Enter whether to enable notification. You can choose whether to send all notifications, including expiration dates, to group users. 
@@ -39,12 +39,12 @@ Certificate Manager sets notification cycle on each expiration date and manages 
 4. **Send via Email** and **Send via SMS** refer to whether to use Email or SMS to send notifications. If both are unchecked, notification is not sent. 
 5. Click **-** of **Delete** to delete notification policy. 
 6. **D-day for Notification Start** and **Notification Cycle** cannot be redundantly set. 
-7. Click **Done** to save notification policy as configured. 
+7. Click **Completed** to save notification policy as configured. 
 ![alarmgroup-6.png](http://static.toastoven.net/prod_certificate_manager/202001/alarmgroup-6.png)
 
 ### User Group Integration
 
-On the main page of notification group, click **User Group Integration**, and users that are integrated to the notification group are displayed. 
+On the main page of notification group, click **Receiving group**, and users that are integrated to the notification group are displayed. 
 By default, the notification group creator is added. 
 
 TOAST project members can be integrated as the group users. ![alarmgroup-7.png](http://static.toastoven.net/prod_certificate_manager/202001/alarmgroup-7.png)
@@ -87,7 +87,7 @@ On the main page of certificate, you can find list of certificates and remaining
 1. On the main page of a certificate, click **+ Add Certificates** and you can find the page as follows. 
 ![certificate-2.png](http://static.toastoven.net/prod_certificate_manager/202001/certificate-2.png)
 2. Select a **Notification Group** to integrate. In case a notification group is not created, there is no available notification group, and hence certificate cannot be created. 
-3. Enter **Name** of a certificate (CommonName, CN): names cannot be redundantly registered. 
+3. Enter **Certificate Name** of a certificate (CommonName, CN): names cannot be redundantly registered. 
 4. Select **Type**. Single refers to a single certificate, while Wildcard is a common-purpose certificate (available for many hosts) starting with *(asterisk). 
 5. Register a certificate file.<br>
 Certificate file is an optional field, and you may skip it for later. 
@@ -120,11 +120,11 @@ Certificate file is an optional field, and you may skip it for later.
 ![certificate-7.png](http://static.toastoven.net/prod_certificate_manager/202001/certificate-7.png)
     * Enter **IP address** and **Port No.**. When auto-collect is enabled, download certificate via IP address and port number to compare expiration dates. 
     * In case of a private IP address (e.g. 192.168.0.1, 172.20.0.1, 10.0.0.1 ), downloading may fail and notification on failed auto collection may be sent.  
-7. Click **Done** to save usage and installation information of the certificate as set. 
+7. Click **Completed** to save usage and installation information of the certificate as set. 
 
 ### Page of Certificate Usage Information
 * On the main page of a certificate, click **Certificate Usages** to check usage and installation information of certificate. 
-* Notifications of usage information can be filtered by selecting All, Enabled, or Disabled on top right.  
+* Notifications of usage information can be filtered by selecting **Total**, **Enabled**, or **Not Use** on top right.  
 
 ![certificate-8.png](http://static.toastoven.net/prod_certificate_manager/202001/certificate-8.png)
 
@@ -159,7 +159,7 @@ As of today, expired data are displayed in red, whereas data with less than 30 d
 5. Select **Type**.
     * **For Service** refers to registering and using domains on a DNS server
     * while **For Defense** refers to acquiring by purchase of domain for the purpose of service credibility, although it is not practically applied. 
-6. Select whether to enable notifications. It shows whether to send notifications to each domain, and with **Disabled**, no notification is sent to the corresponding domain. 
+6. Select whether to enable notifications. It shows whether to send notifications to each domain, and with **Not Use**, no notification is sent to the corresponding domain. 
 7. Select to enable/disable **Auto Collect**. If Auto Collect is **Enable**, following items are automatically collected from the whois server:
     * Creation Date
     * Expiration Date
@@ -202,7 +202,7 @@ Click **+ Add User Data** on the main user data page and it shows the following.
 
 * Select a notification group to integrate. In case a notification group is not created, there is no available notification group, and hence user data cannot be created. 
 * Enter name of user data: user data name cannot be redundantly registered.  Enter name of user data: user data names cannot be redundantly registered. 
-* Select whether to send notification, which refers to whether to send notifications on corresponding user data. With **Disabled**, no notification is sent regarding the user data.  
+* Select whether to send notification, which refers to whether to send notifications on corresponding user data. With **Not Use**, no notification is sent regarding the user data.  
 * Enter expiration date of the user data. 
 * Click **Add** and save user data as configured. 
 
