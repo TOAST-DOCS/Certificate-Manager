@@ -5,7 +5,7 @@ Certificate Manager provides APIs to upload or download certificates. Clients mu
 ### Basic Information
 #### EndPoint
 ```text
-https://alpha-api-certmanager.cloud.toast.com
+https://alpha-api-certificate-manager.cloud.toast.com
 ```
 
 #### Available API Types 
@@ -50,7 +50,7 @@ Regarding supported certificate file formats (.pem), read '[Troubleshooting Guid
 #### Request
 
 ```
-POST https://alpha-api-certmanager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
+POST https://alpha-api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
 ```
 
 [Request Header]
@@ -93,7 +93,7 @@ Certificate files registered at Certificate Manager can be downloaded.
 #### Request
 
 ```
-GET https://alpha-api-certmanager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
+GET https://alpha-api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
 ```
 
 #### Response
@@ -122,13 +122,13 @@ Download Certificate File API can be requested by using the `curl` command.
 
 ```sh
 #Write to File
-curl 'https://alpha-api-certmanager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files' > cert.pem
+curl 'https://alpha-api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files' > cert.pem
 
 #Specify File Name
-curl -o cert.pem 'https://alpha-api-certmanager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
+curl -o cert.pem 'https://alpha-api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
 
 #Maintain Uploaded File Name
-curl -OJ 'https://alpha-api-certmanager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
+curl -OJ 'https://alpha-api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
 ```
 * See the link below on how to use curl command
   * curl command guide : [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)
