@@ -50,7 +50,7 @@ Regarding supported certificate file formats (.pem), read '[Troubleshooting Guid
 #### Request
 
 ```
-POST /certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
+POST https://alpha-api-certmanager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
 ```
 
 [Request Header]
@@ -93,7 +93,7 @@ Certificate files registered at Certificate Manager can be downloaded.
 #### Request
 
 ```
-GET /certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
+GET https://alpha-api-certmanager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
 ```
 
 #### Response
