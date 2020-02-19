@@ -1,25 +1,25 @@
 ## Management > Certificate Manager > API v1.0 가이드
 
-Certificate Manager는 인증서 업로드, 다운로드를 위한 API를 제공합니다. 클라이언트는 콘솔에서 인증서와 인증서 파일을 등록한 후 API를 통해 데이터를 사용할 수 있습니다.
+Certificate Manager에서는 인증서 업로드, 다운로드를 위한 API를 제공합니다. 클라이언트는 콘솔에서 인증서와 인증서 파일을 등록한 후 API를 통해 데이터를 사용할 수 있습니다.
 
 ### 기본 정보
 #### EndPoint
 ```text
-https://beta-api-certmanager.cloud.toast.com
+https://beta-api-certificate-manager.cloud.toast.com
 ```
 
 #### 제공하는 API 종류
 | Method | URI | 설명 |
 | ------ | --- | --- |
-| POST | /certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files | 등록되어있는 인증서에 파일을 업로드합니다. 파일이 등록되어 있는 경우, 업로드하는 파일로 교체됩니다. |
-| GET | /certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files | 등록되어있는 인증서 파일을 다운로드합니다. |
+| POST | /certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files | 등록된 인증서에 파일을 업로드합니다. 파일이 등록되어 있는 경우, 업로드하는 파일로 교체됩니다. |
+| GET | /certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files | 등록된 인증서 파일을 다운로드합니다. |
 
 ##### API 요청의 경로 변수
 
 | 값 | 타입 | 설명 |
 | --- | --- | --- |
-| appKey | String | 사용하려는 데이터를 저장하고 있는 TOAST 프로젝트의 앱 키 |
-| certificateName | String | 사용하려는 데이터(인증서)의 이름 |
+| appKey | String | 사용할 데이터를 저장하고 있는 TOAST 프로젝트의 앱 키 |
+| certificateName | String | 사용할 데이터(인증서)의 이름 |
 
 ##### API 응답의 데이터 공통 헤더
 
@@ -44,13 +44,13 @@ https://beta-api-certmanager.cloud.toast.com
 
 ### 인증서 파일 업로드
 
-Certificate Manager에 등록한 인증서에 파일을 업로드 할 때 사용합니다. 파일이 등록되어 있다면, 새로 업로드하는 파일로 교체됩니다.
-지원하는 인증서 파일(.pem) 형식은 '[문제 해결 가이드 > 인증서 파일 포맷 변환](http://beta-docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)' 참고 부탁드립니다.
+Certificate Manager에 등록한 인증서에 파일을 업로드할 때 사용합니다. 파일이 등록되어 있다면, 새로 업로드하는 파일로 교체됩니다.
+지원하는 인증서 파일(.pem) 형식은 [문제 해결 가이드 > 인증서 파일 포맷 변환](http://beta-docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1) 참고 부탁드립니다.
 
 #### 요청
 
 ```
-POST https://beta-api-certmanager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
+POST https://beta-api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
 ```
 
 [Request Header]
@@ -88,12 +88,12 @@ Content-Type:application/json
 
 ### 인증서 파일 다운로드
 
-Certificate Manager에 등록한 인증서 파일을 다운로드 할 때 사용합니다.
+Certificate Manager에 등록한 인증서 파일을 다운로드할 때 사용합니다.
 
 #### 요청
 
 ```
-GET https://beta-api-certmanager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
+GET https://beta-api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
 ```
 
 #### 응답
@@ -118,19 +118,19 @@ Content-Type:application/octet-stream
 ```
 #### Command Line Interface(CLI) 사용 시
 
-인증서 파일 다운로드 API는 `curl` 명령어를 사용하여 요청하실 수 있습니다.
+인증서 파일 다운로드 API는 `curl` 명령어를 사용해 요청할 수 있습니다.
 
 ```sh
 #파일에 쓰기
-curl 'https://beta-api-certmanager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files' > cert.pem
+curl 'https://beta-api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files' > cert.pem
 
 #파일명 지정
-curl -o cert.pem 'https://beta-api-certmanager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
+curl -o cert.pem 'https://beta-api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
 
 #업로드한 파일명 유지
-curl -OJ 'https://beta-api-certmanager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
+curl -OJ 'https://beta-api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
 ```
-* 기타 curl 명령어 사용 방법은 아래 링크 참고 부탁드립니다.
+* 기타 curl 명령어 사용법은 아래 가이드를 참고해 주시기 바랍니다.
   * curl command guide : [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)
 
 ### 응답 코드
@@ -141,6 +141,6 @@ curl -OJ 'https://beta-api-certmanager.cloud.toast.com/certmanager/v1.0/appkeys/
 | false | 52000 | Certificate name does not exist. | 요청한 인증서 이름이 존재하지 않습니다. |
 | false | 52001 | Certificate file does not exist. | 요청한 인증서 파일이 존재하지 않습니다. |
 | false | 52002 | There are more than one certificate file. | 요청한 인증서에 등록된 파일이 두 개 이상입니다. |
-| false | 52003 | The certificate file is not a pem file. | 요청한 인증서 파일이 pem 파일이 아닙니다. |
+| false | 52003 | The certificate file is not a pem file. | 요청한 인증서 파일이 .pem 파일이 아닙니다. |
 | false | 52004 | The certificate name in the file is different from the requested certificate name. | 요청한 인증서 이름과 인증서 파일에 등록된 이름이 다릅니다. |
 | false | 52005 | Certificate file has expired | 요청한 인증서 파일이 만료된 파일입니다. |
