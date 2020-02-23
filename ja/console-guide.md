@@ -9,12 +9,12 @@
 
 Certificate Managerは、通知グループ単位で有効期限の通知周期を設定し、通知を受け取る対象者を管理します。
 
-![alarmgroup-1.png](http://static.toastoven.net/prod_certificate_manager/202001/alarmgroup-1.png)
+![alarmgroup-1.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-1.png)
 
 ### 通知グループ作成
 
 1. 通知グループメイン画面で**+グループ作成**ボタンをクリックします。
-![alarmgroup-2.png](http://static.toastoven.net/prod_certificate_manager/202001/alarmgroup-2.png)
+![alarmgroup-2.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-2.png)
 2. **グループ作成**ウィンドウでグループ名を入力します。すでに存在する名前は指定できません。
 3. 通知を使用するかどうかを選択します。通知グループに属しているユーザーに有効期限の通知を含むすべての通知を送信するかどうかを選択できます。
 4. **追加**ボタンをクリックします。
@@ -24,37 +24,37 @@ Certificate Managerは、通知グループ単位で有効期限の通知周期�
 1. 通知グループメイン画面で**詳細情報**ボタンをクリックすると、通知グループ名と通知使用有無、管理データが表示されます。**管理data**は該当通知グループに連携されている証明書、ドメイン、ユーザーデータを意味します。
 2. **修正**ボタンをクリックして通知グループの名前および通知を使用するかどうかを変更できます。
 
-![alarmgroup-3.png](http://static.toastoven.net/prod_certificate_manager/202001/alarmgroup-3.png)
+![alarmgroup-3.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-3.png)
 
 ### 通知設定
 
 1. 通知グループメイン画面で**通知設定**ボタンをクリックします。
-2. 基本に設定されている通知ポリシーがないため、**通知設定**ウィンドウで通知ポリシーを追加すると、有効期限の通知を受け取ることができます。![alarmgroup-4.png](http://static.toastoven.net/prod_certificate_manager/202001/alarmgroup-4.png)
+2. 基本に設定されている通知ポリシーがないため、**通知設定**ウィンドウで通知ポリシーを追加すると、有効期限の通知を受け取ることができます。![alarmgroup-4.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-4.png)
 
 ### 通知追加
 
-1. **通知設定**ウィンドウ左下の**+**ボタンをクリックします。![alarmgroup-5.png](http://static.toastoven.net/prod_certificate_manager/202001/alarmgroup-5.png)
+1. **通知設定**ウィンドウ左下の**+**ボタンをクリックします。![alarmgroup-5.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-5.png)
 2. **通知開始D-day**で、証明書、ドメイン、データ有効期限の何日前から通知を送信するかを指定します。
 3. **通知周期**で、何日間隔で通知を送信するかを指定します。
 4. **Emailを送信するかどうか**と**SMSを送信するかどうか**で通知送信時にメール、SMSを使用するかどうかを選択します。どちらも選択されていない場合は通知を送信しません。
 5. **管理**列で**-**ボタンをクリックして通知ポリシーを削除できます。
 6. **通知開始D-day**と**通知周期**は重複して設定できません。
 7. **完了**ボタンをクリックします。
-![alarmgroup-6.png](http://static.toastoven.net/prod_certificate_manager/202001/alarmgroup-6.png)
+![alarmgroup-6.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-6.png)
 
 ### 受信グループ連携画面
 
 通知グループメイン画面で**受信グループ**ボタンをクリックすると、通知グループに連携されているユーザーが表示されます。
 デフォルト値には通知グループを作成したユーザーが追加されています。
 
-TOASTプロジェクトに属しているメンバーが通知グループのユーザーに連携される場合があります。![alarmgroup-7.png](http://static.toastoven.net/prod_certificate_manager/202001/alarmgroup-7.png)
+TOASTプロジェクトに属しているメンバーが通知グループのユーザーに連携される場合があります。![alarmgroup-7.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-7.png)
 
 ### ユーザー追加
 
 上部のユーザー連携検索ウィンドウで、TOASTプロジェクトに属しているメンバーを検索して追加できます。
 
-![alarmgroup-8.png](http://static.toastoven.net/prod_certificate_manager/202001/alarmgroup-8.png)
-![alarmgroup-9.png](http://static.toastoven.net/prod_certificate_manager/202001/alarmgroup-9.png)
+![alarmgroup-8.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-8.png)
+![alarmgroup-9.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-9.png)
 
 * **Type**は、そのユーザーが持つTOASTプロジェクトの権限(ADMIN/MEMBER)を意味します。
 * メンバーの**名前**、**Email**および**Phone**を確認できます。
@@ -76,7 +76,7 @@ Certificate Managerに登録した証明書の有効期限より、自動収集�
 ### メイン画面
 メイン画面では証明書リストや有効期限までの残り日数などを確認できます。
 
-![certificate-1.png](http://static.toastoven.net/prod_certificate_manager/202001/certificate-1.png)
+![certificate-1.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-1.png)
 
 * 既に登録している証明書のリストを確認および検索できます。
 * 有効期限までの残り日数を確認できます。
@@ -85,7 +85,7 @@ Certificate Managerに登録した証明書の有効期限より、自動収集�
 ### 証明書の作成
 
 1. 証明書メイン画面で**+証明書の追加**ボタンをクリックすると、**証明書の追加**ウィンドウが表示されます。
-![certificate-2.png](http://static.toastoven.net/prod_certificate_manager/202001/certificate-2.png)
+![certificate-2.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-2.png)
 2. **通知グループ**で連携する通知グループを選択します。作成された通知グループがない時はリストに表示されず、証明書を作成できません。
 3. **名前**に証明書名(CommonName、CN)を入力します。証明書名は重複して登録できません。
 4. **タイプ**で項目を選択します。Singleは単一証明書、Wildcardは\*(asterisk)で始まる汎用証明書(複数のホストで使用できる証明書)を意味します。
@@ -102,22 +102,22 @@ Certificate Managerに登録した証明書の有効期限より、自動収集�
     * **(自動収集)**が表示されたフィールドは証明書ファイルから自動収集された項目を意味します。証明書ファイルが登録されていない場合は「-」と表示されます。
 2. **修正**ボタンをクリックすると、証明書情報の修正や、証明書ファイルのアップロードを行うことができます。
     * 証明書名は修正できません。証明書名を修正するには、登録している証明書を削除して新たに作成する必要があります。
-      ![certificate-3.png](http://static.toastoven.net/prod_certificate_manager/202001/certificate-3.png)
+      ![certificate-3.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-3.png)
 
 ### 証明書使用情報、インストール情報作成
 
 1. 証明書メイン画面で**証明書の使用情報**ボタンをクリックすると、証明書の使用およびインストール情報を確認できます。デフォルト値では何も登録されていません。
-![certificate-4.png](http://static.toastoven.net/prod_certificate_manager/202001/certificate-4.png)
+![certificate-4.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-4.png)
 2. **修正**ボタンをクリックすると、次のような画面を確認できます。
-![certificate-5.png](http://static.toastoven.net/prod_certificate_manager/202001/certificate-5.png)
+![certificate-5.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-5.png)
 3. 右上の**+追加**ボタンをクリックすると、情報を入力できるフィールドが表示されます。
-![certificate-6.png](http://static.toastoven.net/prod_certificate_manager/202001/certificate-6.png)
+![certificate-6.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-6.png)
 4. 証明書使用情報の名前を入力します。
     * 証明書タイプが**Single**の場合、証明書名と同じにする必要があります。
     * 証明書タイプが**Wildcard**の場合、'\*'(asterisk)を除いた証明書名と同じか、'\*'(asterisk)を除いた'.[証明書名]'で終わる必要があります。
 5. **通知使用有無**で証明書使用情報の通知を使用するかどうかを選択します。
 6. 証明書インストール情報を入力するには証明書インストール情報の横にある**+追加**ボタンをクリックします。 
-![certificate-7.png](http://static.toastoven.net/prod_certificate_manager/202001/certificate-7.png)
+![certificate-7.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-7.png)
     * **IPアドレス**と**ポート番号**を入力します。証明書の自動収集を使用する場合、入力したIPアドレスとポート番号で証明書をダウンロードして有効期限を比較します。
     * IPアドレスがプライベートIP(例：192.168.0.1, 172.20.0.1, 10.0.0.1)の場合、証明書をダウンロードできず、自動収集失敗通知が送信される場合があります。
 7. **完了**ボタンをクリックすると、設定した証明書の使用およびインストール情報が保存されます。
@@ -126,7 +126,7 @@ Certificate Managerに登録した証明書の有効期限より、自動収集�
 証明書メイン画面で**証明書使用情報**ボタンをクリックすると、証明書使用およびインストール情報を確認できます。
 右上の全体/使用/未使用で証明書使用情報の通知使用有無を選択して確認できます。
 
-![certificate-8.png](http://static.toastoven.net/prod_certificate_manager/202001/certificate-8.png)
+![certificate-8.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-8.png)
 
 ## ドメイン
 DNSの最上位ドメイン名(例：toast.com)と有効期限を入力すると、連携した通知グループの通知ポリシーに合わせてユーザーに通知を送信します。
@@ -143,7 +143,7 @@ DNSの最上位ドメイン名(例：toast.com)と有効期限を入力すると
 
 登録したドメインリストの確認、検索ができます。
 
-![domain-1.png](http://static.toastoven.net/prod_certificate_manager/202001/domain-1.png)
+![domain-1.png](http://static.toastoven.net/prod_certificate_manager/202002/domain-1.png)
 
 有効期限まで何日残っているかを確認できます。
 
@@ -152,7 +152,7 @@ DNSの最上位ドメイン名(例：toast.com)と有効期限を入力すると
 ### ドメイン作成
 
 1. ドメインメイン画面で**+ ドメイン追加**ボタンをクリックします。
-![domain-2.png](http://static.toastoven.net/prod_certificate_manager/202001/domain-2.png)
+![domain-2.png](http://static.toastoven.net/prod_certificate_manager/202002/domain-2.png)
 2. **ドメイン追加**ウィンドウで連携する通知グループを選択します。通知グループがない場合はリストに表示されず、ドメインを作成できません。
 3. **上位ドメイン情報**の下の**名前**に上位ドメイン名を入力します。上位ドメイン名は重複して登録できません。
 4. **有効期限**にドメインの有効期限を入力します。
@@ -180,7 +180,7 @@ DNSの最上位ドメイン名(例：toast.com)と有効期限を入力すると
 3. **修正**ボタンをクリックして上位ドメイン情報を修正したり、登録されたサブドメインの削除またはサブドメインの追加を行うことができます。
     * 上位ドメイン名は修正できません。上位ドメイン名を修正する必要がある場合は、登録したドメインを削除し、新たに作成する必要があります。
 
-![domain-3.png](http://static.toastoven.net/prod_certificate_manager/202001/domain-3.png)
+![domain-3.png](http://static.toastoven.net/prod_certificate_manager/202002/domain-3.png)
 
 ## ユーザーデータ
 
@@ -192,13 +192,13 @@ DNSの最上位ドメイン名(例：toast.com)と有効期限を入力すると
 登録したユーザーデータのリストの確認、検索を行うことができます。有効期限までの残り日数を確認できます。
 有効期限を過ぎたデータは赤色で、有効期限までの残り日数が30日以下のデータはオレンジ色で表示されます。
 
-![userdata-1.png](http://static.toastoven.net/prod_certificate_manager/202001/userdata-1.png)
+![userdata-1.png](http://static.toastoven.net/prod_certificate_manager/202002/userdata-1.png)
 
 ### ユーザーデータの作成
 
 ユーザーデータメイン画面で**+ ユーザーデータ追加**ボタンをクリックすると、次のような画面が表示されます。
 
-![userdata-2.png](http://static.toastoven.net/prod_certificate_manager/202001/userdata-2.png)
+![userdata-2.png](http://static.toastoven.net/prod_certificate_manager/202002/userdata-2.png)
 
 * 連携する通知グループを選択します。通知グループが作成されていない場合、選択可能な通知グループが表示されず、ユーザーデータを作成できません。
 * ユーザーデータ名を入力します。ユーザーデータ名は重複して登録できません。
@@ -212,4 +212,4 @@ DNSの最上位ドメイン名(例：toast.com)と有効期限を入力すると
 
 **修正**ボタンをクリックしてユーザーデータの情報を修正できます。
 
-![userdata-3.png](http://static.toastoven.net/prod_certificate_manager/202001/userdata-3.png)
+![userdata-3.png](http://static.toastoven.net/prod_certificate_manager/202002/userdata-3.png)
