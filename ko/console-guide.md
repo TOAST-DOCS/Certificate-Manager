@@ -9,12 +9,12 @@
 
 Certificate Manager는 알림 그룹 단위로 만료 일자의 알림 주기를 설정하고 알림을 받을 대상자를 관리합니다.
 
-![alarmgroup-1.png](http://static.toastoven.net/prod_certificate_manager/202001/alarmgroup-1.png)
+![alarmgroup-1.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-1.png)
 
 ### 알림 그룹 생성
 
 1. 알림 그룹 메인 화면에서 **+ 그룹 만들기** 버튼을 클릭합니다.
-![alarmgroup-2.png](http://static.toastoven.net/prod_certificate_manager/202001/alarmgroup-2.png)
+![alarmgroup-2.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-2.png)
 2. **그룹 만들기** 창에서 그룹 이름을 입력합니다. 이미 있는 이름은 지정할 수 없습니다.
 3. 알림 사용 여부를 선택합니다. 알림 그룹에 속한 사용자에게 만료 일자 알림을 포함한 모든 알림을 발송할지 여부를 선택할 수 있습니다.
 4. **추가** 버튼을 클릭합니다.
@@ -24,37 +24,37 @@ Certificate Manager는 알림 그룹 단위로 만료 일자의 알림 주기를
 1. 알림 그룹 메인 화면에서 **상세 정보** 버튼을 클릭하면 알림 그룹 이름과 알림 사용 여부, 관리 데이터가 표시됩니다. **관리 data**는 해당 알림 그룹에 연동되어 있는 인증서, 도메인, 사용자 데이터를 의미합니다.
 2. **수정** 버튼을 클릭하여 알림 그룹의 이름 및 알림 사용 여부를 변경할 수 있습니다.
 
-![alarmgroup-3.png](http://static.toastoven.net/prod_certificate_manager/202001/alarmgroup-3.png)
+![alarmgroup-3.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-3.png)
 
 ### 알림 설정
 
 1. 알림 그룹 메인 화면에서 **알림 설정** 버튼을 클릭합니다.
-2. 기본으로 설정된 알림 정책이 없으므로 **알림 설정** 창에서 알림 정책을 추가해야 만료일 알림을 받을 수 있습니다.![alarmgroup-4.png](http://static.toastoven.net/prod_certificate_manager/202001/alarmgroup-4.png)
+2. 기본으로 설정된 알림 정책이 없으므로 **알림 설정** 창에서 알림 정책을 추가해야 만료일 알림을 받을 수 있습니다.![alarmgroup-4.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-4.png)
 
 ### 알림 추가
 
-1. **알림 설정** 창 왼쪽 하단의 **+** 버튼을 클릭합니다.![alarmgroup-5.png](http://static.toastoven.net/prod_certificate_manager/202001/alarmgroup-5.png)
+1. **알림 설정** 창 왼쪽 하단의 **+** 버튼을 클릭합니다.![alarmgroup-5.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-5.png)
 2. **알림 시작 D-day**에서 인증서, 도메인, 데이터 만료일 며칠 전부터 알림을 발송할지를 지정합니다.
 3. **알림 주기**에서 며칠 간격으로 알림을 발송할지를 지정합니다.
 4. **Email 발송 여부**와 **SMS 발송 여부**에서 알림 발송 시 이메일, SMS를 사용할지를 선택합니다. 둘 다 선택돼 있지 않으면 알림을 발송하지 않습니다.
 5. **삭제** 열에서 **-** 버튼을 클릭하여 알림 정책을 삭제할 수 있습니다.
 6. **알림 시작 D-day**와 **알림 주기**는 중복 설정할 수 없습니다.
 7. **완료** 버튼을 클릭합니다.
-![alarmgroup-6.png](http://static.toastoven.net/prod_certificate_manager/202001/alarmgroup-6.png)
+![alarmgroup-6.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-6.png)
 
 ### 수신 그룹 연동 화면
 
 알림 그룹 메인 화면에서 **사용자 그룹 연동** 버튼을 클릭하면 알림 그룹에 연동되어 있는 사용자가 표시됩니다.
 기본값으로는 알림 그룹을 생성한 사용자가 추가되어 있습니다.
 
-TOAST 프로젝트에 속한 멤버가 알림 그룹의 사용자로 연동될 수 있습니다.![alarmgroup-7.png](http://static.toastoven.net/prod_certificate_manager/202001/alarmgroup-7.png)
+TOAST 프로젝트에 속한 멤버가 알림 그룹의 사용자로 연동될 수 있습니다.![alarmgroup-7.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-7.png)
 
 ### 사용자 추가
 
 상단의 사용자 연동 검색 창에서 TOAST 프로젝트에 속한 멤버를 검색하여 추가할 수 있습니다.
 
-![alarmgroup-8.png](http://static.toastoven.net/prod_certificate_manager/202001/alarmgroup-8.png)
-![alarmgroup-9.png](http://static.toastoven.net/prod_certificate_manager/202001/alarmgroup-9.png)
+![alarmgroup-8.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-8.png)
+![alarmgroup-9.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-9.png)
 
 * **Type**은 해당 사용자가 지닌 TOAST 프로젝트 권한(ADMIN/MEMBER)을 의미합니다.
 * 멤버의 **이름**, **Email** 및 **Phone**을 확인할 수 있습니다.
@@ -76,7 +76,7 @@ Certificate Manager에 등록한 인증서의 만료일보다 자동 수집한 �
 ### 메인 화면
 메인 화면에서는 인증서 목록이나 만료일까지 남은 날짜 등을 확인할 수 있습니다.
 
-![certificate-1.png](http://static.toastoven.net/prod_certificate_manager/202001/certificate-1.png)
+![certificate-1.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-1.png)
 
 * 기존에 등록한 인증서의 목록을 확인 및 검색할 수 있습니다.
 * 만료일까지 남은 날짜를 확인할 수 있습니다.
@@ -85,7 +85,7 @@ Certificate Manager에 등록한 인증서의 만료일보다 자동 수집한 �
 ### 인증서 생성
 
 1. 인증서 메인 화면에서 **+ 인증서 추가** 버튼을 클릭하면 **인증서 추가** 창이 나타납니다.
-![certificate-2.png](http://static.toastoven.net/prod_certificate_manager/202001/certificate-2.png)
+![certificate-2.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-2.png)
 2. **알림 그룹**에서 연동할 알림 그룹을 선택합니다. 생성된 알림 그룹이 없을 때는 목록에 표시되지 않으며, 인증서를 생성할 수 없습니다.
 3. **이름**에 인증서 이름(CommonName, CN)을 입력합니다. 인증서 이름은 중복으로 등록할 수 없습니다.
 4. **유형**에서 원하는 항목을 선택합니다. Single은 단일 인증서, Wildcard는 \*(asterisk)로 시작하는 범용 인증서(여러 호스트에서 사용할 수 있는 인증서)를 뜻합니다.
@@ -103,22 +103,22 @@ Certificate Manager에 등록한 인증서의 만료일보다 자동 수집한 �
     * **(자동 수집)**이 표시된 필드는 인증서 파일로부터 자동 수집된 항목을 의미합니다. 인증서 파일이 등록되지 않은 경우 '-'로 표시됩니다.
 2. **수정** 버튼을 클릭하여 인증서 정보를 수정하거나, 인증서 파일을 업로드할 수 있습니다.
     * 인증서 이름은 수정할 수 없습니다. 인증서 이름을 수정하려면 기존에 등록한 인증서를 삭제하고 새로 생성해야 합니다.
-      ![certificate-3.png](http://static.toastoven.net/prod_certificate_manager/202001/certificate-3.png)
+      ![certificate-3.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-3.png)
 
 ### 인증서 사용 정보, 설치 정보 생성
 
 1. 인증서 메인 화면에서 **인증서 사용 정보** 버튼을 클릭하면 인증서 사용 및 설치 정보를 확인할 수 있습니다. 기본값으로는 아무것도 등록되어 있지 않습니다.
-![certificate-4.png](http://static.toastoven.net/prod_certificate_manager/202001/certificate-4.png)
+![certificate-4.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-4.png)
 2. **수정** 버튼을 클릭하면 다음과 같은 화면을 확인할 수 있습니다.
-![certificate-5.png](http://static.toastoven.net/prod_certificate_manager/202001/certificate-5.png)
+![certificate-5.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-5.png)
 3. 오른쪽 상단의 **+ 추가** 버튼을 클릭하면 정보를 입력할 수 있는 필드가 나타납니다.
-![certificate-6.png](http://static.toastoven.net/prod_certificate_manager/202001/certificate-6.png)
+![certificate-6.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-6.png)
 4. 인증서 사용 정보의 이름을 입력합니다.
     * 인증서 유형이 **Single**인 경우 인증서 이름과 동일해야 합니다.
     * 인증서 유형이 **Wildcard**인 경우 '\*'(asterisk)를 제외한 인증서 이름과 동일하거나 '\*'(asterisk)를 제외한 '.[인증서 이름]'으로 끝나야 합니다.
 5. **알림 사용 여부**에서 인증서 사용 정보의 알림 사용 여부를 선택합니다.
 6. 인증서 설치 정보를 입력하려면 인증서 설치 정보 옆의 **+추가** 버튼을 클릭합니다. 
-![certificate-7.png](http://static.toastoven.net/prod_certificate_manager/202001/certificate-7.png)
+![certificate-7.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-7.png)
     * **IP 주소**와 **포트 번호**를 입력합니다. 인증서의 자동 수집을 사용하는 경우, 입력한 IP 주소와 포트 번호로 인증서를 다운로드해 만료 일자를 비교합니다.
     * IP 주소가 사설 IP(예: 192.168.0.1, 172.20.0.1, 10.0.0.1)인 경우 인증서를 다운로드하지 못해 자동 수집 실패 알림이 발송될 수 있습니다.
 7. **완료** 버튼을 클릭하면 설정한 인증서의 사용 및 설치 정보가 저장됩니다.
@@ -127,7 +127,7 @@ Certificate Manager에 등록한 인증서의 만료일보다 자동 수집한 �
 인증서 메인 화면에서 **인증서 사용 정보** 버튼을 클릭하면 인증서 사용 및 설치 정보를 확인할 수 있습니다.
 오른쪽 상단의 전체/사용/미사용으로 인증서 사용 정보의 알림 사용 여부를 선택해서 볼 수 있습니다.
 
-![certificate-8.png](http://static.toastoven.net/prod_certificate_manager/202001/certificate-8.png)
+![certificate-8.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-8.png)
 
 ## 도메인
 DNS의 최상위 도메인 이름(예: toast.com)과 만료일을 입력하면 연동한 알림 그룹의 알림 정책에 맞춰 사용자에게 알림을 발송합니다.
@@ -144,7 +144,7 @@ DNS의 최상위 도메인 이름(예: toast.com)과 만료일을 입력하면 �
 
 기존에 등록한 도메인의 목록을 확인하거나 검색할 수 있습니다.
 
-![domain-1.png](http://static.toastoven.net/prod_certificate_manager/202001/domain-1.png)
+![domain-1.png](http://static.toastoven.net/prod_certificate_manager/202002/domain-1.png)
 
 만료일까지 며칠이 남았는지 확인할 수 있습니다.
 
@@ -153,7 +153,7 @@ DNS의 최상위 도메인 이름(예: toast.com)과 만료일을 입력하면 �
 ### 도메인 생성
 
 1. 도메인 메인 화면에서 **+ 도메인 추가** 버튼을 클릭합니다.
-![domain-2.png](http://static.toastoven.net/prod_certificate_manager/202001/domain-2.png)
+![domain-2.png](http://static.toastoven.net/prod_certificate_manager/202002/domain-2.png)
 2. **도메인 추가** 창에서 연동할 알림 그룹을 선택합니다. 알림 그룹이 없으면 목록에 나타나지 않으며 도메인을 생성할 수 없습니다.
 3. **상위 도메인 정보** 아래 **이름**에 상위 도메인 이름을 입력합니다. 상위 도메인 이름은 중복으로 등록할 수 없습니다.
 4. **만료일**에 도메인의 만료일을 입력합니다.
@@ -181,7 +181,7 @@ DNS의 최상위 도메인 이름(예: toast.com)과 만료일을 입력하면 �
 3. **수정** 버튼을 클릭하여 상위 도메인 정보를 수정하시거나, 등록된 하위 도메인을 삭제 혹은 하위 도메인을 추가할 수 있습니다.
     * 상위 도메인 이름은 수정할 수 없습니다. 상위 도메인 이름을 수정해야 하면 기존에 등록한 도메인을 삭제하고 신규로 생성해야 합니다.
 
-![domain-3.png](http://static.toastoven.net/prod_certificate_manager/202001/domain-3.png)
+![domain-3.png](http://static.toastoven.net/prod_certificate_manager/202002/domain-3.png)
 
 ## 사용자 데이터
 
@@ -193,13 +193,13 @@ DNS의 최상위 도메인 이름(예: toast.com)과 만료일을 입력하면 �
 기존에 등록한 사용자 데이터의 목록을 확인하거나 검색할 수 있습니다. 만료일까지 남은 날짜를 확인할 수 있습니다.
 오늘 날짜 기준으로 만료일이 지난 데이터는 빨간색으로, 만료일까지 남은 날짜가 30일 이하인 데이터는 주황색으로 표시됩니다. 
 
-![userdata-1.png](http://static.toastoven.net/prod_certificate_manager/202001/userdata-1.png)
+![userdata-1.png](http://static.toastoven.net/prod_certificate_manager/202002/userdata-1.png)
 
 ### 사용자 데이터 생성
 
 사용자 데이터 메인 화면에서 **+ 사용자 데이터 추가** 버튼을 클릭하면 다음과 같은 화면이 나옵니다.
 
-![userdata-2.png](http://static.toastoven.net/prod_certificate_manager/202001/userdata-2.png)
+![userdata-2.png](http://static.toastoven.net/prod_certificate_manager/202002/userdata-2.png)
 
 * 연동할 알림 그룹을 선택합니다. 알림 그룹이 생성되어 있지 않은 경우 선택 가능한 알림 그룹이 표시되지 않으며, 사용자 데이터를 생성할 수 없습니다.
 * 사용자 데이터 이름을 입력합니다. 사용자 데이터 이름은 중복으로 등록할 수 없습니다.
@@ -213,4 +213,4 @@ DNS의 최상위 도메인 이름(예: toast.com)과 만료일을 입력하면 �
 
 **수정** 버튼을 클릭하여 사용자 데이터의 정보를 수정할 수 있습니다.
 
-![userdata-3.png](http://static.toastoven.net/prod_certificate_manager/202001/userdata-3.png)
+![userdata-3.png](http://static.toastoven.net/prod_certificate_manager/202002/userdata-3.png)
