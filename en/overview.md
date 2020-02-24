@@ -1,57 +1,59 @@
-## Management > Certificate Manager > 개요
+## Management > Certificate Manager > Overview
 
-TLS 인증서/도메인의 만료일 연장을 놓치면 웹 서비스에 접속하지 못하는 일이 발생합니다.
-Certificate Manager는 만료일 연장을 놓치지 않도록, 만료일이 가까워지면 알림(SMS, EMAIL)을 발송하는 서비스입니다.
-만료일이 존재하는 TLS 인증서/도메인/사용자 데이터(ex. 라이선스)를 관리하고, 만료일에 따른 알림 발송 규칙과 알림 받을 사용자를 정할 수 있습니다.
+If you miss extending expiration dates of TLS certificate/domain, you may not access web services. 
+Certificate Manager helps you not to miss expiration dates by sending notifications (via SMS or Email) when you near each date.
+You can manage TLS certificate/domain/user data (e.g. license) for which expiration dates exist, and specify the notifying rules and recipients for each expiration date.  
 
-### 제공 기능
+### Features
 
-#### TLS 인증서/도메인/사용자 데이터 관리
+#### Manage TLS Certificate/Domain/User Data
 
-* 인증서 정보 등록, 관리, 조회
-* 인증서 파일(pem) 업로드 및 다운로드
-* 인증서 사용/설치 정보 등록, 관리, 조회
+* Register, manage, and query certificate information
+* Upload and download certificate files (pem)
+* Register, manage, and query certificate usage/installation information 
 
-#### TLS 인증서 정보 자동 수집
+#### Auto-Collect TLS Certificate Information 
 
-* 인증서 파일 업로드 시, 파일을 읽어 인증서의 생성일, 만료일, 서명 방식, 인증 기관을 수집
-* 인증서 설치 정보 등록 시, 설치 정보로부터 인증서를 다운로드해 만료일과 인증서 이름을 수집
+* For uploading certificate files, read files to collect certificate's creation date, expiration date, signature type, and certification institution 
+* For registering certificate installation information, download certificate out of installation information so as to collect expiration date and certificate name
+    * It does not collect certificate installation information if the IP of the certificate installation information is private IP. 
 
-#### 도메인 정보 자동 수집
+#### Auto-Collect Domain Information
 
-* 자동 수집 사용 시 Whois 서버로부터 도메인의 생성일, 만료일, 등록자, 등록 기관, 네임 서버를 수집
-* 하위 도메인 정보 등록 시 하위 도메인으로 ping 을 호출해 응답 성공 여부를 수집
+* With auto-collection, collect domain's creation date, expiration date, registrar, registering institution, and name server.
+* In registering sub-domain information, call ping as sub-domain so as to collect if response is successful or not.
+    * It does not collect sub-domain ping responses if lookup IP for child domains is private IP.
 
-#### 알림 그룹 관리
+#### Manage Notification Groups
 
-* 알림을 받을 사용자를 등록, 관리, 조회
-* 만료일 알림 정책을 등록, 관리, 조회
-* TLS 인증서 / 도메인 / 사용자 데이터의 알림 그룹을 지정 시 해당 알림 그룹에 속한 사용자에게 알림을 발송
+* Register, manage, and query recipients 
+* Register, manage, and query notification policy on expiration dates 
+* Send notification to users within a corresponding notification group, once the group for TLS certificate/domain/user data is specified   
 
-#### 알림 발송
+#### Send Notifications
 
-* 만료일이 가까워지거나 자동 수집에 실패한 경우 사용자에게 알림을 발송
-* 알림 종류
+* Send notification to users when it nears an expiration date or if it fails to auto-collect
+* Notification Types
 
-| 종류 | 알림 대상자 | 발송 시간 | 설명 |
+| Type | Notification Recipients | Delivery Time | Description |
 | --- | --- | --- | --- |
-| 만료 알림 | 알림 그룹의 ADMIN/MEMBER | 09:00 (UTC+09) | 알림 그룹의 알림 설정(며칠 전부터 며칠마다)에 맞춰 인증서/도메인/사용자 데이터의 만료일을 안내하는 알림 |
-| 인증서 설치 정보 교체 알림 | 알림 그룹의 ADMIN/MEMBER | 09:00 (UTC+09) | 인증서 파일과 인증서 설치 정보를 모두 등록 시, 인증서 설치 정보의 만료일이 인증서의 만료일보다 앞선 경우 인증서 교체 대상으로 판단하고 인증서 교체를 안내하는 알림 |
-| 자동 수집 실패로 인한 정보 확인 알림 | 알림 그룹의 ADMIN | 09:00 (UTC+09) | 인증서 설치 정보에 등록한 ip/port로부터 인증서를 다운로드하지 못하거나 하위 도메인의 ping 응답 실패가 발생한 경우, 인증서 설치정보/하위 도메인 정보 확인을 안내하는 알림 |
-| 알림 실패로 인한 알림 그룹 사용자 확인 알림 | 알림 그룹의 ADMIN | 10:00 (UTC+09) | 알림 그룹에 속한 사용자에게 알림 발송이 실패하는 경우, 알림 그룹에 속한 ADMIN에게 알림 그룹 사용자 확인을 안내하는 알림 |
-| 알림 실패로 인한 알림 그룹 ADMIN 확인 알림 | 프로젝트의 ADMIN | 11:00 (UTC+09) | '알림 실패로 인한 알림 그룹 사용자 확인 알림\` 발송이 모두 실패하는 경우, 프로젝트에 속한 ADMIN에게 알림 그룹의 ADMIN 확인을 안내하는 알림 |
+| Expiration | ADMIN/MEMBER of notification group | 09:00 (UTC+09) | Guide for expiration dates of certificate/domain/user data according to setting (e.g. since x days, or every x days) of a notification group |
+| Replace Certificate Installation Information | ADMIN/MEMBER of notification group | 09:00 (UTC+09) | Guide on replacement is sent, when certificate files and installation information are registered, and if the expiration date for certificate installation information is earlier than that of certificate |
+| Check Information due to Failed Auto Collection | ADMIN of notification group | 09:00 (UTC+09) | Guide is sent to check certificate installation/sub-domain information, if it fails to download certificates from IP/Port registered at certificate installation information, or if it fails to get response from ping of sub-domain |
+| Check Notification Group Users due to Failed Notifications | ADMIN of notification group | 10:00 (UTC+09) | Guide is sent to ADMIN of a notification group to check its user, if notification delivery fails to a user of the group |
+| Check Notification Group ADMIN due to Failed Notifications | ADMIN of project | 11:00 (UTC+09) | Guide is sent to ADMIN of a project to check ADMIN of a notification group, if delivery fails for 'Notification to check Notification Group Users due to Failed Notification Delivery' |
 
-### 서비스 대상
+### Service Targets
 
-* 만료일이 존재하는 데이터의 만료일 안내 알림이 필요한 사용자
+*  Those who need to be notified on data nearing expiration dates  
 
-### 용어 설명
+### Glossary
 
-| 용어 | 설명 |
+| Term | Description |
 | --- | --- |
-| TLS 인증서 / 인증서 | https로 통신하는 웹사이트에 필요한 문서로, TLS 인증서는 신뢰할 수 있는 제3자 인증기관에서 발급받을 수 있으며 이 인증서에는 인증서의 해당 사이트의 공개키와 사이트의 정보들이 있습니다. |
-| 인증서 사용 정보 | 인증서의 실제 사용 정보(웹 서버 도메인, 포트 번호)를 의미합니다. |
-| 인증서 설치 정보 | 인증서를 설치한 웹 서버의 정보(IP 주소, https 포트 번호, Host 이름)를 의미합니다. |
-| 도메인 | DNS가 서비스하는 호스트 도메인 영역입니다. (ex. toast.com) |
-| 하위 도메인 | 도메인의 실제 사용 정보를 의미합니다. (ex. www.toast.com) |
-| 사용자 데이터 | 텍스트 형식으로 입력할 수 있는 모든 데이터를 의미합니다. 만료일 알림을 받고 싶으신 경우 자유로운 형식으로 사용하시면 됩니다. |
+| TLS Certificate/ Certificate | Documents required for a website communicated via https, which can be issued from a trustworthy third-party certificate institution. Each certificate includes a private key and information of the website. |
+| Certificate Usage Information | Actual usage information of a certificate (e.g. web server domain or port number). |
+| Certificate Installation Information | Information of a web server in which certificate is installed (e.g. IP address, https port number, or host name) |
+| Domain | The host domain area serviced by DNS. (ex. toast.com) |
+| Sub-domain | Actual usage information of domain (ex. www.toast.com) |
+| User Data | All data which are available in text. Format is free to choose to be notified on expiration dates. |

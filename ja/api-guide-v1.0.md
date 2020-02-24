@@ -1,27 +1,27 @@
-## Management > Certificate Manager > API v1.0 가이드
+## Management > Certificate Manager > API v1.0ガイド
 
-Certificate Manager는 인증서 업로드, 다운로드를 위한 API를 제공합니다. 클라이언트는 콘솔에서 인증서와 인증서 파일을 등록한 후 API를 통해 데이터를 사용할 수 있습니다.
+Certificate Managerでは証明書のアップロード、ダウンロードを行うためのAPIを提供します。クライアントはコンソールで証明書と証明書ファイルを登録した後、APIを通してデータを使用できます。
 
-### 기본 정보
+### 基本情報
 #### EndPoint
 ```text
 https://api-certificate-manager.cloud.toast.com
 ```
 
-#### 제공하는 API 종류
-| Method | URI | 설명 |
+#### 提供するAPI種類
+| Method | URI | 説明 |
 | ------ | --- | --- |
-| POST | /certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files | 등록되어있는 인증서에 파일을 업로드합니다. 파일이 등록되어 있는 경우, 업로드하는 파일로 교체됩니다. |
-| GET | /certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files | 등록되어있는 인증서 파일을 다운로드합니다. |
+| POST | /certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files | 登録された証明書にファイルをアップロードします。ファイルが登録されている場合、アップロードしたファイルに更新されます。 |
+| GET | /certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files | 登録された証明書ファイルをダウンロードします。 |
 
-##### API 요청의 경로 변수
+##### APIリクエストのパス変数
 
-| 값 | 타입 | 설명 |
+| 値 | タイプ | 説明 |
 | --- | --- | --- |
-| appKey | String | 사용하려는 데이터를 저장하고 있는 TOAST 프로젝트의 앱 키 |
-| certificateName | String | 사용하려는 데이터(인증서)의 이름 |
+| appKey | String | 使用するデータを保存しているTOASTプロジェクトのアプリキー |
+| certificateName | String | 使用するデータ(証明書)の名前 |
 
-##### API 응답의 데이터 공통 헤더
+##### APIレスポンスのデータ共通ヘッダ
 
 ``` json
 {
@@ -36,18 +36,18 @@ https://api-certificate-manager.cloud.toast.com
 }
 ```
 
-| 값 | 타입 | 설명 |
+| 値 | タイプ | 説明 |
 | --- | --- | --- |
-| resultCode | Number | API 호출 결과 코드값 |
-| resultMessage | String | API 호출 결과 메시지 |
-| isSuccessful | Boolean | API 호출 성공 여부 |
+| resultCode | Number | API呼び出し結果コード値 |
+| resultMessage | String | API呼び出し結果メッセージ |
+| isSuccessful | Boolean | API呼び出し成否 |
 
-### 인증서 파일 업로드
+### 証明書ファイルのアップロード
 
-Certificate Manager에 등록한 인증서에 파일을 업로드 할 때 사용합니다. 파일이 등록되어 있다면, 새로 업로드하는 파일로 교체됩니다.
-지원하는 인증서 파일(.pem) 형식은 '[문제 해결 가이드 > 인증서 파일 포맷 변환](http://docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)' 참고 부탁드립니다.
+Certificate Managerに登録した証明書にファイルをアップロードする時に使用します。ファイルが登録されている場合、新たにアップロードしたファイルに更新されます。
+サポートする証明書ファイル(.pem)の形式は[問題解決ガイド > 証明書ファイルフォーマット変換](http://docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)を参照してください。
 
-#### 요청
+#### リクエスト
 
 ```
 POST https://api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
@@ -62,10 +62,10 @@ Content-Type:multipart/form-data
 [Request Body]
 
 ```
-file: {파일}
+file: {ファイル}
 ```
 
-#### 응답
+#### レスポンス
 
 [Response Header]
 
@@ -86,22 +86,22 @@ Content-Type:application/json
 }
 ```
 
-### 인증서 파일 다운로드
+### 証明書ファイルのダウンロード
 
-Certificate Manager에 등록한 인증서 파일을 다운로드 할 때 사용합니다.
+Certificate Managerに登録した証明書ファイルをダウンロードする時に使用します。
 
-#### 요청
+#### リクエスト
 
 ```
 GET https://api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
 ```
 
-#### 응답
+#### レスポンス
 
 [Response Header]
 
 ```
-Content-Disposition:attachment; filename="{파일명}"
+Content-Disposition:attachment; filename="{ファイル名}"
 Content-Type:application/octet-stream
 ```
 
@@ -116,31 +116,31 @@ Content-Type:application/octet-stream
 ...
 -----END RSA PRIVATE KEY-----
 ```
-#### Command Line Interface(CLI) 사용 시
+#### Command Line Interface(CLI)使用時
 
-인증서 파일 다운로드 API는 `curl` 명령어를 사용하여 요청하실 수 있습니다.
+証明書ファイルダウンロードAPIは`curl`コマンドを使用してリクエストできます。
 
 ```sh
-#파일에 쓰기
+#ファイルに書き込む
 curl 'https://api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files' > cert.pem
 
-#파일명 지정
+#ファイル名指定
 curl -o cert.pem 'https://api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
 
-#업로드한 파일명 유지
+#アップロードしたファイル名を維持
 curl -OJ 'https://api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
 ```
-* 기타 curl 명령어 사용 방법은 아래 링크 참고 부탁드립니다.
+* その他curlコマンドの使用方法は下記のガイドを参照してください。
   * curl command guide : [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)
 
-### 응답 코드
+### レスポンスコード
 
-| isSuccessful | resultCode | resultMessage | 설명 |
+| isSuccessful | resultCode | resultMessage | 説明 |
 | ------------ | ---------- | ------------- | --- |
-| true | 0 | SUCCESS | 성공 |
-| false | 52000 | Certificate name does not exist. | 요청한 인증서 이름이 존재하지 않습니다. |
-| false | 52001 | Certificate file does not exist. | 요청한 인증서 파일이 존재하지 않습니다. |
-| false | 52002 | There are more than one certificate file. | 요청한 인증서에 등록된 파일이 두 개 이상입니다. |
-| false | 52003 | The certificate file is not a pem file. | 요청한 인증서 파일이 pem 파일이 아닙니다. |
-| false | 52004 | The certificate name in the file is different from the requested certificate name. | 요청한 인증서 이름과 인증서 파일에 등록된 이름이 다릅니다. |
-| false | 52005 | Certificate file has expired | 요청한 인증서 파일이 만료된 파일입니다. |
+| true | 0 | SUCCESS | 成功 |
+| false | 52000 | Certificate name does not exist. | リクエストした証明書名が存在しません。 |
+| false | 52001 | Certificate file does not exist. | リクエストした証明書ファイルが存在しません。 |
+| false | 52002 | There are more than one certificate file. | リクエストした証明書に登録されたファイルが2つ以上あります。 |
+| false | 52003 | The certificate file is not a pem file. | リクエストした証明書ファイルが.pemファイルではありません。 |
+| false | 52004 | The certificate name in the file is different from the requested certificate name. | リクエストした証明書名と証明書ファイルに登録された名前が異なります。 |
+| false | 52005 | Certificate file has expired | リクエストした証明書ファイルの有効期限が切れています。 |
