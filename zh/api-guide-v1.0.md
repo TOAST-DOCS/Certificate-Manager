@@ -1,6 +1,6 @@
 ## Management > Certificate Manager > API v1.0 가이드
 
-Certificate Manager에서는 인증서 업로드, 다운로드를 위한 API를 제공합니다. 클라이언트는 콘솔에서 인증서와 인증서 파일을 등록한 후 API를 통해 데이터를 사용할 수 있습니다.
+Certificate Manager에서는 인증서 목록 조회, 업로드, 다운로드를 위한 API를 제공합니다. 클라이언트는 콘솔에서 인증서와 인증서 파일을 등록한 후 API를 통해 데이터를 사용할 수 있습니다.
 
 ### 기본 정보
 #### EndPoint
@@ -11,6 +11,7 @@ https://alpha-api-certificate-manager.cloud.toast.com
 #### 제공하는 API 종류
 | Method | URI | 설명 |
 | ------ | --- | --- |
+| GET | /certmanager/v1.0/appkeys/{appKey}/certificates | 인증서 목록을 조회합니다. |
 | POST | /certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files | 등록된 인증서에 파일을 업로드합니다. 파일이 등록되어 있는 경우, 업로드하는 파일로 교체됩니다. |
 | GET | /certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files | 등록된 인증서 파일을 다운로드합니다. |
 
@@ -23,7 +24,7 @@ https://alpha-api-certificate-manager.cloud.toast.com
 
 ##### API 응답의 데이터 공통 헤더
 
-``` json
+```json
 {
     "header": {
         "resultCode": 0,
@@ -41,6 +42,51 @@ https://alpha-api-certificate-manager.cloud.toast.com
 | resultCode | Number | API 호출 결과 코드값 |
 | resultMessage | String | API 호출 결과 메시지 |
 | isSuccessful | Boolean | API 호출 성공 여부 |
+
+### 인증서 목록 조회
+
+Certificate Manager에 등록한 인증서 목록을 조회할 때 사용합니다. 
+
+#### 요청
+
+```
+GET https://alpha-api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates
+```
+
+#### 응답
+
+[Response Header]
+
+```
+Content-Type:application/json
+```
+
+[Response Body]
+
+```json
+{
+    "header": {
+        "resultCode": 0,
+        "resultMessage": "success",
+        "isSuccessful": true
+    },
+    "body": {
+        "totalCount": 1,
+        "totalPage": 1,
+        "currentPage": 1,
+        "pageSize": 10,
+        "data": [
+            {
+                "certificateName": "test.nhn.com",
+                "authority": "NHN",
+                "signatureAlgorithm": "SHA256withRSA",
+                "fileCreationDate": "2020-03-02",
+                "expirationDate": "2021-03-25"
+            }
+        ]
+    }
+}
+```
 
 ### 인증서 파일 업로드
 
@@ -75,7 +121,7 @@ Content-Type:application/json
 
 [Response Body]
 
-``` json
+```json
 {
     "header": {
         "resultCode": 0,
@@ -120,7 +166,7 @@ Content-Type:application/octet-stream
 
 인증서 파일 다운로드 API는 `curl` 명령어를 사용해 요청할 수 있습니다.
 
-```sh
+```bash
 #파일에 쓰기
 curl 'https://alpha-api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files' > cert.pem
 
