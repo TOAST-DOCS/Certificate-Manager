@@ -1,6 +1,6 @@
 ## Management > Certificate Manager > API v1.0 Guide
 
-Certificate Manager provides APIs to upload or download certificates. Clients must register certificates and certificate files on console to use data via APIs. 
+Certificate Manager provides APIs for certificate list lookup, uploading or downloading certificates. Clients must register certificates and certificate files on console to use data via APIs. 
 
 ### Basic Information
 #### EndPoint
@@ -11,6 +11,7 @@ https://alpha-api-certificate-manager.cloud.toast.com
 #### Available API Types 
 | Method | URI | Description |
 | ------ | --- | --- |
+| GET | /certmanager/v1.0/appkeys/{appKey}/certificates | Look up the list of certificates. |
 | POST | /certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files | Upload files to a registered certificate. If a file is already registered, it shall be replaced by a newly uploaded file. |
 | GET | /certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files | Download certificate files that are registered. |
 
@@ -23,7 +24,7 @@ https://alpha-api-certificate-manager.cloud.toast.com
 
 ##### Common Data Header of API Response
 
-``` json
+```json
 {
     "header": {
         "resultCode": 0,
@@ -41,6 +42,70 @@ https://alpha-api-certificate-manager.cloud.toast.com
 | resultCode | Number | Result code value of API call |
 | resultMessage | String | Result message of API call |
 | isSuccessful | Boolean | API call successful or not |
+
+### Lookup certificate list
+
+Used to query the list of certificates registered with Certificate Manager.
+
+#### Request
+
+```
+GET https://alpha-api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates?pageSize={pageSize}&pageNum={pageNum}&all={all}&status={status}
+```
+
+| Value | Type | Description | Available |
+| --- | --- | --- | --- |
+| pageSize | Number | Page size | 10(default) |
+| pageNum | Number | Page number | 1(default) |
+| all | Boolean | Full lookup | true, false(default) |
+| status | String | Certificate expiration status | ALL, EXPIRED, UNEXPIRED(default) | 
+
+#### Response
+
+[Response Header]
+
+```
+Content-Type:application/json
+```
+
+[Response Body]
+
+```json
+{
+    "header": {
+        "resultCode": 0,
+        "resultMessage": "success",
+        "isSuccessful": true
+    },
+    "body": {
+        "totalCount": 1,
+        "totalPage": 1,
+        "currentPage": 1,
+        "pageSize": 10,
+        "data": [
+            {
+                "certificateName": "test.nhn.com",
+                "authority": "NHN",
+                "signatureAlgorithm": "SHA256withRSA",
+                "fileCreationDate": "2020-03-02",
+                "expirationDate": "2021-03-25"
+            }
+        ]
+    }
+}
+```
+
+| Value | Type | Description |
+| --- | --- | --- |
+| totalCount | Number | Total certificates |
+| totalPage | Number | Total pages |
+| currentPage | Number | Current page |
+| pageSize | Number | Page size |
+| certificateName | String | Certificate name |
+| authority | String | Authority |
+| signatureAlgorithm | String | Signature algorithm |
+| fileCreationDate | String | Certificate file creation date |
+| expirationDate | String | Certificate file expiration date |
 
 ### Uploading Certificate Files 
 
@@ -75,7 +140,7 @@ Content-Type:application/json
 
 [Response Body]
 
-``` json
+```json
 {
     "header": {
         "resultCode": 0,
@@ -120,7 +185,7 @@ Content-Type:application/octet-stream
 
 Download Certificate File API can be requested by using the `curl` command. 
 
-```sh
+```bash
 #Write to File
 curl 'https://alpha-api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files' > cert.pem
 
