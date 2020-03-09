@@ -50,8 +50,15 @@ Used to query the list of certificates registered with Certificate Manager.
 #### Request
 
 ```
-GET https://alpha-api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates
+GET https://alpha-api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates?pageSize={pageSize}&pageNum={pageNum}&all={all}&status={status}
 ```
+
+| Value | Type | Description | Available |
+| --- | --- | --- | --- |
+| pageSize | Number | Page size | 10(default) |
+| pageNum | Number | Page number | 1(default) |
+| all | Boolean | Full lookup | true, false(default) |
+| status | String | Certificate expiration status | ALL, EXPIRED, UNEXPIRED(default) | 
 
 #### Response
 
@@ -87,6 +94,18 @@ Content-Type:application/json
     }
 }
 ```
+
+| Value | Type | Description |
+| --- | --- | --- |
+| totalCount | Number | Total certificates |
+| totalPage | Number | Total pages |
+| currentPage | Number | Current page |
+| pageSize | Number | Page size |
+| certificateName | String | Certificate name |
+| authority | String | Authority |
+| signatureAlgorithm | String | Signature algorithm |
+| fileCreationDate | String | Certificate file creation date |
+| expirationDate | String | Certificate file expiration date |
 
 ### Uploading Certificate Files 
 

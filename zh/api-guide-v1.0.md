@@ -50,8 +50,15 @@ Certificate Manager에 등록한 인증서 목록을 조회할 때 사용합니�
 #### 요청
 
 ```
-GET https://alpha-api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates
+GET https://alpha-api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates?pageSize={pageSize}&pageNum={pageNum}&all={all}&status={status}
 ```
+
+| 값 | 타입 | 설명 | 입력가능 |
+| --- | --- | --- | --- |
+| pageSize | Number | 페이지 크기 | 10(default) |
+| pageNum | Number | 페이지 번호 | 1(default) |
+| all | Boolean | 전체조회 여부 | true, false(default) |
+| status | String | 인증서 상태 | ALL, EXPIRED, UNEXPIRED(default) | 
 
 #### 응답
 
@@ -87,6 +94,18 @@ Content-Type:application/json
     }
 }
 ```
+
+| 값 | 타입 | 설명 |
+| --- | --- | --- |
+| totalCount | Number | 전체 인증서 수 |
+| totalPage | Number | 전체 페이지 수 |
+| currentPage | Number | 현재 페이지 |
+| pageSize | Number | 페이지 크기 |
+| certificateName | String | 인증서 이름 |
+| authority | String | 인증기관 |
+| signatureAlgorithm | String | 서명방식 |
+| fileCreationDate | String | 인증서 파일 생성일 |
+| expirationDate | String | 인증서 파일 만료일 |
 
 ### 인증서 파일 업로드
 

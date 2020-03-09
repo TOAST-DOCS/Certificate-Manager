@@ -50,8 +50,15 @@ Certificate Manager に登録されている証明書のリストを照会する
 #### リクエスト
 
 ```
-GET https://alpha-api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates
+GET https://alpha-api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates?pageSize={pageSize}&pageNum={pageNum}&all={all}&status={status}
 ```
+
+| 値 | タイプ | 説明 | 入力可能 |
+| --- | --- | --- | --- |
+| pageSize | Number | ページサイズ | 10(default) |
+| pageNum | Number | ページ番号 | 1(default) |
+| all | Boolean | 完全検索 | true, false(default) |
+| status | String | 証明書の有効期限ステータス | ALL, EXPIRED, UNEXPIRED(default) |
 
 #### レスポンス
 
@@ -87,6 +94,18 @@ Content-Type:application/json
     }
 }
 ```
+
+| 値 | タイプ | 説明 |
+| --- | --- | --- |
+| totalCount | Number | 証明書の合計数 |
+| totalPage | Number | 合計ページ数 |
+| currentPage | Number | 現在のページ |
+| pageSize | Number | ページサイズ |
+| certificateName | String | 名証明書 |
+| authority | String | 権限 |
+| signatureAlgorithm | String | シグニチャ アルゴリズム |
+| fileCreationDate | String | 証明書ファイルの作成日 |
+| expirationDate | String | 証明書ファイルの有効期限 |
 
 ### 証明書ファイルのアップロード
 
