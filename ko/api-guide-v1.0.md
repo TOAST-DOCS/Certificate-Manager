@@ -144,3 +144,6 @@ curl -OJ 'https://api-certificate-manager.cloud.toast.com/certmanager/v1.0/appke
 | false | 52003 | The certificate file is not a pem file. | 요청한 인증서 파일이 pem 파일이 아닙니다. |
 | false | 52004 | The certificate name in the file is different from the requested certificate name. | 요청한 인증서 이름과 인증서 파일에 등록된 이름이 다릅니다. |
 | false | 52005 | Certificate file has expired | 요청한 인증서 파일이 만료된 파일입니다. |
+| false | 52006 | The certificate has an invalid certificate authority name. | 요청한 인증서 파일의 인증기관 정보가 유효하지 않습니다. |
+| false | 52007 | Requested certificate file should be one. | 동시에 하나의 인증서 파일만 업로드 가능합니다. |
+| false | 52008 | Maximum permitted size is {} bytes. But, requested {} bytes. | 업로드 가능한 최대 파일크기는 512KB 입니다. |

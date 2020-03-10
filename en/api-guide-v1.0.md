@@ -137,10 +137,13 @@ curl -OJ 'https://api-certificate-manager.cloud.toast.com/certmanager/v1.0/appke
 
 | isSuccessful | resultCode | resultMessage | 설명 |
 | ------------ | ---------- | ------------- | --- |
-| true | 0 | SUCCESS | 성공 |
-| false | 52000 | Certificate name does not exist. | 요청한 인증서 이름이 존재하지 않습니다. |
-| false | 52001 | Certificate file does not exist. | 요청한 인증서 파일이 존재하지 않습니다. |
-| false | 52002 | There are more than one certificate file. | 요청한 인증서에 등록된 파일이 두 개 이상입니다. |
-| false | 52003 | The certificate file is not a pem file. | 요청한 인증서 파일이 pem 파일이 아닙니다. |
-| false | 52004 | The certificate name in the file is different from the requested certificate name. | 요청한 인증서 이름과 인증서 파일에 등록된 이름이 다릅니다. |
-| false | 52005 | Certificate file has expired | 요청한 인증서 파일이 만료된 파일입니다. |
+| true | 0 | SUCCESS | Successful |
+| false | 52000 | Certificate name does not exist. | Requested certificate name does not exist. |
+| false | 52001 | Certificate file does not exist. | Requested certificate file does not exist. |
+| false | 52002 | There are more than one certificate file. | More than two files are registered for requested certificate. |
+| false | 52003 | The certificate file is not a pem file. | Requested certificate file is not pem file. |
+| false | 52004 | The certificate name in the file is different from the requested certificate name. | Requested certificate name is different from registered name on certificate file. |
+| false | 52005 | Certificate file has expired | Requested certificate file is expired. |
+| false | 52006 | The certificate has an invalid certificate authority name. | The certificate authority information in the requested certificate file is invalid. |
+| false | 52007 | Requested certificate file should be one. | Only one certificate file can be uploaded at the same time. |
+| false | 52008 | Maximum permitted size is {} bytes. But, requested {} bytes. | The maximum file size that can be uploaded is 512KB. |

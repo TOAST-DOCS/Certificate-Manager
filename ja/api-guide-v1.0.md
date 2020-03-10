@@ -137,10 +137,13 @@ curl -OJ 'https://api-certificate-manager.cloud.toast.com/certmanager/v1.0/appke
 
 | isSuccessful | resultCode | resultMessage | 설명 |
 | ------------ | ---------- | ------------- | --- |
-| true | 0 | SUCCESS | 성공 |
-| false | 52000 | Certificate name does not exist. | 요청한 인증서 이름이 존재하지 않습니다. |
-| false | 52001 | Certificate file does not exist. | 요청한 인증서 파일이 존재하지 않습니다. |
-| false | 52002 | There are more than one certificate file. | 요청한 인증서에 등록된 파일이 두 개 이상입니다. |
-| false | 52003 | The certificate file is not a pem file. | 요청한 인증서 파일이 pem 파일이 아닙니다. |
-| false | 52004 | The certificate name in the file is different from the requested certificate name. | 요청한 인증서 이름과 인증서 파일에 등록된 이름이 다릅니다. |
-| false | 52005 | Certificate file has expired | 요청한 인증서 파일이 만료된 파일입니다. |
+| true | 0 | SUCCESS | 成功 |
+| false | 52000 | Certificate name does not exist. | リクエストした証明書名が存在しません。 |
+| false | 52001 | Certificate file does not exist. | リクエストした証明書ファイルが存在しません。 |
+| false | 52002 | There are more than one certificate file. | リクエストした証明書に登録されたファイルが2つ以上あります。 |
+| false | 52003 | The certificate file is not a pem file. | リクエストした証明書ファイルが.pemファイルではありません。 |
+| false | 52004 | The certificate name in the file is different from the requested certificate name. | リクエストした証明書名と証明書ファイルに登録された名前が異なります。 |
+| false | 52005 | Certificate file has expired | リクエストした証明書ファイルの有効期限が切れています。 |
+| false | 52006 | The certificate has an invalid certificate authority name. | 要求された証明書ファイルの認証局情報が無効です。 |
+| false | 52007 | Requested certificate file should be one. | 同時にアップロードできる証明書ファイルは1つだけです。 |
+| false | 52008 | Maximum permitted size is {} bytes. But, requested {} bytes. | アップロードできる最大ファイルサイズは512KBです。 |
