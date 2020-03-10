@@ -206,6 +206,9 @@ curl -OJ 'https://alpha-api-certificate-manager.cloud.toast.com/certmanager/v1.0
 | false | 52000 | Certificate name does not exist. | リクエストした証明書名が存在しません。 |
 | false | 52001 | Certificate file does not exist. | リクエストした証明書ファイルが存在しません。 |
 | false | 52002 | There are more than one certificate file. | リクエストした証明書に登録されたファイルが2つ以上あります。 |
-| false | 52003 | The certificate file is not a pem file. | リクエストした証明書ファイルが.pemファイルではありません。 |
+| false | 52003 | The certificate file is not a pem file. | リクエストした証明書ファイルがpemファイルではありません。 |
 | false | 52004 | The certificate name in the file is different from the requested certificate name. | リクエストした証明書名と証明書ファイルに登録された名前が異なります。 |
 | false | 52005 | Certificate file has expired | リクエストした証明書ファイルの有効期限が切れています。 |
+| false | 52006 | The certificate has an invalid certificate authority name. | 要求された証明書ファイルの認証局情報が無効です。 |
+| false | 52007 | Requested certificate file should be one. | 同時にアップロードできる証明書ファイルは1つだけです。 |
+| false | 52008 | Maximum permitted size is {} bytes. But, requested {} bytes. | アップロードできる最大ファイルサイズは512KBです。 |
