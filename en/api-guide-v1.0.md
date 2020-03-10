@@ -209,3 +209,6 @@ curl -OJ 'https://alpha-api-certificate-manager.cloud.toast.com/certmanager/v1.0
 | false | 52003 | The certificate file is not a pem file. | Requested certificate file is not pem file. |
 | false | 52004 | The certificate name in the file is different from the requested certificate name. | Requested certificate name is different from registered name on certificate file. |
 | false | 52005 | Certificate file has expired | Requested certificate file is expired. |
+| false | 52006 | The certificate has an invalid certificate authority name. | The certificate authority information in the requested certificate file is invalid. |
+| false | 52007 | Requested certificate file should be one. | Only one certificate file can be uploaded at the same time. |
+| false | 52008 | Maximum permitted size is {} bytes. But, requested {} bytes. | The maximum file size that can be uploaded is 512KB. |
