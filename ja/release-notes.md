@@ -1,5 +1,10 @@
 ## Management > Certificate Manager > 릴리스 노트
 
+### 2020.03.24.
+#### 기능 개선
+Certificate Manager에 추가한 인증서의 목록을 조회할 수 있는 API가 추가됩니다.
+* [API] 인증서 목록 조회 API 추가
+
 ### 2020.01.21.
 #### サービスリリース
 Certificate Managerは、有効期限の延長を逃さないように、有効期限が近づいたらアラーム(SMS、メール)を送信するサービスです。
