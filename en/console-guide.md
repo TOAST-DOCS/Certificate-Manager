@@ -55,7 +55,7 @@ On the search window for user integration above, you may search and add TOAST pr
 
 ![alarmgroup-8.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-8.png)
 ![alarmgroup-9.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-9.png)
-  
+
 * **Type** refers to the user's authority (Admin/Member) for a TOAST project. 
 * You can check **Name**, **Email** and **Phone** of each member. 
 * When a member's mobile phone number is not registered, you shall find '-' for **Phone**. In such case, it fails to send notification via SMS; then, a failure message of notification delivery is sent to ADMIN of each group.   
@@ -63,7 +63,7 @@ On the search window for user integration above, you may search and add TOAST pr
 ## Certificate
 
 Enter domain name (e.g. *.toast.com) and expiration date of certificate, and then notification is sent to user, in accordance with notification policy of an integrated notification group.
- 
+
 To upload certificate files (.pem), following items are automatically collected from such files. 
 * Creation date
 * Expiration date
