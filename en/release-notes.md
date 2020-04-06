@@ -1,11 +1,11 @@
-## Management > Certificate Manager > 릴리스 노트
+## Management > Certificate Manager > Release Notes
 
-### 2020. 03. 24.
-#### 기능 추가
-Certificate Manager에 추가한 인증서의 목록을 조회할 수 있는 API를 추가했습니다.
-* [API] 인증서 목록 조회 API 추가
+### March 24, 2020
+#### More Features 
+Added API to list certificates that have been added for Certificate Manager.
+* [API] Added List Certificates API 
 
-### 2020. 01. 21.
-#### 신규 서비스 출시
-Certificate Manager는 만료일 연장을 놓치지 않도록, 만료일이 가까워지면 알람(SMS, 이메일)을 발송하는 서비스입니다.
-만료일이 존재하는 TLS 인증서, 도메인, 사용자 데이터(예: 라이선스)를 관리하고, 만료일에 따른 알람 발송 규칙과 알람을 받을 사용자를 정할 수 있습니다.
+### January 21, 2020 
+#### New Releases 
+Certificate Manager sends alarms (via SMS or email) when you near an expirations date so as not to miss extension of it.
+Certificatae Manager manages TLS certificates, domains, or user data (e.g. licenses) that have expiry dates, by regulating alarm delivery rules and receipient users.  
