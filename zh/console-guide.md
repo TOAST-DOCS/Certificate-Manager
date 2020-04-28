@@ -98,7 +98,7 @@ Certificate Manager에 등록한 인증서의 만료일보다 자동 수집한 �
 7. **추가** 버튼을 클릭합니다.
 8. [Network > Load Balancer](https://alpha.toast.com/kr/service/network/load-balancer) 상품과 연동이 필요한 경우, 등록하는 인증서 파일에 패스프레이즈(passphrase, 비밀문구)는 제거되어야 합니다.
     * 패스프레이즈(passphrase, 비밀문구) 제거를 위해서는 다음 명령을 사용하여 제거할 수 있습니다.
-    ```bash
+    ``` bash
     openssl rsa -in my_private_input.key -out my_private_output.key
     ```
 

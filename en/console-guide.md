@@ -98,7 +98,7 @@ Certificate file is an optional field, and you may skip it for later.
 7. Click **Add** to save certificate information as configured. 
 8. [Network> Load Balancer](https://alpha.toast.com/kr/service/network/load-balancer) If you need to link with a product, the passphrase It must be removed.
     * To remove the passphrase, you can remove it using the following command.
-    ```bash
+    ``` bash
     openssl rsa -in my_private_input.key -out my_private_output.key
     ```
 
