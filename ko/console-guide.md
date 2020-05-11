@@ -92,10 +92,11 @@ Certificate Manager에 등록한 인증서의 만료일보다 자동 수집한 �
 5. **인증서 등록** 아래 **인증서**에서 인증서 파일을 등록합니다.<br>
 인증서 등록은 필수가 아니므로 나중에 등록해도 괜찮습니다.
     * 인증서는 개인 키와 인증서로 구성된 .pem 형식의 파일입니다.
-    * 지원하는 인증서 파일(.pem) 형식은 [**문제 해결 가이드 > 인증서 파일 포맷 변환**](http://alpha-docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)을 참고해 주시기 바랍니다.
+    * 지원하는 인증서 파일(.pem) 형식은 [**문제 해결 가이드 > 인증서 파일 포맷 변환**](http://beta-docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)을 참고해 주시기 바랍니다.
     * 업로드 가능한 인증서 파일 사이즈는 최대 512KB 입니다.
 6. **패스프레이즈**에  인증서 파일 내에 포함된 개인 키의 패스프레이즈(passphrase, 비밀문구)를 입력합니다.
 7. **추가** 버튼을 클릭합니다.
+
 
 ### 상세 화면
 

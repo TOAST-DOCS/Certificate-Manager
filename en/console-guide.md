@@ -92,7 +92,7 @@ On the main page of certificate, you can find list of certificates and remaining
 5. Register a certificate file.<br>
 Certificate file is an optional field, and you may skip it for later. 
     * A certificate (.pem) is a pem file comprised of a private key and a certificate. 
-    * For supported type of certificate file (.pem), see '[Troubleshooting Guide > Converting Certificate File Formats](http://alpha-docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)'.
+    * For supported type of certificate file (.pem), see '[Troubleshooting Guide > Converting Certificate File Formats](http://beta-docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)'.
     * The maximum uploadable certificate is 512KB. 
 6. Enter **Passphrase** of the private key included within certificate file. 
 7. Click **Add** to save certificate information as configured. 
