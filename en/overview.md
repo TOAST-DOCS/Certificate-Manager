@@ -22,9 +22,9 @@ You can manage TLS certificate/domain/user data (e.g. license) for which expirat
 
 * With auto-collection, collect domain's creation date, expiration date, registrar, registering institution, and name server.
 * In registering sub-domain information, call ping as sub-domain so as to collect if response is successful or not.
-    * It does not collect sub-domain ping responses if lookup IP for child domains is private IP.
-    * If you register a sub-domain that is not registered in DNS, the notification of sub-domain ping response failure will not be sent.
-    * (The collection of ping replies for subdomains is performed based on the lookup results of the public DNS name server. If the lookup is restricted by an external public DNS server, the collection of sub-domain ping replies can not.)
+   * When the lookup IP of a sub-domain is a private IP, ping response for sub-domain is not colleted. 
+   * When a sub-domain is not registered at DNS, notification on failed ping response for sub-domain shall not be sent. 
+   * (Ping response of sub-domain is to be collected for the lookup result of a public DNS name server. If a public DNS server restricts lookup, the ping response shall not be collected.)
 
 #### Manage Notification Groups
 
