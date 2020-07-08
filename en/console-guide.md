@@ -96,7 +96,7 @@ Certificate file is an optional field, and you may skip it for later.
     * The maximum uploadable certificate is 512KB. 
 6. Enter **Passphrase** of the private key included within certificate file. 
 7. Click **Add** to save certificate information as configured. 
-8. In order to integrate with [Network > Load Balancer](https://alpha.toast.com/kr/service/network/load-balancer), passphrase of the certificate file must be deleted. 
+8. In order to integrate with [Network > Load Balancer](https://beta.toast.com/kr/service/network/load-balancer), passphrase of the certificate file must be deleted. 
     * Use the following command to delete passphrase. 
     ```bash
     openssl rsa -in my_private_input.key -out my_private_output.key
