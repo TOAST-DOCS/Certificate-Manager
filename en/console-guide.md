@@ -1,228 +1,221 @@
-## Management > Certificate Manager > 콘솔 사용 가이드
-* 콘솔 사용 가이드에서는 Certificate Manager를 사용하는 데 필요한 기본적인 내용을 설명합니다.
-    * 알림 그룹
-    * 인증서
-    * 도메인
-    * 사용자 데이터
+## Management > Certificate Manager > Console User Guide 
+Console User Guide describes basic requirements to enable Certificate Manager. 
+* Notification Group
+* Certificate
+* Domain
+* User Data 
 
-## 알림 그룹
+## Notification Group
 
-* CertificateManager는 알림 그룹 단위로 만료 일자에 따른 알림 주기 설정 및 알림 받을 대상자를 관리합니다.
+Certificate Manager sets notification cycle on each expiration date and manages notification recipients, by notification group.  
 
-![alarmgroup-1.png](http://static.toastoven.net/prod_certificate_manager/202001/alarmgroup-1.png)
+![alarmgroup-1.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-1.png)
 
-### 알림 그룹 생성
+### Creating Notification Groups
 
-* 알림 그룹 메인 화면에서 **+ 그룹 만들기** 버튼을 클릭하면 다음과 같은 화면이 나옵니다.
+1. Click **+ Create Groups** on the main page of notification group, and you'll find a page like below. 
+![alarmgroup-2.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-2.png)
+2. Enter name for a group. No duplicate name is allowed. 
+3. Enter whether to enable notification. You can choose whether to send all notifications, including expiration dates, to group users. 
+4. Click **Add** and create a notification group. 
 
-![alarmgroup-2.png](http://static.toastoven.net/prod_certificate_manager/202001/alarmgroup-2.png)
+### Detail Page
 
-* 그룹 이름을 입력합니다. 알림 그룹 이름은 중복으로 등록하실 수 없습니다.
-* 알림 사용 여부를 입력합니다. 알림 그룹에 속한 사용자에게 만료 일자 알림을 포함한 모든 알림을 발송할지 여부를 선택할 수 있습니다.
-* **추가** 버튼을 클릭하여 알림 그룹을 생성합니다.
+1. Click **Details** on the main page, and it shows name of the group, whether notification is enabled, and management data. **Managed Data** refers to certificate/domain/user data that are integrated with each notification group. 
+2. Click **Edit** to change name of the group or notification enabled/disabled.    
 
-### 상세 화면
+![alarmgroup-3.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-3.png)
 
-* 알림 그룹 메인 화면에서 **상세 정보** 버튼을 클릭하면 알림 그룹 이름과 알림 사용 여부, 관리 data가 표시됩니다.
-* **관리 data**는 해당 알림 그룹에 연동되어 있는 인증서/도메인/사용자 데이터를 의미합니다.
-* **수정** 버튼을 클릭하여 알림 그룹의 이름 및 알림 사용 여부를 변경할 수 있습니다.
+### Notification Setup
+
+1. Click **Notification Setting** on the main page and you can find notification policy for expiration dates set for each notification group. 
+2. By default, notification policy is not set. You need to add notification policy to be notified on each expiration date. ![alarmgroup-4.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-4.png)
 
-![alarmgroup-3.png](http://static.toastoven.net/prod_certificate_manager/202001/alarmgroup-3.png)
+### Adding Notifications
 
-### 알림 설정 화면
+1. Click **+** at the bottom left of the table to add notification policy. ![alarmgroup-5.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-5.png) 
+2. **D-day for Notification Start** refers to since how many days ago notifications can be sent from expiration dates of certificate/domain/user data. 
+3. **Notification Cycle** means how often notification is to be sent from D-day for notification start. 
+4. **Send via Email** and **Send via SMS** refer to whether to use Email or SMS to send notifications. If both are unchecked, notification is not sent. 
+5. Click **-** of **Delete** to delete notification policy. 
+6. **D-day for Notification Start** and **Notification Cycle** cannot be redundantly set. 
+7. Click **Completed** to save notification policy as configured. 
+![alarmgroup-6.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-6.png)
+
+### User Group Integration
+
+On the main page of notification group, click **Receiving group**, and users that are integrated to the notification group are displayed. 
+By default, the notification group creator is added. 
+
+TOAST project members can be integrated as the group users. ![alarmgroup-7.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-7.png)
+
+### Adding Users
 
-* 알림 그룹 메인 화면에서 **알림 설정** 버튼을 클릭하면 알림 그룹에 설정되어 있는 만료일 알림 정책이 표시됩니다.
-* 기본값으로는 알림 정책이 설정되어 있지 않습니다. 알림 정책을 추가해야 만료일에 따른 알림을 받아보실 수 있습니다.
+On the search window for user integration above, you may search and add TOAST project members.
+
+![alarmgroup-8.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-8.png)
+![alarmgroup-9.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-9.png)
 
-![alarmgroup-4.png](http://static.toastoven.net/prod_certificate_manager/202001/alarmgroup-4.png)
+* **Type** refers to the user's authority (Admin/Member) for a TOAST project. 
+* You can check **Name**, **Email** and **Phone** of each member. 
+* When a member's mobile phone number is not registered, you shall find '-' for **Phone**. In such case, it fails to send notification via SMS; then, a failure message of notification delivery is sent to ADMIN of each group.   
 
-### 알림 추가
+## Certificate
 
-![alarmgroup-5.png](http://static.toastoven.net/prod_certificate_manager/202001/alarmgroup-5.png)
-
-* 테이블 좌측 하단의 **+** 버튼을 클릭하면 알림 정책을 추가하실 수 있습니다.
-* **알림 시작 D-day**는 인증서/도메인/사용자 데이터의 만료 일자에서 며칠 전부터 알림을 발송할지를 의미합니다.
-* **알림 주기**는 알림 시작 D-day로부터 며칠 간격으로 알림을 발송할지를 의미합니다.
-* **Email 발송 여부** 와 **SMS 발송 여부**는 알림 발송 시 Email/SMS를 사용할지를 의미합니다. 둘 다 체크박스 해제되어 있는 경우 알림을 발송하지 않습니다.
-* **관리**의 **-** 버튼을 클릭하여 알림 정책을 삭제할 수 있습니다.
-* **알림 시작 D-day** 와 **알림 주기**는 중복해 설정하실 수 없습니다.
-* **완료** 버튼을 클릭하여 설정하신 알림 정책을 저장할 수 있습니다.
-
-![alarmgroup-6.png](http://static.toastoven.net/prod_certificate_manager/202001/alarmgroup-6.png)
-
-### 사용자 그룹 연동 화면
-
-* 알림 그룹 메인 화면에서 **사용자 그룹 연동** 버튼을 클릭하면 알림 그룹에 연동되어 있는 사용자가 표시됩니다.
-* 기본값으로는 알림 그룹을 생성한 사용자가 추가되어 있습니다.
-* TOAST 프로젝트에 속한 멤버가 알림 그룹의 사용자로 연동될 수 있습니다.
-
-![alarmgroup-7.png](http://static.toastoven.net/prod_certificate_manager/202001/alarmgroup-7.png)
-
-### 사용자 추가
-
-![alarmgroup-8.png](http://static.toastoven.net/prod_certificate_manager/202001/alarmgroup-8.png)
-![alarmgroup-9.png](http://static.toastoven.net/prod_certificate_manager/202001/alarmgroup-9.png)
-
-* 상단의 사용자 연동 검색창에서 TOAST 프로젝트에 속한 멤버를 검색하여 추가할 수 있습니다.
-* **Type** 은 해당 사용자가 지닌 TOAST 프로젝트 권한(ADMIN/MEMBER)을 의미합니다.
-* 멤버의 **이름**, **Email** 및 **Phone**을 확인하실 수 있습니다.
-* **Phone** 이 '-'로 표시되는 경우는 TOAST 멤버의 휴대폰 번호가 등록되어 있지 않은 경우에 해당됩니다. 이 경우 SMS 알림 발송이 실패하며, 알림 발송 실패 시 알림 그룹에 속한 ADMIN에게 알림 발송 실패 알림이 발송됩니다.
-
-## 인증서
-
-* 인증서의 도메인 이름(ex. \*.toast.com)과 만료일을 입력하면 연동한 알림 그룹의 알림 정책에 맞춰 사용자에게 알림을 발송합니다.
-* 인증서 파일(.pem)을 업로드하는 경우, 인증서 파일로부터 아래 항목을 자동으로 수집합니다.
-    * 생성일
-    * 만료일
-    * 인증서의 서명 방식 (ex. sha256RSA)
-    * 인증 기관 (ex. Digicert)
-* 인증서의 설치 정보를 등록하는 경우, 인증서 설치 정보의 IP 와 port 로부터 인증서를 가져와, CertificateManager에 등록한 인증서와 만료일을 비교합니다.
-    * CertificateManager에 등록한 인증서의 만료일보다 자동 수집한 인증서 설치 정보의 만료일이 앞선 경우, 인증서 교체가 필요하다는 알림을 발송합니다.
-
-### 메인 화면
-
-![certificate-1.png](http://static.toastoven.net/prod_certificate_manager/202001/certificate-1.png)
-
-* 기존에 등록한 인증서의 목록을 확인 및 검색하실 수 있습니다.
-* 만료일의 잔여일을 확인하실 수 있습니다.
-* 오늘 날짜 기준으로 만료일이 지난 데이터는 빨간색으로, 만료일의 잔여일이 30일 이하인 데이터는 주황색으로 표시됩니다.
-
-### 인증서 생성
-
-* 인증서 메인 화면에서 **+ 인증서 추가** 버튼을 클릭하면 다음과 같은 화면이 나옵니다.
-
-![certificate-2.png](http://static.toastoven.net/prod_certificate_manager/202001/certificate-2.png)
-
-* 연동할 **알림 그룹**을 선택합니다. 알림 그룹이 생성되어 있지 않은 경우 선택 가능한 알림 그룹이 표시되지 않으며, 인증서를 생성할 수 없습니다.
-* 인증서의 이름(CommonName, CN)을 입력합니다. 인증서 이름은 중복으로 등록하실 수 없습니다.
-* **유형**을 선택합니다. Single 은 단일 인증서인 경우이며, Wildcard는 \*(asterisk)로 시작하는 범용 인증서(여러 호스트에서 사용할 수 있는 인증서)를 뜻합니다.
-* 인증서 파일을 등록합니다.
-    * 인증서(.pem) 은 개인키와 인증서로 이루어진 pem 파일입니다.
-        * 지원하는 인증서 파일(.pem) 형식은 '[문제 해결 가이드 > 인증서 파일 포맷 변환](http://docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)' 참고 부탁드립니다.
-    * 인증서 파일은 선택 필드이며, 차후 등록해도 무방합니다.
-    * 인증서 파일 내에 포함된 개인키의 패스프레이즈(passphrase)를 입력합니다.
-* **추가** 버튼을 클릭하여 설정하신 인증서 정보를 저장하실 수 있습니다.
-
-### 상세 화면
-
-* 인증서 메인 화면에서 **상세 정보** 버튼을 클릭하면 인증서의 및 인증서 파일 정보를 확인하실 수 있습니다.
-* 필드 이름 뒤에 **(자동 수집)**으로 표시된 필드는 인증서 파일로부터 자동 수집된 항목을 의미합니다. 인증서 파일이 등록되지 않은 경우 '-'로 표시됩니다.
-* **수정** 버튼을 클릭하여 인증서 정보를 수정하시거나, 인증서 파일을 (재) 업로드 하실 수 있습니다.
-    * 인증서 이름은 수정하실 수 없습니다. 인증서 이름 수정이 필요하신 경우 기존에 등록하신 인증서를 삭제하시고 신규로 생성하셔야 합니다.
-    ![certificate-3.png](http://static.toastoven.net/prod_certificate_manager/202001/certificate-3.png)
-
-### 인증서 사용 정보, 설치 정보 생성
-
-* 인증서 메인 화면에서 **인증서 사용 정보** 버튼을 클릭하면 인증서 사용 및 설치 정보를 확인하실 수 있습니다.
-* 기본값으로는 아무것도 등록되어 있지 않습니다.
-
-![certificate-4.png](http://static.toastoven.net/prod_certificate_manager/202001/certificate-4.png)
-
-* **수정** 버튼을 클릭할 경우 아래와 같은 화면을 확인하실 수 있습니다.
-
-![certificate-5.png](http://static.toastoven.net/prod_certificate_manager/202001/certificate-5.png)
-
-* 우측 상단의 **+ 추가** 버튼을 클릭하게 될 경우 인증서 사용 정보를 등록하는 입력 창이 표시됩니다.
-
-![certificate-6.png](http://static.toastoven.net/prod_certificate_manager/202001/certificate-6.png))
-
-* 인증서 사용 정보의 이름을 입력합니다.
-    * 인증서 유형이 **Single**인 경우 인증서 이름과 동일해야 합니다.
-    * 인증서 유형이 **Wildcard**인 경우 '\*'(asterisk)를 제외한 인증서 이름과 동일하거나 '\*'(asterisk)를 제외한 ".[인증서 이름]" 으로 끝나야 합니다.
-* 인증서 사용 정보의 알림 사용 여부를 입력합니다.
-* 인증서 설치 정보를 입력하시고자 하는 경우 인증서 설치 정보 옆의 **+추가** 버튼을 클릭합니다. 이 경우 아래와 같은 창이 표시됩니다.
-    * ![certificate-7.png](http://static.toastoven.net/prod_certificate_manager/202001/certificate-7.png)
-    * IP 주소와 port 번호를 입력합니다. 인증서의 자동 수집을 사용하시는 경우, 입력하신 IP 주소와 port 번호로 인증서를 다운로드해 만료 일자를 비교하게 됩니다.
-        * IP 주소가 사설 IP (ex. 192.168.0.1, 172.20.0.1, 10.0.0.1) 인 경우 인증서를 다운로드하지 못해 자동 수집 실패 알림이 발송될 수 있습니다.
-* **완료** 버튼을 클릭하여 설정하신 인증서의 사용 및 설치 정보를 저장하실 수 있습니다.
-
-### 인증서 사용 정보 화면
-
-* 인증서 메인 화면에서 **인증서 사용 정보** 버튼을 클릭하면 인증서 사용 및 설치 정보를 확인하실 수 있습니다.
-* 우측 상단의 전체/사용/미사용으로 인증서 사용 정보의 알림 사용 여부 필드를 필터링하셔서 보실 수 있습니다.
-
-![certificate-8.png](http://static.toastoven.net/prod_certificate_manager/202001/certificate-8.png)
-
-## 도메인
-
-* 도메인 이름(DNS의 최상위 도메인 이름, ex. toast.com)과 만료일을 입력하면 연동한 알림 그룹의 알림 정책에 맞춰 사용자에게 알림을 발송합니다.
-* 도메인의 '자동 수집' 기능을 사용하는 경우, whois 서버로부터 도메인의 정보를 자동 수집합니다.
-* 자동 수집하는 항목은 다음과 같습니다.
-    * 생성일
-    * 만료일
-    * 등록자 (registrar) (ex.Gabia, Inc.)
-    * 등록 기관 (registrant, 도메인의 실 소유자)
-    * 네임 서버
-
-### 메인 화면
-
-![domain-1.png](http://static.toastoven.net/prod_certificate_manager/202001/domain-1.png)
-
-* 기존에 등록한 도메인의 목록을 확인 및 검색하실 수 있습니다.
-* 만료일의 잔여일을 확인하실 수 있습니다.
-* 오늘 날짜 기준으로 만료일이 지난 데이터는 빨간색으로, 만료일의 잔여일이 30일 이하인 데이터는 주황색으로 표시됩니다.
-
-### 도메인 생성
-
-* 도메인 메인 화면에서 **+ 도메인 추가** 버튼을 클릭하면 다음과 같은 화면이 나옵니다.
-
-![domain-2.png](http://static.toastoven.net/prod_certificate_manager/202001/domain-2.png)
-
-* 연동할 알림 그룹을 선택합니다. 알림 그룹이 생성되어 있지 않은 경우 선택 가능한 알림 그룹이 표시되지 않으며, 도메인을 생성할 수 없습니다.
-* 상위 도메인 이름을 입력합니다. 상위 도메인 이름은 중복으로 등록하실 수 없습니다.
-* 도메인의 만료일을 입력합니다.
-* 유형을 선택합니다. 서비스용은 DNS 서버에 도메인을 등록하여 서비스에서 사용하는 경우를 뜻하며, 방어용은 실 서비스에서 사용하진 않지만 서비스의 신뢰성 등의 목적으로 도메인을 구매하여 확보하는 경우를 뜻합니다.
-* 알림 발송 여부를 선택합니다. 해당 도메인에 대한 알림을 발송할지 여부이며, 해당 필드를 '미사용'으로 선택하는 경우 해당 도메인에 대한 알림이 모두 발송되지 않습니다.
-* 자동 수집 여부를 선택합니다. 자동 수집을 사용할 경우 whois 서버로부터 아래 항목들을 수집합니다.
-    * 생성일
-    * 만료일
-    * 등록자 (registrar) (ex.Gabia, Inc.)
-    * 등록 기관 (registrant, 도메인의 실 소유자)
-    * 네임 서버
-* 하위 도메인의 자동 수집 여부 및 하위 도메인 이름을 입력합니다.
-    * 하위 도메인의 자동 수집을 사용할 경우, 해당 도메인으로 ping 을 호출해 응답이 성공하는지를 확인합니다.
-    * 하위 도메인 이름은 상위 도메인에 속해야 합니다.
-        * 하위 도메인 이름은 상위 도메인과 동일하거나, ".[상위 도메인 이름]" 으로 끝나야 합니다.
-        * ex. 상위 도메인 이름이 "toast.com" 인 경우, 하위 도메인 이름으로는 "toast.com" 및 "www.toast.com", "www2.toast.com" 등을 입력하실 수 있습니다.
-* **추가** 버튼을 클릭하여 설정하신 도메인 정보를 저장하실 수 있습니다.
-
-### 상세 화면
-
-* 도메인 메인 화면에서 **상세 정보** 버튼을 클릭하면 도메인과 하위 도메인의 정보 및 자동 수집된 정보가 표시됩니다.
-* 필드 이름 뒤에 **(자동 수집)**으로 표시된 필드는 자동 수집된 항목을 의미합니다. 자동 수집된 정보가 없을 경우 **-**로 표시됩니다.
-* **수정** 버튼을 클릭하여 상위 도메인 정보를 수정하시거나, 등록된 하위 도메인을 삭제 혹은 하위 도메인을 추가하실 수 있습니다.
-    * 상위 도메인 이름은 수정하실 수 없습니다. 상위 도메인 이름 수정이 필요하신 경우 기존에 등록하신 도메인을 삭제하시고 신규로 생성하셔야 합니다.
-
-![domain-3.png](http://static.toastoven.net/prod_certificate_manager/202001/domain-3.png)
-
-## 사용자 데이터
-
-* 만료일이 존재하는 데이터(ex. 라이선스 키)를 입력하면 연동한 알림 그룹의 알림 정책에 맞춰 사용자에게 알림을 발송합니다.
-    * 특정 사용자 그룹에게 주기적인 알림이 필요한 경우 활용이 가능합니다.
-
-### 메인 화면
-
-![userdata-1.png](http://static.toastoven.net/prod_certificate_manager/202001/userdata-1.png)
-
-* 기존에 등록한 사용자 데이터의 목록을 확인 및 검색하실 수 있습니다.
-* 만료일의 잔여일을 확인하실 수 있습니다.
-* 오늘 날짜 기준으로 만료일이 지난 데이터는 빨간색으로, 만료일의 잔여일이 30일 이하인 데이터는 주황색으로 표시됩니다.
-
-### 사용자 데이터 생성
-
-* 사용자 데이터 메인 화면에서 **+ 사용자 데이터 추가** 버튼을 클릭하면 다음과 같은 화면이 나옵니다.
-
-![userdata-2.png](http://static.toastoven.net/prod_certificate_manager/202001/userdata-2.png)
-
-* 연동할 알림 그룹을 선택합니다. 알림 그룹이 생성되어 있지 않은 경우 선택 가능한 알림 그룹이 표시되지 않으며, 사용자 데이터를 생성할 수 없습니다.
-* 사용자 데이터 이름을 입력합니다. 사용자 데이터 이름은 중복으로 등록하실 수 없습니다.
-* 알림 발송 여부를 선택합니다. 해당 사용자 데이터에 대한 알림을 발송할지 여부이며, 해당 필드를 **미사용**으로 선택하는 경우 해당 사용자 데이터에 대한 알림이 모두 발송되지 않습니다.
-* 사용자 데이터의 만료일을 입력합니다.
-* **추가** 버튼을 클릭하여 설정하신 사용자 데이터의 정보를 저장하실 수 있습니다.
-
-### 상세 화면
-
-* 사용자 데이터 메인 화면에서 **상세 정보** 버튼을 클릭하면 저장하셨던 사용자 데이터의 정보가 표시됩니다.
-* **수정** 버튼을 클릭하여 사용자 데이터의 정보를 수정하실 수 있습니다.
-
-![userdata-3.png](http://static.toastoven.net/prod_certificate_manager/202001/userdata-3.png)
+Enter domain name (e.g. *.toast.com) and expiration date of certificate, and then notification is sent to user, in accordance with notification policy of an integrated notification group.
+
+To upload certificate files (.pem), following items are automatically collected from such files. 
+* Creation date
+* Expiration date
+* Signature type of a certificate (ex: sha256RSA)
+* Certification institution (ex. Digicert)
+
+To register certificate installation information, import certificate from the IP and port of such information so as to compare them with registered certificate and expiration date at CertificateManager. 
+If auto-collected certificate installation information has earlier expiration date than that of the registered certificate at CertificateManager, notification is sent to alert that certificate needs to be replaced. 
+
+### Main Page
+On the main page of certificate, you can find list of certificates and remaining days until expired.
+
+![certificate-1.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-1.png)
+
+* You can find and search the list of already registered certificates. 
+* Also check remaining days until expired. 
+* As of today, expired data are displayed in red, whereas data with less than 30 days until expired are displayed in orange.  
+
+### Creating Certificates
+
+1. On the main page of a certificate, click **+ Add Certificates** and you can find the page as follows. 
+![certificate-2.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-2.png)
+2. Select a **Notification Group** to integrate. In case a notification group is not created, there is no available notification group, and hence certificate cannot be created. 
+3. Enter **Name** of a certificate (CommonName, CN): names cannot be redundantly registered. 
+4. Select **Type**. Single refers to a single certificate, while Wildcard is a common-purpose certificate (available for many hosts) starting with *(asterisk). 
+5. Register a certificate file.<br>
+Certificate file is an optional field, and you may skip it for later. 
+    * A certificate (.pem) is a pem file comprised of a private key and a certificate. 
+    * For supported type of certificate file (.pem), see '[Troubleshooting Guide > Converting Certificate File Formats](http://docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)'.
+    * The maximum uploadable certificate is 512KB. 
+6. Enter **Passphrase** of the private key included within certificate file. 
+7. Click **Add** to save certificate information as configured. 
+8. In order to integrate with [Network > Load Balancer](https://toast.com/kr/service/network/load-balancer), passphrase of the certificate file must be deleted. 
+    * Use the following command to delete passphrase. 
+    ```bash
+    openssl rsa -in my_private_input.key -out my_private_output.key
+    ```
+
+### Detail Page
+
+1. Click **Details** on the main page of a certificate to find information of the certificate and file. 
+    * Fields specified as **(Auto Collect)** after field name refer to automatically collected items from certificate files. If there is no registered certificate file, '-' shows.  
+2. Click **Edit** to modify certificate information or (re)upload certificate files. 
+    * Certificate names cannot be edited. If a name must be edited, delete a registered certificate and create a new one. 
+    ![certificate-3.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-3.png)
+
+### Creating Certificate Usage/Installation Information
+
+1. Click **Certificate Usages** on the main page, and find usage and installation information of certificate. By default, no item is registered. 
+![certificate-4.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-4.png)
+2. Click **Edit** to find a page as below. 
+![certificate-5.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-5.png)
+3. Click **+ Add** on top right to show a window to register certificate usage information. 
+![certificate-6.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-6.png))
+4. Enter name for certificate usage information. 
+    * If the certificate type is **Single**, the name must be same as certificate name. 
+    * If the certificate type is **Wildcard**, the name must be same as certificate name, excluding '\*'(asterisk), or must end with ".[Certificate Name]", excluding  '\*'(asterisk). 
+5. Enter whether to enable notification for certificate usage information.
+6. To enter certificate installation information, click **+ Add** next to Certificate Installation Information. Then, a window like below shows. 
+![certificate-7.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-7.png)
+    * Enter **IP address** and **Port No.**. When auto-collect is enabled, download certificate via IP address and port number to compare expiration dates. 
+    * In case of a private IP address (e.g. 192.168.0.1, 172.20.0.1, 10.0.0.1 ), downloading may fail and notification on failed auto collection may be sent.  
+7. Click **Completed** to save usage and installation information of the certificate as set. 
+
+### Page of Certificate Usage Information
+* On the main page of a certificate, click **Certificate Usages** to check usage and installation information of certificate. 
+* Notifications of usage information can be filtered by selecting **Total**, **Enabled**, or **Not Use** on top right.  
+
+![certificate-8.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-8.png)
+
+## Domain
+Enter name of domain (the highest domain name of DNS, e.g. toast.com) and expiration date, and notifications are sent to users in accordance with notification policy of an integrated notification group.
+ 
+If 'Auto Collect' is enabled for domain, domain information is automatically collected from the whois server. 
+Following items are automatically collected:
+* Creation Date
+* Expiration Date
+* Registrar (ex.Gabia, Inc.)
+* Registration institution (Registrant, domain's real owner) 
+* Name server 
+
+### Main Page
+
+You can find and search the list of already registered domains.
+
+![domain-1.png](http://static.toastoven.net/prod_certificate_manager/202002/domain-1.png)
+ 
+Also check remaining days until expired. 
+
+As of today, expired data are displayed in red, whereas data with less than 30 days until expired are displayed in orange. 
+
+### Creating Domains
+
+1. On the main page of a domain, click **+ Add Domains** and you can find the page as follows. 
+![domain-2.png](http://static.toastoven.net/prod_certificate_manager/202002/domain-2.png)
+2. Select a notification group to integrate. In case a notification group is not created, there is no available notification group, and hence domain cannot be created. 
+3. Enter **Name** of a upper domain: upper domain names cannot be redundantly registered. 
+4. Enter **Date of expiration** of the domain.
+5. Select **Type**.
+    * **For Service** refers to registering and using domains on a DNS server
+    * while **For Defense** refers to acquiring by purchase of domain for the purpose of service credibility, although it is not practically applied. 
+6. Select whether to enable notifications. It shows whether to send notifications to each domain, and with **Not Use**, no notification is sent to the corresponding domain. 
+7. Select to enable/disable **Auto Collect**. If Auto Collect is **Enable**, following items are automatically collected from the whois server:
+    * Creation Date
+    * Expiration Date
+    * Registrar (ex.Gabia, Inc.)
+    * Registration institution (Registrant, domain's real owner) 
+    * Name server 
+8. Enter whether to auto-collect sub-domain and name of the domain. 
+    * With auto-collect enabled, call ping to the corresponding domain to check if it gets response successfully. 
+    * A sub-domain name must belong to a upper domain. 
+        * Name of a sub-domain must be same as that of a upper domain, or end with "[Name of Upper Domain]".
+        * ex. If a upper domain is named "toast.com", a sub-domain can be named as "toast.com", "www.toast.com", or "www2.toast.com".
+9. Click **Add** to save domain information as configured. 
+
+### Detail Page
+
+1. Click **Detail Information** on the main page of a domain to find information of the domain and sub-domain and file. 
+2. Fields specified as **(Auto Collect)** after field name refer to automatically collected items. If there is no automatically collected information, '-' shows.  
+3. Click **Edit** to modify upper domain information, delete a registered sub-domain or add a sub-domain.   
+    * Upper domain names cannot be edited. If a name must be edited, delete a registered domain and create a new one. 
+
+![domain-3.png](http://static.toastoven.net/prod_certificate_manager/202002/domain-3.png)
+
+## User Data
+
+Enter data with expiration dates (e.g. license key) and notifications are sent to users in accordance with notification policy of an integrated notification group.  
+This feature is applicable when notification is required on a regular basis to specific user groups. 
+
+### Main Page
+
+You can find and search the list of already registered certificates. Also check remaining days until expired. 
+As of today, expired data are displayed in red, whereas data with less than 30 days until expired are displayed in orange.
+
+![userdata-1.png](http://static.toastoven.net/prod_certificate_manager/202002/userdata-1.png) 
+
+### Creating User Data
+
+Click **+ Add User Data** on the main user data page and it shows the following. 
+
+![userdata-2.png](http://static.toastoven.net/prod_certificate_manager/202002/userdata-2.png)
+
+* Select a notification group to integrate. In case a notification group is not created, there is no available notification group, and hence user data cannot be created. 
+* Enter name of user data: user data name cannot be redundantly registered.  Enter name of user data: user data names cannot be redundantly registered. 
+* Select whether to send notification, which refers to whether to send notifications on corresponding user data. With **Not Use**, no notification is sent regarding the user data.  
+* Enter expiration date of the user data. 
+* Click **Add** and save user data as configured. 
+
+### Detail Page
+
+Click **Details** on the main user data page, and user data information as saved shows up. 
+
+Click **Edit** to edit user data information. 
+
+![userdata-3.png](http://static.toastoven.net/prod_certificate_manager/202002/userdata-3.png)
