@@ -56,7 +56,7 @@ On the search window for user integration above, you may search and add NHN Clou
 ![alarmgroup-8.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-8.png)
 ![alarmgroup-9.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-9.png)
   
-* **Type** refers to the user's authority (Admin/Member) for a TOAST project. 
+* **Type** refers to the user's authority (Admin/Member) for a NHN Cloud project. 
 * You can check **Name**, **Email** and **Phone** of each member. 
 * When a member's mobile phone number is not registered, you shall find '-' for **Phone**. In such case, it fails to send notification via SMS; then, a failure message of notification delivery is sent to ADMIN of each group.   
 
