@@ -47,16 +47,16 @@ Certificate Managerは、通知グループ単位で有効期限の通知周期�
 通知グループメイン画面で**受信グループ**ボタンをクリックすると、通知グループに連携されているユーザーが表示されます。
 デフォルト値には通知グループを作成したユーザーが追加されています。
 
-TOASTプロジェクトに属しているメンバーが通知グループのユーザーに連携される場合があります。![alarmgroup-7.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-7.png)
+NHN Cloudプロジェクトに属しているメンバーが通知グループのユーザーに連携される場合があります。![alarmgroup-7.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-7.png)
 
 ### ユーザー追加
 
-上部のユーザー連携検索ウィンドウで、TOASTプロジェクトに属しているメンバーを検索して追加できます。
+上部のユーザー連携検索ウィンドウで、NHN Cloudプロジェクトに属しているメンバーを検索して追加できます。
 
 ![alarmgroup-8.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-8.png)
 ![alarmgroup-9.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-9.png)
 
-* **Type**は、そのユーザーが持つTOASTプロジェクトの権限(ADMIN/MEMBER)を意味します。
+* **Type**は、そのユーザーが持つNHN Cloudプロジェクトの権限(ADMIN/MEMBER)を意味します。
 * メンバーの**名前**、**Email**および**Phone**を確認できます。
 * 登録された携帯電話番号がない場合は、**Phone**に「-」と表示されます。この場合、SMS通知の送信が失敗し、通知の送信に失敗すると通知グループに属しているADMINに「通知送信失敗」通知が送信されます。
 
@@ -96,11 +96,19 @@ Certificate Managerに登録した証明書の有効期限より、自動収集�
     * アップロード可能な証明書は最大512KBです。
 6. **パスフレーズ**に証明書ファイルに含まれる秘密鍵のパスフレーズ(passphrase、秘密文言)を入力します。
 7. **追加**ボタンをクリックします。
+<<<<<<< HEAD
 8. [Network> Load Balancer]（https://beta.toast.com/kr/service/network/load-balancer）製品とリンクする必要がある場合は、パスフレーズ（passphrase、秘密文言）を削除する必要があります。
     * パスフレーズを削除するには、次のコマンドを使用してパスフレーズを削除できます。
     ```bash
     openssl rsa -in my_private_input.key -out my_private_output.key
     ```
+=======
+8. [Network> Load Balancer]（https://alpha.toast.com/kr/service/network/load-balancer）製品と連携する必要がある場合は、パスフレーズ（passphrase、秘密文言）を削除する必要があります。
+    * パスフレーズは、次のコマンドを使って削除できます。
+``` bash
+openssl rsa -in my_private_input.key -out my_private_output.key
+```
+>>>>>>> alpha
 
 ### 詳細画面
 

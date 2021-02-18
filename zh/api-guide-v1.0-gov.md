@@ -5,7 +5,11 @@ Certificate Manager에서는 인증서 목록 조회, 업로드, 다운로드를
 ### 기본 정보
 #### EndPoint
 ```text
+<<<<<<< HEAD
 https://beta-gov-api-certificate-manager.toast.com
+=======
+https://alpha-gov-api-certificate-manager.toast.com
+>>>>>>> alpha
 ```
 
 #### 제공하는 API 종류
@@ -50,7 +54,11 @@ Certificate Manager에 등록한 인증서 목록을 조회할 때 사용합니�
 #### 요청
 
 ```
+<<<<<<< HEAD
 GET https://beta-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates?pageSize={pageSize}&pageNum={pageNum}&all={all}&status={status}
+=======
+GET https://alpha-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates?pageSize={pageSize}&pageNum={pageNum}&all={all}&status={status}
+>>>>>>> alpha
 ```
 
 | 값 | 타입 | 설명 | 입력가능 |
@@ -110,12 +118,20 @@ Content-Type:application/json
 ### 인증서 파일 업로드
 
 Certificate Manager에 등록한 인증서에 파일을 업로드할 때 사용합니다. 파일이 등록되어 있다면, 새로 업로드하는 파일로 교체됩니다.
+<<<<<<< HEAD
 지원하는 인증서 파일(.pem) 형식은 [문제 해결 가이드 > 인증서 파일 포맷 변환](http://beta-docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1) 참고 부탁드립니다.
+=======
+지원하는 인증서 파일(.pem) 형식은 [문제 해결 가이드 > 인증서 파일 포맷 변환](http://alpha-docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1) 참고 부탁드립니다.
+>>>>>>> alpha
 
 #### 요청
 
 ```
+<<<<<<< HEAD
 POST https://beta-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
+=======
+POST https://alpha-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
+>>>>>>> alpha
 ```
 
 [Request Header]
@@ -158,7 +174,11 @@ Certificate Manager에 등록한 인증서 파일을 다운로드할 때 사용�
 #### 요청
 
 ```
+<<<<<<< HEAD
 GET https://beta-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
+=======
+GET https://alpha-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
+>>>>>>> alpha
 ```
 
 #### 응답
@@ -187,6 +207,7 @@ Content-Type:application/octet-stream
 
 ```bash
 #파일에 쓰기
+<<<<<<< HEAD
 curl 'https://beta-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files' > cert.pem
 
 #파일명 지정
@@ -194,6 +215,15 @@ curl -o cert.pem 'https://beta-gov-api-certificate-manager.toast.com/certmanager
 
 #업로드한 파일명 유지
 curl -OJ 'https://beta-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
+=======
+curl 'https://alpha-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files' > cert.pem
+
+#파일명 지정
+curl -o cert.pem 'https://alpha-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
+
+#업로드한 파일명 유지
+curl -OJ 'https://alpha-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
+>>>>>>> alpha
 ```
 * 기타 curl 명령어 사용법은 아래 가이드를 참고해 주시기 바랍니다.
   * curl command guide : [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)

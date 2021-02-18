@@ -19,7 +19,7 @@ https://beta-api-certificate-manager.cloud.toast.com
 
 | 값 | 타입 | 설명 |
 | --- | --- | --- |
-| appKey | String | 사용할 데이터를 저장하고 있는 TOAST 프로젝트의 앱 키 |
+| appKey | String | 사용할 데이터를 저장하고 있는 NHN Cloud 프로젝트의 앱 키 |
 | certificateName | String | 사용할 데이터(인증서)의 이름 |
 
 ##### API 응답의 데이터 공통 헤더
