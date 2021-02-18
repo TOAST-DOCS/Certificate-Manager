@@ -5,11 +5,7 @@ Certificate Manager provides APIs for certificate list lookup, uploading or down
 ### Basic Information
 #### EndPoint
 ```text
-<<<<<<< HEAD
 https://beta-gov-api-certificate-manager.toast.com
-=======
-https://alpha-gov-api-certificate-manager.toast.com
->>>>>>> alpha
 ```
 
 #### Available API Types 
@@ -54,11 +50,7 @@ Used to query the list of certificates registered with Certificate Manager.
 #### Request
 
 ```
-<<<<<<< HEAD
 GET https://beta-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates?pageSize={pageSize}&pageNum={pageNum}&all={all}&status={status}
-=======
-GET https://alpha-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates?pageSize={pageSize}&pageNum={pageNum}&all={all}&status={status}
->>>>>>> alpha
 ```
 
 | Value | Type | Description | Available |
@@ -118,20 +110,12 @@ Content-Type:application/json
 ### Uploading Certificate Files 
 
 Files can be uploaded to certificates registered at Certificate Manager. If a file is already registered, it shall be replaced by a newly uploaded file.  
-<<<<<<< HEAD
 Regarding supported certificate file formats (.pem), read '[Troubleshooting Guide > Converting Certificate File Formats](http://beta-docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)'.
-=======
-Regarding supported certificate file formats (.pem), read '[Troubleshooting Guide > Converting Certificate File Formats](http://alpha-gov-docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)'.
->>>>>>> alpha
 
 #### Request
 
 ```
-<<<<<<< HEAD
 POST https://beta-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
-=======
-POST https://alpha-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
->>>>>>> alpha
 ```
 
 [Request Header]
@@ -174,11 +158,7 @@ Certificate files registered at Certificate Manager can be downloaded.
 #### Request
 
 ```
-<<<<<<< HEAD
 GET https://beta-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
-=======
-GET https://alpha-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
->>>>>>> alpha
 ```
 
 #### Response
@@ -207,7 +187,6 @@ Download Certificate File API can be requested by using the `curl` command.
 
 ```bash
 #Write to File
-<<<<<<< HEAD
 curl 'https://beta-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files' > cert.pem
 
 #Specify File Name
@@ -215,15 +194,6 @@ curl -o cert.pem 'https://beta-gov-api-certificate-manager.toast.com/certmanager
 
 #Maintain Uploaded File Name
 curl -OJ 'https://beta-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
-=======
-curl 'https://alpha-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files' > cert.pem
-
-#Specify File Name
-curl -o cert.pem 'https://alpha-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
-
-#Maintain Uploaded File Name
-curl -OJ 'https://alpha-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
->>>>>>> alpha
 ```
 * See the link below on how to use curl command
   * curl command guide : [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)
