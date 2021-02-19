@@ -5,15 +5,7 @@ Certificate Manager は、証明書リスト検索、証明書のアップロー
 ### 基本情報
 #### EndPoint
 ```text
-<<<<<<< HEAD
 https://alpha-gov-api-certificate-manager.toast.com
-=======
-<<<<<<< HEAD
-https://beta-gov-api-certificate-manager.toast.com
-=======
-https://alpha-gov-api-certificate-manager.toast.com
->>>>>>> alpha
->>>>>>> parent of cb6da8d... Revert "Merge branch 'alpha' into beta"
 ```
 
 #### 提供するAPI種類
@@ -58,15 +50,7 @@ Certificate Manager に登録されている証明書のリストを照会する
 #### リクエスト
 
 ```
-<<<<<<< HEAD
 GET https://alpha-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates?pageSize={pageSize}&pageNum={pageNum}&all={all}&status={status}
-=======
-<<<<<<< HEAD
-GET https://beta-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates?pageSize={pageSize}&pageNum={pageNum}&all={all}&status={status}
-=======
-GET https://alpha-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates?pageSize={pageSize}&pageNum={pageNum}&all={all}&status={status}
->>>>>>> alpha
->>>>>>> parent of cb6da8d... Revert "Merge branch 'alpha' into beta"
 ```
 
 | 値 | タイプ | 説明 | 入力可能 |
@@ -126,28 +110,12 @@ Content-Type:application/json
 ### 証明書ファイルのアップロード
 
 Certificate Managerに登録した証明書にファイルをアップロードする時に使用します。ファイルが登録されている場合、新たにアップロードしたファイルに更新されます。
-<<<<<<< HEAD
 サポートする証明書ファイル(.pem)の形式は[問題解決ガイド > 証明書ファイルフォーマット変換](http://alpha-docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)を参照してください。
-=======
-<<<<<<< HEAD
-サポートする証明書ファイル(.pem)の形式は[問題解決ガイド > 証明書ファイルフォーマット変換](http://beta-docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)を参照してください。
-=======
-サポートする証明書ファイル(.pem)の形式は[問題解決ガイド > 証明書ファイルフォーマット変換](http://alpha-docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)を参照してください。
->>>>>>> alpha
->>>>>>> parent of cb6da8d... Revert "Merge branch 'alpha' into beta"
 
 #### リクエスト
 
 ```
-<<<<<<< HEAD
 POST https://alpha-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
-=======
-<<<<<<< HEAD
-POST https://beta-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
-=======
-POST https://alpha-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
->>>>>>> alpha
->>>>>>> parent of cb6da8d... Revert "Merge branch 'alpha' into beta"
 ```
 
 [Request Header]
@@ -190,15 +158,7 @@ Certificate Managerに登録した証明書ファイルをダウンロードす�
 #### リクエスト
 
 ```
-<<<<<<< HEAD
 GET https://alpha-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
-=======
-<<<<<<< HEAD
-GET https://beta-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
-=======
-GET https://alpha-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
->>>>>>> alpha
->>>>>>> parent of cb6da8d... Revert "Merge branch 'alpha' into beta"
 ```
 
 #### レスポンス
@@ -227,22 +187,6 @@ Content-Type:application/octet-stream
 
 ```bash
 #ファイルに書き込む
-<<<<<<< HEAD
-curl 'https://alpha-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files' > cert.pem
-=======
-<<<<<<< HEAD
-curl 'https://beta-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files' > cert.pem
->>>>>>> parent of cb6da8d... Revert "Merge branch 'alpha' into beta"
-
-#ファイル名指定
-curl -o cert.pem 'https://alpha-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
-
-#アップロードしたファイル名を維持
-<<<<<<< HEAD
-curl -OJ 'https://alpha-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
-=======
-curl -OJ 'https://beta-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
-=======
 curl 'https://alpha-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files' > cert.pem
 
 #ファイル名指定
@@ -250,8 +194,6 @@ curl -o cert.pem 'https://alpha-gov-api-certificate-manager.toast.com/certmanage
 
 #アップロードしたファイル名を維持
 curl -OJ 'https://alpha-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
->>>>>>> alpha
->>>>>>> parent of cb6da8d... Revert "Merge branch 'alpha' into beta"
 ```
 * その他curlコマンドの使用方法は下記のガイドを参照してください。
   * curl command guide : [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)

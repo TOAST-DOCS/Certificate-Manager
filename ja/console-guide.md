@@ -96,25 +96,11 @@ Certificate Managerに登録した証明書の有効期限より、自動収集�
     * アップロード可能な証明書は最大512KBです。
 6. **パスフレーズ**に証明書ファイルに含まれる秘密鍵のパスフレーズ(passphrase、秘密文言)を入力します。
 7. **追加**ボタンをクリックします。
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-8. [Network> Load Balancer]（https://beta.toast.com/kr/service/network/load-balancer）製品とリンクする必要がある場合は、パスフレーズ（passphrase、秘密文言）を削除する必要があります。
-    * パスフレーズを削除するには、次のコマンドを使用してパスフレーズを削除できます。
-    ```bash
-    openssl rsa -in my_private_input.key -out my_private_output.key
-    ```
-=======
->>>>>>> parent of cb6da8d... Revert "Merge branch 'alpha' into beta"
 8. [Network> Load Balancer]（https://alpha.toast.com/kr/service/network/load-balancer）製品と連携する必要がある場合は、パスフレーズ（passphrase、秘密文言）を削除する必要があります。
     * パスフレーズは、次のコマンドを使って削除できます。
 ``` bash
 openssl rsa -in my_private_input.key -out my_private_output.key
 ```
-<<<<<<< HEAD
-=======
->>>>>>> alpha
->>>>>>> parent of cb6da8d... Revert "Merge branch 'alpha' into beta"
 
 ### 詳細画面
 
