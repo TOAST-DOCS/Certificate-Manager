@@ -101,6 +101,11 @@ Certificate Manager에 등록한 인증서의 만료일보다 자동 수집한 �
 ``` bash
 openssl rsa -in my_private_input.key -out my_private_output.key
 ``` 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> parent of cb6da8d... Revert "Merge branch 'alpha' into beta"
 
 ### 상세 화면
 
