@@ -19,7 +19,7 @@ https://beta-api-certificate-manager.cloud.toast.com
 
 | 値 | タイプ | 説明 |
 | --- | --- | --- |
-| appKey | String | 使用するデータを保存しているTOASTプロジェクトのアプリキー |
+| appKey | String | 使用するデータを保存しているNHN Cloudプロジェクトのアプリキー |
 | certificateName | String | 使用するデータ(証明書)の名前 |
 
 ##### APIレスポンスのデータ共通ヘッダ
