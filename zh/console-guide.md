@@ -47,16 +47,16 @@ Certificate Manager는 알림 그룹 단위로 만료 일자의 알림 주기를
 알림 그룹 메인 화면에서 **사용자 그룹 연동** 버튼을 클릭하면 알림 그룹에 연동되어 있는 사용자가 표시됩니다.
 기본값으로는 알림 그룹을 생성한 사용자가 추가되어 있습니다.
 
-TOAST 프로젝트에 속한 멤버가 알림 그룹의 사용자로 연동될 수 있습니다.![alarmgroup-7.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-7.png)
+NHN Cloud 프로젝트에 속한 멤버가 알림 그룹의 사용자로 연동될 수 있습니다.![alarmgroup-7.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-7.png)
 
 ### 사용자 추가
 
-상단의 사용자 연동 검색 창에서 TOAST 프로젝트에 속한 멤버를 검색하여 추가할 수 있습니다.
+상단의 사용자 연동 검색 창에서 NHN Cloud 프로젝트에 속한 멤버를 검색하여 추가할 수 있습니다.
 
 ![alarmgroup-8.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-8.png)
 ![alarmgroup-9.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-9.png)
 
-* **Type**은 해당 사용자가 지닌 TOAST 프로젝트 권한(ADMIN/MEMBER)을 의미합니다.
+* **Type**은 해당 사용자가 지닌 NHN Cloud 프로젝트 권한(ADMIN/MEMBER)을 의미합니다.
 * 멤버의 **이름**, **Email** 및 **Phone**을 확인할 수 있습니다.
 * 등록된 휴대폰 번호가 없다면 **Phone**에 '-'로 표시됩니다. 이 경우 SMS 알림 발송에 실패하며, 알림 발송 실패 시 알림 그룹에 속한 ADMIN에게 '알림 발송 실패' 알림이 발송됩니다.
 
