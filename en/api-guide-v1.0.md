@@ -19,7 +19,7 @@ https://api-certificate-manager.cloud.toast.com
 
 | Value | Type | Description |
 | --- | --- | --- |
-| appKey | String | Appkey of the TOAST project in which data is saved |
+| appKey | String | Appkey of the NHN Cloud project in which data is saved |
 | certificateName | String | Name of data (certificate) to use |
 
 ##### Common Data Header of API Response

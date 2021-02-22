@@ -47,16 +47,16 @@ Certificate Manager sets notification cycle on each expiration date and manages 
 On the main page of notification group, click **Receiving group**, and users that are integrated to the notification group are displayed. 
 By default, the notification group creator is added. 
 
-TOAST project members can be integrated as the group users. ![alarmgroup-7.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-7.png)
+NHN Cloud project members can be integrated as the group users. ![alarmgroup-7.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-7.png)
 
 ### Adding Users
 
-On the search window for user integration above, you may search and add TOAST project members.
+On the search window for user integration above, you may search and add NHN Cloud project members.
 
 ![alarmgroup-8.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-8.png)
 ![alarmgroup-9.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-9.png)
 
-* **Type** refers to the user's authority (Admin/Member) for a TOAST project. 
+* **Type** refers to the user's authority (Admin/Member) for a NHN Cloud project. 
 * You can check **Name**, **Email** and **Phone** of each member. 
 * When a member's mobile phone number is not registered, you shall find '-' for **Phone**. In such case, it fails to send notification via SMS; then, a failure message of notification delivery is sent to ADMIN of each group.   
 
