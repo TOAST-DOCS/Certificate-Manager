@@ -1,28 +1,28 @@
-## Management > Certificate Manager > API v1.0 가이드
+## Management > Certificate Manager > API v1.0 Guide
 
-Certificate Manager에서는 인증서 목록 조회, 업로드, 다운로드를 위한 API를 제공합니다. 클라이언트는 콘솔에서 인증서와 인증서 파일을 등록한 후 API를 통해 데이터를 사용할 수 있습니다.
+Certificate Manager provides APIs for certificate list lookup, uploading or downloading certificates. Clients must register certificates and certificate files on console to use data via APIs. 
 
-### 기본 정보
+### Basic Information
 #### EndPoint
 ```text
 https://beta-api-certificate-manager.cloud.toast.com
 ```
 
-#### 제공하는 API 종류
-| Method | URI | 설명 |
+#### Available API Types 
+| Method | URI | Description |
 | ------ | --- | --- |
-| GET | /certmanager/v1.0/appkeys/{appKey}/certificates | 인증서 목록을 조회합니다. |
-| POST | /certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files | 등록된 인증서에 파일을 업로드합니다. 파일이 등록되어 있는 경우, 업로드하는 파일로 교체됩니다. |
-| GET | /certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files | 등록된 인증서 파일을 다운로드합니다. |
+| GET | /certmanager/v1.0/appkeys/{appKey}/certificates | Look up the list of certificates. |
+| POST | /certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files | Upload files to a registered certificate. If a file is already registered, it shall be replaced by a newly uploaded file. |
+| GET | /certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files | Download certificate files that are registered. |
 
-##### API 요청의 경로 변수
+##### Path Variables of API Request
 
-| 값 | 타입 | 설명 |
+| Value | Type | Description |
 | --- | --- | --- |
-| appKey | String | 사용할 데이터를 저장하고 있는 NHN Cloud 프로젝트의 앱 키 |
-| certificateName | String | 사용할 데이터(인증서)의 이름 |
+| appKey | String | Appkey of the NHN Cloud project in which data is saved |
+| certificateName | String | Name of data (certificate) to use |
 
-##### API 응답의 데이터 공통 헤더
+##### Common Data Header of API Response
 
 ```json
 {
@@ -37,30 +37,30 @@ https://beta-api-certificate-manager.cloud.toast.com
 }
 ```
 
-| 값 | 타입 | 설명 |
+| Value | Type | Description |
 | --- | --- | --- |
-| resultCode | Number | API 호출 결과 코드값 |
-| resultMessage | String | API 호출 결과 메시지 |
-| isSuccessful | Boolean | API 호출 성공 여부 |
+| resultCode | Number | Result code value of API call |
+| resultMessage | String | Result message of API call |
+| isSuccessful | Boolean | API call successful or not |
 
-### 인증서 목록 조회
+### Lookup certificate list
 
-Certificate Manager에 등록한 인증서 목록을 조회할 때 사용합니다. 
+Used to query the list of certificates registered with Certificate Manager.
 
-#### 요청
+#### Request
 
 ```
 GET https://beta-api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates?pageSize={pageSize}&pageNum={pageNum}&all={all}&status={status}
 ```
 
-| 값 | 타입 | 설명 | 입력가능 |
+| Value | Type | Description | Available |
 | --- | --- | --- | --- |
-| pageSize | Number | 페이지 크기 | 10(default) |
-| pageNum | Number | 페이지 번호 | 1(default) |
-| all | Boolean | 전체조회 여부 | true, false(default) |
-| status | String | 인증서 상태 | ALL, EXPIRED, UNEXPIRED(default) | 
+| pageSize | Number | Page size | 10(default) |
+| pageNum | Number | Page number | 1(default) |
+| all | Boolean | Full lookup | true, false(default) |
+| status | String | Certificate expiration status | ALL, EXPIRED, UNEXPIRED(default) | 
 
-#### 응답
+#### Response
 
 [Response Header]
 
@@ -95,24 +95,24 @@ Content-Type:application/json
 }
 ```
 
-| 값 | 타입 | 설명 |
+| Value | Type | Description |
 | --- | --- | --- |
-| totalCount | Number | 전체 인증서 수 |
-| totalPage | Number | 전체 페이지 수 |
-| currentPage | Number | 현재 페이지 |
-| pageSize | Number | 페이지 크기 |
-| certificateName | String | 인증서 이름 |
-| authority | String | 인증기관 |
-| signatureAlgorithm | String | 서명방식 |
-| fileCreationDate | String | 인증서 파일 생성일 |
-| expirationDate | String | 인증서 파일 만료일 |
+| totalCount | Number | Total certificates |
+| totalPage | Number | Total pages |
+| currentPage | Number | Current page |
+| pageSize | Number | Page size |
+| certificateName | String | Certificate name |
+| authority | String | Authority |
+| signatureAlgorithm | String | Signature algorithm |
+| fileCreationDate | String | Certificate file creation date |
+| expirationDate | String | Certificate file expiration date |
 
-### 인증서 파일 업로드
+### Uploading Certificate Files 
 
-Certificate Manager에 등록한 인증서에 파일을 업로드할 때 사용합니다. 파일이 등록되어 있다면, 새로 업로드하는 파일로 교체됩니다.
-지원하는 인증서 파일(.pem) 형식은 [문제 해결 가이드 > 인증서 파일 포맷 변환](http://beta-docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1) 참고 부탁드립니다.
+Files can be uploaded to certificates registered at Certificate Manager. If a file is already registered, it shall be replaced by a newly uploaded file.  
+Regarding supported certificate file formats (.pem), read '[Troubleshooting Guide > Converting Certificate File Formats](http://beta-docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)'.
 
-#### 요청
+#### Request
 
 ```
 POST https://beta-api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
@@ -127,10 +127,10 @@ Content-Type:multipart/form-data
 [Request Body]
 
 ```
-file: {파일}
+file: {file}
 ```
 
-#### 응답
+#### Response
 
 [Response Header]
 
@@ -151,22 +151,22 @@ Content-Type:application/json
 }
 ```
 
-### 인증서 파일 다운로드
+### Downloading Certificate Files 
 
-Certificate Manager에 등록한 인증서 파일을 다운로드할 때 사용합니다.
+Certificate files registered at Certificate Manager can be downloaded. 
 
-#### 요청
+#### Request
 
 ```
 GET https://beta-api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
 ```
 
-#### 응답
+#### Response
 
 [Response Header]
 
 ```
-Content-Disposition:attachment; filename="{파일명}"
+Content-Disposition:attachment; filename="{file name}"
 Content-Type:application/octet-stream
 ```
 
@@ -181,34 +181,34 @@ Content-Type:application/octet-stream
 ...
 -----END RSA PRIVATE KEY-----
 ```
-#### Command Line Interface(CLI) 사용 시
+#### For Command Line Interface (CLI) 
 
-인증서 파일 다운로드 API는 `curl` 명령어를 사용해 요청할 수 있습니다.
+Download Certificate File API can be requested by using the `curl` command. 
 
 ```bash
-#파일에 쓰기
+#Write to File
 curl 'https://beta-api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files' > cert.pem
 
-#파일명 지정
+#Specify File Name
 curl -o cert.pem 'https://beta-api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
 
-#업로드한 파일명 유지
+#Maintain Uploaded File Name
 curl -OJ 'https://beta-api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
 ```
-* 기타 curl 명령어 사용법은 아래 가이드를 참고해 주시기 바랍니다.
+* See the link below on how to use curl command
   * curl command guide : [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)
 
-### 응답 코드
+### Response Codes
 
-| isSuccessful | resultCode | resultMessage | 설명 |
+| isSuccessful | resultCode | resultMessage | Description |
 | ------------ | ---------- | ------------- | --- |
-| true | 0 | SUCCESS | 성공 |
-| false | 52000 | Certificate name does not exist. | 요청한 인증서 이름이 존재하지 않습니다. |
-| false | 52001 | Certificate file does not exist. | 요청한 인증서 파일이 존재하지 않습니다. |
-| false | 52002 | There are more than one certificate file. | 요청한 인증서에 등록된 파일이 두 개 이상입니다. |
-| false | 52003 | The certificate file is not a pem file. | 요청한 인증서 파일이 pem 파일이 아닙니다. |
-| false | 52004 | The certificate name in the file is different from the requested certificate name. | 요청한 인증서 이름과 인증서 파일에 등록된 이름이 다릅니다. |
-| false | 52005 | Certificate file has expired | 요청한 인증서 파일이 만료된 파일입니다. |
-| false | 52006 | The certificate has an invalid certificate authority name. | 요청한 인증서 파일의 인증기관 정보가 유효하지 않습니다. |
-| false | 52007 | Requested certificate file should be one. | 동시에 하나의 인증서 파일만 업로드 가능합니다. |
-| false | 52008 | Maximum permitted size is {} bytes. But, requested {} bytes. | 업로드 가능한 최대 파일크기는 512KB 입니다. |
+| true | 0 | SUCCESS | Successful |
+| false | 52000 | Certificate name does not exist. | Requested certificate name does not exist. |
+| false | 52001 | Certificate file does not exist. | Requested certificate file does not exist. |
+| false | 52002 | There are more than one certificate file. | More than two files are registered for requested certificate. |
+| false | 52003 | The certificate file is not a pem file. | Requested certificate file is not pem file. |
+| false | 52004 | The certificate name in the file is different from the requested certificate name. | Requested certificate name is different from registered name on certificate file. |
+| false | 52005 | Certificate file has expired | Requested certificate file is expired. |
+| false | 52006 | The certificate has an invalid certificate authority name. | The certificate authority information in the requested certificate file is invalid. |
+| false | 52007 | Requested certificate file should be one. | Only one certificate file can be uploaded at the same time. |
+| false | 52008 | Maximum permitted size is {} bytes. But, requested {} bytes. | The maximum file size that can be uploaded is 512KB. |
