@@ -1,5 +1,9 @@
 ## Management > Certificate Manager > 릴리스 노트
 
+### 2022. 07. 26.
+#### 기능 개선
+* API 엔드포인트의 도메인이 gov-api-certificate-manager.toast.com에서 certmanager.api.gov-nhncloudservice.com로 변경되었습니다.
+
 ### 2020. 12. 29.
 #### 신규 서비스 출시
 Certificate Manager는 만료일 연장을 놓치지 않도록, 만료일이 가까워지면 알람(SMS, 이메일)을 발송하는 서비스입니다.

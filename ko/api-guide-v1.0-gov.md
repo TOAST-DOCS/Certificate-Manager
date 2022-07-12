@@ -5,7 +5,7 @@ Certificate Manager에서는 인증서 목록 조회, 업로드, 다운로드를
 ### 기본 정보
 #### EndPoint
 ```text
-https://gov-api-certificate-manager.toast.com
+https://certmanager.api.gov-nhncloudservice.com
 ```
 
 #### 제공하는 API 종류
@@ -50,7 +50,7 @@ Certificate Manager에 등록한 인증서 목록을 조회할 때 사용합니�
 #### 요청
 
 ```
-GET https://gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates?pageSize={pageSize}&pageNum={pageNum}&all={all}&status={status}
+GET https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates?pageSize={pageSize}&pageNum={pageNum}&all={all}&status={status}
 ```
 
 | 값 | 타입 | 설명 | 입력가능 |
@@ -115,7 +115,7 @@ Certificate Manager에 등록한 인증서에 파일을 업로드할 때 사용�
 #### 요청
 
 ```
-POST https://gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
+POST https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
 ```
 
 [Request Header]
@@ -158,7 +158,7 @@ Certificate Manager에 등록한 인증서 파일을 다운로드할 때 사용�
 #### 요청
 
 ```
-GET https://gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
+GET https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
 ```
 
 #### 응답
@@ -187,13 +187,13 @@ Content-Type:application/octet-stream
 
 ```bash
 #파일에 쓰기
-curl 'https://gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files' > cert.pem
+curl 'https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files' > cert.pem
 
 #파일명 지정
-curl -o cert.pem 'https://gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
+curl -o cert.pem 'https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
 
 #업로드한 파일명 유지
-curl -OJ 'https://gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
+curl -OJ 'https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
 ```
 * 기타 curl 명령어 사용법은 아래 가이드를 참고해 주시기 바랍니다.
   * curl command guide : [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)

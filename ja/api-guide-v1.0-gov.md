@@ -5,7 +5,7 @@ Certificate Manager は、証明書リスト検索、証明書のアップロー
 ### 基本情報
 #### EndPoint
 ```text
-https://beta-gov-api-certificate-manager.toast.com
+https://certmanager.api.gov-nhncloudservice.com
 ```
 
 #### 提供するAPI種類
@@ -50,7 +50,7 @@ Certificate Manager に登録されている証明書のリストを照会する
 #### リクエスト
 
 ```
-GET https://beta-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates?pageSize={pageSize}&pageNum={pageNum}&all={all}&status={status}
+GET https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates?pageSize={pageSize}&pageNum={pageNum}&all={all}&status={status}
 ```
 
 | 値 | タイプ | 説明 | 入力可能 |
@@ -115,7 +115,7 @@ Certificate Managerに登録した証明書にファイルをアップロード�
 #### リクエスト
 
 ```
-POST https://beta-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
+POST https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
 ```
 
 [Request Header]
@@ -158,7 +158,7 @@ Certificate Managerに登録した証明書ファイルをダウンロードす�
 #### リクエスト
 
 ```
-GET https://beta-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
+GET https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
 ```
 
 #### レスポンス
@@ -187,13 +187,13 @@ Content-Type:application/octet-stream
 
 ```bash
 #ファイルに書き込む
-curl 'https://beta-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files' > cert.pem
+curl 'https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files' > cert.pem
 
 #ファイル名指定
-curl -o cert.pem 'https://beta-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
+curl -o cert.pem 'https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
 
 #アップロードしたファイル名を維持
-curl -OJ 'https://beta-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
+curl -OJ 'https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
 ```
 * その他curlコマンドの使用方法は下記のガイドを参照してください。
   * curl command guide : [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)
