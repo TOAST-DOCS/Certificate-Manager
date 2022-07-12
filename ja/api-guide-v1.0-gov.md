@@ -110,7 +110,7 @@ Content-Type:application/json
 ### 証明書ファイルのアップロード
 
 Certificate Managerに登録した証明書にファイルをアップロードする時に使用します。ファイルが登録されている場合、新たにアップロードしたファイルに更新されます。
-サポートする証明書ファイル(.pem)の形式は[問題解決ガイド > 証明書ファイルフォーマット変換](http://beta-docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)を参照してください。
+サポートする証明書ファイル(.pem)の形式は[問題解決ガイド > 証明書ファイルフォーマット変換](http://docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)を参照してください。
 
 #### リクエスト
 

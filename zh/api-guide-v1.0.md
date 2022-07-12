@@ -110,7 +110,7 @@ Content-Type:application/json
 ### Uploading Certificate Files 
 
 Files can be uploaded to certificates registered at Certificate Manager. If a file is already registered, it shall be replaced by a newly uploaded file.  
-Regarding supported certificate file formats (.pem), read '[Troubleshooting Guide > Converting Certificate File Formats](http://beta-docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)'.
+Regarding supported certificate file formats (.pem), read '[Troubleshooting Guide > Converting Certificate File Formats](http://docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)'.
 
 #### Request
 
