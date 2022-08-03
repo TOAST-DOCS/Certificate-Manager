@@ -1,8 +1,8 @@
 ## Management > Certificate Manager > 릴리스 노트
 
-### 2022. 07. 26.
+### 2022. 08. 23.
 #### 기능 개선
-* API 엔드포인트의 도메인이 api-certificate-manager.cloud.toast.com에서 certmanager.api.nhncloudservice.com로 변경되었습니다.
+* API 엔드포인트의 도메인이 api-certificate-manager.cloud.toast.com에서 certmanager.api.nhncloudservice.com으로 변경되었습니다.
 
 ### 2020. 03. 24.
 #### 기능 추가

@@ -110,7 +110,7 @@ Content-Type:application/json
 ### 인증서 파일 업로드
 
 Certificate Manager에 등록한 인증서에 파일을 업로드할 때 사용합니다. 파일이 등록되어 있다면, 새로 업로드하는 파일로 교체됩니다.
-지원하는 인증서 파일(.pem) 형식은 [문제 해결 가이드 > 인증서 파일 포맷 변환](http://gov-docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1) 참고 부탁드립니다.
+지원하는 인증서 파일(.pem) 형식은 [문제 해결 가이드 > 인증서 파일 포맷 변환](http://gov-docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1) 참고하십시오.
 
 #### 요청
 
@@ -211,4 +211,4 @@ curl -OJ 'https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.0/appke
 | false | 52005 | Certificate file has expired | 요청한 인증서 파일이 만료된 파일입니다. |
 | false | 52006 | The certificate has an invalid certificate authority name. | 요청한 인증서 파일의 인증기관 정보가 유효하지 않습니다. |
 | false | 52007 | Requested certificate file should be one. | 동시에 하나의 인증서 파일만 업로드 가능합니다. |
-| false | 52008 | Maximum permitted size is {} bytes. But, requested {} bytes. | 업로드 가능한 최대 파일크기는 512KB 입니다. |
+| false | 52008 | Maximum permitted size is {} bytes. But, requested {} bytes. | 업로드 가능한 최대 파일크기는 512KB입니다. |
