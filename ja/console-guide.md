@@ -92,15 +92,15 @@ Certificate Managerに登録した証明書の有効期限より、自動収集�
 5. **証明書の登録**下記の**証明書**から証明書ファイルを登録します。<br>
 証明書の登録は必須ではないため、後で登録しても構いません。
     * 証明書は秘密鍵と証明書で構成された.pem形式のファイルです。
-    * サポートする証明書ファイル(.pem)形式は[**問題解決ガイド > 証明書ファイルフォーマット変換**](http://alpha-docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)を参照してください。
+    * サポートする証明書ファイル(.pem)形式は[**問題解決ガイド > 証明書ファイルフォーマット変換**](http://docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)を参照してください。
     * アップロード可能な証明書は最大512KBです。
 6. **パスフレーズ**に証明書ファイルに含まれる秘密鍵のパスフレーズ(passphrase、秘密文言)を入力します。
 7. **追加**ボタンをクリックします。
-8. [Network> Load Balancer]（https://alpha.toast.com/kr/service/network/load-balancer）製品と連携する必要がある場合は、パスフレーズ（passphrase、秘密文言）を削除する必要があります。
-    * パスフレーズは、次のコマンドを使って削除できます。
-``` bash
-openssl rsa -in my_private_input.key -out my_private_output.key
-```
+8. [Network> Load Balancer]（https://toast.com/kr/service/network/load-balancer）製品とリンクする必要がある場合は、パスフレーズ（passphrase、秘密文言）を削除する必要があります。
+    * パスフレーズを削除するには、次のコマンドを使用してパスフレーズを削除できます。
+    ```bash
+    openssl rsa -in my_private_input.key -out my_private_output.key
+    ```
 
 ### 詳細画面
 

@@ -5,7 +5,7 @@ Certificate Manager は、証明書リスト検索、証明書のアップロー
 ### 基本情報
 #### EndPoint
 ```text
-https://alpha-gov-api-certificate-manager.toast.com
+https://certmanager.api.gov-nhncloudservice.com
 ```
 
 #### 提供するAPI種類
@@ -50,7 +50,7 @@ Certificate Manager に登録されている証明書のリストを照会する
 #### リクエスト
 
 ```
-GET https://alpha-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates?pageSize={pageSize}&pageNum={pageNum}&all={all}&status={status}
+GET https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates?pageSize={pageSize}&pageNum={pageNum}&all={all}&status={status}
 ```
 
 | 値 | タイプ | 説明 | 入力可能 |
@@ -110,12 +110,12 @@ Content-Type:application/json
 ### 証明書ファイルのアップロード
 
 Certificate Managerに登録した証明書にファイルをアップロードする時に使用します。ファイルが登録されている場合、新たにアップロードしたファイルに更新されます。
-サポートする証明書ファイル(.pem)の形式は[問題解決ガイド > 証明書ファイルフォーマット変換](http://alpha-docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)を参照してください。
+サポートする証明書ファイル(.pem)の形式は[問題解決ガイド > 証明書ファイルフォーマット変換](http://docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)を参照してください。
 
 #### リクエスト
 
 ```
-POST https://alpha-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
+POST https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
 ```
 
 [Request Header]
@@ -158,7 +158,7 @@ Certificate Managerに登録した証明書ファイルをダウンロードす�
 #### リクエスト
 
 ```
-GET https://alpha-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
+GET https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
 ```
 
 #### レスポンス
@@ -187,13 +187,13 @@ Content-Type:application/octet-stream
 
 ```bash
 #ファイルに書き込む
-curl 'https://alpha-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files' > cert.pem
+curl 'https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files' > cert.pem
 
 #ファイル名指定
-curl -o cert.pem 'https://alpha-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
+curl -o cert.pem 'https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
 
 #アップロードしたファイル名を維持
-curl -OJ 'https://alpha-gov-api-certificate-manager.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
+curl -OJ 'https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
 ```
 * その他curlコマンドの使用方法は下記のガイドを参照してください。
   * curl command guide : [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)
