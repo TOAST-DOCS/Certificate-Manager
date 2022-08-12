@@ -1,5 +1,9 @@
 ## Management > Certificate Manager > リリースノート
 
+### 2022. 08. 23.
+#### 機能改善
+* APIエンドポイントのドメインがapi-certificate-manager.cloud.toast.comからcertmanager.api.nhncloudservice.comに変更されました。
+
 ### 2020. 03. 24.
 #### 機能追加
 Certificate Managerに追加した証明書のリストを照会できるAPIを追加しました。
