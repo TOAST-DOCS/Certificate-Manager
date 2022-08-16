@@ -5,7 +5,7 @@ Certificate Manager provides APIs for certificate list lookup, uploading or down
 ### Basic Information
 #### EndPoint
 ```text
-https://beta-api-certificate-manager.cloud.toast.com
+https://certmanager.api.nhncloudservice.com
 ```
 
 #### Available API Types 
@@ -50,7 +50,7 @@ Used to query the list of certificates registered with Certificate Manager.
 #### Request
 
 ```
-GET https://beta-api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates?pageSize={pageSize}&pageNum={pageNum}&all={all}&status={status}
+GET https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates?pageSize={pageSize}&pageNum={pageNum}&all={all}&status={status}
 ```
 
 | Value | Type | Description | Available |
@@ -110,12 +110,12 @@ Content-Type:application/json
 ### Uploading Certificate Files 
 
 Files can be uploaded to certificates registered at Certificate Manager. If a file is already registered, it shall be replaced by a newly uploaded file.  
-Regarding supported certificate file formats (.pem), read '[Troubleshooting Guide > Converting Certificate File Formats](http://beta-docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)'.
+Regarding supported certificate file formats (.pem), read '[Troubleshooting Guide > Converting Certificate File Formats](http://docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)'.
 
 #### Request
 
 ```
-POST https://beta-api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
+POST https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
 ```
 
 [Request Header]
@@ -158,7 +158,7 @@ Certificate files registered at Certificate Manager can be downloaded.
 #### Request
 
 ```
-GET https://beta-api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
+GET https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
 ```
 
 #### Response
@@ -187,13 +187,13 @@ Download Certificate File API can be requested by using the `curl` command.
 
 ```bash
 #Write to File
-curl 'https://beta-api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files' > cert.pem
+curl 'https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files' > cert.pem
 
 #Specify File Name
-curl -o cert.pem 'https://beta-api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
+curl -o cert.pem 'https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
 
 #Maintain Uploaded File Name
-curl -OJ 'https://beta-api-certificate-manager.cloud.toast.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
+curl -OJ 'https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
 ```
 * See the link below on how to use curl command
   * curl command guide : [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)
