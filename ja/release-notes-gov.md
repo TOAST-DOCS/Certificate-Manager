@@ -1,5 +1,9 @@
 ## Management > Certificate Manager > リリースノート
 
+### 2022. 08. 23.
+#### 機能改善
+* APIエンドポイントのドメインがgov-api-certificate-manager.toast.comからcertmanager.api.gov-nhncloudservice.comに変更されました。
+
 ### 2020. 07. 30.
 #### サービスリリース
 Certificate Managerは、有効期限の延長を逃さないように、有効期限が近づいたらアラーム(SMS、EMAIL)を送信するサービスです。
