@@ -1,5 +1,9 @@
 ## Management > Certificate Manager > Release Notes
 
+### October 4, 2022
+#### Feature Updates
+* Fixed an issue where a permission is not properly applied when it is issued through the role group management.
+
 ### August 23, 2022
 #### Feature Updates
 * Changed the API's endpoint domain from api-certificate-manager.cloud.toast.com to certmanager.api.nhncloudservice.com.
