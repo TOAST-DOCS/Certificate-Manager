@@ -1,5 +1,9 @@
 ## Management > Certificate Manager > リリースノート
 
+### 2022. 10. 04.
+#### 機能改善
+* 役割グループ管理から権限を付与する場合に、権限が正常に適されない問題を修正しました。
+
 ### 2022. 08. 23.
 #### 機能改善
 * APIエンドポイントのドメインがgov-api-certificate-manager.toast.comからcertmanager.api.gov-nhncloudservice.comに変更されました。
