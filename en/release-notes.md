@@ -1,5 +1,10 @@
 ## Management > Certificate Manager > Release Notes
 
+### October 25, 2022
+#### Feature Updates
+* Fixed an issue where calling APIs with a project total appkey does not work properly.
+* Modified the logic so that, when collection of certificates and domain information fails, mail is sent only for those confirmed that day.
+
 ### October 4, 2022
 #### Feature Updates
 * Fixed an issue where a permission is not properly applied when it is issued through the role group management.
