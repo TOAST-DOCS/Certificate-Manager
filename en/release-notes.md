@@ -1,5 +1,14 @@
 ## Management > Certificate Manager > Release Notes
 
+### December 27, 2022
+#### Feature Updates
+* Improved so that, when you click the **Initialize** button on the search bar, all options are selected.
+* Improved so that, even when you select a search option and close the dropdown list without clicking the **Apply** button, the selected option is applied. 
+* Improved so that, when the auto-collection feature does not work in the domain, `-` is displayed on the registrar, registering institution items.
+* Added an organization name to SMS notifications, and shortened guide messages.
+#### Bug Fixes
+Fixed an issue where, when re-entering an additional page in the domain, the expiry date is set to the previously set value.
+
 ### October 25, 2022
 #### Feature Updates
 * Fixed an issue where calling APIs with a project total appkey does not work properly.
