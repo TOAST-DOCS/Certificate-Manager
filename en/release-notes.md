@@ -1,5 +1,14 @@
 ## Management > Certificate Manager > Release Notes
 
+### January 31, 2023
+#### Feature Updates
+* Changed the maximum length of user data from 3,000 to 700 characters.
+* Changed the naming rules for domains have.
+     * The beginning and end of the domain and between dot(.) and dot(.) are limited to 63 characters.
+     * The maximum length of domains is limited to 260 characters.
+#### Bug Fixes
+* Fixed an issue where the html format is applied when the notification group and user data names are in the html format during email notification.
+
 ### December 27, 2022
 #### Feature Updates
 * Improved so that, when you click the **Initialize** button on the search bar, all options are selected.
