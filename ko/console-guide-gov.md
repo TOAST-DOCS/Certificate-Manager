@@ -76,7 +76,7 @@ Certificate Manager에 등록한 인증서의 만료일보다 자동 수집한 �
 ### 메인 화면
 메인 화면에서는 인증서 목록이나 만료일까지 남은 날짜 등을 확인할 수 있습니다.
 
-![certificate-1.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-1.png)
+![certificate-1.png](http://static.toastoven.net/prod_certificate_manager/202302/certificate-1.png)
 
 * 기존에 등록한 인증서의 목록을 확인 및 검색할 수 있습니다.
 * 만료일까지 남은 날짜를 확인할 수 있습니다.
@@ -85,10 +85,14 @@ Certificate Manager에 등록한 인증서의 만료일보다 자동 수집한 �
 ### 인증서 생성
 
 1. 인증서 메인 화면에서 **+ 인증서 추가** 버튼을 클릭하면 **인증서 추가** 창이 나타납니다.
-![certificate-2.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-2.png)
+![certificate-2.png](http://static.toastoven.net/prod_certificate_manager/202302/certificate-2.png)
 2. **알림 그룹**에서 연동할 알림 그룹을 선택합니다. 생성된 알림 그룹이 없을 때는 목록에 표시되지 않으며, 인증서를 생성할 수 없습니다.
-3. **이름**에 인증서 이름(CommonName, CN)을 입력합니다. 인증서 이름은 중복으로 등록할 수 없습니다.
-4. **유형**에서 원하는 항목을 선택합니다. Single은 단일 인증서, Wildcard는 \*(asterisk)로 시작하는 범용 인증서(여러 호스트에서 사용할 수 있는 인증서)를 뜻합니다.
+3. **유형**에서 원하는 항목을 선택합니다.
+   * Single은 단일 인증서 입니다.
+   * Wildcard는 \*(asterisk)로 시작하는 범용 인증서(여러 호스트에서 사용할 수 있는 인증서)를 뜻합니다.
+   * SAN은 1개 인증서로 여러 개의 도메인에 SSL을 적용이 가능한 인증서를 뜻합니다.
+4. **이름**에 인증서 이름(CommonName, CN)을 입력합니다. 인증서 이름은 중복으로 등록할 수 없습니다. <br>
+   * SAN 인증서의 경우 인증서 파일을 업로드하면 인증서 이름과 서브 인증서 이름이 자동 입력됩니다.(임의로 인증서 이름을 변경할 수 없습니다.)
 5. **인증서 등록** 아래 **인증서**에서 인증서 파일을 등록합니다.<br>
 인증서 등록은 필수가 아니므로 나중에 등록해도 괜찮습니다.
     * 인증서는 개인 키와 인증서로 구성된 .pem 형식의 파일입니다.
@@ -96,6 +100,8 @@ Certificate Manager에 등록한 인증서의 만료일보다 자동 수집한 �
     * 업로드 가능한 인증서 파일 사이즈는 최대 512KB입니다.
 6. **패스프레이즈**(passphrase, 비밀문구)에  인증서 파일 내에 포함된 개인 키의 **패스프레이즈**를 입력합니다.
 7. **추가** 버튼을 클릭합니다.
+   * Single과 Wildcard의 경우는 1개의 인증서가 생성됩니다.
+   * SAN의 경우는 대표 인증서와 서브 인증서 모두 생성됩니다.(예시 : 대표 인증서 1 개와 서브 인증서 3개인 경우 총 4개의 인증서가 생성됨)
 8. [Network > Load Balancer](https://gov.toast.com/kr/service/network/load-balancer) 서비스와 연동해야 할 때는 인증서 파일의 **패스프레이즈**를 삭제해야 합니다.
     * **패스프레이즈**는 다음 명령을 사용해 삭제할 수 있습니다.
     ```bash
@@ -123,6 +129,9 @@ Certificate Manager에 등록한 인증서의 만료일보다 자동 수집한 �
 4. 인증서 사용 정보의 이름을 입력합니다.
     * 인증서 유형이 **Single**인 경우 인증서 이름과 동일해야 합니다.
     * 인증서 유형이 **Wildcard**인 경우 '\*'(asterisk)를 제외한 인증서 이름과 동일하거나 '\*'(asterisk)를 제외한 '.[인증서 이름]'으로 끝나야 합니다.
+    * 인증서 유형이 **SAN**인 경우
+      * 인증서 이름이 Single 형태인 경우 인증서 이름과 동일해야 합니다.
+      * 인증서 이름이 Wildcard 형태인 경우 '\*'(asterisk)를 제외한 인증서 이름과 동일하거나 '\*'(asterisk)를 제외한 '.[인증서 이름]'으로 끝나야 합니다.
 5. **알림 사용 여부**에서 인증서 사용 정보의 알림 사용 여부를 선택합니다.
 6. 인증서 설치 정보를 입력하려면 인증서 설치 정보 옆의 **+추가** 버튼을 클릭합니다. 
 ![certificate-7.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-7.png)
