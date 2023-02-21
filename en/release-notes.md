@@ -1,5 +1,12 @@
 ## Management > Certificate Manager > Release Notes
 
+#### February 28, 2023
+#### Added Features
+* Added SAN certificate feature
+    * SAN (subject alternative name) is a certificate that allows you to apply SSL to multiple domains with a single certificate.
+    * By registering SAN certificate, you can easily manage expiration dates and notification settings for sub-certificates.
+    * When you add or modify SAN certificate,  it reads information from the certificate file (.pem) to automatically enter the certificate name and sub certificate name.
+
 ### January 31, 2023
 #### Feature Updates
 * Changed the maximum length of user data from 3,000 to 700 characters.
