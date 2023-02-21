@@ -7,6 +7,9 @@
     * By registering SAN certificate, you can easily manage expiration dates and notification settings for sub-certificates.
     * When you add or modify SAN certificate,  it reads information from the certificate file (.pem) to automatically enter the certificate name and sub certificate name.
 
+#### Feature Updates
+* Improved so that user data names cannot be entered only with spaces.
+
 ### January 31, 2023
 #### Feature Updates
 * Changed the maximum length of user data from 3,000 to 700 characters.
