@@ -76,7 +76,7 @@ Certificate Managerに登録した証明書の有効期限より、自動収集�
 ### メイン画面
 メイン画面では証明書リストや有効期限までの残り日数などを確認できます。
 
-![certificate-1.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-1.png)
+![certificate-1.png](http://static.toastoven.net/prod_certificate_manager/202302/certificate-1.png)
 
 * 既に登録している証明書のリストを確認および検索できます。
 * 有効期限までの残り日数を確認できます。
@@ -85,22 +85,29 @@ Certificate Managerに登録した証明書の有効期限より、自動収集�
 ### 証明書の作成
 
 1. 証明書メイン画面で**+証明書の追加**ボタンをクリックすると、**証明書の追加**ウィンドウが表示されます。
-![certificate-2.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-2.png)
+![certificate-2.png](http://static.toastoven.net/prod_certificate_manager/202302/certificate-2.png)
 2. **通知グループ**で連携する通知グループを選択します。作成された通知グループがない時はリストに表示されず、証明書を作成できません。
-3. **名前**に証明書名(CommonName、CN)を入力します。証明書名は重複して登録できません。
-4. **タイプ**で項目を選択します。Singleは単一証明書、Wildcardは\*(asterisk)で始まる汎用証明書(複数のホストで使用できる証明書)を意味します。
+3. **名前**に証明書名(CommonName、CN)を入力します。証明書名は重複して登録できません。 <br>
+   * SAN証明書の場合、証明書ファイルをアップロードすると証明書名とサブ証明書名が自動的に入力されます。証明書の名前は任意に変更できません。
+4. **タイプ**で項目を選択します。
+   * Singleは単一証明書です。
+   * Wildcardは\*(asterisk)で始まる汎用証明書(複数のホストで使用できる証明書)を意味します。
+   * SANは1つの証明書で複数のドメインにSSLを適用できる証明書です。
 5. **証明書の登録**下記の**証明書**から証明書ファイルを登録します。<br>
-証明書の登録は必須ではないため、後で登録しても構いません。
-    * 証明書は秘密鍵と証明書で構成された.pem形式のファイルです。
-    * サポートする証明書ファイル(.pem)形式は[**問題解決ガイド > 証明書ファイルフォーマット変換**](http://docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)を参照してください。
-    * アップロード可能な証明書は最大512KBです。
-6. **パスフレーズ**に証明書ファイルに含まれる秘密鍵のパスフレーズ(passphrase、秘密文言)を入力します。
+ 証明書は必須値ではないため、後で登録しても構いません。
+   * 証明書は秘密鍵と証明書で構成された.pem形式のファイルです。
+    * サポートする証明書ファイル(.pem)形式は[**問題解決ガイド > 証明書ファイルフォーマット変換**](http://gov-docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)をご覧ください。
+    * 証明書ファイルは最大512KBまでアップロードできます。
+6. **パスフレーズ**(passphrase、秘密文言)に証明書ファイルに含まれる秘密鍵のパスフレーズ(passphrase、秘密文言)を入力します。
 7. **追加**ボタンをクリックします。
-8. [Network> Load Balancer]（https://toast.com/kr/service/network/load-balancer）製品とリンクする必要がある場合は、パスフレーズ（passphrase、秘密文言）を削除する必要があります。
-    * パスフレーズを削除するには、次のコマンドを使用してパスフレーズを削除できます。
+   * SingleとWildcardの場合は1つの証明書が作成されます。
+   * SANの場合、代表証明書とサブ証明書の両方が作成されます。例えば代表証明書が1つ、サブ証明書が3つの場合、合計4つの証明書が作成されます。
+8. [Network > Load Balancer](https://gov.toast.com/kr/service/network/load-balancer)製品とリンクする必要がある場合は、パスフレーズ（passphrase、秘密文言）を削除する必要があります。
+   * 次のコマンドを使用してパスフレーズを削除できます。
     ```bash
     openssl rsa -in my_private_input.key -out my_private_output.key
     ```
+
 
 ### 詳細画面
 
@@ -121,6 +128,9 @@ Certificate Managerに登録した証明書の有効期限より、自動収集�
 4. 証明書使用情報の名前を入力します。
     * 証明書タイプが**Single**の場合、証明書名と同じにする必要があります。
     * 証明書タイプが**Wildcard**の場合、'\*'(asterisk)を除いた証明書名と同じか、'\*'(asterisk)を除いた'.[証明書名]'で終わる必要があります。
+    * 証明書タイプが**SAN**の場合
+      * 証明書名がSingle形式の場合、証明書と同じでなければなりません。
+      * 証明書名がWildcard形式の場合、'\*'(asterisk)を除外した証明書名と同じか。'\*'(asterisk)を除外した'.[証明書名]'で終わる必要があります。
 5. **通知使用有無**で証明書使用情報の通知を使用するかどうかを選択します。
 6. 証明書インストール情報を入力するには証明書インストール情報の横にある**+追加**ボタンをクリックします。 
 ![certificate-7.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-7.png)
