@@ -1,5 +1,12 @@
 ## Management > Certificate Manager > Release Notes
 
+### March 28, 2023
+#### Feature Updates
+* Improved to display the message `Only files with the extension '.pem' can be uploaded.` if the selected file is not a certificate file (.pem) when registering a certificate.
+* The passphrase value of the certificate is limited to a maximum of 200 characters.
+#### Bug Fixes
+* Fixed an issue where the Modify button is deactivated after modifying user data.
+
 #### February 28, 2023
 #### Added Features
 * Added SAN certificate feature
