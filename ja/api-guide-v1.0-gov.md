@@ -12,7 +12,6 @@ https://certmanager.api.gov-nhncloudservice.com
 | Method | URI | 説明 |
 | ------ | --- | --- |
 | GET | /certmanager/v1.0/appkeys/{appKey}/certificates | 証明書のリストを検索します。 |
-| POST | /certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files | 登録された証明書にファイルをアップロードします。ファイルが登録されている場合、アップロードしたファイルに更新されます。 |
 | GET | /certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files | 登録された証明書ファイルをダウンロードします。 |
 
 ##### APIリクエストのパス変数
@@ -106,50 +105,6 @@ Content-Type:application/json
 | signatureAlgorithm | String | シグニチャ アルゴリズム |
 | fileCreationDate | String | 証明書ファイルの作成日 |
 | expirationDate | String | 証明書ファイルの有効期限 |
-
-### 証明書ファイルのアップロード
-
-Certificate Managerに登録した証明書にファイルをアップロードする時に使用します。ファイルが登録されている場合、新たにアップロードしたファイルに更新されます。
-サポートする証明書ファイル(.pem)の形式は[問題解決ガイド > 証明書ファイルフォーマット変換](http://docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)を参照してください。
-
-#### リクエスト
-
-```
-POST https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
-```
-
-[Request Header]
-
-```
-Content-Type:multipart/form-data
-```
-
-[Request Body]
-
-```
-file: {ファイル}
-```
-
-#### レスポンス
-
-[Response Header]
-
-```
-Content-Type:application/json
-```
-
-[Response Body]
-
-```json
-{
-    "header": {
-        "resultCode": 0,
-        "resultMessage": "success",
-        "isSuccessful": true
-    },
-    "body": null
-}
-```
 
 ### 証明書ファイルのダウンロード
 
