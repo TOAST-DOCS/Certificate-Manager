@@ -12,7 +12,6 @@ https://certmanager.api.gov-nhncloudservice.com
 | Method | URI | 설명 |
 | ------ | --- | --- |
 | GET | /certmanager/v1.0/appkeys/{appKey}/certificates | 인증서 목록을 조회합니다. |
-| POST | /certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files | 등록된 인증서에 파일을 업로드합니다. 파일이 등록되어 있는 경우, 업로드하는 파일로 교체됩니다. |
 | GET | /certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files | 등록된 인증서 파일을 다운로드합니다. |
 
 ##### API 요청의 경로 변수
@@ -106,50 +105,6 @@ Content-Type:application/json
 | signatureAlgorithm | String | 서명방식 |
 | fileCreationDate | String | 인증서 파일 생성일 |
 | expirationDate | String | 인증서 파일 만료일 |
-
-### 인증서 파일 업로드
-
-Certificate Manager에 등록한 인증서에 파일을 업로드할 때 사용합니다. 파일이 등록되어 있다면, 새로 업로드하는 파일로 교체됩니다.
-지원하는 인증서 파일(.pem) 형식은 [문제 해결 가이드 > 인증서 파일 포맷 변환](http://gov-docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1) 참고하십시오.
-
-#### 요청
-
-```
-POST https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
-```
-
-[Request Header]
-
-```
-Content-Type:multipart/form-data
-```
-
-[Request Body]
-
-```
-file: {파일}
-```
-
-#### 응답
-
-[Response Header]
-
-```
-Content-Type:application/json
-```
-
-[Response Body]
-
-```json
-{
-    "header": {
-        "resultCode": 0,
-        "resultMessage": "success",
-        "isSuccessful": true
-    },
-    "body": null
-}
-```
 
 ### 인증서 파일 다운로드
 
