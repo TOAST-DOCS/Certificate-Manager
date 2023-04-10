@@ -12,7 +12,6 @@ https://certmanager.api.nhncloudservice.com
 | Method | URI | Description |
 | ------ | --- | --- |
 | GET | /certmanager/v1.0/appkeys/{appKey}/certificates | Look up the list of certificates. |
-| POST | /certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files | Upload files to a registered certificate. If a file is already registered, it shall be replaced by a newly uploaded file. |
 | GET | /certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files | Download certificate files that are registered. |
 
 ##### Path Variables of API Request
@@ -106,50 +105,6 @@ Content-Type:application/json
 | signatureAlgorithm | String | Signature algorithm |
 | fileCreationDate | String | Certificate file creation date |
 | expirationDate | String | Certificate file expiration date |
-
-### Uploading Certificate Files 
-
-Files can be uploaded to certificates registered at Certificate Manager. If a file is already registered, it shall be replaced by a newly uploaded file.  
-Regarding supported certificate file formats (.pem), read '[Troubleshooting Guide > Converting Certificate File Formats](http://docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)'.
-
-#### Request
-
-```
-POST https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
-```
-
-[Request Header]
-
-```
-Content-Type:multipart/form-data
-```
-
-[Request Body]
-
-```
-file: {file}
-```
-
-#### Response
-
-[Response Header]
-
-```
-Content-Type:application/json
-```
-
-[Response Body]
-
-```json
-{
-    "header": {
-        "resultCode": 0,
-        "resultMessage": "success",
-        "isSuccessful": true
-    },
-    "body": null
-}
-```
 
 ### Downloading Certificate Files 
 
