@@ -58,7 +58,7 @@ GET https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{appKey
 | pageNum | Number | 페이지 번호 | 1(default) |
 | all | Boolean | 전체조회 여부 | true, false(default) |
 | status | String | 인증서 상태 | ALL, EXPIRED, UNEXPIRED(default) | 
-※ all, status는 대소문자 구분없이 사용 가능합니다.
+※ (all, status)의 value는 대소문자 구분없이 사용 가능합니다.
 
 #### 응답
 
