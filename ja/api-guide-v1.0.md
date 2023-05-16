@@ -59,6 +59,8 @@ GET https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{appKey
 | all | Boolean | 完全検索 | true, false(default) |
 | status | String | 証明書の有効期限ステータス | ALL, EXPIRED, UNEXPIRED(default) |
 
+※ all、statusの値は大文字/小文字を区別せずに使用できます。
+
 #### レスポンス
 
 [Response Header]
