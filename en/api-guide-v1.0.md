@@ -59,6 +59,8 @@ GET https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{appKey
 | all | Boolean | Full lookup | true, false(default) |
 | status | String | Certificate expiration status | ALL, EXPIRED, UNEXPIRED(default) | 
 
+※ The values for all and status are case insensitive.
+
 #### Response
 
 [Response Header]
