@@ -1,6 +1,6 @@
 ## Management > Certificate Manager > API v1.0 가이드
 
-Certificate Manager에서는 인증서 목록 조회, 업로드, 다운로드를 위한 API를 제공합니다. 클라이언트는 콘솔에서 인증서와 인증서 파일을 등록한 후 API를 통해 데이터를 사용할 수 있습니다.
+Certificate Manager에서는 인증서 목록 조회, 다운로드를 위한 API를 제공합니다. 클라이언트는 콘솔에서 인증서와 인증서 파일을 등록한 후 API를 통해 데이터를 사용할 수 있습니다.
 
 ### 기본 정보
 #### EndPoint

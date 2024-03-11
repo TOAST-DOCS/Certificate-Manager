@@ -1,4 +1,4 @@
-## Management > Certificate Manager > API v1.0 가이드
+## Management > Certificate Manager > API v1.1 가이드
 
 Certificate Manager에서는 인증서 목록 조회, 다운로드를 위한 API를 제공합니다. 클라이언트는 콘솔에서 인증서와 인증서 파일을 등록한 후 API를 통해 데이터를 사용할 수 있습니다.
 
@@ -9,10 +9,20 @@ https://certmanager.api.nhncloudservice.com
 ```
 
 #### 제공하는 API 종류
-| Method | URI | 설명 |
-| ------ | --- | --- |
-| GET | /certmanager/v1.0/appkeys/{appKey}/certificates | 인증서 목록을 조회합니다. |
-| GET | /certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files | 등록된 인증서 파일을 다운로드합니다. |
+| Method | URI                                                                     | 설명 |
+| ------ |-------------------------------------------------------------------------| --- |
+| GET | /certmanager/v1.1/appkeys/{appKey}/certificates                         | 인증서 목록을 조회합니다. |
+| GET | /certmanager/v1.1/appkeys/{appKey}/certificates/{certificateName}/files | 등록된 인증서 파일을 다운로드합니다. |
+
+##### API의 요청의 HTTP 헤더 
+v1.1에서는 HTTP 헤더에 필수 필드가 추가됩니다.
+```
+X-TC-AUTHENTICATION-ID: {User Access Key ID}
+X-TC-AUTHENTICATION-SECRET: {Secret Access Key}
+```
+
+자세한 사항은 [콘솔 사용 가이드](/Security/Secure%20Key%20Manager/ko/getting-started/#api)를 참고하세요.
+
 
 ##### API 요청의 경로 변수
 
@@ -49,7 +59,7 @@ Certificate Manager에 등록한 인증서 목록을 조회할 때 사용합니�
 #### 요청
 
 ```
-GET https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates?pageSize={pageSize}&pageNum={pageNum}&all={all}&status={status}
+GET https://certmanager.api.nhncloudservice.com/certmanager/v1.1/appkeys/{appKey}/certificates?pageSize={pageSize}&pageNum={pageNum}&all={all}&status={status}
 ```
 
 | 값 | 타입 | 설명 | 입력가능 |
@@ -116,7 +126,7 @@ Certificate Manager에 등록한 인증서 파일을 다운로드할 때 사용�
 #### 요청
 
 ```
-GET https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
+GET https://certmanager.api.nhncloudservice.com/certmanager/v1.1/appkeys/{appKey}/certificates/{certificateName}/files
 ```
 
 #### 응답
@@ -145,13 +155,13 @@ Content-Type:application/octet-stream
 
 ```bash
 #파일에 쓰기
-curl 'https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files' > cert.pem
+curl 'https://certmanager.api.nhncloudservice.com/certmanager/v1.1/appkeys/{appKey}/certificates/{certificateName}/files' > cert.pem
 
 #파일명 지정
-curl -o cert.pem 'https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
+curl -o cert.pem 'https://certmanager.api.nhncloudservice.com/certmanager/v1.1/appkeys/{appKey}/certificates/{certificateName}/files'
 
 #업로드한 파일명 유지
-curl -OJ 'https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
+curl -OJ 'https://certmanager.api.nhncloudservice.com/certmanager/v1.1/appkeys/{appKey}/certificates/{certificateName}/files'
 ```
 * 기타 curl 명령어 사용법은 아래 가이드를 참고해 주시기 바랍니다.
   * curl command guide : [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)
