@@ -1,8 +1,8 @@
 ## Management > Certificate Manager > 릴리스 노트
 
 ### 2024.03.26
-#### 신규 API 추가 
-* Certificate Manager의 인증 방식이 추가된 API v1.1가 추가되었습니다.<br>자세한 내용은 API v1.1 가이드에서 확인할 수 있습니다.
+#### API 버전 추가 
+* Certificate Manager의 API v1.1가 추가되었습니다. <br>자세한 내용은 API v1.1 가이드에서 확인할 수 있습니다.
 
 ### 2023. 03. 28.
 #### 기능 개선
