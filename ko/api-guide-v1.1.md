@@ -21,7 +21,7 @@ X-TC-AUTHENTICATION-ID: {User Access Key ID}
 X-TC-AUTHENTICATION-SECRET: {Secret Access Key}
 ```
 
-자세한 사항은 [콘솔 사용 가이드](/Security/Secure%20Key%20Manager/ko/getting-started/#api)를 참고하세요.
+자세한 사항은 [콘솔 사용 가이드](/Management/Certificate%20Manager/ko/console-guide/#api)를 참고하세요.
 
 
 ##### API 요청의 경로 변수
