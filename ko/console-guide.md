@@ -240,7 +240,7 @@ DNS의 최상위 도메인 이름(예: toast.com)과 만료일을 입력하면 �
 
 ![console-guide-api1](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403/console-guide-api1.png)
 
-**API 보안 설정**에서 **User Access Key ID 생성**을 클릭하여 CertificateManager API 헤더 입력해야 하는 **User Access Key ID**와 **Secret Access Key**를 생성할 수 있습니다.
+**API 보안 설정**에서 **User Access Key ID 생성**을 클릭하여 CertificateManager API 헤더에 입력해야 하는 **User Access Key ID**와 **Secret Access Key**를 생성할 수 있습니다.
 
 ![console-guide-api2](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403/console-guide-api2.png)
 

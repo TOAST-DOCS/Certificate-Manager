@@ -9,7 +9,7 @@ https://certmanager.api.gov-nhncloudservice.com
 ```
 
 #### 제공하는 API 종류
-| Method | URI                                                                     | 설명 |
+| 메서드 | URI                                                                     | 설명 |
 | ------ |-------------------------------------------------------------------------| --- |
 | GET | /certmanager/v1.1/appkeys/{appKey}/certificates                         | 인증서 목록을 조회합니다. |
 | GET | /certmanager/v1.1/appkeys/{appKey}/certificates/{certificateName}/files | 등록된 인증서 파일을 다운로드합니다. |
@@ -21,13 +21,13 @@ X-TC-AUTHENTICATION-ID: {User Access Key ID}
 X-TC-AUTHENTICATION-SECRET: {Secret Access Key}
 ```
 
-자세한 사항은 [콘솔 사용 가이드](/Management/Certificate%20Manager/ko/console-guide/#api)를 참고하세요.
+자세한 사항은 [콘솔 사용 가이드](/Management/Certificate%20Manager/ko/console-guide/#api)를 참고하십시오.
 
 ##### API 요청의 경로 변수
 
 | 값 | 타입 | 설명 |
 | --- | --- | --- |
-| appKey | String | 사용할 데이터를 저장하고 있는 NHN Cloud 프로젝트의 앱 키 |
+| appKey | String | 사용할 데이터를 저장하고 있는 NHN Cloud 프로젝트의 앱키 |
 | certificateName | String | 사용할 데이터(인증서)의 이름 |
 
 ##### API 응답의 데이터 공통 헤더
@@ -65,7 +65,7 @@ GET https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.1/appkeys/{ap
 | --- | --- | --- | --- |
 | pageSize | Number | 페이지 크기 | 10(default) |
 | pageNum | Number | 페이지 번호 | 1(default) |
-| all | Boolean | 전체조회 여부 | true, false(default) |
+| all | Boolean | 전체 조회 여부 | true, false(default) |
 | status | String | 인증서 상태 | ALL, EXPIRED, UNEXPIRED(default) | 
 
 ※ all, status의 값은 대소문자 구분 없이 사용할 수 있습니다.
@@ -112,8 +112,8 @@ Content-Type:application/json
 | currentPage | Number | 현재 페이지 |
 | pageSize | Number | 페이지 크기 |
 | certificateName | String | 인증서 이름 |
-| authority | String | 인증기관 |
-| signatureAlgorithm | String | 서명방식 |
+| authority | String | 인증 기관 |
+| signatureAlgorithm | String | 서명 방식 |
 | fileCreationDate | String | 인증서 파일 생성일 |
 | expirationDate | String | 인증서 파일 만료일 |
 
@@ -161,7 +161,7 @@ curl -o cert.pem 'https://certmanager.api.gov-nhncloudservice.com/certmanager/v1
 #업로드한 파일명 유지
 curl -OJ 'https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.1/appkeys/{appKey}/certificates/{certificateName}/files'
 ```
-* 기타 curl 명령어 사용법은 아래 가이드를 참고해 주시기 바랍니다.
+* 기타 curl 명령어 사용법은 아래 가이드를 참고하십시오.
   * curl command guide : [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)
 
 ### 응답 코드
@@ -175,6 +175,6 @@ curl -OJ 'https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.1/appke
 | false | 52003 | The certificate file is not a pem file. | 요청한 인증서 파일이 pem 파일이 아닙니다. |
 | false | 52004 | The certificate name in the file is different from the requested certificate name. | 요청한 인증서 이름과 인증서 파일에 등록된 이름이 다릅니다. |
 | false | 52005 | Certificate file has expired | 요청한 인증서 파일이 만료된 파일입니다. |
-| false | 52006 | The certificate has an invalid certificate authority name. | 요청한 인증서 파일의 인증기관 정보가 유효하지 않습니다. |
+| false | 52006 | The certificate has an invalid certificate authority name. | 요청한 인증서 파일의 인증 기관 정보가 유효하지 않습니다. |
 | false | 52007 | Requested certificate file should be one. | 동시에 하나의 인증서 파일만 업로드 가능합니다. |
-| false | 52008 | Maximum permitted size is {} bytes. But, requested {} bytes. | 업로드 가능한 최대 파일크기는 512KB입니다. |
+| false | 52008 | Maximum permitted size is {} bytes. But, requested {} bytes. | 업로드 가능한 최대 파일 크기는 512KB입니다. |
