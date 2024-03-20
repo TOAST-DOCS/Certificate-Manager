@@ -52,7 +52,7 @@ Certificate Manager에 등록한 인증서 목록을 조회할 때 사용합니�
 GET https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates?pageSize={pageSize}&pageNum={pageNum}&all={all}&status={status}
 ```
 
-| 값 | 타입 | 설명 | 입력가능 |
+| 값 | 타입 | 설명 | 입력 가능 |
 | --- | --- | --- | --- |
 | pageSize | Number | 페이지 크기 | 10(default) |
 | pageNum | Number | 페이지 번호 | 1(default) |
