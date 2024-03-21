@@ -4,6 +4,7 @@
 * 인증서
 * 도메인
 * 사용자 데이터
+* 인증서 조회/다운로드 API 자격 관련
 
 ## 알림 그룹
 
@@ -230,3 +231,26 @@ DNS의 최상위 도메인 이름(예: toast.com)과 만료일을 입력하면 �
 **수정** 버튼을 클릭하여 사용자 데이터의 정보를 수정할 수 있습니다.
 
 ![userdata-3.png](http://static.toastoven.net/prod_certificate_manager/202002/userdata-3.png)
+
+## 인증서 조회/다운로드 API 자격 관련
+
+### User Access Key ID, Secret Access Key 생성
+
+콘솔 우측 상단의 ID 영역을 클릭하면 다음과 같은 **API 보안 설정** 메뉴를 확인할 수 있습니다.
+
+![console-guide-api1](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403/console-guide-api1.png)
+
+**API 보안 설정**에서 **User Access Key ID 생성**을 클릭하여 CertificateManager API 헤더에 입력해야 하는 **User Access Key ID**와 **Secret Access Key**를 생성할 수 있습니다.
+
+![console-guide-api2](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403/console-guide-api2.png)
+
+![console-guide-api3](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403/console-guide-api3.png)
+
+**User Access Key ID**, **Secret Access Key**를 생성하면 아래와 같이 **비밀 키 발급 완료** 화면이 표시됩니다. 비밀 키는 해당 팝업 화면에서 한 번만 알려주므로 이 값을 잘 기록하여 사용합니다.
+
+![console-guide-api4](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403/console-guide-api4.png)
+
+API 요청 시 필요한 **User Access Key ID**는 비밀 키 발급 완료 팝업을 닫으면 확인할 수 있습니다.
+
+![console-guide-api5](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403/console-guide-api5.png)
+
