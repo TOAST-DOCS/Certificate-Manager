@@ -142,7 +142,7 @@ Content-Type:application/octet-stream
 #### Command Line Interface(CLI) 사용 시
 
 인증서 파일 다운로드 API는 `curl` 명령어를 사용해 요청할 수 있습니다.
-에
+
 ```bash
 #파일에 쓰기
 curl 'https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files' > cert.pem

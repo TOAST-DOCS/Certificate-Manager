@@ -1,6 +1,6 @@
-## Management > Certificate Manager > API v1.0 Guide
+## Management > Certificate Manager > API v1.1 Guide
 
-Certificate Manager provides APIs to retrieve and download a list of certificates. Clients must register certificates and certificate files on console to use data via APIs. 
+Certificate Manager provides APIs to view and download a list of certificates. Clients can register certificates and certificate files in the console and then use the data through APIs.
 
 ### Basic Information
 #### EndPoint
@@ -9,19 +9,29 @@ https://certmanager.api.nhncloudservice.com
 ```
 
 #### Available API Types 
-| Method | URI | Description |
-| ------ | --- | --- |
-| GET | /certmanager/v1.0/appkeys/{appKey}/certificates | Look up the list of certificates. |
-| GET | /certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files | Download certificate files that are registered. |
+| Method | URI                                                                     | Description |
+| ------ |-------------------------------------------------------------------------| --- |
+| GET | /certmanager/v1.1/appkeys/{appKey}/certificates                         | Retrieves a list of certificates. |
+| GET | /certmanager/v1.1/appkeys/{appKey}/certificates/{certificateName}/files | Downloads the registered certificate file. |
+
+##### HTTP Headers in API Requests 
+Required fields are added to the HTTP header in v1.1.
+```
+X-TC-AUTHENTICATION-ID: {User Access Key ID}
+X-TC-AUTHENTICATION-SECRET: {Secret Access Key}
+```
+
+For more information, see the [](/Management/Certificate%20Manager/en/console-guide/#api)console user guide[](/Management/Certificate%20Manager/en/console-guide/#api).
+
 
 ##### Path Variables of API Request
 
 | Value | Type | Description |
 | --- | --- | --- |
-| appKey | String | Appkey of the NHN Cloud project in which data is saved |
-| certificateName | String | Name of data (certificate) to use |
+| appKey | Token ID | Appkey of the NHN Cloud project where the data in need is stored |
+| certificateName | Token ID | Name of the data (certificate) you want to use |
 
-##### Common Data Header of API Response
+##### [Common Data Header of API Response]
 
 ```json
 {
@@ -31,7 +41,7 @@ https://certmanager.api.nhncloudservice.com
         "isSuccessful": true
     },
     "body": {
-
+        ...
     }
 }
 ```
@@ -39,25 +49,25 @@ https://certmanager.api.nhncloudservice.com
 | Value | Type | Description |
 | --- | --- | --- |
 | resultCode | Number | Result code value of API call |
-| resultMessage | String | Result message of API call |
-| isSuccessful | Boolean | API call successful or not |
+| resultMessage | Token ID | Result message of API call |
+| isSuccessful | Boolean | Whether API call is successful or not |
 
-### Lookup certificate list
+### List Certificates
 
 Used to query the list of certificates registered with Certificate Manager.
 
 #### Request
 
 ```
-GET https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates?pageSize={pageSize}&pageNum={pageNum}&all={all}&status={status}
+GET https://certmanager.api.nhncloudservice.com/certmanager/v1.1/appkeys/{appKey}/certificates?pageSize={pageSize}&pageNum={pageNum}&all={all}&status={status}
 ```
 
-| Value | Type | Description | Available |
+| Value | Type | Description | Available input |
 | --- | --- | --- | --- |
 | pageSize | Number | Page size | 10(default) |
 | pageNum | Number | Page number | 1(default) |
-| all | Boolean | Full lookup | true, false(default) |
-| status | String | Certificate expiration status | ALL, EXPIRED, UNEXPIRED(default) | 
+| all | Boolean | Retrieve all or not | true, false(default) |
+| String | Token ID | Certificate status | ALL, EXPIRED, UNEXPIRED(default) | 
 
 ※ The values for all and status are case insensitive.
 
@@ -98,24 +108,25 @@ Content-Type:application/json
 
 | Value | Type | Description |
 | --- | --- | --- |
-| totalCount | Number | Total certificates |
-| totalPage | Number | Total pages |
+| totalCount | Number | Total number of certificates |
+| totalPage | Number | Total number of pages |
 | currentPage | Number | Current page |
 | pageSize | Number | Page size |
-| certificateName | String | Certificate name |
-| authority | String | Authority |
-| signatureAlgorithm | String | Signature algorithm |
-| fileCreationDate | String | Certificate file creation date |
-| expirationDate | String | Certificate file expiration date |
+| certificateName | Token ID | Certificate name |
+| authority | Token ID | Certificate Authority |
+| signatureAlgorithm | Token ID | Signature method |
+| fileCreationDate | Token ID | Certificate file creation date |
+| expirationDate | Token ID | Certificate file expiration date |
 
-### Downloading Certificate Files 
 
-Certificate files registered at Certificate Manager can be downloaded. 
+### Download Certificate File
+
+Downloads certificates registered in Certificate Manager.
 
 #### Request
 
 ```
-GET https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
+GET https://certmanager.api.nhncloudservice.com/certmanager/v1.1/appkeys/{appKey}/certificates/{certificateName}/files
 ```
 
 #### Response
@@ -123,7 +134,7 @@ GET https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{appKey
 [Response Header]
 
 ```
-Content-Disposition:attachment; filename="{file name}"
+Content-Disposition:attachment; filename="{filename}"
 Content-Type:application/octet-stream
 ```
 
@@ -144,7 +155,7 @@ Download Certificate File API can be requested by using the `curl` command.
 
 ```bash
 #Write to File
-curl 'https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files' > cert.pem
+curl 'https://certmanager.api.nhncloudservice.com/certmanager/v1.1/appkeys/{appKey}/certificates/{certificateName}/files' > cert.pem
 
 #Specify File Name
 curl -o cert.pem 'https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
