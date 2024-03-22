@@ -4,6 +4,7 @@ Console User Guide describes basic requirements to enable Certificate Manager.
 * Certificate
 * Domain
 * User Data 
+* Authorization for Retrieve/Download certificates API
 
 ## Notification Group
 
@@ -63,7 +64,7 @@ On the search window for user integration above, you may search and add NHN Clou
 ## Certificate
 
 Enter domain name (e.g. *.toast.com) and expiration date of certificate, and then notification is sent to user, in accordance with notification policy of an integrated notification group.
- 
+
 To upload certificate files (.pem), following items are automatically collected from such files. 
 * Creation date
 * Expiration date
@@ -76,7 +77,7 @@ If auto-collected certificate installation information has earlier expiration da
 ### Main Page
 On the main page of certificate, you can find list of certificates and remaining days until expired.
 
-![certificate-1.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-1.png)
+![certificate-1.png](http://static.toastoven.net/prod_certificate_manager/202302/certificate-1.png)
 
 * You can find and search the list of already registered certificates. 
 * Also check remaining days until expired. 
@@ -85,19 +86,25 @@ On the main page of certificate, you can find list of certificates and remaining
 ### Creating Certificates
 
 1. On the main page of a certificate, click **+ Add Certificates** and you can find the page as follows. 
-![certificate-2.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-2.png)
+![certificate-2.png](http://static.toastoven.net/prod_certificate_manager/202302/certificate-2.png)
 2. Select a **Notification Group** to integrate. In case a notification group is not created, there is no available notification group, and hence certificate cannot be created. 
-3. Enter **Name** of a certificate (CommonName, CN): names cannot be redundantly registered. 
-4. Select **Type**. Single refers to a single certificate, while Wildcard is a common-purpose certificate (available for many hosts) starting with *(asterisk). 
-5. Register a certificate file.<br>
-Certificate file is an optional field, and you may skip it for later. 
+3. Enter **Name** of a certificate (CommonName, CN): names cannot be redundantly registered.<br>
+    * For SAN certificates, the certificate name and sub-certificate name are automatically entered when the certificate file is uploaded. The name of the certificate cannot be arbitrarily changed.
+4. Select an item in **Type**. 
+    * Single is a single certificate.
+    * Wildcard is a common-purpose certificate (available for many hosts) starting with *(asterisk).
+    * SAN is a certificate that allows you to apply SSL to multiple domains with a single certificate. 
+5. Register a certificate file in **Certificate** under **Register Certificate**.<br>
+Certificates are not required and can be registered later.
     * A certificate (.pem) is a pem file comprised of a private key and a certificate. 
     * For supported type of certificate file (.pem), see '[Troubleshooting Guide > Converting Certificate File Formats](http://docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)'.
     * The maximum uploadable certificate is 512KB. 
 6. Enter **Passphrase** of the private key included within certificate file. 
-7. Click **Add** to save certificate information as configured. 
-8. In order to integrate with [Network > Load Balancer](https://beta.toast.com/kr/service/network/load-balancer), passphrase of the certificate file must be deleted. 
-    * Use the following command to delete passphrase. 
+7. Click **Add**. 
+    * For Single and Wildcard, one certificate is created.
+    * For SAN, both a main and sub certificate are created. For example, if there is 1 main certificate and 3 sub certificates, a total of 4 certificates are created.
+8. In order to integrate with [Network > Load Balancer](https://toast.com/kr/service/network/load-balancer), **passphrase** of the certificate file must be deleted. 
+    * Use the following command to delete **passphrase**. 
     ```bash
     openssl rsa -in my_private_input.key -out my_private_output.key
     ```
@@ -121,6 +128,9 @@ Certificate file is an optional field, and you may skip it for later.
 4. Enter name for certificate usage information. 
     * If the certificate type is **Single**, the name must be same as certificate name. 
     * If the certificate type is **Wildcard**, the name must be same as certificate name, excluding '\*'(asterisk), or must end with ".[Certificate Name]", excluding  '\*'(asterisk). 
+    * If the certificate type is **SAN**
+        * If the certificate name is in Single for, it must be the same as the certificate name.
+        * If the certificate name is in Wildcard form, it must be the same as the certificate name excluding '\*' (asterisk) or end with '.[certificate name]' excluding '\*' (asterisk).
 5. Enter whether to enable notification for certificate usage information.
 6. To enter certificate installation information, click **+ Add** next to Certificate Installation Information. Then, a window like below shows. 
 ![certificate-7.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-7.png)
@@ -219,3 +229,27 @@ Click **Details** on the main user data page, and user data information as saved
 Click **Edit** to edit user data information. 
 
 ![userdata-3.png](http://static.toastoven.net/prod_certificate_manager/202002/userdata-3.png)
+
+
+
+### Authorization for Retrieve/Download Certificates API 
+
+#### Create User Access Key ID and Secret Access Key
+
+Click the ID area in the upper-right corner of the console to see the **API Security Settings** menu as follows.
+
+![console-guide-api1](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403/console-guide-api1.png)
+
+**In API Security Settings,**you can click **Create User Access Key ID**to create a **User Access Key ID** and **Secret Access Key**that must be entered into the CertificateManager API header.
+
+![console-guide-api2](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403/console-guide-api2.png)
+
+![console-guide-api3](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403/console-guide-api3.png)
+
+After creating **User Access Key ID** and **Secret Access Key**, the **secret key successfully issued** screen is displayed as shown below. The secret key is only given to you once in that popup screen, so make sure to keep a good record of this value.
+
+![console-guide-api4](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403/console-guide-api4.png)
+
+**The User Access Key ID**, which is required for API requests, can be found by closing the secret key successfully issued popup.
+
+![console-guide-api5](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403/console-guide-api5.png)
