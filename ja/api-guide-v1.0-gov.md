@@ -1,6 +1,6 @@
 ## Management > Certificate Manager > API v1.0ガイド
 
-Certificate Manager は、証明書リスト検索、証明書のアップロード、またはダウンロード用の API を提供します。クライアントはコンソールで証明書と証明書ファイルを登録した後、APIを通してデータを使用できます。
+Certificate Manager は、証明書リスト検索、またはダウンロード用の API を提供します。クライアントはコンソールで証明書と証明書ファイルを登録した後、APIを通してデータを使用できます。
 
 ### 基本情報
 #### EndPoint
@@ -9,7 +9,7 @@ https://certmanager.api.gov-nhncloudservice.com
 ```
 
 #### 提供するAPI種類
-| Method | URI | 説明 |
+| メソッド | URI | 説明 |
 | ------ | --- | --- |
 | GET | /certmanager/v1.0/appkeys/{appKey}/certificates | 証明書のリストを検索します。 |
 | GET | /certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files | 登録された証明書ファイルをダウンロードします。 |
@@ -96,8 +96,8 @@ Content-Type:application/json
 }
 ```
 
-| 値 | タイプ | 説明 |
-| --- | --- | --- |
+| 値 | タイプ | 説明|
+| --- | --- |---|
 | totalCount | Number | 証明書の合計数 |
 | totalPage | Number | 合計ページ数 |
 | currentPage | Number | 現在のページ |
