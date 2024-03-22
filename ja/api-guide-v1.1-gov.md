@@ -1,18 +1,27 @@
-## Management > Certificate Manager > API v1.0ガイド
+## Management > Certificate Manager > API v1.1ガイド
 
 Certificate Manager は、証明書リスト検索、またはダウンロード用の API を提供します。クライアントはコンソールで証明書と証明書ファイルを登録した後、APIを通してデータを使用できます。
 
 ### 基本情報
 #### EndPoint
 ```text
-https://certmanager.api.nhncloudservice.com
+https://certmanager.api.gov-nhncloudservice.com
 ```
 
-#### 提供するAPI種類
-| メソッド | URI | 説明 |
-| ------ | --- | --- |
-| GET | /certmanager/v1.0/appkeys/{appKey}/certificates | 証明書のリストを検索します。 |
-| GET | /certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files | 登録された証明書ファイルをダウンロードします。 |
+#### 提供するAPIの種類
+| メソッド | URI                                                                     | 説明 |
+| ------ |-------------------------------------------------------------------------| --- |
+| GET | /certmanager/v1.1/appkeys/{appKey}/certificates                         | 証明書のリストを検索します。 |
+| GET | /certmanager/v1.1/appkeys/{appKey}/certificates/{certificateName}/files | 登録された証明書ファイルをダウンロードします。 |
+
+##### APIのリクエストのHTTPヘッダ 
+v1.1ではHTTPヘッダに必須フィールドが追加されます。
+```
+X-TC-AUTHENTICATION-ID: {User Access Key ID}
+X-TC-AUTHENTICATION-SECRET: {Secret Access Key}
+```
+
+詳細については、 [コンソール使用ガイド](/Management/Certificate%20Manager/ko/console-guide/#api)を参照してください。
 
 ##### APIリクエストのパス変数
 
@@ -42,22 +51,22 @@ https://certmanager.api.nhncloudservice.com
 | resultMessage | String | API呼び出し結果メッセージ |
 | isSuccessful | Boolean | API呼び出し成否 |
 
-### 証明書の検索リスト
+### 証明書リスト照会
 
-Certificate Manager に登録されている証明書のリストを照会するために使用されます。
+Certificate Managerに登録されている証明書のリストを照会するために使用されます。
 
 #### リクエスト
 
 ```
-GET https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates?pageSize={pageSize}&pageNum={pageNum}&all={all}&status={status}
+GET https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.1/appkeys/{appKey}/certificates?pageSize={pageSize}&pageNum={pageNum}&all={all}&status={status}
 ```
 
 | 値 | タイプ | 説明 | 入力可能 |
 | --- | --- | --- | --- |
 | pageSize | Number | ページサイズ | 10(default) |
 | pageNum | Number | ページ番号 | 1(default) |
-| all | Boolean | 完全検索 | true, false(default) |
-| status | String | 証明書の有効期限ステータス | ALL, EXPIRED, UNEXPIRED(default) |
+| all | Boolean | 全体検索 | true, false(default) |
+| status | String | 証明書の有効期限ステータス | ALL, EXPIRED, UNEXPIRED(default) | 
 
 ※ all、statusの値は大文字/小文字を区別せずに使用できます。
 
@@ -102,8 +111,8 @@ Content-Type:application/json
 | totalPage | Number | 合計ページ数 |
 | currentPage | Number | 現在のページ |
 | pageSize | Number | ページサイズ |
-| certificateName | String | 名証明書 |
-| authority | String | 権限 |
+| certificateName | String | 証明書名 |
+| authority | String | 認証機関 |
 | signatureAlgorithm | String | シグニチャ アルゴリズム |
 | fileCreationDate | String | 証明書ファイルの作成日 |
 | expirationDate | String | 証明書ファイルの有効期限 |
@@ -115,7 +124,7 @@ Certificate Managerに登録した証明書ファイルをダウンロードす�
 #### リクエスト
 
 ```
-GET https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
+GET https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.1/appkeys/{appKey}/certificates/{certificateName}/files
 ```
 
 #### レスポンス
@@ -144,13 +153,13 @@ Content-Type:application/octet-stream
 
 ```bash
 #ファイルに書き込む
-curl 'https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files' > cert.pem
+curl 'https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.1/appkeys/{appKey}/certificates/{certificateName}/files' > cert.pem
 
 #ファイル名指定
-curl -o cert.pem 'https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
+curl -o cert.pem 'https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.1/appkeys/{appKey}/certificates/{certificateName}/files'
 
 #アップロードしたファイル名を維持
-curl -OJ 'https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
+curl -OJ 'https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.1/appkeys/{appKey}/certificates/{certificateName}/files'
 ```
 * その他curlコマンドの使用方法は下記のガイドを参照してください。
   * curl command guide : [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)
