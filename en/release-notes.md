@@ -1,5 +1,13 @@
 ## Management > Certificate Manager > Release Notes
 
+### March 26, 2024
+#### Add a new API version
+* Added API v1.1 for Certificate Manager. <br>You can find more information in the API v1.1 guide.
+
+### February 27, 2024
+#### Added the feature to set who receives notification emails
+* Added the feature to set the incoming mail address name in Organization/Project Dashboard > Manage Notifications.
+
 ### March 28, 2023
 #### Feature Updates
 * Improved to display the message `Only files with the extension '.pem' can be uploaded.` if the selected file is not a certificate file (.pem) when registering a certificate.
