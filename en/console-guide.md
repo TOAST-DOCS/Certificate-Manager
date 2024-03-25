@@ -238,18 +238,18 @@ Click **Edit** to edit user data information.
 
 Click the ID area in the upper-right corner of the console to see the **API Security Settings** menu as follows.
 
-![console-guide-api1](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403/console-guide-api1.png)
+![console-guide-api1](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403_en/console-guide-api1.png)
 
 **In API Security Settings,**you can click **Create User Access Key ID**to create a **User Access Key ID** and **Secret Access Key**that must be entered into the CertificateManager API header.
 
-![console-guide-api2](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403/console-guide-api2.png)
+![console-guide-api2](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403_en/console-guide-api2.png)
 
-![console-guide-api3](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403/console-guide-api3.png)
+![console-guide-api3](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403_en/console-guide-api3.png)
 
 After creating **User Access Key ID** and **Secret Access Key**, the **secret key successfully issued** screen is displayed as shown below. The secret key is only given to you once in that popup screen, so make sure to keep a good record of this value.
 
-![console-guide-api4](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403/console-guide-api4.png)
+![console-guide-api4](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403_en/console-guide-api4.png)
 
 **The User Access Key ID**, which is required for API requests, can be found by closing the secret key successfully issued popup.
 
-![console-guide-api5](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403/console-guide-api5.png)
+![console-guide-api5](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403_en/console-guide-api5.png)
