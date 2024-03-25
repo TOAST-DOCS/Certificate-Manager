@@ -237,18 +237,18 @@ DNSの最上位ドメイン名(例：toast.com)と有効期限を入力すると
 
 コンソール右上のID領域をクリックすると、次のような**APIセキュリティ設定**メニューを確認できます。
 
-![console-guide-api1](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403/console-guide-api1.png)
+![console-guide-api1](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403_en/console-guide-api1.png)
 
 **APIセキュリティ設定**で**User Access Key ID生成**をクリックしてCertificateManager APIヘッダに入力しなければならない **User Access Key ID**と **Secret Access Key**を生成できます。
 
-![console-guide-api2](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403/console-guide-api2.png)
+![console-guide-api2](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403_en/console-guide-api2.png)
 
-![console-guide-api3](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403/console-guide-api3.png)
+![console-guide-api3](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403_en/console-guide-api3.png)
 
 **User Access Key ID**、**Secret Access Key**を生成すると、下記のように**秘密鍵発行完了**画面が表示されます。秘密鍵は該当ポップアップ画面で一度だけ表示されるるので、この値を記録して使います。
 
-![console-guide-api4](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403/console-guide-api4.png)
+![console-guide-api4](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403_en/console-guide-api4.png)
 
 API リクエスト時に必要な**User Access Key ID**は、秘密鍵発行完了ポップアップを閉じると確認できます。
 
-![console-guide-api5](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403/console-guide-api5.png)
+![console-guide-api5](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403_en/console-guide-api5.png)
