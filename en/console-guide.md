@@ -232,7 +232,7 @@ Click **Edit** to edit user data information.
 
 
 
-### Authorization for Retrieve/Download Certificates API 
+## Authorization for Retrieve/Download Certificates API 
 
 #### Create User Access Key ID and Secret Access Key
 

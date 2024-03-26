@@ -232,7 +232,7 @@ DNS의 최상위 도메인 이름(예: toast.com)과 만료일을 입력하면 �
 ![userdata-3.png](http://static.toastoven.net/prod_certificate_manager/202002/userdata-3.png)
 
 
-### 인증서 조회/다운로드 API 자격 관련 
+## 인증서 조회/다운로드 API 자격 관련 
 
 #### User Access Key ID, Secret Access Key 생성
 
