@@ -21,7 +21,7 @@ X-TC-AUTHENTICATION-ID: {User Access Key ID}
 X-TC-AUTHENTICATION-SECRET: {Secret Access Key}
 ```
 
-For more information, see the [](/Management/Certificate%20Manager/zh/console-guide/#api)console user guide[](/Management/Certificate%20Manager/zh/console-guide/#api).
+For more information, see the [console user guide](/Management/Certificate%20Manager/zh/console-guide/#api).
 
 
 ##### Path Variables of API Request
