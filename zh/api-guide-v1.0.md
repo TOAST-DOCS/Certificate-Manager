@@ -1,6 +1,6 @@
 ## Management > Certificate Manager > API v1.0 Guide
 
-Certificate Manager provides APIs for certificate list lookup, uploading or downloading certificates. Clients must register certificates and certificate files on console to use data via APIs. 
+Certificate Manager provides APIs to retrieve and download a list of certificates. Clients must register certificates and certificate files on console to use data via APIs. 
 
 ### Basic Information
 #### EndPoint
@@ -12,7 +12,6 @@ https://certmanager.api.nhncloudservice.com
 | Method | URI | Description |
 | ------ | --- | --- |
 | GET | /certmanager/v1.0/appkeys/{appKey}/certificates | Look up the list of certificates. |
-| POST | /certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files | Upload files to a registered certificate. If a file is already registered, it shall be replaced by a newly uploaded file. |
 | GET | /certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files | Download certificate files that are registered. |
 
 ##### Path Variables of API Request
@@ -60,6 +59,8 @@ GET https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{appKey
 | all | Boolean | Full lookup | true, false(default) |
 | status | String | Certificate expiration status | ALL, EXPIRED, UNEXPIRED(default) | 
 
+※ The values for all and status are case insensitive.
+
 #### Response
 
 [Response Header]
@@ -106,50 +107,6 @@ Content-Type:application/json
 | signatureAlgorithm | String | Signature algorithm |
 | fileCreationDate | String | Certificate file creation date |
 | expirationDate | String | Certificate file expiration date |
-
-### Uploading Certificate Files 
-
-Files can be uploaded to certificates registered at Certificate Manager. If a file is already registered, it shall be replaced by a newly uploaded file.  
-Regarding supported certificate file formats (.pem), read '[Troubleshooting Guide > Converting Certificate File Formats](http://docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)'.
-
-#### Request
-
-```
-POST https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
-```
-
-[Request Header]
-
-```
-Content-Type:multipart/form-data
-```
-
-[Request Body]
-
-```
-file: {file}
-```
-
-#### Response
-
-[Response Header]
-
-```
-Content-Type:application/json
-```
-
-[Response Body]
-
-```json
-{
-    "header": {
-        "resultCode": 0,
-        "resultMessage": "success",
-        "isSuccessful": true
-    },
-    "body": null
-}
-```
 
 ### Downloading Certificate Files 
 
