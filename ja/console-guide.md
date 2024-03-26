@@ -231,7 +231,7 @@ DNSの最上位ドメイン名(例：toast.com)と有効期限を入力すると
 
 ![userdata-3.png](http://static.toastoven.net/prod_certificate_manager/202002/userdata-3.png)
 
-### 証明書照会/ダウンロードAPI資格関連 
+## 証明書照会/ダウンロードAPI資格関連 
 
 #### User Access Key ID, Secret Access Key作成
 
