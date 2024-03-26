@@ -21,7 +21,7 @@ X-TC-AUTHENTICATION-ID: {User Access Key ID}
 X-TC-AUTHENTICATION-SECRET: {Secret Access Key}
 ```
 
-詳細については、 [コンソール使用ガイド](/Management/Certificate%20Manager/ko/console-guide/#api)を参照してください。
+詳細については、 [コンソール使用ガイド](/Management/Certificate%20Manager/ja/console-guide/#api)を参照してください。
 
 
 ##### APIリクエストのパス変数
