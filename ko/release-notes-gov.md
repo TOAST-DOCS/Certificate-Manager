@@ -1,5 +1,14 @@
 ## Management > Certificate Manager > 릴리스 노트
 
+### 2024. 06. 24.
+#### 기능 개선 
+* 인증서 등록시 최대 2개까지 인증서 파일을 등록할 수 있도록 개선되었습니다.
+* 자세한 내용은 [콘솔 사용 가이드](/Management/Certificate%20Manager/ko/console-guide/#certificates)에서 확인할 수 있습니다.
+
+#### API 버전 추가 
+* Certificate Manager의 API v2.0이 추가되었습니다. <br>자세한 내용은 API v2.0 가이드에서 확인할 수 있습니다.
+* Certificate Manager의 API v1.0에서 인증서 파일 다운로드 시 인증서 파일 ID를 사용합니다. <br>자세한 내용은 API v2.0 가이드에서 확인할 수 있습니다.
+
 ### 2024. 03. 26.
 #### API 버전 추가 
 * Certificate Manager의 API v1.1이 추가되었습니다. <br>자세한 내용은 API v1.1 가이드에서 확인할 수 있습니다.
