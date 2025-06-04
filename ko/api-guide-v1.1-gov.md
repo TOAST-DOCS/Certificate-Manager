@@ -54,6 +54,7 @@ X-TC-AUTHENTICATION-SECRET: {Secret Access Key}
 ### 인증서 목록 조회
 
 Certificate Manager에 등록한 인증서 목록을 조회할 때 사용합니다. 
+파일이 2개 등록되어있는 경우는 만료일이 가장 많이 남은 인증서 1개만 조회됩니다.
 
 #### 요청
 
@@ -120,6 +121,7 @@ Content-Type:application/json
 ### 인증서 파일 다운로드
 
 Certificate Manager에 등록한 인증서 파일을 다운로드할 때 사용합니다.
+파일이 2개 등록되어있는 경우는 만료일이 가장 많이 남은 인증서 1개만 다운로드 됩니다. 
 
 #### 요청
 
@@ -134,6 +136,20 @@ GET https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.1/appkeys/{ap
 ```
 Content-Disposition:attachment; filename="{파일명}"
 Content-Type:application/octet-stream
+```
+
+인증서 다운로드가 불가능할 경우 Content-Type은 `application/json`으로 설정됩니다.
+이 경우 응답 본문에 에러 메시지가 포함됩니다.
+
+```json
+{
+    "header": {
+        "resultCode": 52000,
+        "resultMessage": "Certificate name does not exist.",
+        "isSuccessful": false
+    },
+    "body": {}
+}
 ```
 
 [Response Body]

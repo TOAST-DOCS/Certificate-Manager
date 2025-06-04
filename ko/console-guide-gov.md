@@ -77,7 +77,7 @@ Certificate Manager에 등록한 인증서의 만료일보다 자동 수집한 �
 ### 메인 화면
 메인 화면에서는 인증서 목록이나 만료일까지 남은 날짜 등을 확인할 수 있습니다.
 
-![certificate-1.png](http://static.toastoven.net/prod_certificate_manager/202302/certificate-1.png)
+![certificate-1.png](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/20250624/certificate-1.png)
 
 * 기존에 등록한 인증서의 목록을 확인 및 검색할 수 있습니다.
 * 만료일까지 남은 날짜를 확인할 수 있습니다.
@@ -86,7 +86,7 @@ Certificate Manager에 등록한 인증서의 만료일보다 자동 수집한 �
 ### 인증서 생성
 
 1. 인증서 메인 화면에서 **+ 인증서 추가** 버튼을 클릭하면 **인증서 추가** 창이 나타납니다.
-![certificate-2.png](http://static.toastoven.net/prod_certificate_manager/202302/certificate-2.png)
+![certificate-2.png](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/20250624/certificate-2.png)
 2. **알림 그룹**에서 연동할 알림 그룹을 선택합니다. 생성된 알림 그룹이 없을 때는 목록에 표시되지 않으며, 인증서를 생성할 수 없습니다.
 3. **이름**에 인증서 이름(CommonName, CN)을 입력합니다. 인증서 이름은 중복으로 등록할 수 없습니다. <br>
    * SAN 인증서의 경우 인증서 파일을 업로드하면 인증서 이름과 서브 인증서 이름이 자동으로 입력됩니다. 인증서의 이름은 임의로 변경할 수 없습니다.
@@ -117,7 +117,18 @@ Certificate Manager에 등록한 인증서의 만료일보다 자동 수집한 �
     * **(자동 수집)**이 표시된 필드는 인증서 파일로부터 자동 수집된 항목을 의미합니다. 인증서 파일이 등록되지 않은 경우 '-'로 표시됩니다.
 2. **수정** 버튼을 클릭하여 인증서 정보를 수정하거나, 인증서 파일을 업로드할 수 있습니다.
     * 인증서 이름은 수정할 수 없습니다. 인증서 이름을 수정하려면 기존에 등록한 인증서를 삭제하고 새로 생성해야 합니다.
-      ![certificate-3.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-3.png)
+
+![certificate-3.png](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/20250624/certificate-3.png)
+
+### 인증서 수정
+1. 인증서 파일을 업로드하거나 인증서의 패스프레이즈를 수정할 수 있습니다.
+    * 인증서는 최대 **2개**까지 업로드할 수 있습니다.
+    * 인증서 파일을 업로드하면 인증서 파일로부터 자동으로 인증서 이름, 생성일, 만료일, 서명 방식, 인증 기관을 수집합니다.
+    * 인증서 파일을 업로드할 때 입력한 패스프레이즈를 수정할 수 있습니다.
+2. 인증서 정보 수정 
+   * 알림 그룹 및 알림 사용 여부를 수정할 수 있습니다.
+   
+![certificate-4.png](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/20250624/certificate-4.png)
 
 ### 인증서 사용 정보, 설치 정보 생성
 
