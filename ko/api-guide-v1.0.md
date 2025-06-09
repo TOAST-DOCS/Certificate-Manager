@@ -119,7 +119,7 @@ Certificate Manager에 등록한 인증서 파일을 다운로드할 때 사용�
 GET https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
 ```
 
-#### 응답
+#### 성공 응답
 
 [Response Header]
 
@@ -139,6 +139,26 @@ Content-Type:application/octet-stream
 ...
 -----END RSA PRIVATE KEY-----
 ```
+
+#### 실패 응답
+[Response Header]
+```
+Content-Type:application/json
+```
+[Response Body]
+
+```
+{
+    "header": {
+        "resultCode": 52000,
+        "resultMessage": "Certificate name does not exist.",
+        "isSuccessful": false
+    },
+    "body": {}
+}
+```
+
+
 #### Command Line Interface(CLI) 사용 시
 
 인증서 파일 다운로드 API는 `curl` 명령어를 사용해 요청할 수 있습니다.
