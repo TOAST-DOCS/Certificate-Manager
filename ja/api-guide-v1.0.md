@@ -118,7 +118,7 @@ Certificate Managerに登録した証明書ファイルをダウンロードす�
 GET https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
 ```
 
-#### レスポンス
+#### 成功レスポンス
 
 [Response Header]
 
@@ -138,6 +138,26 @@ Content-Type:application/octet-stream
 ...
 -----END RSA PRIVATE KEY-----
 ```
+
+#### 失敗レスポンス
+[Response Header]
+```
+Content-Type:application/json
+```
+[Response Body]
+
+```
+{
+    "header": {
+        "resultCode": 52000,
+        "resultMessage": "Certificate name does not exist.",
+        "isSuccessful": false
+    },
+    "body": {}
+}
+```
+
+
 #### Command Line Interface(CLI)使用時
 
 証明書ファイルダウンロードAPIは`curl`コマンドを使用してリクエストできます。
