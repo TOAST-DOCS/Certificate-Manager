@@ -129,7 +129,7 @@ Downloads certificates registered in Certificate Manager.
 GET https://certmanager.api.nhncloudservice.com/certmanager/v1.1/appkeys/{appKey}/certificates/{certificateName}/files
 ```
 
-#### Response
+#### Success Response
 
 [Response Header]
 
@@ -149,6 +149,27 @@ Content-Type:application/octet-stream
 ...
 -----END RSA PRIVATE KEY-----
 ```
+
+
+#### Failure Response
+[Response Header]
+```
+Content-Type:application/json
+```
+[Response Body]
+
+```
+{
+    "header": {
+        "resultCode": 52000,
+        "resultMessage": "Certificate name does not exist.",
+        "isSuccessful": false
+    },
+    "body": {}
+}
+```
+
+
 #### For Command Line Interface (CLI) 
 
 Download Certificate File API can be requested by using the `curl` command. 
