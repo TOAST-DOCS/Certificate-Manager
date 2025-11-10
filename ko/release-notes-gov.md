@@ -1,5 +1,15 @@
 ## Management > Certificate Manager > 릴리스 노트
 
+### 2025. 11. 25.
+#### 기능 개선
+* 인증서 이름 제약이 변경되어, 구 인증서와 신규 인증서를 함께 관리할 수 있습니다.
+    * 인증서 이름이 인증서 파일의 CN(CommonName) 값과 동일하지 않아도 되며, 프로젝트 내에서 유일한 이름이면 등록할 수 있습니다.
+* 인증서의 Domains [CN(CommonName) + SAN(SubjectAlternativeNames)] 항목이 추가되었습니다.
+  * Domains 정보는 인증서 파일 업로드시 자동으로 수집됩니다.
+* 인증서 타입(Single, Wildcard, SAN)이 제거되었습니다.
+* 인증서 목록 및 상세 정보 UI가 변경되었습니다.
+* 자세한 내용은 [콘솔 사용 가이드](/Management/Certificate%20Manager/ko/console-guide/)에서 확인 가능합니다. 
+
 ### 2024. 03. 26.
 #### API 버전 추가 
 * Certificate Manager의 API v1.1이 추가되었습니다. <br>자세한 내용은 API v1.1 가이드에서 확인할 수 있습니다.
