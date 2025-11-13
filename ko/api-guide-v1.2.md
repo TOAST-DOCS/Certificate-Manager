@@ -54,10 +54,10 @@ GET https://certmanager.api.nhncloudservice.com/certmanager/v1.2/appkeys/{appKey
 
 | 값 | 타입 | 설명 | 입력 가능 |
 | --- | --- | --- | --- |
-| pageSize | Number | 페이지 크기 | 10(default) |
-| pageNum | Number | 페이지 번호 | 1(default) |
-| all | Boolean | 전체 조회 여부 | true, false(default) |
-| status | String | 인증서 상태 | ALL, EXPIRED, UNEXPIRED(default) | 
+| pageSize | Number | 페이지 크기 | 10(기본값) |
+| pageNum | Number | 페이지 번호 | 1(기본값) |
+| all | Boolean | 전체 조회 여부 | true, false(기본값) |
+| status | String | 인증서 상태 | ALL, EXPIRED, UNEXPIRED(기본값) | 
 
 ※ all, status의 값은 대소문자 구분 없이 사용할 수 있습니다.
 
@@ -177,7 +177,7 @@ curl -o cert.pem 'https://certmanager.api.nhncloudservice.com/certmanager/v1.2/a
 #업로드한 파일명 유지
 curl -OJ 'https://certmanager.api.nhncloudservice.com/certmanager/v1.2/appkeys/{appKey}/certificates/{certificateName}/files'
 ```
-* 기타 curl 명령어 사용법은 아래 가이드를 참고하십시오.
+* 기타 curl 명령어 사용법은 아래 가이드를 참고하세요.
   * curl command guide : [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)
 
 ### 응답 코드

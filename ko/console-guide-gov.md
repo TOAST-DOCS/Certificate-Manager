@@ -81,7 +81,7 @@ Certificate Manager에 등록한 인증서의 만료일보다 자동 수집한 �
 ![certificate-1.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-1.png)
 
 * 기존에 등록한 인증서의 목록을 확인 및 검색할 수 있습니다.
-* 인증서 파일이 업로드된 경우, 자동으로 추출된 Domains [CN(CommonName) + SAN(SubjectAlternativeNames)] 정보를 확인할 수 있습니다.
+* 인증서 파일이 업로드된 경우 자동으로 추출된 Domains [CN(CommonName) + SAN(SubjectAlternativeNames)] 정보를 확인할 수 있습니다.
 * 만료일까지 남은 날짜를 확인할 수 있습니다.
 * 오늘 날짜 기준으로 만료일이 지난 데이터는 빨간색으로, 만료일까지 남은 날짜가 30일 이하인 데이터는 주황색으로 표시됩니다.
 
@@ -93,15 +93,15 @@ Certificate Manager에 등록한 인증서의 만료일보다 자동 수집한 �
 3. **이름**에 인증서 이름을 입력합니다.
     * 인증서 이름은 프로젝트 내에서 중복으로 등록할 수 없습니다.
     * 인증서 이름은 영문, 한글, 숫자를 조합하여 자유롭게 구성할 수 있습니다.
-    * 특수기호는(-, _, ., *)만 허용합니다.
-4. **인증서 등록** 에서 인증서 파일을 등록합니다.<br>
+    * 특수 기호는(-, _, ., *)만 허용합니다.
+4. **인증서 등록**에서 인증서 파일을 등록합니다.<br>
    인증서는 필수 값입니다.
     * 인증서는 개인 키와 인증서로 구성된 .pem 형식의 파일입니다.
-    * 지원하는 인증서 파일(.pem) 형식은 [**문제 해결 가이드 > 인증서 파일 포맷 변환**](http://gov-docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)을 참고하십시오.
+    * 지원하는 인증서 파일(.pem) 형식은 [**문제 해결 가이드 > 인증서 파일 포맷 변환**](http://gov-docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)을 참고하세요.
     * 인증서 파일은 최대 512KB까지 업로드할 수 있습니다.
 5. **패스프레이즈**(passphrase, 비밀 문구)에 인증서 파일 내에 포함된 개인 키의 **패스프레이즈**를 입력합니다.
 6. **추가** 버튼을 클릭합니다.
-7. [Network > Load Balancer](https://gov.toast.com/kr/service/network/load-balancer) 서비스와 연동해야 할 때는 인증서 파일의 **패스프레이즈**를 삭제해야 합니다.
+7. [Network > Load Balancer](https://gov.toast.com/kr/service/network/load-balancer) 서비스와 연동 시에는 인증서 파일의 **패스프레이즈**를 삭제해야 합니다.
     * **패스프레이즈**는 다음 명령을 사용해 삭제할 수 있습니다.
     ```bash
     openssl rsa -in my_private_input.key -out my_private_output.key
@@ -129,7 +129,7 @@ Certificate Manager에 등록한 인증서의 만료일보다 자동 수집한 �
 3. 인증서 사용 정보를 추가하는 방법은 다음 두 가지가 있습니다.
     * **사용자 추가**: 오른쪽 상단의 **+ 추가** 버튼을 클릭하여 정보를 입력할 수 있는 필드가 나타납니다.
 ![certificate-6.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-3.png)
-    * **불러오기**: 오른쪽 상단의 **불러오기** 버튼을 클릭하여 다른 인증서의 사용정보를 불러올 수 있습니다.
+    * **불러오기**: 오른쪽 상단의 **불러오기** 버튼을 클릭하여 다른 인증서의 사용 정보를 불러올 수 있습니다.
         1. **불러오기** 버튼을 클릭하면 인증서 검색 창이 나타납니다.
 ![certificate-9.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-4.png)
         2. 검색 창에서 불러올 인증서 이름을 검색합니다.
