@@ -66,6 +66,7 @@ NHN Cloudプロジェクトに属しているメンバーが通知グループ�
 証明書のドメイン名(例：\*.toast.com)と有効期限を入力すると、連携した通知グループの通知ポリシーに従ってユーザーに通知を送信します。
 
 証明書ファイル(.pem)をアップロードすると、証明書ファイルから下記の項目を自動的に収集します。
+* Domains [CN(CommonName) + SAN(SubjectAlternativeNames)]
 * 作成日
 * 有効期限
 * 証明書の署名方式(例: sha256RSA)
@@ -77,64 +78,68 @@ Certificate Managerに登録した証明書の有効期限より、自動収集�
 ### メイン画面
 メイン画面では証明書リストや有効期限までの残り日数などを確認できます。
 
-![certificate-1.png](http://static.toastoven.net/prod_certificate_manager/202302/certificate-1.png)
+![certificate-1.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-1.png)
 
 * 既に登録している証明書のリストを確認および検索できます。
+* 証明書ファイルがアップロードされると、自動で抽出されたDomains [CN(CommonName) + SAN(SubjectAlternativeNames)]情報を確認できます。
 * 有効期限までの残り日数を確認できます。
 * 有効期限を過ぎたデータは赤色で、有効期限までの残り日数が30日以下のデータはオレンジ色で表示されます。
 
 ### 証明書の作成
 
 1. 証明書メイン画面で**+証明書の追加**ボタンをクリックすると、**証明書の追加**ウィンドウが表示されます。
-![certificate-2.png](http://static.toastoven.net/prod_certificate_manager/202302/certificate-2.png)
+![certificate-2.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-2.png)
 2. **通知グループ**で連携する通知グループを選択します。作成された通知グループがない時はリストに表示されず、証明書を作成できません。
-3. **名前**に証明書名(CommonName、CN)を入力します。証明書名は重複して登録できません。 <br>
-   * SAN証明書の場合、証明書ファイルをアップロードすると証明書名とサブ証明書名が自動的に入力されます。証明書の名前は任意に変更できません。
-4. **タイプ**で項目を選択します。
-   * Singleは単一証明書です。
-   * Wildcardは\*(asterisk)で始まる汎用証明書(複数のホストで使用できる証明書)を意味します。
-   * SANは1つの証明書で複数のドメインにSSLを適用できる証明書です。
-5. **証明書の登録**下記の**証明書**から証明書ファイルを登録します。<br>
- 証明書は必須値ではないため、後で登録しても構いません。
-   * 証明書は秘密鍵と証明書で構成された.pem形式のファイルです。
-    * サポートする証明書ファイル(.pem)形式は[**問題解決ガイド > 証明書ファイルフォーマット変換**](http://gov-docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)をご覧ください。
+3. **名前**に証明書名を入力します。
+    * 証明書名は、プロジェクト内で重複して登録できません。
+    * 証明書名は、英字、日本語、数字を組み合わせて自由に構成できます。
+    * 特殊記号は(-, _, ., *)のみ使用できます。
+4. **証明書登録**で証明書ファイルを登録します。<br>
+   証明書は必須項目です。
+    * サポートする証明書ファイル(.pem)形式は[**問題解決ガイド > 証明書ファイルフォーマット変換**](http://docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)をご覧ください。
     * 証明書ファイルは最大512KBまでアップロードできます。
-6. **パスフレーズ**(passphrase、秘密文言)に証明書ファイルに含まれる秘密鍵のパスフレーズ(passphrase、秘密文言)を入力します。
-7. **追加**ボタンをクリックします。
-   * SingleとWildcardの場合は1つの証明書が作成されます。
-   * SANの場合、代表証明書とサブ証明書の両方が作成されます。例えば代表証明書が1つ、サブ証明書が3つの場合、合計4つの証明書が作成されます。
-8. [Network > Load Balancer](https://gov.toast.com/kr/service/network/load-balancer)製品とリンクする必要がある場合は、パスフレーズ（passphrase、秘密文言）を削除する必要があります。
+5. **パスフレーズ**(passphrase)に、証明書ファイル内に含まれる秘密鍵の**パスフレーズ**を入力します。
+6. **追加**ボタンをクリックします。
+7. [Network > Load Balancer](https://toast.com/kr/service/network/load-balancer) サービスと連携する場合は、証明書ファイルの**パスフレーズ**を削除する必要があります。
    * 次のコマンドを使用してパスフレーズを削除できます。
     ```bash
     openssl rsa -in my_private_input.key -out my_private_output.key
     ```
 
 
+
 ### 詳細画面
 
 1. 証明書メイン画面で**詳細情報**ボタンをクリックすると、証明書ファイル情報を確認できます。
     * **(自動収集)**が表示されたフィールドは証明書ファイルから自動収集された項目を意味します。証明書ファイルが登録されていない場合は「-」と表示されます。
+      ![certificate-3-1.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-3-1.png)
 2. **修正**ボタンをクリックすると、証明書情報の修正や、証明書ファイルのアップロードを行うことができます。
     * 証明書名は修正できません。証明書名を修正するには、登録している証明書を削除して新たに作成する必要があります。
-      ![certificate-3.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-3.png)
+    * 1つの証明書には、1つの証明書ファイルのみアップロードできます。
+    * 既存の証明書ファイルを更新する場合、新しい証明書ファイルのDomains [CN(CommonName) + SAN(SubjectAlternativeNames)]が、既存の証明書ファイルのDomainsと同一である必要があります。
+      ![certificate-3-2.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-3-2.png)
 
 ### 証明書使用情報、インストール情報作成
 
 1. 証明書メイン画面で**証明書の使用情報**ボタンをクリックすると、証明書の使用およびインストール情報を確認できます。デフォルト値では何も登録されていません。
-![certificate-4.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-4.png)
+![certificate-4.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-1.png)
 2. **修正**ボタンをクリックすると、次のような画面を確認できます。
-![certificate-5.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-5.png)
-3. 右上の**+追加**ボタンをクリックすると、情報を入力できるフィールドが表示されます。
-![certificate-6.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-6.png)
+![certificate-5.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-2.png)
+3. 証明書の使用情報を追加する方法は、次の2つがあります。
+    * **ユーザー追加**: 右上にある**+ 追加**ボタンをクリックすると、情報を入力できるフィールドが表示されます。
+![certificate-6.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-3.png)
+    * **読み込み**: 右上にある**読み込み**ボタンをクリックして、他の証明書の使用情報を読み込むことができます。
+        1. **読み込み**ボタンをクリックすると、証明書検索ウィンドウが表示されます。
+![certificate-9.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-4.png)
+        2. 検索ウィンドウで、読み込む証明書名を検索します。
+![certificate-10.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-5.png)
+        3. **確認**を押すと、該当の証明書の使用情報一覧が自動的に読み込まれます。
+![certificate-11.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-6.png)
 4. 証明書使用情報の名前を入力します。
-    * 証明書タイプが**Single**の場合、証明書名と同じにする必要があります。
-    * 証明書タイプが**Wildcard**の場合、'\*'(asterisk)を除いた証明書名と同じか、'\*'(asterisk)を除いた'.[証明書名]'で終わる必要があります。
-    * 証明書タイプが**SAN**の場合
-      * 証明書名がSingle形式の場合、証明書と同じでなければなりません。
-      * 証明書名がWildcard形式の場合、'\*'(asterisk)を除外した証明書名と同じか。'\*'(asterisk)を除外した'.[証明書名]'で終わる必要があります。
+    * 使用情報のドメイン名は、証明書ファイルのアップロード時に自動登録されたDomains [CN(CommonName) + SAN(SubjectAlternativeNames)]に含まれている必要があります。
 5. **通知使用有無**で証明書使用情報の通知を使用するかどうかを選択します。
 6. 証明書インストール情報を入力するには証明書インストール情報の横にある**+追加**ボタンをクリックします。 
-![certificate-7.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-7.png)
+![certificate-7.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-8.png)
     * **IPアドレス**と**ポート番号**を入力します。証明書の自動収集を使用する場合、入力したIPアドレスとポート番号で証明書をダウンロードして有効期限を比較します。
     * IPアドレスがプライベートIP(例：192.168.0.1, 172.20.0.1, 10.0.0.1)の場合、証明書をダウンロードできず、自動収集失敗通知が送信される場合があります。
 7. **完了**ボタンをクリックすると、設定した証明書の使用およびインストール情報が保存されます。
@@ -143,7 +148,7 @@ Certificate Managerに登録した証明書の有効期限より、自動収集�
 証明書メイン画面で**証明書使用情報**ボタンをクリックすると、証明書使用およびインストール情報を確認できます。
 右上の全体/使用/未使用で証明書使用情報の通知使用有無を選択して確認できます。
 
-![certificate-8.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-8.png)
+![certificate-8.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-7.png)
 
 ## ドメイン
 DNSの最上位ドメイン名(例：toast.com)と有効期限を入力すると、連携した通知グループの通知ポリシーに合わせてユーザーに通知を送信します。
