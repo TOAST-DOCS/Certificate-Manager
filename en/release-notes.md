@@ -1,5 +1,15 @@
 ## Management > Certificate Manager > Release Notes
 
+### November 25, 2025
+#### Feature Updates
+* Modified certificate name restrictions so that you can manage both old and new certificates together.
+    * Certificate names do not need to be identical to the CN (CommonName) value in the certificate file; they can be registered as long as they are unique within the project.
+* Added the Domains [CN (CommonName) + SAN (SubjectAlternativeNames)] field to the certificate.
+    * Domains information is automatically collected when uploading a certificate file.
+* Removed certificate types (Single, Wildcard, SAN).
+* Modified certificate list and details UI.
+* For more information, you can check the contents in the [Console User Guide](/Management/Certificate%20Manager/ko/console-guide/). 
+
 ### March 26, 2024
 #### Add a new API version
 * Added API v1.1 for Certificate Manager. <br>You can find more information in the API v1.1 guide.
