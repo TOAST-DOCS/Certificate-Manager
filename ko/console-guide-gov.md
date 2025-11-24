@@ -66,6 +66,7 @@ NHN Cloud 프로젝트에 속한 멤버가 알림 그룹의 사용자로 연동�
 인증서의 도메인 이름(예: \*.toast.com)과 만료일을 입력하면 연동한 알림 그룹의 알림 정책에 맞춰 사용자에게 알림을 발송합니다.
 
 인증서 파일(.pem)을 업로드하는 경우, 인증서 파일로부터 아래 항목을 자동으로 수집합니다.
+* Domains [CN(CommonName) + SAN(SubjectAlternativeNames)]
 * 생성일
 * 만료일
 * 인증서의 서명 방식(예: sha256RSA)
@@ -77,33 +78,30 @@ Certificate Manager에 등록한 인증서의 만료일보다 자동 수집한 �
 ### 메인 화면
 메인 화면에서는 인증서 목록이나 만료일까지 남은 날짜 등을 확인할 수 있습니다.
 
-![certificate-1.png](http://static.toastoven.net/prod_certificate_manager/202302/certificate-1.png)
+![certificate-1.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-1.png)
 
 * 기존에 등록한 인증서의 목록을 확인 및 검색할 수 있습니다.
+* 인증서 파일이 업로드된 경우 자동으로 추출된 Domains [CN(CommonName) + SAN(SubjectAlternativeNames)] 정보를 확인할 수 있습니다.
 * 만료일까지 남은 날짜를 확인할 수 있습니다.
 * 오늘 날짜 기준으로 만료일이 지난 데이터는 빨간색으로, 만료일까지 남은 날짜가 30일 이하인 데이터는 주황색으로 표시됩니다.
 
 ### 인증서 생성
 
 1. 인증서 메인 화면에서 **+ 인증서 추가** 버튼을 클릭하면 **인증서 추가** 창이 나타납니다.
-![certificate-2.png](http://static.toastoven.net/prod_certificate_manager/202302/certificate-2.png)
+![certificate-2.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-2.png)
 2. **알림 그룹**에서 연동할 알림 그룹을 선택합니다. 생성된 알림 그룹이 없을 때는 목록에 표시되지 않으며, 인증서를 생성할 수 없습니다.
-3. **이름**에 인증서 이름(CommonName, CN)을 입력합니다. 인증서 이름은 중복으로 등록할 수 없습니다. <br>
-   * SAN 인증서의 경우 인증서 파일을 업로드하면 인증서 이름과 서브 인증서 이름이 자동으로 입력됩니다. 인증서의 이름은 임의로 변경할 수 없습니다.
-4. **유형**에서 원하는 항목을 선택합니다.
-   * Single은 단일 인증서입니다.
-   * Wildcard는 \*(asterisk)로 시작하는 범용 인증서(여러 호스트에서 사용할 수 있는 인증서)를 뜻합니다.
-   * SAN은 1개의 인증서로 여러 개의 도메인에 SSL을 적용할 수 있는 인증서입니다.
-5. **인증서 등록** 아래 **인증서**에서 인증서 파일을 등록합니다.<br>
-   인증서는 필수값이 아니며, 추후에 등록할 수도 있습니다.
+3. **이름**에 인증서 이름을 입력합니다.
+    * 인증서 이름은 프로젝트 내에서 중복으로 등록할 수 없습니다.
+    * 인증서 이름은 영문, 한글, 숫자를 조합하여 자유롭게 구성할 수 있습니다.
+    * 특수 기호는(-, _, ., *)만 허용합니다.
+4. **인증서 등록**에서 인증서 파일을 등록합니다.<br>
+   인증서는 필수 값입니다.
     * 인증서는 개인 키와 인증서로 구성된 .pem 형식의 파일입니다.
-    * 지원하는 인증서 파일(.pem) 형식은 [**문제 해결 가이드 > 인증서 파일 포맷 변환**](http://gov-docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)을 참고하십시오.
+    * 지원하는 인증서 파일(.pem) 형식은 [**문제 해결 가이드 > 인증서 파일 포맷 변환**](http://gov-docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)을 참고하세요.
     * 인증서 파일은 최대 512KB까지 업로드할 수 있습니다.
-6. **패스프레이즈**(passphrase, 비밀 문구)에 인증서 파일 내에 포함된 개인 키의 **패스프레이즈**를 입력합니다.
-7. **추가** 버튼을 클릭합니다.
-   * Single과 Wildcard의 경우는 1개의 인증서가 생성됩니다.
-   * SAN의 경우 대표 인증서와 서브 인증서가 모두 생성됩니다. 예를 들어 대표 인증서가 1개이고, 서브 인증서가 3개인 경우 총 4개의 인증서가 생성됩니다.
-8. [Network > Load Balancer](https://gov.toast.com/kr/service/network/load-balancer) 서비스와 연동해야 할 때는 인증서 파일의 **패스프레이즈**를 삭제해야 합니다.
+5. **패스프레이즈**(passphrase, 비밀 문구)에 인증서 파일 내에 포함된 개인 키의 **패스프레이즈**를 입력합니다.
+6. **추가** 버튼을 클릭합니다.
+7. [Network > Load Balancer](https://gov.toast.com/kr/service/network/load-balancer) 서비스와 연동 시에는 인증서 파일의 **패스프레이즈**를 삭제해야 합니다.
     * **패스프레이즈**는 다음 명령을 사용해 삭제할 수 있습니다.
     ```bash
     openssl rsa -in my_private_input.key -out my_private_output.key
@@ -115,27 +113,34 @@ Certificate Manager에 등록한 인증서의 만료일보다 자동 수집한 �
 
 1. 인증서 메인 화면에서 **상세 정보** 버튼을 클릭하면 인증서 파일 정보를 확인할 수 있습니다.
     * **(자동 수집)**이 표시된 필드는 인증서 파일로부터 자동 수집된 항목을 의미합니다. 인증서 파일이 등록되지 않은 경우 '-'로 표시됩니다.
+      ![certificate-3-1.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-3-1.png)
 2. **수정** 버튼을 클릭하여 인증서 정보를 수정하거나, 인증서 파일을 업로드할 수 있습니다.
     * 인증서 이름은 수정할 수 없습니다. 인증서 이름을 수정하려면 기존에 등록한 인증서를 삭제하고 새로 생성해야 합니다.
-      ![certificate-3.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-3.png)
+    * 하나의 인증서에는 1개의 인증서 파일만 업로드할 수 있습니다.
+    * 기존 인증서 파일을 갱신하는 경우, 새로운 인증서 파일의 Domains [CN(CommonName) + SAN(SubjectAlternativeNames)]가 기존 인증서 파일의 Domains와 동일해야 합니다.
+      ![certificate-3-2.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-3-2.png)
 
 ### 인증서 사용 정보, 설치 정보 생성
 
 1. 인증서 메인 화면에서 **인증서 사용 정보** 버튼을 클릭하면 인증서 사용 및 설치 정보를 확인할 수 있습니다. 기본값으로는 아무것도 등록되어 있지 않습니다.
-![certificate-4.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-4.png)
+![certificate-4.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-1.png)
 2. **수정** 버튼을 클릭하면 다음과 같은 화면을 확인할 수 있습니다.
-![certificate-5.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-5.png)
-3. 오른쪽 상단의 **+ 추가** 버튼을 클릭하면 정보를 입력할 수 있는 필드가 나타납니다.
-![certificate-6.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-6.png)
+![certificate-5.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-2.png)
+3. 인증서 사용 정보를 추가하는 방법은 다음 두 가지가 있습니다.
+    * **사용자 추가**: 오른쪽 상단의 **+ 추가** 버튼을 클릭하여 정보를 입력할 수 있는 필드가 나타납니다.
+![certificate-6.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-3.png)
+    * **불러오기**: 오른쪽 상단의 **불러오기** 버튼을 클릭하여 다른 인증서의 사용 정보를 불러올 수 있습니다.
+        1. **불러오기** 버튼을 클릭하면 인증서 검색 창이 나타납니다.
+![certificate-9.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-4.png)
+        2. 검색 창에서 불러올 인증서 이름을 검색합니다.
+![certificate-10.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-5.png)
+        3. **확인**을 누르면 해당 인증서의 사용 정보 목록을 자동으로 불러옵니다.
+![certificate-11.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-6.png)
 4. 인증서 사용 정보의 이름을 입력합니다.
-    * 인증서 유형이 **Single**인 경우 인증서 이름과 동일해야 합니다.
-    * 인증서 유형이 **Wildcard**인 경우 '\*'(asterisk)를 제외한 인증서 이름과 동일하거나 '\*'(asterisk)를 제외한 '.[인증서 이름]'으로 끝나야 합니다.
-    * 인증서 유형이 **SAN**인 경우
-      * 인증서 이름이 Single 형태인 경우 인증서 이름과 동일해야 합니다.
-      * 인증서 이름이 Wildcard 형태인 경우 '\*'(asterisk)를 제외한 인증서 이름과 동일하거나 '\*'(asterisk)를 제외한 '.[인증서 이름]'으로 끝나야 합니다.
+    * 사용 정보의 도메인 이름은 인증서 파일 업로드 시 자동 등록된 Domains [CN(CommonName) + SAN(SubjectAlternativeNames)]에 포함되어야 합니다.
 5. **알림 사용 여부**에서 인증서 사용 정보의 알림 사용 여부를 선택합니다.
-6. 인증서 설치 정보를 입력하려면 인증서 설치 정보 옆의 **+추가** 버튼을 클릭합니다. 
-![certificate-7.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-7.png)
+6. 인증서 설치 정보를 입력하려면 인증서 설치 정보 옆의 **+추가** 버튼을 클릭합니다.
+![certificate-7.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-8.png)
     * **IP 주소**와 **포트 번호**를 입력합니다. 인증서의 자동 수집을 사용하는 경우, 입력한 IP 주소와 포트 번호로 인증서를 다운로드해 만료 일자를 비교합니다.
     * IP 주소가 사설 IP(예: 192.168.0.1, 172.20.0.1, 10.0.0.1)인 경우 인증서를 다운로드하지 못해 자동 수집 실패 알림이 발송될 수 있습니다.
 7. **완료** 버튼을 클릭하면 설정한 인증서의 사용 및 설치 정보가 저장됩니다.
@@ -144,7 +149,7 @@ Certificate Manager에 등록한 인증서의 만료일보다 자동 수집한 �
 인증서 메인 화면에서 **인증서 사용 정보** 버튼을 클릭하면 인증서 사용 및 설치 정보를 확인할 수 있습니다.
 오른쪽 상단의 전체/사용/미사용으로 인증서 사용 정보의 알림 사용 여부를 선택해서 볼 수 있습니다.
 
-![certificate-8.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-8.png)
+![certificate-8.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-7.png)
 
 ## 도메인
 DNS의 최상위 도메인 이름(예: toast.com)과 만료일을 입력하면 연동한 알림 그룹의 알림 정책에 맞춰 사용자에게 알림을 발송합니다.
@@ -234,7 +239,7 @@ DNS의 최상위 도메인 이름(예: toast.com)과 만료일을 입력하면 �
 
 ## 인증서 조회/다운로드 API 자격 관련
 
-### User Access Key ID, Secret Access Key 생성
+#### User Access Key ID, Secret Access Key 생성
 
 콘솔 우측 상단의 ID 영역을 클릭하면 다음과 같은 **API 보안 설정** 메뉴를 확인할 수 있습니다.
 

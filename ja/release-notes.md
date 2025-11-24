@@ -1,5 +1,15 @@
 ## Management > Certificate Manager > リリースノート
 
+### 2025. 11. 25.
+#### 機能改善
+* 証明書名の制約が変更され、旧証明書と新規証明書を一緒に管理できるようになりました。
+    * 証明書名が証明書ファイルのCN(CommonName)値と同一でなくても、プロジェクト内で一意の名前であれば登録できます。
+* 証明書のDomains [CN(CommonName) + SAN(SubjectAlternativeNames)]項目が追加されました。
+    * Domains情報は、証明書ファイルのアップロード時に自動で収集されます。
+* 証明書タイプ(Single, Wildcard, SAN)が削除されました。
+* 証明書一覧及び詳細情報のUIが変更されました。
+* 詳細については、[コンソール利用ガイド](/Management/Certificate%20Manager/ko/console-guide/)で確認できます。
+
 ### 2024. 03. 26.
 #### APIバージョン追加 
 * Certificate ManagerのAPI v1.1が追加されました。 <br>詳細はAPI v1.1ガイドでご確認ください。
