@@ -65,7 +65,8 @@ On the search window for user integration above, you may search and add NHN Clou
 
 Enter domain name (e.g. *.toast.com) and expiration date of certificate, and then notification is sent to user, in accordance with notification policy of an integrated notification group.
 
-To upload certificate files (.pem), following items are automatically collected from such files. 
+To upload certificate files (.pem), following items are automatically collected from such files.
+* Domains [CN(CommonName) + SAN(SubjectAlternativeNames)] 
 * Creation date
 * Expiration date
 * Signature type of a certificate (ex: sha256RSA)
@@ -77,63 +78,69 @@ If auto-collected certificate installation information has earlier expiration da
 ### Main Page
 On the main page of certificate, you can find list of certificates and remaining days until expired.
 
-![certificate-1.png](http://static.toastoven.net/prod_certificate_manager/202302/certificate-1.png)
+![certificate-1.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-1.png)
 
 * You can find and search the list of already registered certificates. 
+* If a certificate file is uploaded, you can check the automatically extracted Domains [CN (CommonName) + SAN (SubjectAlternativeNames)] information.
 * Also check remaining days until expired. 
 * As of today, expired data are displayed in red, whereas data with less than 30 days until expired are displayed in orange.  
 
 ### Creating Certificates
 
 1. On the main page of a certificate, click **+ Add Certificates** and you can find the page as follows. 
-![certificate-2.png](http://static.toastoven.net/prod_certificate_manager/202302/certificate-2.png)
+![certificate-2.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-2.png)
 2. Select a **Notification Group** to integrate. In case a notification group is not created, there is no available notification group, and hence certificate cannot be created. 
-3. Enter **Name** of a certificate (CommonName, CN): names cannot be redundantly registered.<br>
-    * For SAN certificates, the certificate name and sub-certificate name are automatically entered when the certificate file is uploaded. The name of the certificate cannot be arbitrarily changed.
-4. Select an item in **Type**. 
-    * Single is a single certificate.
-    * Wildcard is a common-purpose certificate (available for many hosts) starting with *(asterisk).
-    * SAN is a certificate that allows you to apply SSL to multiple domains with a single certificate. 
-5. Register a certificate file in **Certificate** under **Register Certificate**.<br>
-Certificates are not required and can be registered later.
+3. Enter **Name** of a certificate.  
+    * Certificate names cannot be redundantly registered in the project.
+    * The certificate name can be freely composed using any combination of English letters, Korean characters, and numbers.
+    * Only special characters (-, _, ., *) are allowed.
+4. Register the certificate file in **Register Certificate**.
+   A certificate is the required value.
     * A certificate (.pem) is a pem file comprised of a private key and a certificate. 
     * For supported type of certificate file (.pem), see '[Troubleshooting Guide > Converting Certificate File Formats](http://docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)'.
     * The maximum uploadable certificate is 512KB. 
-6. Enter **Passphrase** of the private key included within certificate file. 
-7. Click **Add**. 
-    * For Single and Wildcard, one certificate is created.
-    * For SAN, both a main and sub certificate are created. For example, if there is 1 main certificate and 3 sub certificates, a total of 4 certificates are created.
-8. In order to integrate with [Network > Load Balancer](https://toast.com/kr/service/network/load-balancer), **passphrase** of the certificate file must be deleted. 
+5. Enter **Passphrase** of the private key included within certificate file. 
+6. Click **Add**. 
+7. In order to integrate with [Network > Load Balancer](https://toast.com/kr/service/network/load-balancer), **passphrase** of the certificate file must be deleted. 
     * Use the following command to delete **passphrase**. 
     ```bash
     openssl rsa -in my_private_input.key -out my_private_output.key
     ```
 
+
+
 ### Detail Page
 
 1. Click **Details** on the main page of a certificate to find information of the certificate and file. 
     * Fields specified as **(Auto Collect)** after field name refer to automatically collected items from certificate files. If there is no registered certificate file, '-' shows.  
+          ![certificate-3-1.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-3-1.png)
 2. Click **Edit** to modify certificate information or (re)upload certificate files. 
     * Certificate names cannot be edited. If a name must be edited, delete a registered certificate and create a new one. 
-    ![certificate-3.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-3.png)
+    * Only one certificate file can be uploaded per certificate.
+    * When renewing an existing certificate file, the Domains [CN (CommonName) + SAN (SubjectAlternativeNames)] of the new certificate file must be identical to those of the existing certificate file.
+      ![certificate-3-2.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-3-2.png)
 
 ### Creating Certificate Usage/Installation Information
 
 1. Click **Certificate Usages** on the main page, and find usage and installation information of certificate. By default, no item is registered. 
-![certificate-4.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-4.png)
-2. Click **Edit** to find a page as below. 
-![certificate-5.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-5.png)
-3. Click **+ Add** on top right to show a window to register certificate usage information. 
-![certificate-6.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-6.png))
+![certificate-4.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-1.png)
+2. Click **Edit** to find a page as below: 
+![certificate-5.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-2.png)
+3. There are two ways to add certificate usage information:
+    * **Add User**: Click the **+ Add** button in the top right corner to bring up fields where you can enter information.
+![certificate-6.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-3.png)
+    * **Load**: you can import usage information from other certificates by clicking the **Load** button in the upper right corner.
+        1. Click the **Load** button will bring up the certificate search window.
+![certificate-9.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-4.png)
+        2. Search for the certificate name you want to retrieve in the search box.
+![certificate-10.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-5.png)
+        3. Click **OK** to automatically retrieve the list of usage information for the certificate.
+![certificate-11.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-6.png)
 4. Enter name for certificate usage information. 
-    * If the certificate type is **Single**, the name must be same as certificate name. 
-    * If the certificate type is **Wildcard**, the name must be same as certificate name, excluding '\*'(asterisk), or must end with ".[Certificate Name]", excluding  '\*'(asterisk). 
-    * If the certificate type is **SAN**
-        * If the certificate name is in Single for, it must be the same as the certificate name.
-        * If the certificate name is in Wildcard form, it must be the same as the certificate name excluding '\*' (asterisk) or end with '.[certificate name]' excluding '\*' (asterisk).
+    * The domain name in the usage information must be included in the Domains [CN (CommonName) + SAN (SubjectAlternativeNames)] automatically registered when uploading the certificate file.
 5. Enter whether to enable notification for certificate usage information.
 6. To enter certificate installation information, click **+ Add** next to Certificate Installation Information. Then, a window like below shows. 
-![certificate-7.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-7.png)
+![certificate-7.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-8.png)
     * Enter **IP address** and **Port No.**. When auto-collect is enabled, download certificate via IP address and port number to compare expiration dates. 
     * In case of a private IP address (e.g. 192.168.0.1, 172.20.0.1, 10.0.0.1 ), downloading may fail and notification on failed auto collection may be sent.  
 7. Click **Completed** to save usage and installation information of the certificate as set. 
@@ -142,7 +149,7 @@ Certificates are not required and can be registered later.
 * On the main page of a certificate, click **Certificate Usages** to check usage and installation information of certificate. 
 * Notifications of usage information can be filtered by selecting **Total**, **Enabled**, or **Not Use** on top right.  
 
-![certificate-8.png](http://static.toastoven.net/prod_certificate_manager/202002/certificate-8.png)
+![certificate-8.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-7.png)
 
 ## Domain
 Enter name of domain (the highest domain name of DNS, e.g. toast.com) and expiration date, and notifications are sent to users in accordance with notification policy of an integrated notification group.
@@ -232,7 +239,7 @@ Click **Edit** to edit user data information.
 
 
 
-## Authorization for Retrieve/Download Certificates API
+## Authorization for Retrieve/Download Certificates API 
 
 #### Create User Access Key ID and Secret Access Key
 
