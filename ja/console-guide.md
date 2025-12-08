@@ -78,7 +78,7 @@ Certificate Managerに登録した証明書の有効期限より、自動収集�
 ### メイン画面
 メイン画面では証明書リストや有効期限までの残り日数などを確認できます。
 
-![certificate-1.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-1.png)
+![certificate-1.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-1-en.png)
 
 * 既に登録している証明書のリストを確認および検索できます。
 * 証明書ファイルがアップロードされると、自動で抽出されたDomains [CN(CommonName) + SAN(SubjectAlternativeNames)]情報を確認できます。
@@ -88,7 +88,7 @@ Certificate Managerに登録した証明書の有効期限より、自動収集�
 ### 証明書の作成
 
 1. 証明書メイン画面で**+証明書の追加**ボタンをクリックすると、**証明書の追加**ウィンドウが表示されます。
-![certificate-2.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-2.png)
+![certificate-2.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-2-en.png)
 2. **通知グループ**で連携する通知グループを選択します。作成された通知グループがない時はリストに表示されず、証明書を作成できません。
 3. **名前**に証明書名を入力します。
     * 証明書名は、プロジェクト内で重複して登録できません。
@@ -112,34 +112,34 @@ Certificate Managerに登録した証明書の有効期限より、自動収集�
 
 1. 証明書メイン画面で**詳細情報**ボタンをクリックすると、証明書ファイル情報を確認できます。
     * **(自動収集)**が表示されたフィールドは証明書ファイルから自動収集された項目を意味します。証明書ファイルが登録されていない場合は「-」と表示されます。
-      ![certificate-3-1.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-3-1.png)
+      ![certificate-3-1.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-3-1-en.png)
 2. **修正**ボタンをクリックすると、証明書情報の修正や、証明書ファイルのアップロードを行うことができます。
     * 証明書名は修正できません。証明書名を修正するには、登録している証明書を削除して新たに作成する必要があります。
     * 1つの証明書には、1つの証明書ファイルのみアップロードできます。
     * 既存の証明書ファイルを更新する場合、新しい証明書ファイルのDomains [CN(CommonName) + SAN(SubjectAlternativeNames)]が、既存の証明書ファイルのDomainsと同一である必要があります。
-      ![certificate-3-2.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-3-2.png)
+      ![certificate-3-2.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-3-2-en.png)
 
 ### 証明書使用情報、インストール情報作成
 
 1. 証明書メイン画面で**証明書の使用情報**ボタンをクリックすると、証明書の使用およびインストール情報を確認できます。デフォルト値では何も登録されていません。
-![certificate-4.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-1.png)
+![certificate-4.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-1-en.png)
 2. **修正**ボタンをクリックすると、次のような画面を確認できます。
-![certificate-5.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-2.png)
+![certificate-5.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-2-en.png)
 3. 証明書の使用情報を追加する方法は、次の2つがあります。
     * **ユーザー追加**: 右上にある**+ 追加**ボタンをクリックすると、情報を入力できるフィールドが表示されます。
-![certificate-6.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-3.png)
+![certificate-6.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-3-en.png)
     * **読み込み**: 右上にある**読み込み**ボタンをクリックして、他の証明書の使用情報を読み込むことができます。
         1. **読み込み**ボタンをクリックすると、証明書検索ウィンドウが表示されます。
-![certificate-9.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-4.png)
+![certificate-9.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-4-en.png)
         2. 検索ウィンドウで、読み込む証明書名を検索します。
-![certificate-10.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-5.png)
+![certificate-10.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-5-en.png)
         3. **確認**を押すと、該当の証明書の使用情報一覧が自動的に読み込まれます。
-![certificate-11.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-6.png)
+![certificate-11.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-6-en.png)
 4. 証明書使用情報の名前を入力します。
     * 使用情報のドメイン名は、証明書ファイルのアップロード時に自動登録されたDomains [CN(CommonName) + SAN(SubjectAlternativeNames)]に含まれている必要があります。
 5. **通知使用有無**で証明書使用情報の通知を使用するかどうかを選択します。
 6. 証明書インストール情報を入力するには証明書インストール情報の横にある**+追加**ボタンをクリックします。 
-![certificate-7.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-8.png)
+![certificate-7.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-8-en.png)
     * **IPアドレス**と**ポート番号**を入力します。証明書の自動収集を使用する場合、入力したIPアドレスとポート番号で証明書をダウンロードして有効期限を比較します。
     * IPアドレスがプライベートIP(例：192.168.0.1, 172.20.0.1, 10.0.0.1)の場合、証明書をダウンロードできず、自動収集失敗通知が送信される場合があります。
 7. **完了**ボタンをクリックすると、設定した証明書の使用およびインストール情報が保存されます。
@@ -148,7 +148,7 @@ Certificate Managerに登録した証明書の有効期限より、自動収集�
 証明書メイン画面で**証明書使用情報**ボタンをクリックすると、証明書使用およびインストール情報を確認できます。
 右上の全体/使用/未使用で証明書使用情報の通知使用有無を選択して確認できます。
 
-![certificate-8.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-7.png)
+![certificate-8.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-7-en.png)
 
 ## ドメイン
 DNSの最上位ドメイン名(例：toast.com)と有効期限を入力すると、連携した通知グループの通知ポリシーに合わせてユーザーに通知を送信します。
