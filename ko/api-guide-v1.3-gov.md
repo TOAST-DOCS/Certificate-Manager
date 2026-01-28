@@ -17,7 +17,7 @@ https://certmanager.api.gov-nhncloudservice.com
 ##### API의 요청의 HTTP 헤더 
 v1.3에서는 HTTP 헤더에 필수 필드가 추가됩니다.
 ```
-X-TC-AUTHENTICATION-ID: Bearer {발급 받은 토큰}
+X-NHN-AUTHORIZATION: Bearer {발급 받은 토큰}
 ```
 
 토큰 발급은 [토큰 가이드](https://docs.gov-nhncloud.com/ko/nhncloud/ko/public-api/api-authentication-gov/)에서 확인 가능합니다.
@@ -176,13 +176,16 @@ Content-Type:application/json
 
 ```bash
 #파일에 쓰기
-curl 'https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.3/appkeys/{appKey}/certificates/{certificateName}/files' > cert.pem
+curl 'https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.3/appkeys/{appKey}/certificates/{certificateName}/files' \
+    -H "X-NHN-AUTHORIZATION: Bearer {발급 받은 토큰}" > cert.pem
 
 #파일명 지정
-curl -o cert.pem 'https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.3/appkeys/{appKey}/certificates/{certificateName}/files'
+curl -o cert.pem 'https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.3/appkeys/{appKey}/certificates/{certificateName}/files' \
+    -H "X-NHN-AUTHORIZATION: Bearer {발급 받은 토큰}"
 
 #업로드한 파일명 유지
-curl -OJ 'https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.3/appkeys/{appKey}/certificates/{certificateName}/files'
+curl -OJ 'https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.3/appkeys/{appKey}/certificates/{certificateName}/files' \
+    -H "X-NHN-AUTHORIZATION: Bearer {발급 받은 토큰}"
 ```
 * 기타 curl 명령어 사용법은 아래 가이드를 참고하세요.
   * curl command guide : [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)
