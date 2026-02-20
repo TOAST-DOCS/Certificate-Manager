@@ -1,6 +1,6 @@
 ## Management > Certificate Manager > 릴리스 노트
 
-### 2026. 02. 10.
+### 2026. 03. 10.
 #### API 버전 추가
 * 토큰 인증 방식을 지원하는 Certificate Manager API v1.3이 추가되었습니다. 
   </br> 자세한 내용은 API v1.3 가이드에서 확인할 수 있습니다.
