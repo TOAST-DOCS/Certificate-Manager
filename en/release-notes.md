@@ -1,5 +1,10 @@
 ## Management > Certificate Manager > Release Notes
 
+### March 10, 2026
+#### Added a API version 
+* Added Certificate Manager API v1.3 supporting token authentication method. 
+  </br> For more information, refer to API v1.3 Guide.
+
 ### November 25, 2025
 #### Feature Updates
 * Modified certificate name restrictions so that you can manage both old and new certificates together.
