@@ -15,7 +15,7 @@ X-NHN-AUTHORIZATION: Bearer {発行されたトークン}
 #### 認証及び権限
 CertificateManagerはAPI呼び出し時、認証/認可のためにUser Access Keyトークンを使用します。 
 User Access Keyトークンは、User Access Keyに基づいて発行されるBearerタイプの一時的なアクセストークンです。 
-User Access Keyトークンの発行及び使用に関する詳細は、[User Access Keyトークン](/nhncloud/ko/public-api/user-access-key-token)を参照してください。
+User Access Keyトークンの発行及び使用に関する詳細は、[User Access Keyトークン](/nhncloud/ja/public-api/user-access-key-token)を参照してください。
 
 CertificateManager APIは、ロールベースアクセス制御(RBAC)を使用しています。<br>
 ユーザーはAPIを使用するために、**CertificateManager ADMINロール**または**CertificateManager VIEWERロール**を所有している必要があります。 
