@@ -2,26 +2,32 @@
 
 Certificate Manager에서는 인증서 목록 조회, 다운로드를 위한 API를 제공합니다. 클라이언트는 콘솔에서 인증서와 인증서 파일을 등록한 후 API를 통해 데이터를 사용할 수 있습니다.
 
-### 기본 정보
-#### EndPoint
+### CertificateManager API 공통 정보
+#### API 엔드포인트
 ```text
 https://certmanager.api.gov-nhncloudservice.com
 ```
 
-#### 제공하는 API 종류
-| 메서드 | URI                                                                     | 설명 |
-| ------ |-------------------------------------------------------------------------| --- |
-| GET | /certmanager/v1.1/appkeys/{appKey}/certificates                         | 인증서 목록을 조회합니다. |
-| GET | /certmanager/v1.1/appkeys/{appKey}/certificates/{certificateName}/files | 등록된 인증서 파일을 다운로드합니다. |
-
-##### API의 요청의 HTTP 헤더 
+#### API 요청 HTTP 헤더
 v1.1에서는 HTTP 헤더에 필수 필드가 추가됩니다.
 ```
 X-TC-AUTHENTICATION-ID: {User Access Key ID}
 X-TC-AUTHENTICATION-SECRET: {Secret Access Key}
 ```
 
-자세한 사항은 [콘솔 사용 가이드](/Management/Certificate%20Manager/ko/console-guide-gov/#api)를 참고하십시오.
+#### 인증 및 권한
+CertificateManager는 API 호출 시 인증/인가를 위해 User Access Key 토큰을 사용합니다.
+User Access Key 토큰은 User Access Key를 기반으로 발급되는 Bearer 타입의 일시적 액세스 토큰입니다.
+User Access Key 토큰 발급 및 사용에 대한 자세한 내용은 [User Access Key 토큰](/nhncloud/ko/public-api/user-access-key-token-gov)을 참고하세요.
+
+CertificateManager API는 역할 기반 접근 제어(RBAC)를 사용하고 있습니다.<br>
+사용자는 API 사용을 위해 **CertificateManager ADMIN 역할** 또는 **CertificateManager VIEWER 역할** 소유해야합니다.
+
+#### 제공하는 API 종류
+| 메서드 | URI                                                                     | 설명 |
+| ------ |-------------------------------------------------------------------------| --- |
+| GET | /certmanager/v1.1/appkeys/{appKey}/certificates                         | 인증서 목록을 조회합니다. |
+| GET | /certmanager/v1.1/appkeys/{appKey}/certificates/{certificateName}/files | 등록된 인증서 파일을 다운로드합니다. |
 
 ##### API 요청의 경로 변수
 
