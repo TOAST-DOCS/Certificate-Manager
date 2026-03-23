@@ -18,7 +18,7 @@ X-TC-AUTHENTICATION-SECRET: {Secret Access Key}
 #### 인증 및 권한
 CertificateManager는 API 호출 시 인증/인가를 위해 User Access Key 인증을 사용합니다.
 User Access Key는 NHN Cloud 계정 또는 IAM 계정을 기반으로 발급되는 인증 키로, Secret Access Key와 함께 사용하여 API 요청에 대한 인증 수단입니다.
-User Access Key 토큰 발급 및 사용에 대한 자세한 내용은 [User Access Key 인증](/nhncloud/ko/public-api/user-access-key-gov)을 참고하세요.
+User Access Key 사용에 대한 자세한 내용은 [User Access Key 인증](/nhncloud/ko/public-api/user-access-key-gov)을 참고하세요.
 
 CertificateManager API는 역할 기반 접근 제어(RBAC)를 사용하고 있습니다.<br>
 사용자는 API 사용을 위해 **CertificateManager ADMIN 역할** 또는 **CertificateManager VIEWER 역할** 소유해야합니다.
@@ -178,16 +178,24 @@ Content-Type:application/json
 
 ```bash
 #파일에 쓰기
-curl 'https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.1/appkeys/{appKey}/certificates/{certificateName}/files' > cert.pem
+curl -H 'X-TC-AUTHENTICATION-ID: {User Access Key ID}' \
+    -H 'X-TC-AUTHENTICATION-SECRET: {Secret Access Key}' \
+    'https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.1/appkeys/{appKey}/certificates/{certificateName}/files' > cert.pem
 
 #파일명 지정
-curl -o cert.pem 'https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.1/appkeys/{appKey}/certificates/{certificateName}/files'
+curl -o cert.pem \
+    -H 'X-TC-AUTHENTICATION-ID: {User Access Key ID}' \
+    -H 'X-TC-AUTHENTICATION-SECRET: {Secret Access Key}' \
+    'https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.1/appkeys/{appKey}/certificates/{certificateName}/files'
 
 #업로드한 파일명 유지
-curl -OJ 'https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.1/appkeys/{appKey}/certificates/{certificateName}/files'
+curl -OJ \
+    -H 'X-TC-AUTHENTICATION-ID: {User Access Key ID}' \
+    -H 'X-TC-AUTHENTICATION-SECRET: {Secret Access Key}' \
+    'https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.1/appkeys/{appKey}/certificates/{certificateName}/files'
 ```
-* 기타 curl 명령어 사용법은 아래 가이드를 참고하십시오.
-  * curl command guide : [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)
+* 기타 curl 명령어 사용법은 아래 가이드를 참고하세요.
+  * curl command guide: [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)
 
 ### 응답 코드
 
