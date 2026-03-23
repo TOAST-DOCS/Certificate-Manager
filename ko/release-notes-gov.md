@@ -1,5 +1,11 @@
 ## Management > Certificate Manager > 릴리스 노트
 
+### 2026. 04. 14.
+#### API v1.1 인증 및 권한 수정
+* Certificate Manager API v1.1 가이드의 인증 및 권한 정보가 수정되었습니다.
+    * API 사용을 위해 **CertificateManager ADMIN 역할** 또는 **CertificateManager VIEWER 역할**이 필요합니다.
+    * 자세한 내용은 [API v1.1 가이드](/Management/Certificate%20Manager/ko/api-guide-v1.1-gov)에서 확인할 수 있습니다.
+
 ### 2026. 03. 10.
 #### API 버전 추가
 * 토큰 인증 방식을 지원하는 Certificate Manager API v1.3이 추가되었습니다.
