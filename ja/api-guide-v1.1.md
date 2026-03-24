@@ -1,28 +1,33 @@
 ## Management > Certificate Manager > API v1.1ガイド
 
-Certificate Manager は、証明書リスト検索、またはダウンロード用の API を提供します。クライアントはコンソールで証明書と証明書ファイルを登録した後、APIを通してデータを使用できます。
+Certificate Managerは、証明書一覧の照会とダウンロードAPIを提供します。クライアントはコンソールで証明書と証明書ファイルを登録した後、APIでデータを使用できます。
 
-### 基本情報
-#### EndPoint
+### Certificate Manager API共通情報
+#### APIエンドポイント
 ```text
 https://certmanager.api.nhncloudservice.com
 ```
 
-#### 提供するAPIの種類
-| メソッド | URI                                                                     | 説明 |
-| ------ |-------------------------------------------------------------------------| --- |
-| GET | /certmanager/v1.1/appkeys/{appKey}/certificates                         | 証明書のリストを検索します。 |
-| GET | /certmanager/v1.1/appkeys/{appKey}/certificates/{certificateName}/files | 登録された証明書ファイルをダウンロードします。 |
-
-##### APIのリクエストのHTTPヘッダ 
+#### APIリクエストHTTPヘッダ
 v1.1ではHTTPヘッダーに必須フィールドが追加されます。
 ```
 X-TC-AUTHENTICATION-ID: {User Access Key ID}
 X-TC-AUTHENTICATION-SECRET: {Secret Access Key}
 ```
 
-詳細については、 [コンソール使用ガイド](/Management/Certificate%20Manager/ja/console-guide/#api)を参照してください。
+#### 認証及び権限
+Certificate Managerは、API呼び出し時の認証/認可のためにUser Access Key認証を使用します。
+User Access Keyは、NHN CloudアカウントまたはIAMアカウントをベースに発行される認証キーであり、Secret Access Keyと一緒に使用するAPIリクエストに対する認証手段です。
+User Access Keyの使用に関する詳細は、[User Access Key認証](/nhncloud/ko/public-api/user-access-key)を参考にしてください。
 
+Certificate Manager APIは、ロールベースのアクセス制御(RBAC)を使用します。<br>
+ユーザーはAPIを使用するために、**Certificate Manager ADMINロール**または**Certificate Manager VIEWERロール**を所有している必要があります。
+
+#### 提供するAPIの種類
+| メソッド | URI                                                                     | 説明 |
+| ------ |-------------------------------------------------------------------------| --- |
+| GET | /certmanager/v1.1/appkeys/{appKey}/certificates                         | 証明書一覧を照会します。 |
+| GET | /certmanager/v1.1/appkeys/{appKey}/certificates/{certificateName}/files | 登録された証明書ファイルをダウンロードします。 |
 
 ##### APIリクエストのパス変数
 
@@ -176,13 +181,21 @@ Content-Type:application/json
 
 ```bash
 #ファイルに書き込む
-curl 'https://certmanager.api.nhncloudservice.com/certmanager/v1.1/appkeys/{appKey}/certificates/{certificateName}/files' > cert.pem
+curl -H 'X-TC-AUTHENTICATION-ID: {User Access Key ID}' \
+    -H 'X-TC-AUTHENTICATION-SECRET: {Secret Access Key}' \
+    'https://certmanager.api.nhncloudservice.com/certmanager/v1.1/appkeys/{appKey}/certificates/{certificateName}/files' > cert.pem
 
 #ファイル名指定
-curl -o cert.pem 'https://certmanager.api.nhncloudservice.com/certmanager/v1.1/appkeys/{appKey}/certificates/{certificateName}/files'
+curl -o cert.pem \
+    -H 'X-TC-AUTHENTICATION-ID: {User Access Key ID}' \
+    -H 'X-TC-AUTHENTICATION-SECRET: {Secret Access Key}' \
+    'https://certmanager.api.nhncloudservice.com/certmanager/v1.1/appkeys/{appKey}/certificates/{certificateName}/files'
 
 #アップロードしたファイル名を維持
-curl -OJ 'https://certmanager.api.nhncloudservice.com/certmanager/v1.1/appkeys/{appKey}/certificates/{certificateName}/files'
+curl -OJ \
+    -H 'X-TC-AUTHENTICATION-ID: {User Access Key ID}' \
+    -H 'X-TC-AUTHENTICATION-SECRET: {Secret Access Key}' \
+    'https://certmanager.api.nhncloudservice.com/certmanager/v1.1/appkeys/{appKey}/certificates/{certificateName}/files'
 ```
 * その他curlコマンドの使用方法は下記のガイドを参照してください。
   * curl command guide : [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)
@@ -192,12 +205,12 @@ curl -OJ 'https://certmanager.api.nhncloudservice.com/certmanager/v1.1/appkeys/{
 | isSuccessful | resultCode | resultMessage | 説明 |
 | ------------ | ---------- | ------------- | --- |
 | true | 0 | SUCCESS | 成功 |
-| false | 52000 | Certificate name does not exist. | リクエストした証明書名が存在しません。 |
-| false | 52001 | Certificate file does not exist. | リクエストした証明書ファイルが存在しません。 |
+| false | 52000 | Certificate name does not exist. | リクエストした証明書名がありません。 |
+| false | 52001 | Certificate file does not exist. | リクエストした証明書ファイルがありません。 |
 | false | 52002 | There are more than one certificate file. | リクエストした証明書に登録されたファイルが2つ以上あります。 |
 | false | 52003 | The certificate file is not a pem file. | リクエストした証明書ファイルがpemファイルではありません。 |
 | false | 52004 | The certificate name in the file is different from the requested certificate name. | リクエストした証明書名と証明書ファイルに登録された名前が異なります。 |
-| false | 52005 | Certificate file has expired | リクエストした証明書ファイルの有効期限が切れています。 |
+| false | 52005 | Certificate file has expired | リクエストした証明書ファイルは期限切れになっています。 |
 | false | 52006 | The certificate has an invalid certificate authority name. | 要求された証明書ファイルの認証局情報が無効です。 |
 | false | 52007 | Requested certificate file should be one. | 同時にアップロードできる証明書ファイルは1つだけです。 |
 | false | 52008 | Maximum permitted size is {} bytes. But, requested {} bytes. | アップロードできる最大ファイルサイズは512KBです。 |
