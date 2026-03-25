@@ -1,28 +1,33 @@
 ## Management > Certificate Manager > API v1.1 Guide
 
-Certificate Manager provides APIs to view and download a list of certificates. Clients can register certificates and certificate files in the console and then use the data through APIs.
+Certificate Manager provides APIs for viewing and downloading a list of certificates. Clients can register certificates and certificate files in the console and then use the data through APIs.
 
-### Basic Information
-#### EndPoint
+### Common Certificate Manager API Information
+#### API EndPoint
 ```text
 https://certmanager.api.nhncloudservice.com
 ```
 
-#### Available API Types 
-| Method | URI                                                                     | Description |
-| ------ |-------------------------------------------------------------------------| --- |
-| GET | /certmanager/v1.1/appkeys/{appKey}/certificates                         | Retrieves a list of certificates. |
-| GET | /certmanager/v1.1/appkeys/{appKey}/certificates/{certificateName}/files | Downloads the registered certificate file. |
-
-##### HTTP Headers in API Requests 
+##### API Request HTTP Header 
 Required fields are added to the HTTP header in v1.1.
 ```
 X-TC-AUTHENTICATION-ID: {User Access Key ID}
 X-TC-AUTHENTICATION-SECRET: {Secret Access Key}
 ```
 
-For more information, see the [console user guide](/Management/Certificate%20Manager/en/console-guide/#api).
+#### Authentication and Authorization
+Certificate Manager uses User Access Key authentication for authentication and authorization when calling APIs.
+User Access Key is an authentication key issued based on an NHN Cloud account or IAM account, and is used together with a Secret Access Key as an authentication method for API requests.
+For more information on using User Access Key, refer to [User Access Key Authentication](/nhncloud/ko/public-api/user-access-key).
 
+Certificate Manager API uses role-based access control (RBAC).<br>
+Users must have the **Certificate Manager ADMIN Role** or **Certificate Manager VIEWER Role** to use the API.
+
+#### Supported API Types
+| Method | URI                                                                     | Description |
+| ------ |-------------------------------------------------------------------------| --- |
+| GET | /certmanager/v1.1/appkeys/{appKey}/certificates                         | Retrieves a list of certificates. |
+| GET | /certmanager/v1.1/appkeys/{appKey}/certificates/{certificateName}/files | Downloads a registered certificate file. |
 
 ##### Path Variables of API Request
 
@@ -67,7 +72,7 @@ GET https://certmanager.api.nhncloudservice.com/certmanager/v1.1/appkeys/{appKey
 | pageSize | Number | Page size | 10(default) |
 | pageNum | Number | Page number | 1(default) |
 | all | Boolean | Retrieve all or not | true, false(default) |
-| String | Token ID | Certificate status | ALL, EXPIRED, UNEXPIRED(default) | 
+| String | Token ID | Certificate status | ALL, EXPIRED, UNEXPIRED(default) |
 
 ※ The values for all and status are case insensitive.
 
@@ -176,16 +181,24 @@ Download Certificate File API can be requested by using the `curl` command.
 
 ```bash
 #Write to File
-curl 'https://certmanager.api.nhncloudservice.com/certmanager/v1.1/appkeys/{appKey}/certificates/{certificateName}/files' > cert.pem
+curl -H 'X-TC-AUTHENTICATION-ID: {User Access Key ID}' \
+    -H 'X-TC-AUTHENTICATION-SECRET: {Secret Access Key}' \
+    'https://certmanager.api.nhncloudservice.com/certmanager/v1.1/appkeys/{appKey}/certificates/{certificateName}/files' > cert.pem
 
 #Specify File Name
-curl -o cert.pem 'https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
+curl -o cert.pem \
+    -H 'X-TC-AUTHENTICATION-ID: {User Access Key ID}' \
+    -H 'X-TC-AUTHENTICATION-SECRET: {Secret Access Key}' \
+    'https://certmanager.api.nhncloudservice.com/certmanager/v1.1/appkeys/{appKey}/certificates/{certificateName}/files'
 
 #Maintain Uploaded File Name
-curl -OJ 'https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files'
+curl -OJ \
+    -H 'X-TC-AUTHENTICATION-ID: {User Access Key ID}' \
+    -H 'X-TC-AUTHENTICATION-SECRET: {Secret Access Key}' \
+    'https://certmanager.api.nhncloudservice.com/certmanager/v1.1/appkeys/{appKey}/certificates/{certificateName}/files'
 ```
 * See the link below on how to use curl command
-  * curl command guide : [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)
+  * curl command guide: [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)
 
 ### Response Codes
 
