@@ -4,7 +4,7 @@
 #### API v1.1 Authentication and Permission Updates
 * Updated the authentication and permission information in the Certificate Manager API v1.1 guide.
     * The **Certificate Manager ADMIN** role or **Certificate Manager VIEWER** role is required to use the API.
-    * For more information, refer to the [API v1.1 guide](/Management/Certificate%20Manager/ko/api-guide-v1.1).
+    * For more information, refer to the [API v1.1 guide](/Management/Certificate%20Manager/en/api-guide-v1.1).
 
 ### March 10, 2026
 #### Added a API version 

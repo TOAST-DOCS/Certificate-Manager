@@ -4,7 +4,7 @@
 #### API v1.1 認証及び権限の修正
 * Certificate Manager API v1.1 ガイドの認証及び権限情報が修正されました。
 * APIを使用するためには、**Certificate Manager ADMINロール**または**Certificate Manager VIEWERロール**が必要です。
-* 詳細は[API v1.1 ガイド](/Management/Certificate%20Manager/ko/api-guide-v1.1)で確認できます。
+* 詳細は[API v1.1 ガイド](/Management/Certificate%20Manager/ja/api-guide-v1.1)で確認できます。
     
 ### 2026. 03. 10.
 #### APIバージョンの追加

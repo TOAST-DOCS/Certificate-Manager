@@ -18,7 +18,7 @@ X-TC-AUTHENTICATION-SECRET: {Secret Access Key}
 #### 認証及び権限
 Certificate Managerは、API呼び出し時の認証/認可のためにUser Access Key認証を使用します。
 User Access Keyは、NHN CloudアカウントまたはIAMアカウントをベースに発行される認証キーであり、Secret Access Keyと一緒に使用するAPIリクエストに対する認証手段です。
-User Access Keyの使用に関する詳細は、[User Access Key認証](/nhncloud/ko/public-api/user-access-key)を参考にしてください。
+User Access Keyの使用に関する詳細は、[User Access Key認証](/nhncloud/ja/public-api/user-access-key)を参考にしてください。
 
 Certificate Manager APIは、ロールベースのアクセス制御(RBAC)を使用します。<br>
 ユーザーはAPIを使用するために、**Certificate Manager ADMINロール**または**Certificate Manager VIEWERロール**を所有している必要があります。
