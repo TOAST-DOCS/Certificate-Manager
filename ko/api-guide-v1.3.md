@@ -24,7 +24,8 @@ CertificateManager API는 역할 기반 접근 제어(RBAC)를 사용하고 있�
 | 메서드 | URI                                                                     | 설명 |
 | ------ |-------------------------------------------------------------------------| --- |
 | GET | /certmanager/v1.3/appkeys/{appKey}/certificates                         | 인증서 목록을 조회합니다. |
-| GET | /certmanager/v1.3/appkeys/{appKey}/certificates/{certificateName}/files | 등록된 인증서 파일을 다운로드합니다. |
+| GET | /certmanager/v1.3/appkeys/{appKey}/certificates/{certificateName}/files | 등록된 인증서 파일을 인증서 이름으로 다운로드합니다. |
+| GET | /certmanager/v1.3/appkeys/{appKey}/certificates/{certificateId}/certificate-files | 등록된 인증서 파일을 인증서 ID로 다운로드합니다. |
 
 ##### API 요청의 경로 변수
 
@@ -32,6 +33,7 @@ CertificateManager API는 역할 기반 접근 제어(RBAC)를 사용하고 있�
 | --- | --- | --- |
 | appKey | String | 사용할 데이터를 저장하고 있는 NHN Cloud 프로젝트의 앱키 |
 | certificateName | String | 사용할 데이터(인증서) 이름 |
+| certificateId | Number | 사용할 데이터(인증서) ID |
 
 ##### API 응답의 데이터 공통 헤더
 
@@ -97,6 +99,7 @@ Content-Type:application/json
         "pageSize": 10,
         "data": [
             {
+                "certificateId": 1,
                 "certificateName": "nhncloudservice.com",
                 "authority": "NHN",
                 "domains": [
@@ -118,6 +121,7 @@ Content-Type:application/json
 | totalPage | Number | 전체 페이지 수 |
 | currentPage | Number | 현재 페이지 |
 | pageSize | Number | 페이지 크기 |
+| certificateId | Number | 인증서 ID |
 | certificateName | String | 인증서 이름 |
 | authority | String | 인증 기관 |
 | signatureAlgorithm | String | 서명 방식 |
@@ -125,9 +129,9 @@ Content-Type:application/json
 | expirationDate | String | 인증서 파일 만료일 |
 
 
-### 인증서 파일 다운로드
+### 인증서 파일 다운로드(인증서 이름)
 
-Certificate Manager에 등록한 인증서 파일을 다운로드할 때 사용합니다.
+Certificate Manager에 등록한 인증서 파일을 인증서 이름으로 다운로드할 때 사용합니다.
 
 #### 요청
 
@@ -195,6 +199,58 @@ curl -OJ 'https://certmanager.api.nhncloudservice.com/certmanager/v1.3/appkeys/{
 * 기타 curl 명령어 사용법은 아래 가이드를 참고하세요.
   * curl command guide: [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)
 
+### 인증서 파일 다운로드(인증서 ID)
+
+Certificate Manager에 등록한 인증서 파일을 인증서 ID로 다운로드할 때 사용합니다.
+인증서 ID는 인증서 목록 조회 API 응답의 certificateId 값입니다.
+
+#### 요청
+
+```
+GET https://certmanager.api.nhncloudservice.com/certmanager/v1.3/appkeys/{appKey}/certificates/{certificateId}/certificate-files
+```
+
+#### 성공 응답
+
+[Response Header]
+
+```
+Content-Disposition:attachment; filename="{파일명}"
+Content-Type:application/octet-stream
+```
+
+[Response Body]
+
+```
+-----BEGIN CERTIFICATE-----
+...
+-----END CERTIFICATE-----
+...
+-----BEGIN RSA PRIVATE KEY-----
+...
+-----END RSA PRIVATE KEY-----
+```
+
+#### 실패 응답
+[Response Header]
+```
+Content-Type:application/json
+```
+[Response Body]
+
+```
+{
+    "header": {
+        "resultCode": 52009,
+        "resultMessage": "Certificate id does not exist.",
+        "isSuccessful": false
+    },
+    "body": {}
+}
+```
+
+※ 실패 응답은 HTTP 상태 코드 404(Not Found)와 함께 반환됩니다.
+
 ### 응답 코드
 
 | isSuccessful | resultCode | resultMessage | 설명 |
@@ -209,3 +265,4 @@ curl -OJ 'https://certmanager.api.nhncloudservice.com/certmanager/v1.3/appkeys/{
 | false | 52006 | The certificate has an invalid certificate authority name. | 요청한 인증서 파일의 인증 기관 정보가 유효하지 않습니다. |
 | false | 52007 | Requested certificate file should be one. | 동시에 하나의 인증서 파일만 업로드 가능합니다. |
 | false | 52008 | Maximum permitted size is {} bytes. But, requested {} bytes. | 업로드 가능한 최대 파일 크기는 512KB입니다. |
+| false | 52009 | Certificate id does not exist. | 요청한 인증서 ID가 존재하지 않습니다. |
