@@ -1,9 +1,22 @@
 ## Management > Certificate Manager > リリースノート
 
+### 2026. 07. 28.
+#### 機能改善
+* Certificate Manager API v1.3の証明書一覧照会APIのレスポンスに証明書IDが追加されました。
+* Certificate Manager API v1.3に証明書IDを利用した証明書ダウンロードAPIが追加されました。
+    * 詳細は[API v1.3ガイド](/Management/Certificate%20Manager/ja/api-guide-v1.3)で確認できます。
+* 通知グループ > 受信グループが**通知受信グループ管理**に移行されました。
+
+### 2026. 04. 14.
+#### API v1.1 認証及び権限の修正
+* Certificate Manager API v1.1 ガイドの認証及び権限情報が修正されました。
+* APIを使用するためには、**Certificate Manager ADMINロール**または**Certificate Manager VIEWERロール**が必要です。
+* 詳細は[API v1.1 ガイド](/Management/Certificate%20Manager/ja/api-guide-v1.1)で確認できます。
+
 ### 2026. 03. 10.
 #### APIバージョンの追加
 * トークン認証方式をサポートするCertificate Manager API v1.3が追加されました。 
-  </br> 詳細はAPI v1.3ガイドで確認できます。
+  <br> 詳細はAPI v1.3ガイドで確認できます。
   
 ### 2025. 11. 25.
 #### 機能改善

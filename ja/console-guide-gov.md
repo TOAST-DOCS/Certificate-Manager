@@ -30,36 +30,20 @@ Certificate Managerは、通知グループ単位で有効期限の通知周期�
 ### 通知設定
 
 1. 通知グループメイン画面で**通知設定**ボタンをクリックします。
-2. 基本に設定されている通知ポリシーがないため、**通知設定**ウィンドウで通知ポリシーを追加すると、有効期限の通知を受け取ることができます。![alarmgroup-4.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-4.png)
+2. 基本に設定されている通知ポリシーがないため、**通知設定**ウィンドウで通知ポリシーを追加すると、有効期限の通知を受け取ることができます。
+![20260728_alarm_01.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_01.png)
 
 ### 通知追加
 
-1. **通知設定**ウィンドウ左下の**+**ボタンをクリックします。![alarmgroup-5.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-5.png)
+1. **通知設定**ウィンドウ左下の**+**ボタンをクリックします。
+![20260728_alarm_02.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_02.png)
 2. **通知開始D-day**で、証明書、ドメイン、データ有効期限の何日前から通知を送信するかを指定します。
 3. **通知周期**で、何日間隔で通知を送信するかを指定します。
-4. **Emailを送信するかどうか**と**SMSを送信するかどうか**で通知送信時にメール、SMSを使用するかどうかを選択します。どちらも選択されていない場合は通知を送信しません。
+4. **受信グループ**で通知を受け取る受信グループを選択します。受信グループはプロジェクト設定で編集できます。
 5. **管理**列で**-**ボタンをクリックして通知ポリシーを削除できます。
 6. **通知開始D-day**と**通知周期**は重複して設定できません。
 7. **完了**ボタンをクリックします。
-![alarmgroup-6.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-6.png)
-
-### 受信グループ連携画面
-
-通知グループメイン画面で**受信グループ**ボタンをクリックすると、通知グループに連携されているユーザーが表示されます。
-デフォルト値には通知グループを作成したユーザーが追加されています。
-
-NHN Cloudプロジェクトに属しているメンバーが通知グループのユーザーに連携される場合があります。![alarmgroup-7.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-7.png)
-
-### ユーザー追加
-
-上部のユーザー連携検索ウィンドウで、NHN Cloudプロジェクトに属しているメンバーを検索して追加できます。
-
-![alarmgroup-8.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-8.png)
-![alarmgroup-9.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-9.png)
-
-* **Type**は、そのユーザーが持つNHN Cloudプロジェクトの権限(ADMIN/MEMBER)を意味します。
-* メンバーの**名前**、**Email**および**Phone**を確認できます。
-* 登録された携帯電話番号がない場合は、**Phone**に「-」と表示されます。この場合、SMS通知の送信が失敗し、通知の送信に失敗すると通知グループに属しているADMINに「通知送信失敗」通知が送信されます。
+![20260728_alarm_03.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_03.png)
 
 ## 証明書
 

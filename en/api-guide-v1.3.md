@@ -24,7 +24,8 @@ Users must have either the **CertificateManager ADMIN role** or **CertificateMan
 | Method | URI                                                                     | Description |
 | ------ |-------------------------------------------------------------------------| --- |
 | GET | /certmanager/v1.3/appkeys/{appKey}/certificates                         | Retrieve the certificate list. |
-| GET | /certmanager/v1.3/appkeys/{appKey}/certificates/{certificateName}/files | Download the registered certificate file. |
+| GET | /certmanager/v1.3/appkeys/{appKey}/certificates/{certificateName}/files | Download the registered certificate file by certificate name. |
+| GET | /certmanager/v1.3/appkeys/{appKey}/certificates/{certificateId}/certificate-files | Download the registered certificate file by certificate ID. |
 
 ##### API Request Path Variables
 
@@ -32,6 +33,7 @@ Users must have either the **CertificateManager ADMIN role** or **CertificateMan
 | --- | --- | --- |
 | appKey | String | AppKey of the NHN Cloud project where the data is stored |
 | certificateName | String | Data (certificate) name to use |
+| certificateId | Number | Data (certificate) ID to use |
 
 ##### API Response's Common Data Header
 
@@ -97,6 +99,7 @@ Content-Type:application/json
         "pageSize": 10,
         "data": [
             {
+                "certificateId": 1,
                 "certificateName": "nhncloudservice.com",
                 "authority": "NHN",
                 "domains": [
@@ -118,6 +121,7 @@ Content-Type:application/json
 | totalPage | Number | Total number of pages |
 | currentPage | Number | Current page |
 | pageSize | Number | Page size |
+| certificateId | Number | Certificate ID |
 | certificateName | String | Certificate name |
 | authority | String | Certificate authority |
 | signatureAlgorithm | String | Signature method |
@@ -125,9 +129,9 @@ Content-Type:application/json
 | expirationDate | String | Certificate file expiration date |
 
 
-### Download a Certificate File
+### Download a Certificate File (Certificate Name)
 
-You can use it to download certificate files registered in the Certificate Manager.
+You can use it to download certificate files registered in the Certificate Manager by certificate name.
 
 #### Request
 
@@ -195,6 +199,58 @@ curl -OJ 'https://certmanager.api.nhncloudservice.com/certmanager/v1.3/appkeys/{
 * For how to use other curl commands, please refer to the guide below:
   * curl command guide: [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)
 
+### Download a Certificate File (Certificate ID)
+
+You can use it to download certificate files registered in the Certificate Manager by certificate ID.
+The certificate ID is the certificateId value in the response of the certificate list retrieval API.
+
+#### Request
+
+```
+GET https://certmanager.api.nhncloudservice.com/certmanager/v1.3/appkeys/{appKey}/certificates/{certificateId}/certificate-files
+```
+
+#### Success Response
+
+[Response Header]
+
+```
+Content-Disposition:attachment; filename="{filename}"
+Content-Type:application/octet-stream
+```
+
+[Response Body]
+
+```
+-----BEGIN CERTIFICATE-----
+...
+-----END CERTIFICATE-----
+...
+-----BEGIN RSA PRIVATE KEY-----
+...
+-----END RSA PRIVATE KEY-----
+```
+
+#### Failure Response
+[Response Header]
+```
+Content-Type:application/json
+```
+[Response Body]
+
+```
+{
+    "header": {
+        "resultCode": 52009,
+        "resultMessage": "Certificate id does not exist.",
+        "isSuccessful": false
+    },
+    "body": {}
+}
+```
+
+※ The failure response is returned with HTTP status code 404 (Not Found).
+
 ### Response Code
 
 | isSuccessful | resultCode | resultMessage | Description |
@@ -209,3 +265,4 @@ curl -OJ 'https://certmanager.api.nhncloudservice.com/certmanager/v1.3/appkeys/{
 | false | 52006 | The certificate has an invalid certificate authority name. | The certificate authority information in the requested certificate file is invalid. |
 | false | 52007 | The requested certificate file should be one. | Only one certificate file can be uploaded at a time. |
 | false | 52008 | The maximum permitted size is {} bytes. However, the requested {} bytes. | The maximum file size that can be uploaded is 512 KB. |
+| false | 52009 | Certificate id does not exist. | The requested certificate ID does not exist. |

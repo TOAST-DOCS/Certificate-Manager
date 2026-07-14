@@ -30,36 +30,20 @@ Certificate Manager sets notification cycle on each expiration date and manages 
 ### Notification Setup
 
 1. Click **Notification Setting** on the main page and you can find notification policy for expiration dates set for each notification group. 
-2. By default, notification policy is not set. You need to add notification policy to be notified on each expiration date. ![alarmgroup-4.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-4.png)
+2. By default, notification policy is not set. You need to add notification policy to be notified on each expiration date.
+![20260728_alarm_01.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_01.png)
 
 ### Adding Notifications
 
-1. Click **+** at the bottom left of the table to add notification policy. ![alarmgroup-5.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-5.png) 
+1. Click **+** at the bottom left of the table to add notification policy.
+![20260728_alarm_02.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_02.png)
 2. **D-day for Notification Start** refers to since how many days ago notifications can be sent from expiration dates of certificate/domain/user data. 
 3. **Notification Cycle** means how often notification is to be sent from D-day for notification start. 
-4. **Send via Email** and **Send via SMS** refer to whether to use Email or SMS to send notifications. If both are unchecked, notification is not sent. 
+4. In **Receiving group**, select a group to receive notifications. Receiving groups can be edited in the project settings.
 5. Click **-** of **Delete** to delete notification policy. 
 6. **D-day for Notification Start** and **Notification Cycle** cannot be redundantly set. 
 7. Click **Completed** to save notification policy as configured. 
-![alarmgroup-6.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-6.png)
-
-### User Group Integration
-
-On the main page of notification group, click **Receiving group**, and users that are integrated to the notification group are displayed. 
-By default, the notification group creator is added. 
-
-NHN Cloud project members can be integrated as the group users. ![alarmgroup-7.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-7.png)
-
-### Adding Users
-
-On the search window for user integration above, you may search and add NHN Cloud project members.
-
-![alarmgroup-8.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-8.png)
-![alarmgroup-9.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-9.png)
-  
-* **Type** refers to the user's authority (Admin/Member) for a NHN Cloud project. 
-* You can check **Name**, **Email** and **Phone** of each member. 
-* When a member's mobile phone number is not registered, you shall find '-' for **Phone**. In such case, it fails to send notification via SMS; then, a failure message of notification delivery is sent to ADMIN of each group.   
+![20260728_alarm_03.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_03.png)
 
 ## Certificate
 
