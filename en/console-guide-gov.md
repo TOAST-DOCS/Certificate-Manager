@@ -9,12 +9,12 @@ Console User Guide describes basic requirements to enable Certificate Manager.
 
 Certificate Manager sets notification cycle on each expiration date and manages notification recipients, by notification group.  
 
-![alarmgroup-1.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-1.png)
+![20260728_alarm_group_01_en.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_group_01_en.png)
 
 ### Creating Notification Groups
 
 1. Click **+ Create Groups** on the main page of notification group, and you'll find a page like below. 
-![alarmgroup-2.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-2.png)
+![20260728_alarm_group_02_en.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_group_02_en.png)
 2. Enter name for a group. No duplicate name is allowed. 
 3. Enter whether to enable notification. You can choose whether to send all notifications, including expiration dates, to group users. 
 4. Click **Add** and create a notification group. 
@@ -24,25 +24,25 @@ Certificate Manager sets notification cycle on each expiration date and manages 
 1. Click **Details** on the main page, and it shows name of the group, whether notification is enabled, and management data. **Managed Data** refers to certificate/domain/user data that are integrated with each notification group. 
 2. Click **Edit** to change name of the group or notification enabled/disabled.    
 
-![alarmgroup-3.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-3.png)
+![20260728_alarm_group_03_en.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_group_03_en.png)
 
 ### Notification Setup
 
 1. Click **Notification Setting** on the main page and you can find notification policy for expiration dates set for each notification group. 
 2. By default, notification policy is not set. You need to add notification policy to be notified on each expiration date.
-![20260728_alarm_01.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_01.png)
+![20260728_alarm_group_04_en.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_group_04_en.png)
 
 ### Adding Notifications
 
 1. Click **+** at the bottom left of the table to add notification policy.
-![20260728_alarm_02.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_02.png)
+![20260728_alarm_group_05_en.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_group_05_en.png)
 2. **D-day for Notification Start** refers to since how many days ago notifications can be sent from expiration dates of certificate/domain/user data. 
 3. **Notification Cycle** means how often notification is to be sent from D-day for notification start. 
 4. In **Receiving group**, select a group to receive notifications. Receiving groups can be edited in the project settings.
 5. Click **-** of **Delete** to delete notification policy. 
 6. **D-day for Notification Start** and **Notification Cycle** cannot be redundantly set. 
 7. Click **Completed** to save notification policy as configured. 
-![20260728_alarm_03.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_03.png)
+![20260728_alarm_group_06_en.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_group_06_en.png)
 
 ## Certificate
 

@@ -10,12 +10,12 @@
 
 Certificate Managerは、通知グループ単位で有効期限の通知周期を設定し、通知を受け取る対象者を管理します。
 
-![alarmgroup-1.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-1.png)
+![20260728_alarm_group_01_en.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_group_01_en.png)
 
 ### 通知グループ作成
 
 1. 通知グループメイン画面で**+グループ作成**ボタンをクリックします。
-![alarmgroup-2.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-2.png)
+![20260728_alarm_group_02_en.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_group_02_en.png)
 2. **グループ作成**ウィンドウでグループ名を入力します。すでに存在する名前は指定できません。
 3. 通知を使用するかどうかを選択します。通知グループに属しているユーザーに有効期限の通知を含むすべての通知を送信するかどうかを選択できます。
 4. **追加**ボタンをクリックします。
@@ -25,25 +25,25 @@ Certificate Managerは、通知グループ単位で有効期限の通知周期�
 1. 通知グループメイン画面で**詳細情報**ボタンをクリックすると、通知グループ名と通知使用有無、管理データが表示されます。**管理data**は該当通知グループに連携されている証明書、ドメイン、ユーザーデータを意味します。
 2. **修正**ボタンをクリックして通知グループの名前および通知を使用するかどうかを変更できます。
 
-![alarmgroup-3.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-3.png)
+![20260728_alarm_group_03_en.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_group_03_en.png)
 
 ### 通知設定
 
 1. 通知グループメイン画面で**通知設定**ボタンをクリックします。
 2. 基本に設定されている通知ポリシーがないため、**通知設定**ウィンドウで通知ポリシーを追加すると、有効期限の通知を受け取ることができます。
-![20260728_alarm_01.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_01.png)
+![20260728_alarm_group_04_en.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_group_04_en.png)
 
 ### 通知追加
 
 1. **通知設定**ウィンドウ左下の**+**ボタンをクリックします。
-![20260728_alarm_02.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_02.png)
+![20260728_alarm_group_05_en.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_group_05_en.png)
 2. **通知開始D-day**で、証明書、ドメイン、データ有効期限の何日前から通知を送信するかを指定します。
 3. **通知周期**で、何日間隔で通知を送信するかを指定します。
 4. **受信グループ**で通知を受け取る受信グループを選択します。受信グループはプロジェクト設定で編集できます。
 5. **管理**列で**-**ボタンをクリックして通知ポリシーを削除できます。
 6. **通知開始D-day**と**通知周期**は重複して設定できません。
 7. **完了**ボタンをクリックします。
-![20260728_alarm_03.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_03.png)
+![20260728_alarm_group_06_en.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_group_06_en.png)
 
 ## 証明書
 
