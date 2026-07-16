@@ -10,12 +10,12 @@
 
 Certificate Manager는 알림 그룹 단위로 만료 일자의 알림 주기를 설정하고 알림을 받을 대상자를 관리합니다.
 
-![alarmgroup-1.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-1.png)
+![20260728_alarm_04.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_04.png)
 
 ### 알림 그룹 생성
 
 1. 알림 그룹 메인 화면에서 **+ 그룹 만들기** 버튼을 클릭합니다.
-![alarmgroup-2.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-2.png)
+![20260728_alarm_05.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_05.png)
 2. **그룹 만들기** 창에서 그룹 이름을 입력합니다. 이미 있는 이름은 지정할 수 없습니다.
 3. 알림 사용 여부를 선택합니다. 알림 그룹에 속한 사용자에게 만료 일자 알림을 포함한 모든 알림을 발송할지 여부를 선택할 수 있습니다.
 4. **추가** 버튼을 클릭합니다.
@@ -25,7 +25,7 @@ Certificate Manager는 알림 그룹 단위로 만료 일자의 알림 주기를
 1. 알림 그룹 메인 화면에서 **상세 정보** 버튼을 클릭하면 알림 그룹 이름과 알림 사용 여부, 관리 데이터가 표시됩니다. **관리 data**는 해당 알림 그룹에 연동되어 있는 인증서, 도메인, 사용자 데이터를 의미합니다.
 2. **수정** 버튼을 클릭하여 알림 그룹의 이름 및 알림 사용 여부를 변경할 수 있습니다.
 
-![alarmgroup-3.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-3.png)
+![20260728_alarm_06.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_06.png)
 
 ### 알림 설정
 
