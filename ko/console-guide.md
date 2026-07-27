@@ -10,12 +10,12 @@
 
 Certificate Manager는 알림 그룹 단위로 만료 일자의 알림 주기를 설정하고 알림을 받을 대상자를 관리합니다.
 
-![alarmgroup-1.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-1.png)
+![20260728_alarm_04.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_04.png)
 
 ### 알림 그룹 생성
 
 1. 알림 그룹 메인 화면에서 **+ 그룹 만들기** 버튼을 클릭합니다.
-![alarmgroup-2.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-2.png)
+![20260728_alarm_05.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_05.png)
 2. **그룹 만들기** 창에서 그룹 이름을 입력합니다. 이미 있는 이름은 지정할 수 없습니다.
 3. 알림 사용 여부를 선택합니다. 알림 그룹에 속한 사용자에게 만료 일자 알림을 포함한 모든 알림을 발송할지 여부를 선택할 수 있습니다.
 4. **추가** 버튼을 클릭합니다.
@@ -25,41 +25,25 @@ Certificate Manager는 알림 그룹 단위로 만료 일자의 알림 주기를
 1. 알림 그룹 메인 화면에서 **상세 정보** 버튼을 클릭하면 알림 그룹 이름과 알림 사용 여부, 관리 데이터가 표시됩니다. **관리 data**는 해당 알림 그룹에 연동되어 있는 인증서, 도메인, 사용자 데이터를 의미합니다.
 2. **수정** 버튼을 클릭하여 알림 그룹의 이름 및 알림 사용 여부를 변경할 수 있습니다.
 
-![alarmgroup-3.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-3.png)
+![20260728_alarm_06.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_06.png)
 
 ### 알림 설정
 
 1. 알림 그룹 메인 화면에서 **알림 설정** 버튼을 클릭합니다.
-2. 기본으로 설정된 알림 정책이 없으므로 **알림 설정** 창에서 알림 정책을 추가해야 만료일 알림을 받을 수 있습니다.![alarmgroup-4.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-4.png)
+2. 기본으로 설정된 알림 정책이 없으므로 **알림 설정** 창에서 알림 정책을 추가해야 만료일 알림을 받을 수 있습니다.
+![20260728_alarm_01.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_01.png)
 
 ### 알림 추가
 
-1. **알림 설정** 창 왼쪽 하단의 **+** 버튼을 클릭합니다.![alarmgroup-5.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-5.png)
+1. **알림 설정** 창 왼쪽 하단의 **+** 버튼을 클릭합니다.
+![20260728_alarm_02.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_02.png)
 2. **알림 시작 D-day**에서 인증서, 도메인, 데이터 만료일 며칠 전부터 알림을 발송할지를 지정합니다.
 3. **알림 주기**에서 며칠 간격으로 알림을 발송할지를 지정합니다.
-4. **Email 발송 여부**와 **SMS 발송 여부**에서 알림 발송 시 이메일, SMS를 사용할지를 선택합니다. 둘 다 선택돼 있지 않으면 알림을 발송하지 않습니다.
+4. **수신 그룹**에서 알림을 받을 수신 그룹을 선택합니다. 프로젝트 설정에서 수신 그룹을 편집할 수 있습니다.
 5. **삭제** 열에서 **-** 버튼을 클릭하여 알림 정책을 삭제할 수 있습니다.
 6. **알림 시작 D-day**와 **알림 주기**는 중복 설정할 수 없습니다.
 7. **완료** 버튼을 클릭합니다.
-![alarmgroup-6.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-6.png)
-
-### 수신 그룹 연동 화면
-
-알림 그룹 메인 화면에서 **사용자 그룹 연동** 버튼을 클릭하면 알림 그룹에 연동되어 있는 사용자가 표시됩니다.
-기본값으로는 알림 그룹을 생성한 사용자가 추가되어 있습니다.
-
-NHN Cloud 프로젝트에 속한 멤버가 알림 그룹의 사용자로 연동될 수 있습니다.![alarmgroup-7.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-7.png)
-
-### 사용자 추가
-
-상단의 사용자 연동 검색 창에서 NHN Cloud 프로젝트에 속한 멤버를 검색하여 추가할 수 있습니다.
-
-![alarmgroup-8.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-8.png)
-![alarmgroup-9.png](http://static.toastoven.net/prod_certificate_manager/202002/alarmgroup-9.png)
-
-* **Type**은 해당 사용자가 지닌 NHN Cloud 프로젝트 권한(ADMIN/MEMBER)을 의미합니다.
-* 멤버의 **이름**, **Email** 및 **Phone**을 확인할 수 있습니다.
-* 등록된 휴대폰 번호가 없다면 **Phone**에 '-'로 표시됩니다. 이 경우 SMS 알림 발송에 실패하며, 알림 발송 실패 시 알림 그룹에 속한 ADMIN에게 '알림 발송 실패' 알림이 발송됩니다.
+![20260728_alarm_03.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_03.png)
 
 ## 인증서
 

@@ -1,5 +1,12 @@
 ## Management > Certificate Manager > Release Notes
 
+### July 28, 2026
+#### Feature Updates
+* Added the certificate ID to the response of the certificate list retrieval API in Certificate Manager API v1.3.
+* Added an API to download certificates using a certificate ID in Certificate Manager API v1.3.
+  * For more information, see the [API v1.3 Guide](/Management/Certificate%20Manager/en/api-guide-v1.3).
+* Migrated Notification Group > Receiving group to **Notification Receiver Group Management**.
+
 ### April 14, 2026
 #### API v1.1 Authentication and Permission Updates
 * Updated the authentication and permission information in the Certificate Manager API v1.1 guide.
