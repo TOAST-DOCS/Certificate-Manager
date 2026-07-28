@@ -1,5 +1,12 @@
 ## Management > Certificate Manager > 릴리스 노트
 
+### 2026. 07. 28.
+#### 기능 개선
+* Certificate Manager API v1.3 인증서 목록 조회 API의 응답에 인증서 ID가 추가되었습니다.
+* Certificate Manager API v1.3에 인증서 ID를 이용한 인증서 다운로드 API가 추가되었습니다.
+    * 자세한 내용은 [API v1.3 가이드](/Management/Certificate%20Manager/ko/api-guide-v1.3-gov)에서 확인할 수 있습니다.
+* 알림 그룹 > 수신 그룹이 **알림 수신 그룹 관리**로 마이그레이션되었습니다.
+
 ### 2026. 04. 14.
 #### API v1.1 인증 및 권한 수정
 * Certificate Manager API v1.1 가이드의 인증 및 권한 정보가 수정되었습니다.

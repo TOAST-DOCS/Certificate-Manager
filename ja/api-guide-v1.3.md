@@ -24,7 +24,8 @@ CertificateManager APIは、ロールベースアクセス制御(RBAC)を使用�
 | メソッド | URI                                                                     | 説明 |
 | ------ |-------------------------------------------------------------------------| --- |
 | GET | /certmanager/v1.3/appkeys/{appKey}/certificates | 証明書一覧を照会します。 |
-| GET | /certmanager/v1.3/appkeys/{appKey}/certificates/{certificateName}/files | 登録された証明書ファイルをダウンロードします。 |
+| GET | /certmanager/v1.3/appkeys/{appKey}/certificates/{certificateName}/files | 登録された証明書ファイルを証明書名でダウンロードします。 |
+| GET | /certmanager/v1.3/appkeys/{appKey}/certificates/{certificateId}/certificate-files | 登録された証明書ファイルを証明書IDでダウンロードします。 |
 
 ##### APIリクエストのパス変数
 
@@ -32,6 +33,7 @@ CertificateManager APIは、ロールベースアクセス制御(RBAC)を使用�
 | --- | --- | --- |
 | appKey | String | 使用するデータを保存しているNHN CloudプロジェクトのAppkey |
 | certificateName | String | 使用するデータ(証明書)の名前 |
+| certificateId | Number | 使用するデータ(証明書)のID |
 
 ##### APIレスポンスのデータ共通ヘッダ
 
@@ -97,6 +99,7 @@ Content-Type:application/json
         "pageSize": 10,
         "data": [
             {
+                "certificateId": 1,
                 "certificateName": "nhncloudservice.com",
                 "authority": "NHN",
                 "domains": [
@@ -118,6 +121,7 @@ Content-Type:application/json
 | totalPage | Number | 総ページ数 |
 | currentPage | Number | 現在のページ |
 | pageSize | Number | ページサイズ |
+| certificateId | Number | 証明書ID |
 | certificateName | String | 証明書名 |
 | authority | String | 認証局 |
 | signatureAlgorithm | String | 署名アルゴリズム |
@@ -125,9 +129,9 @@ Content-Type:application/json
 | expirationDate | String | 証明書ファイル有効期限 |
 
 
-### 証明書ファイルのダウンロード
+### 証明書ファイルのダウンロード(証明書名)
 
-Certificate Managerに登録した証明書ファイルをダウンロードする際に使用します。
+Certificate Managerに登録した証明書ファイルを証明書名でダウンロードする際に使用します。
 
 #### リクエスト
 
@@ -195,6 +199,58 @@ curl -OJ 'https://certmanager.api.nhncloudservice.com/certmanager/v1.3/appkeys/{
 * その他のcurlコマンドの使用方法は、以下のガイドを参照してください。
   * curl command guide: [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)
 
+### 証明書ファイルのダウンロード(証明書ID)
+
+Certificate Managerに登録した証明書ファイルを証明書IDでダウンロードする際に使用します。
+証明書IDは、証明書一覧照会APIレスポンスのcertificateId値です。
+
+#### リクエスト
+
+```
+GET https://certmanager.api.nhncloudservice.com/certmanager/v1.3/appkeys/{appKey}/certificates/{certificateId}/certificate-files
+```
+
+#### 成功レスポンス
+
+[Response Header]
+
+```
+Content-Disposition:attachment; filename="{ファイル名}"
+Content-Type:application/octet-stream
+```
+
+[Response Body]
+
+```
+-----BEGIN CERTIFICATE-----
+...
+-----END CERTIFICATE-----
+...
+-----BEGIN RSA PRIVATE KEY-----
+...
+-----END RSA PRIVATE KEY-----
+```
+
+#### 失敗レスポンス
+[Response Header]
+```
+Content-Type:application/json
+```
+[Response Body]
+
+```
+{
+    "header": {
+        "resultCode": 52009,
+        "resultMessage": "Certificate id does not exist.",
+        "isSuccessful": false
+    },
+    "body": {}
+}
+```
+
+※失敗レスポンスは、HTTPステータスコード404(Not Found)と共に返されます。
+
 ### レスポンスコード
 
 | isSuccessful | resultCode | resultMessage | 説明 |
@@ -209,3 +265,4 @@ curl -OJ 'https://certmanager.api.nhncloudservice.com/certmanager/v1.3/appkeys/{
 | false | 52006 | The certificate has an invalid certificate authority name. | リクエストした証明書ファイルの認証局情報が有効ではありません。 |
 | false | 52007 | Requested certificate file should be one. | 同時に1つの証明書ファイルのみアップロード可能です。 |
 | false | 52008 | Maximum permitted size is {} bytes. But, requested {} bytes. | アップロード可能な最大ファイルサイズは512KBです。 |
+| false | 52009 | Certificate id does not exist. | リクエストした証明書IDが存在しません。 |
