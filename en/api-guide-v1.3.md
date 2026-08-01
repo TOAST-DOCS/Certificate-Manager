@@ -1,17 +1,24 @@
-## Management > Certificate Manager > API v1.3 Guide
+<!-- pre-align:aligned sig=1830bd25c1cb -->
+
+<a id="management-certificate-manager-api-v13-guide"></a>
+## Management > Certificate Manager > API v1.3 Guide { #management-certificate-manager-api-v13-guide }
 
 Certificate Manager provides APIs for retrieving certificate lists and downloading certificates. After registering certificates and certificate files in the console, clients can access and utilize the data through the API.
 
-### CertificateManager API Common Information
+<a id="certificatemanager-api-common-information"></a>
+### CertificateManager API Common Information { #certificatemanager-api-common-information }
+<a id="certificatemanager-api-common-information-api-endpoint"></a>
 #### API Endpoint
 ```text
 https://certmanager.api.nhncloudservice.com
 ```
+<a id="certificatemanager-api-common-information-api-request-http-header"></a>
 #### API Request HTTP Header
 ```
 X-NHN-AUTHORIZATION: Bearer {issued token}
 ```
 
+<a id="certificatemanager-api-common-information-authentication-and-authorization"></a>
 #### Authentication and Authorization
 CertificateManager uses User Access Key tokens for authentication and authorization when making API calls. 
 The User Access Key token is a temporary, Bearer-type access token issued from a User Access Key.
@@ -20,6 +27,7 @@ For more information on issuing and using User Access Key tokens, please refer t
 CertificateManager API uses role-based access (RBAC).<br>
 Users must have either the **CertificateManager ADMIN role** or **CertificateManager VIEWER role** to use the API. 
 
+<a id="certificatemanager-api-common-information-provided-apis"></a>
 #### Provided APIs
 | Method | URI                                                                     | Description |
 | ------ |-------------------------------------------------------------------------| --- |
@@ -56,10 +64,12 @@ Users must have either the **CertificateManager ADMIN role** or **CertificateMan
 | resultMessage | String | API call result message |
 | isSuccessful | Boolean | API call success status |
 
-### Retrieve a Certificate List
+<a id="retrieve-a-certificate-list"></a>
+### Retrieve a Certificate List { #retrieve-a-certificate-list }
 
 You can use it to retrieve the certificate lists registered in the Certificate Manager. 
 
+<a id="retrieve-a-certificate-list-request"></a>
 #### Request
 
 ```
@@ -75,6 +85,7 @@ GET https://certmanager.api.nhncloudservice.com/certmanager/v1.3/appkeys/{appKey
 
 ※ The values for all, status are case-insensitive.
 
+<a id="retrieve-a-certificate-list-response"></a>
 #### Response
 
 [Response Header]
@@ -129,16 +140,19 @@ Content-Type:application/json
 | expirationDate | String | Certificate file expiration date |
 
 
-### Download a Certificate File (Certificate Name)
+<a id="download-a-certificate-file-certificate-name"></a>
+### Download a Certificate File (Certificate Name) { #download-a-certificate-file-certificate-name }
 
 You can use it to download certificate files registered in the Certificate Manager by certificate name.
 
+<a id="download-a-certificate-file-certificate-name-request"></a>
 #### Request
 
 ```
 GET https://certmanager.api.nhncloudservice.com/certmanager/v1.3/appkeys/{appKey}/certificates/{certificateName}/files
 ```
 
+<a id="download-a-certificate-file-certificate-name-success-response"></a>
 #### Success Response
 
 [Response Header]
@@ -160,6 +174,7 @@ Content-Type:application/octet-stream
 -----END RSA PRIVATE KEY-----
 ```
 
+<a id="download-a-certificate-file-certificate-name-failure-response"></a>
 #### Failure Response
 [Response Header]
 ```
@@ -179,6 +194,7 @@ Content-Type:application/json
 ```
 
 
+<a id="download-a-certificate-file-certificate-name-using-the-command-line-interface-cli"></a>
 #### Using the Command Line Interface (CLI)
 
 You can request the certificate file download API using the curl command.
@@ -199,17 +215,20 @@ curl -OJ 'https://certmanager.api.nhncloudservice.com/certmanager/v1.3/appkeys/{
 * For how to use other curl commands, please refer to the guide below:
   * curl command guide: [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)
 
-### Download a Certificate File (Certificate ID)
+<a id="download-a-certificate-file-certificate-id"></a>
+### Download a Certificate File (Certificate ID) { #download-a-certificate-file-certificate-id }
 
 You can use it to download certificate files registered in the Certificate Manager by certificate ID.
 The certificate ID is the certificateId value in the response of the certificate list retrieval API.
 
+<a id="download-a-certificate-file-certificate-id-request"></a>
 #### Request
 
 ```
 GET https://certmanager.api.nhncloudservice.com/certmanager/v1.3/appkeys/{appKey}/certificates/{certificateId}/certificate-files
 ```
 
+<a id="download-a-certificate-file-certificate-id-success-response"></a>
 #### Success Response
 
 [Response Header]
@@ -231,6 +250,7 @@ Content-Type:application/octet-stream
 -----END RSA PRIVATE KEY-----
 ```
 
+<a id="download-a-certificate-file-certificate-id-failure-response"></a>
 #### Failure Response
 [Response Header]
 ```
@@ -251,7 +271,8 @@ Content-Type:application/json
 
 ※ The failure response is returned with HTTP status code 404 (Not Found).
 
-### Response Code
+<a id="response-code"></a>
+### Response Code { #response-code }
 
 | isSuccessful | resultCode | resultMessage | Description |
 | ------------ | ---------- | ------------- | --- |

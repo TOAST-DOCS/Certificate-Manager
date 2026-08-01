@@ -1,23 +1,30 @@
-## Management > Certificate Manager > 개요
+<!-- pre-align:aligned sig=71a63d528337 -->
+
+<a id="management-certificate-manager-overview"></a>
+## Management > Certificate Manager > 개요 { #management-certificate-manager-overview }
 
 TLS 인증서/도메인의 만료일 연장을 놓치면 웹 서비스에 접속하지 못하는 일이 생깁니다.
 Certificate Manager는 만료일 연장을 놓치지 않도록, 만료일이 가까워지면 알림(SMS, 이메일)을 발송하는 서비스입니다.
 만료일이 존재하는 TLS 인증서/도메인/사용자 데이터(예: 라이선스)를 관리하고, 만료일에 따른 알림 발송 규칙과 알림 받을 사용자를 정할 수 있습니다.
 
-### 제공 기능
+<a id="features"></a>
+### 제공 기능 { #features }
 
+<a id="features-manage-tls-certificatedomainuser-data"></a>
 #### TLS 인증서/도메인/사용자 데이터 관리
 
 * 인증서 정보 등록, 관리, 조회
 * 인증서 파일(pem) 업로드 및 다운로드
 * 인증서 사용/설치 정보 등록, 관리, 조회
 
+<a id="features-auto-collect-tls-certificate-information"></a>
 #### TLS 인증서 정보 자동 수집
 
 * 인증서 파일 업로드 시, 파일을 읽어 인증서의 생성일, 만료일, 서명 방식, 인증 기관을 수집
 * 인증서 설치 정보 등록 시, 설치 정보로부터 인증서를 다운로드해 만료일과 인증서 이름을 수집
     * 인증서 설치 정보의 IP 가 사설 IP인 경우 인증서 설치 정보를 수집하지 않습니다.
 
+<a id="features-auto-collect-domain-information"></a>
 #### 도메인 정보 자동 수집
 
 * 자동 수집 사용 시 Whois 서버로부터 도메인의 생성일, 만료일, 등록자, 등록 기관, 네임 서버를 수집
@@ -26,12 +33,14 @@ Certificate Manager는 만료일 연장을 놓치지 않도록, 만료일이 가
     * DNS에 등록하지 않은 하위 도메인을 등록할 경우, 하위 도메인 ping 응답 실패 알림을 발송하지 않습니다.
     * (하위도메인의 ping 응답 수집은 공개된 DNS 네임서버의 lookup 결과를 대상으로 진행합니다. 외부의 공개된 DNS 서버에서 lookup 이 제한되는 경우, 하위도메인 ping 응답 수집이 되지 않습니다.)
 
+<a id="features-manage-notification-groups"></a>
 #### 알림 그룹 관리
 
 * 알림을 받을 사용자를 등록, 관리, 조회
 * 만료일 알림 정책을 등록, 관리, 조회
 * TLS 인증서/도메인/사용자 데이터의 알림 그룹 지정 시 해당 알림 그룹에 속한 사용자에게 알림 발송
 
+<a id="features-send-notifications"></a>
 #### 알림 발송
 
 * 만료일이 가까워지거나 자동 수집에 실패한 경우 사용자에게 알림 발송
@@ -45,11 +54,13 @@ Certificate Manager는 만료일 연장을 놓치지 않도록, 만료일이 가
 | 알림 실패로 인한 알림 그룹 사용자 확인 알림 | 알림 그룹의 ADMIN | 10:00 (UTC+09) | 알림 그룹에 속한 사용자에게 알림 발송에 실패하는 경우, 알림 그룹에 속한 ADMIN에게 알림 그룹 사용자 확인을 안내하는 알림 |
 | 알림 실패로 인한 알림 그룹 ADMIN 확인 알림 | 프로젝트의 ADMIN | 11:00 (UTC+09) | '알림 실패로 인한 알림 그룹 사용자 확인 알림\` 발송에 모두 실패하는 경우, 프로젝트에 속한 ADMIN에게 알림 그룹의 ADMIN 확인을 안내하는 알림 |
 
-### 서비스 대상
+<a id="service-targets"></a>
+### 서비스 대상 { #service-targets }
 
 * 만료일이 존재하는 데이터의 만료일 안내 알림이 필요한 사용자
 
-### 용어 설명
+<a id="glossary"></a>
+### 용어 설명 { #glossary }
 
 | 용어 | 설명 |
 | --- | --- |

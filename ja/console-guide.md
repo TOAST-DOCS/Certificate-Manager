@@ -1,4 +1,7 @@
-## Management > Certificate Manager > コンソール使用ガイド
+<!-- pre-align:aligned sig=72d665d34e38 -->
+
+<a id="management-certificate-manager-console-user-guide"></a>
+## Management > Certificate Manager > コンソール使用ガイド { #management-certificate-manager-console-user-guide }
 コンソール使用ガイドではCertificate Managerを使用するのに必要な基本的な内容を説明します。
 * 通知グループ
 * 証明書
@@ -6,13 +9,15 @@
 * ユーザーデータ
 * 証明書照会/ダウンロードAPI資格関連
 
-## 通知グループ
+<a id="notification-group"></a>
+## 通知グループ { #notification-group }
 
 Certificate Managerは、通知グループ単位で有効期限の通知周期を設定し、通知を受け取る対象者を管理します。
 
 ![20260728_alarm_group_01_en.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_group_01_en.png)
 
-### 通知グループ作成
+<a id="creating-notification-groups"></a>
+### 通知グループ作成 { #creating-notification-groups }
 
 1. 通知グループメイン画面で**+グループ作成**ボタンをクリックします。
 ![20260728_alarm_group_02_en.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_group_02_en.png)
@@ -20,20 +25,23 @@ Certificate Managerは、通知グループ単位で有効期限の通知周期�
 3. 通知を使用するかどうかを選択します。通知グループに属しているユーザーに有効期限の通知を含むすべての通知を送信するかどうかを選択できます。
 4. **追加**ボタンをクリックします。
 
-### 詳細情報
+<a id="detail-page"></a>
+### 詳細情報 { #detail-page }
 
 1. 通知グループメイン画面で**詳細情報**ボタンをクリックすると、通知グループ名と通知使用有無、管理データが表示されます。**管理data**は該当通知グループに連携されている証明書、ドメイン、ユーザーデータを意味します。
 2. **修正**ボタンをクリックして通知グループの名前および通知を使用するかどうかを変更できます。
 
 ![20260728_alarm_group_03_en.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_group_03_en.png)
 
-### 通知設定
+<a id="notification-setup"></a>
+### 通知設定 { #notification-setup }
 
 1. 通知グループメイン画面で**通知設定**ボタンをクリックします。
 2. 基本に設定されている通知ポリシーがないため、**通知設定**ウィンドウで通知ポリシーを追加すると、有効期限の通知を受け取ることができます。
 ![20260728_alarm_group_04_en.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_group_04_en.png)
 
-### 通知追加
+<a id="adding-notifications"></a>
+### 通知追加 { #adding-notifications }
 
 1. **通知設定**ウィンドウ左下の**+**ボタンをクリックします。
 ![20260728_alarm_group_05_en.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_group_05_en.png)
@@ -45,7 +53,8 @@ Certificate Managerは、通知グループ単位で有効期限の通知周期�
 7. **完了**ボタンをクリックします。
 ![20260728_alarm_group_06_en.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_group_06_en.png)
 
-## 証明書
+<a id="certificate"></a>
+## 証明書 { #certificate }
 
 証明書のドメイン名(例：\*.toast.com)と有効期限を入力すると、連携した通知グループの通知ポリシーに従ってユーザーに通知を送信します。
 
@@ -59,7 +68,8 @@ Certificate Managerは、通知グループ単位で有効期限の通知周期�
 証明書のインストール情報を登録する場合、証明書インストール情報のIPと、ポートから証明書をインポートし、Certificate Managerに登録した証明書と有効期限を比較します。
 Certificate Managerに登録した証明書の有効期限より、自動収集した証明書インストール情報の有効期限が前の場合、証明書の交換が必要という通知を送信します。
 
-### メイン画面
+<a id="main-page"></a>
+### メイン画面 { #main-page }
 メイン画面では証明書リストや有効期限までの残り日数などを確認できます。
 
 ![certificate-1.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-1-en.png)
@@ -69,7 +79,8 @@ Certificate Managerに登録した証明書の有効期限より、自動収集�
 * 有効期限までの残り日数を確認できます。
 * 有効期限を過ぎたデータは赤色で、有効期限までの残り日数が30日以下のデータはオレンジ色で表示されます。
 
-### 証明書の作成
+<a id="creating-certificates"></a>
+### 証明書の作成 { #creating-certificates }
 
 1. 証明書メイン画面で**+証明書の追加**ボタンをクリックすると、**証明書の追加**ウィンドウが表示されます。
 ![certificate-2.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-2-en.png)
@@ -92,7 +103,8 @@ Certificate Managerに登録した証明書の有効期限より、自動収集�
 
 
 
-### 詳細画面
+<a id="certificate-detail-page"></a>
+### 詳細画面 { #certificate-detail-page }
 
 1. 証明書メイン画面で**詳細情報**ボタンをクリックすると、証明書ファイル情報を確認できます。
     * **(自動収集)**が表示されたフィールドは証明書ファイルから自動収集された項目を意味します。証明書ファイルが登録されていない場合は「-」と表示されます。
@@ -103,7 +115,8 @@ Certificate Managerに登録した証明書の有効期限より、自動収集�
     * 既存の証明書ファイルを更新する場合、新しい証明書ファイルのDomains [CN(CommonName) + SAN(SubjectAlternativeNames)]が、既存の証明書ファイルのDomainsと同一である必要があります。
       ![certificate-3-2.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-3-2-en.png)
 
-### 証明書使用情報、インストール情報作成
+<a id="creating-certificate-usageinstallation-information"></a>
+### 証明書使用情報、インストール情報作成 { #creating-certificate-usageinstallation-information }
 
 1. 証明書メイン画面で**証明書の使用情報**ボタンをクリックすると、証明書の使用およびインストール情報を確認できます。デフォルト値では何も登録されていません。
 ![certificate-4.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-1-en.png)
@@ -128,13 +141,15 @@ Certificate Managerに登録した証明書の有効期限より、自動収集�
     * IPアドレスがプライベートIP(例：192.168.0.1, 172.20.0.1, 10.0.0.1)の場合、証明書をダウンロードできず、自動収集失敗通知が送信される場合があります。
 7. **完了**ボタンをクリックすると、設定した証明書の使用およびインストール情報が保存されます。
 
-### 証明書使用情報画面
+<a id="page-of-certificate-usage-information"></a>
+### 証明書使用情報画面 { #page-of-certificate-usage-information }
 証明書メイン画面で**証明書使用情報**ボタンをクリックすると、証明書使用およびインストール情報を確認できます。
 右上の全体/使用/未使用で証明書使用情報の通知使用有無を選択して確認できます。
 
 ![certificate-8.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-7-en.png)
 
-## ドメイン
+<a id="domain"></a>
+## ドメイン { #domain }
 DNSの最上位ドメイン名(例：toast.com)と有効期限を入力すると、連携した通知グループの通知ポリシーに合わせてユーザーに通知を送信します。
 
 ドメインの「自動収集」機能を使用する場合、whoisサーバーからドメイン情報を自動収集します。
@@ -145,7 +160,8 @@ DNSの最上位ドメイン名(例：toast.com)と有効期限を入力すると
 * 登録機関(registrant、ドメインの実所有者)
 * ネームサーバー
 
-### メイン画面
+<a id="domain-main-page"></a>
+### メイン画面 { #domain-main-page }
 
 登録したドメインリストの確認、検索ができます。
 
@@ -155,7 +171,8 @@ DNSの最上位ドメイン名(例：toast.com)と有効期限を入力すると
 
 有効期限を過ぎたデータは赤色で、有効期限までの残り日数が30日以下のデータはオレンジ色で表示されます。
 
-### ドメイン作成
+<a id="creating-domains"></a>
+### ドメイン作成 { #creating-domains }
 
 1. ドメインメイン画面で**+ ドメイン追加**ボタンをクリックします。
 ![domain-2.png](http://static.toastoven.net/prod_certificate_manager/202002/domain-2.png)
@@ -179,7 +196,8 @@ DNSの最上位ドメイン名(例：toast.com)と有効期限を入力すると
         * 例：上位ドメイン名が'toast.com'の場合、サブドメイン名には'toast.com'および'www.toast.com'、'www2.toast.com'などを入力できます。
 9. **追加**ボタンをクリックすると、設定したドメイン情報を保存できます。
 
-### 詳細画面
+<a id="domain-detail-page"></a>
+### 詳細画面 { #domain-detail-page }
 
 1. ドメインメイン画面で**詳細情報**ボタンをクリックすると、ドメインとサブドメインの情報および自動収集された情報が表示されます。
 2. フィールド名の後ろに**(自動収集)**と表示されたフィールドは自動収集された項目を意味します。自動収集された情報がない場合は**-**と表示されます。
@@ -188,19 +206,22 @@ DNSの最上位ドメイン名(例：toast.com)と有効期限を入力すると
 
 ![domain-3.png](http://static.toastoven.net/prod_certificate_manager/202002/domain-3.png)
 
-## ユーザーデータ
+<a id="user-data"></a>
+## ユーザーデータ { #user-data }
 
 有効期限があるデータ(例：ライセンスキー)を入力すると、連携した通知グループの通知ポリシーに応じてユーザーに通知を送信します。
 特定ユーザーグループに周期的に通知を送信する時に活用できます。
 
-### メイン画面
+<a id="user-data-main-page"></a>
+### メイン画面 { #user-data-main-page }
 
 登録したユーザーデータのリストの確認、検索を行うことができます。有効期限までの残り日数を確認できます。
 有効期限を過ぎたデータは赤色で、有効期限までの残り日数が30日以下のデータはオレンジ色で表示されます。
 
 ![userdata-1.png](http://static.toastoven.net/prod_certificate_manager/202002/userdata-1.png)
 
-### ユーザーデータの作成
+<a id="creating-user-data"></a>
+### ユーザーデータの作成 { #creating-user-data }
 
 ユーザーデータメイン画面で**+ ユーザーデータ追加**ボタンをクリックすると、次のような画面が表示されます。
 
@@ -212,7 +233,8 @@ DNSの最上位ドメイン名(例：toast.com)と有効期限を入力すると
 * ユーザーデータの有効期限を入力します。
 * **追加**ボタンをクリックすると、ユーザーデータ情報が保存されます。
 
-### 詳細画面
+<a id="user-data-detail-page"></a>
+### 詳細画面 { #user-data-detail-page }
 
 ユーザーデータメイン画面で**詳細情報**ボタンをクリックすると、保存していたユーザーデータの情報が表示されます。
 
@@ -220,8 +242,10 @@ DNSの最上位ドメイン名(例：toast.com)と有効期限を入力すると
 
 ![userdata-3.png](http://static.toastoven.net/prod_certificate_manager/202002/userdata-3.png)
 
-## 証明書照会/ダウンロードAPI資格関連 
+<a id="authorization-for-retrievedownload-certificates-api"></a>
+## 証明書照会/ダウンロードAPI資格関連 { #authorization-for-retrievedownload-certificates-api }
 
+<a id="authorization-for-retrievedownload-certificates-api-create-user-access-key-id-and-secret-access-key"></a>
 #### User Access Key ID, Secret Access Key作成
 
 コンソール右上のID領域をクリックすると、次のような**APIセキュリティ設定**メニューを確認できます。

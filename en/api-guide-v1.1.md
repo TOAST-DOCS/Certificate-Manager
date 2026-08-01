@@ -1,20 +1,27 @@
-## Management > Certificate Manager > API v1.1 Guide
+<!-- pre-align:aligned sig=2c9270a88b89 -->
+
+<a id="management-certificate-manager-api-v11-guide"></a>
+## Management > Certificate Manager > API v1.1 Guide { #management-certificate-manager-api-v11-guide }
 
 Certificate Manager provides APIs for viewing and downloading a list of certificates. Clients can register certificates and certificate files in the console and then use the data through APIs.
 
-### Common Certificate Manager API Information
+<a id="common-certificate-manager-api-information"></a>
+### Common Certificate Manager API Information { #common-certificate-manager-api-information }
+<a id="common-certificate-manager-api-information-api-endpoint"></a>
 #### API EndPoint
 ```text
 https://certmanager.api.nhncloudservice.com
 ```
 
-##### API Request HTTP Header 
+<a id="common-certificate-manager-api-information-api-request-http-header"></a>
+#### API Request HTTP Header 
 Required fields are added to the HTTP header in v1.1.
 ```
 X-TC-AUTHENTICATION-ID: {User Access Key ID}
 X-TC-AUTHENTICATION-SECRET: {Secret Access Key}
 ```
 
+<a id="common-certificate-manager-api-information-authentication-and-authorization"></a>
 #### Authentication and Authorization
 Certificate Manager uses User Access Key authentication for authentication and authorization when calling APIs.
 User Access Key is an authentication key issued based on an NHN Cloud account or IAM account, and is used together with a Secret Access Key as an authentication method for API requests.
@@ -23,6 +30,7 @@ For more information on using User Access Key, refer to [User Access Key Authent
 Certificate Manager API uses role-based access control (RBAC).<br>
 Users must have the **Certificate Manager ADMIN Role** or **Certificate Manager VIEWER Role** to use the API.
 
+<a id="common-certificate-manager-api-information-supported-api-types"></a>
 #### Supported API Types
 | Method | URI                                                                     | Description |
 | ------ |-------------------------------------------------------------------------| --- |
@@ -57,10 +65,12 @@ Users must have the **Certificate Manager ADMIN Role** or **Certificate Manager 
 | resultMessage | Token ID | Result message of API call |
 | isSuccessful | Boolean | Whether API call is successful or not |
 
-### List Certificates
+<a id="list-certificates"></a>
+### List Certificates { #list-certificates }
 
 Used to query the list of certificates registered with Certificate Manager.
 
+<a id="list-certificates-request"></a>
 #### Request
 
 ```
@@ -76,6 +86,7 @@ GET https://certmanager.api.nhncloudservice.com/certmanager/v1.1/appkeys/{appKey
 
 ※ The values for all and status are case insensitive.
 
+<a id="list-certificates-response"></a>
 #### Response
 
 [Response Header]
@@ -124,16 +135,19 @@ Content-Type:application/json
 | expirationDate | Token ID | Certificate file expiration date |
 
 
-### Download Certificate File
+<a id="download-certificate-file"></a>
+### Download Certificate File { #download-certificate-file }
 
 Downloads certificates registered in Certificate Manager.
 
+<a id="download-certificate-file-request"></a>
 #### Request
 
 ```
 GET https://certmanager.api.nhncloudservice.com/certmanager/v1.1/appkeys/{appKey}/certificates/{certificateName}/files
 ```
 
+<a id="download-certificate-file-success-response"></a>
 #### Success Response
 
 [Response Header]
@@ -156,6 +170,7 @@ Content-Type:application/octet-stream
 ```
 
 
+<a id="download-certificate-file-failure-response"></a>
 #### Failure Response
 [Response Header]
 ```
@@ -175,6 +190,7 @@ Content-Type:application/json
 ```
 
 
+<a id="download-certificate-file-for-command-line-interface-cli"></a>
 #### For Command Line Interface (CLI) 
 
 Download Certificate File API can be requested by using the `curl` command. 
@@ -200,7 +216,8 @@ curl -OJ \
 * See the link below on how to use curl command
   * curl command guide: [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)
 
-### Response Codes
+<a id="response-codes"></a>
+### Response Codes { #response-codes }
 
 | isSuccessful | resultCode | resultMessage | Description |
 | ------------ | ---------- | ------------- | --- |

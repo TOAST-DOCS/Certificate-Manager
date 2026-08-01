@@ -1,4 +1,7 @@
-## Management > Certificate Manager > Console User Guide 
+<!-- pre-align:aligned sig=72d665d34e38 -->
+
+<a id="management-certificate-manager-console-user-guide"></a>
+## Management > Certificate Manager > Console User Guide { #management-certificate-manager-console-user-guide }
 Console User Guide describes basic requirements to enable Certificate Manager. 
 * Notification Group
 * Certificate
@@ -6,13 +9,15 @@ Console User Guide describes basic requirements to enable Certificate Manager.
 * User Data 
 * Authorization for Retrieve/Download certificates API
 
-## Notification Group
+<a id="notification-group"></a>
+## Notification Group { #notification-group }
 
 Certificate Manager sets notification cycle on each expiration date and manages notification recipients, by notification group.  
 
 ![20260728_alarm_group_01_en.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_group_01_en.png)
 
-### Creating Notification Groups
+<a id="creating-notification-groups"></a>
+### Creating Notification Groups { #creating-notification-groups }
 
 1. Click **+ Create Groups** on the main page of notification group, and you'll find a page like below. 
 ![20260728_alarm_group_02_en.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_group_02_en.png)
@@ -20,20 +25,23 @@ Certificate Manager sets notification cycle on each expiration date and manages 
 3. Enter whether to enable notification. You can choose whether to send all notifications, including expiration dates, to group users. 
 4. Click **Add** and create a notification group. 
 
-### Detail Page
+<a id="detail-page"></a>
+### Detail Page { #detail-page }
 
 1. Click **Details** on the main page, and it shows name of the group, whether notification is enabled, and management data. **Managed Data** refers to certificate/domain/user data that are integrated with each notification group. 
 2. Click **Edit** to change name of the group or notification enabled/disabled.    
 
 ![20260728_alarm_group_03_en.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_group_03_en.png)
 
-### Notification Setup
+<a id="notification-setup"></a>
+### Notification Setup { #notification-setup }
 
 1. Click **Notification Setting** on the main page and you can find notification policy for expiration dates set for each notification group. 
 2. By default, notification policy is not set. You need to add notification policy to be notified on each expiration date.
 ![20260728_alarm_group_04_en.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_group_04_en.png)
 
-### Adding Notifications
+<a id="adding-notifications"></a>
+### Adding Notifications { #adding-notifications }
 
 1. Click **+** at the bottom left of the table to add notification policy.
 ![20260728_alarm_group_05_en.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_group_05_en.png)
@@ -45,7 +53,8 @@ Certificate Manager sets notification cycle on each expiration date and manages 
 7. Click **Completed** to save notification policy as configured. 
 ![20260728_alarm_group_06_en.png](http://static.toastoven.net/prod_certificate_manager/2026-07-28/20260728_alarm_group_06_en.png)
 
-## Certificate
+<a id="certificate"></a>
+## Certificate { #certificate }
 
 Enter domain name (e.g. *.toast.com) and expiration date of certificate, and then notification is sent to user, in accordance with notification policy of an integrated notification group.
 
@@ -59,7 +68,8 @@ To upload certificate files (.pem), following items are automatically collected 
 To register certificate installation information, import certificate from the IP and port of such information so as to compare them with registered certificate and expiration date at CertificateManager. 
 If auto-collected certificate installation information has earlier expiration date than that of the registered certificate at CertificateManager, notification is sent to alert that certificate needs to be replaced. 
 
-### Main Page
+<a id="main-page"></a>
+### Main Page { #main-page }
 On the main page of certificate, you can find list of certificates and remaining days until expired.
 
 ![certificate-1.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-1-en.png)
@@ -69,7 +79,8 @@ On the main page of certificate, you can find list of certificates and remaining
 * Also check remaining days until expired. 
 * As of today, expired data are displayed in red, whereas data with less than 30 days until expired are displayed in orange.  
 
-### Creating Certificates
+<a id="creating-certificates"></a>
+### Creating Certificates { #creating-certificates }
 
 1. On the main page of a certificate, click **+ Add Certificates** and you can find the page as follows. 
 ![certificate-2.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-2-en.png)
@@ -93,7 +104,8 @@ On the main page of certificate, you can find list of certificates and remaining
 
 
 
-### Detail Page
+<a id="certificate-detail-page"></a>
+### Detail Page { #certificate-detail-page }
 
 1. Click **Details** on the main page of a certificate to find information of the certificate and file. 
     * Fields specified as **(Auto Collect)** after field name refer to automatically collected items from certificate files. If there is no registered certificate file, '-' shows.  
@@ -104,7 +116,8 @@ On the main page of certificate, you can find list of certificates and remaining
     * When renewing an existing certificate file, the Domains [CN (CommonName) + SAN (SubjectAlternativeNames)] of the new certificate file must be identical to those of the existing certificate file.
       ![certificate-3-2.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-3-2-en.png)
 
-### Creating Certificate Usage/Installation Information
+<a id="creating-certificate-usageinstallation-information"></a>
+### Creating Certificate Usage/Installation Information { #creating-certificate-usageinstallation-information }
 
 1. Click **Certificate Usages** on the main page, and find usage and installation information of certificate. By default, no item is registered. 
 ![certificate-4.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-1-en.png)
@@ -129,13 +142,15 @@ On the main page of certificate, you can find list of certificates and remaining
     * In case of a private IP address (e.g. 192.168.0.1, 172.20.0.1, 10.0.0.1 ), downloading may fail and notification on failed auto collection may be sent.  
 7. Click **Completed** to save usage and installation information of the certificate as set. 
 
-### Page of Certificate Usage Information
+<a id="page-of-certificate-usage-information"></a>
+### Page of Certificate Usage Information { #page-of-certificate-usage-information }
 * On the main page of a certificate, click **Certificate Usages** to check usage and installation information of certificate. 
 * Notifications of usage information can be filtered by selecting **Total**, **Enabled**, or **Not Use** on top right.  
 
 ![certificate-8.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-7-en.png)
 
-## Domain
+<a id="domain"></a>
+## Domain { #domain }
 Enter name of domain (the highest domain name of DNS, e.g. toast.com) and expiration date, and notifications are sent to users in accordance with notification policy of an integrated notification group.
  
 If 'Auto Collect' is enabled for domain, domain information is automatically collected from the whois server. 
@@ -146,7 +161,8 @@ Following items are automatically collected:
 * Registration institution (Registrant, domain's real owner) 
 * Name server 
 
-### Main Page
+<a id="domain-main-page"></a>
+### Main Page { #domain-main-page }
 
 You can find and search the list of already registered domains.
 
@@ -156,7 +172,8 @@ Also check remaining days until expired.
 
 As of today, expired data are displayed in red, whereas data with less than 30 days until expired are displayed in orange. 
 
-### Creating Domains
+<a id="creating-domains"></a>
+### Creating Domains { #creating-domains }
 
 1. On the main page of a domain, click **+ Add Domains** and you can find the page as follows. 
 ![domain-2.png](http://static.toastoven.net/prod_certificate_manager/202002/domain-2.png)
@@ -180,7 +197,8 @@ As of today, expired data are displayed in red, whereas data with less than 30 d
         * ex. If a upper domain is named "toast.com", a sub-domain can be named as "toast.com", "www.toast.com", or "www2.toast.com".
 9. Click **Add** to save domain information as configured. 
 
-### Detail Page
+<a id="domain-detail-page"></a>
+### Detail Page { #domain-detail-page }
 
 1. Click **Detail Information** on the main page of a domain to find information of the domain and sub-domain and file. 
 2. Fields specified as **(Auto Collect)** after field name refer to automatically collected items. If there is no automatically collected information, '-' shows.  
@@ -189,19 +207,22 @@ As of today, expired data are displayed in red, whereas data with less than 30 d
 
 ![domain-3.png](http://static.toastoven.net/prod_certificate_manager/202002/domain-3.png)
 
-## User Data
+<a id="user-data"></a>
+## User Data { #user-data }
 
 Enter data with expiration dates (e.g. license key) and notifications are sent to users in accordance with notification policy of an integrated notification group.  
 This feature is applicable when notification is required on a regular basis to specific user groups. 
 
-### Main Page
+<a id="user-data-main-page"></a>
+### Main Page { #user-data-main-page }
 
 You can find and search the list of already registered certificates. Also check remaining days until expired. 
 As of today, expired data are displayed in red, whereas data with less than 30 days until expired are displayed in orange.
 
 ![userdata-1.png](http://static.toastoven.net/prod_certificate_manager/202002/userdata-1.png) 
 
-### Creating User Data
+<a id="creating-user-data"></a>
+### Creating User Data { #creating-user-data }
 
 Click **+ Add User Data** on the main user data page and it shows the following. 
 
@@ -213,7 +234,8 @@ Click **+ Add User Data** on the main user data page and it shows the following.
 * Enter expiration date of the user data. 
 * Click **Add** and save user data as configured. 
 
-### Detail Page
+<a id="user-data-detail-page"></a>
+### Detail Page { #user-data-detail-page }
 
 Click **Details** on the main user data page, and user data information as saved shows up. 
 
@@ -223,8 +245,10 @@ Click **Edit** to edit user data information.
 
 
 
-## Authorization for Retrieve/Download Certificates API 
+<a id="authorization-for-retrievedownload-certificates-api"></a>
+## Authorization for Retrieve/Download Certificates API { #authorization-for-retrievedownload-certificates-api }
 
+<a id="authorization-for-retrievedownload-certificates-api-create-user-access-key-id-and-secret-access-key"></a>
 #### Create User Access Key ID and Secret Access Key
 
 Click the ID area in the upper-right corner of the console to see the **API Security Settings** menu as follows.

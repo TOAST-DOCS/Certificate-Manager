@@ -1,13 +1,19 @@
-## Management > Certificate Manager > API v1.1ガイド
+<!-- pre-align:aligned sig=2c9270a88b89 -->
+
+<a id="management-certificate-manager-api-v11-guide"></a>
+## Management > Certificate Manager > API v1.1ガイド { #management-certificate-manager-api-v11-guide }
 
 Certificate Managerは、証明書一覧の照会とダウンロードAPIを提供します。クライアントはコンソールで証明書と証明書ファイルを登録した後、APIでデータを使用できます。
 
-### Certificate Manager API共通情報
+<a id="common-certificate-manager-api-information"></a>
+### Certificate Manager API共通情報 { #common-certificate-manager-api-information }
+<a id="common-certificate-manager-api-information-api-endpoint"></a>
 #### APIエンドポイント
 ```text
 https://certmanager.api.nhncloudservice.com
 ```
 
+<a id="common-certificate-manager-api-information-api-request-http-header"></a>
 #### APIリクエストHTTPヘッダ
 v1.1ではHTTPヘッダーに必須フィールドが追加されます。
 ```
@@ -15,6 +21,7 @@ X-TC-AUTHENTICATION-ID: {User Access Key ID}
 X-TC-AUTHENTICATION-SECRET: {Secret Access Key}
 ```
 
+<a id="common-certificate-manager-api-information-authentication-and-authorization"></a>
 #### 認証及び権限
 Certificate Managerは、API呼び出し時の認証/認可のためにUser Access Key認証を使用します。
 User Access Keyは、NHN CloudアカウントまたはIAMアカウントをベースに発行される認証キーであり、Secret Access Keyと一緒に使用するAPIリクエストに対する認証手段です。
@@ -23,6 +30,7 @@ User Access Keyの使用に関する詳細は、[User Access Key認証](/nhnclou
 Certificate Manager APIは、ロールベースのアクセス制御(RBAC)を使用します。<br>
 ユーザーはAPIを使用するために、**Certificate Manager ADMINロール**または**Certificate Manager VIEWERロール**を所有している必要があります。
 
+<a id="common-certificate-manager-api-information-supported-api-types"></a>
 #### 提供するAPIの種類
 | メソッド | URI                                                                     | 説明 |
 | ------ |-------------------------------------------------------------------------| --- |
@@ -57,10 +65,12 @@ Certificate Manager APIは、ロールベースのアクセス制御(RBAC)を使
 | resultMessage | String | API呼び出し結果メッセージ |
 | isSuccessful | Boolean | API呼び出し成否 |
 
-### 証明書リスト照会
+<a id="list-certificates"></a>
+### 証明書リスト照会 { #list-certificates }
 
 Certificate Managerに登録されている証明書のリストを照会するために使用されます。
 
+<a id="list-certificates-request"></a>
 #### リクエスト
 
 ```
@@ -76,6 +86,7 @@ GET https://certmanager.api.nhncloudservice.com/certmanager/v1.1/appkeys/{appKey
 
 ※ all、statusの値は大文字/小文字を区別せずに使用できます。
 
+<a id="list-certificates-response"></a>
 #### レスポンス
 
 [Response Header]
@@ -124,16 +135,19 @@ Content-Type:application/json
 | expirationDate | String | 証明書ファイルの有効期限 |
 
 
-### 証明書ファイルのダウンロード
+<a id="download-certificate-file"></a>
+### 証明書ファイルのダウンロード { #download-certificate-file }
 
 Certificate Managerに登録した証明書ファイルをダウンロードする時に使用します。
 
+<a id="download-certificate-file-request"></a>
 #### リクエスト
 
 ```
 GET https://certmanager.api.nhncloudservice.com/certmanager/v1.1/appkeys/{appKey}/certificates/{certificateName}/files
 ```
 
+<a id="download-certificate-file-success-response"></a>
 #### 成功レスポンス
 
 [Response Header]
@@ -156,6 +170,7 @@ Content-Type:application/octet-stream
 ```
 
 
+<a id="download-certificate-file-failure-response"></a>
 #### 失敗レスポンス
 [Response Header]
 ```
@@ -175,6 +190,7 @@ Content-Type:application/json
 ```
 
 
+<a id="download-certificate-file-for-command-line-interface-cli"></a>
 #### Command Line Interface(CLI)使用時
 
 証明書ファイルダウンロードAPIは`curl`コマンドを使用してリクエストできます。
@@ -200,7 +216,8 @@ curl -OJ \
 * その他curlコマンドの使用方法は下記のガイドを参照してください。
   * curl command guide : [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)
 
-### レスポンスコード
+<a id="response-codes"></a>
+### レスポンスコード { #response-codes }
 
 | isSuccessful | resultCode | resultMessage | 説明 |
 | ------------ | ---------- | ------------- | --- |

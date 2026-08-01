@@ -1,13 +1,19 @@
-## Management > Certificate Manager > API v1.2 Guide
+<!-- pre-align:aligned sig=62797d4ab3bf -->
+
+<a id="management-certificate-manager-api-v12-guide"></a>
+## Management > Certificate Manager > API v1.2 Guide { #management-certificate-manager-api-v12-guide }
 
 Certificate Manager provides an API for viewing and downloading certificate lists. Clients can register certificates and certificate files in the console and then access the data through the API.
 
-### Basic information
+<a id="basic-information"></a>
+### Basic information { #basic-information }
+<a id="basic-information-endpoint"></a>
 #### EndPoint
 ```text
 https://certmanager.api.nhncloudservice.com
 ```
 
+<a id="basic-information-apis-provided"></a>
 #### APIs Provided
 | Method | URI                                                                     | Description |
 | ------ |-------------------------------------------------------------------------| --- |
@@ -42,10 +48,12 @@ https://certmanager.api.nhncloudservice.com
 | resultMessage | String | API call result message |
 | isSuccessful | Boolean | Whether the API call was successful |
 
-### Retrieve Certificate List
+<a id="retrieve-certificate-list"></a>
+### Retrieve Certificate List { #retrieve-certificate-list }
 
 Use the function to retrieve a list of certificates registered in the Certificate Manager.
 
+<a id="retrieve-certificate-list-request"></a>
 #### Request
 
 ```
@@ -61,6 +69,7 @@ GET https://certmanager.api.nhncloudservice.com/certmanager/v1.2/appkeys/{appKey
 
 ※ The values ​​for "all" and "status" are case-insensitive.
 
+<a id="retrieve-certificate-list-response"></a>
 #### Response
 
 [Response Header]
@@ -113,16 +122,19 @@ Content-Type:application/json
 | expirationDate | String | Certificate file expiration date |
 
 
-### Download Certificate File
+<a id="download-certificate-file"></a>
+### Download Certificate File { #download-certificate-file }
 
 Use the feature to download the certificate file registered on the Certificate Manager.
 
+<a id="download-certificate-file-request"></a>
 #### Request
 
 ```
 GET https://certmanager.api.nhncloudservice.com/certmanager/v1.2/appkeys/{appKey}/certificates/{certificateName}/files
 ```
 
+<a id="download-certificate-file-success-response"></a>
 #### Success Response
 
 [Response Header]
@@ -144,6 +156,7 @@ Content-Type:application/octet-stream
 -----END RSA PRIVATE KEY-----
 ```
 
+<a id="download-certificate-file-failure-response"></a>
 #### Failure Response
 [Response Header]
 ```
@@ -163,6 +176,7 @@ Content-Type:application/json
 ```
 
 
+<a id="download-certificate-file-when-using-command-line-interfacecli"></a>
 #### When Using Command Line Interface(CLI)
 
 The certificate file download API can be requested using the `curl` command.
@@ -180,7 +194,8 @@ curl -OJ 'https://certmanager.api.nhncloudservice.com/certmanager/v1.2/appkeys/{
 * For how to use other curl commands, refer to the guide below:
   * curl command guide : [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)
 
-### Response Code
+<a id="response-code"></a>
+### Response Code { #response-code }
 
 | isSuccessful | resultCode | resultMessage | Description |
 | ------------ | ---------- | ------------- | --- |

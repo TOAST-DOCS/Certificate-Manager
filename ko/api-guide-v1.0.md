@@ -1,13 +1,19 @@
-## Management > Certificate Manager > API v1.0 가이드
+<!-- pre-align:aligned sig=8eda339a3204 -->
+
+<a id="management-certificate-manager-api-v10-guide"></a>
+## Management > Certificate Manager > API v1.0 가이드 { #management-certificate-manager-api-v10-guide }
 
 Certificate Manager에서는 인증서 목록 조회, 다운로드를 위한 API를 제공합니다. 클라이언트는 콘솔에서 인증서와 인증서 파일을 등록한 후 API를 통해 데이터를 사용할 수 있습니다.
 
-### 기본 정보
+<a id="basic-information"></a>
+### 기본 정보 { #basic-information }
+<a id="basic-information-endpoint"></a>
 #### EndPoint
 ```text
 https://certmanager.api.nhncloudservice.com
 ```
 
+<a id="basic-information-available-api-types"></a>
 #### 제공하는 API 종류
 | 메서드 | URI | 설명 |
 | ------ | --- | --- |
@@ -42,10 +48,12 @@ https://certmanager.api.nhncloudservice.com
 | resultMessage | String | API 호출 결과 메시지 |
 | isSuccessful | Boolean | API 호출 성공 여부 |
 
-### 인증서 목록 조회
+<a id="lookup-certificate-list"></a>
+### 인증서 목록 조회 { #lookup-certificate-list }
 
 Certificate Manager에 등록한 인증서 목록을 조회할 때 사용합니다. 
 
+<a id="lookup-certificate-list-request"></a>
 #### 요청
 
 ```
@@ -61,6 +69,7 @@ GET https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{appKey
 
 ※ all, status의 값은 대소문자 구분 없이 사용할 수 있습니다.
 
+<a id="lookup-certificate-list-response"></a>
 #### 응답
 
 [Response Header]
@@ -109,16 +118,19 @@ Content-Type:application/json
 | expirationDate | String | 인증서 파일 만료일 |
 
 
-### 인증서 파일 다운로드
+<a id="downloading-certificate-files"></a>
+### 인증서 파일 다운로드 { #downloading-certificate-files }
 
 Certificate Manager에 등록한 인증서 파일을 다운로드할 때 사용합니다.
 
+<a id="downloading-certificate-files-request"></a>
 #### 요청
 
 ```
 GET https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
 ```
 
+<a id="downloading-certificate-files-success-response"></a>
 #### 성공 응답
 
 [Response Header]
@@ -140,6 +152,7 @@ Content-Type:application/octet-stream
 -----END RSA PRIVATE KEY-----
 ```
 
+<a id="downloading-certificate-files-failure-response"></a>
 #### 실패 응답
 [Response Header]
 ```
@@ -159,6 +172,7 @@ Content-Type:application/json
 ```
 
 
+<a id="downloading-certificate-files-for-command-line-interface-cli"></a>
 #### Command Line Interface(CLI) 사용 시
 
 인증서 파일 다운로드 API는 `curl` 명령어를 사용해 요청할 수 있습니다.
@@ -176,7 +190,8 @@ curl -OJ 'https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{
 * 기타 curl 명령어 사용법은 아래 가이드를 참고하십시오.
   * curl command guide : [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)
 
-### 응답 코드
+<a id="response-codes"></a>
+### 응답 코드 { #response-codes }
 
 | isSuccessful | resultCode | resultMessage | 설명 |
 | ------------ | ---------- | ------------- | --- |

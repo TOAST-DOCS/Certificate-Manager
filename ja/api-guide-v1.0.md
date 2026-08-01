@@ -1,13 +1,19 @@
-## Management > Certificate Manager > API v1.0ガイド
+<!-- pre-align:aligned sig=8eda339a3204 -->
+
+<a id="management-certificate-manager-api-v10-guide"></a>
+## Management > Certificate Manager > API v1.0ガイド { #management-certificate-manager-api-v10-guide }
 
 Certificate Manager は、証明書リスト検索、またはダウンロード用の API を提供します。クライアントはコンソールで証明書と証明書ファイルを登録した後、APIを通してデータを使用できます。
 
-### 基本情報
+<a id="basic-information"></a>
+### 基本情報 { #basic-information }
+<a id="basic-information-endpoint"></a>
 #### EndPoint
 ```text
 https://certmanager.api.nhncloudservice.com
 ```
 
+<a id="basic-information-available-api-types"></a>
 #### 提供するAPI種類
 | メソッド | URI | 説明 |
 | ------ | --- | --- |
@@ -42,10 +48,12 @@ https://certmanager.api.nhncloudservice.com
 | resultMessage | String | API呼び出し結果メッセージ |
 | isSuccessful | Boolean | API呼び出し成否 |
 
-### 証明書の検索リスト
+<a id="lookup-certificate-list"></a>
+### 証明書の検索リスト { #lookup-certificate-list }
 
 Certificate Manager に登録されている証明書のリストを照会するために使用されます。
 
+<a id="lookup-certificate-list-request"></a>
 #### リクエスト
 
 ```
@@ -61,6 +69,7 @@ GET https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{appKey
 
 ※ all、statusの値は大文字/小文字を区別せずに使用できます。
 
+<a id="lookup-certificate-list-response"></a>
 #### レスポンス
 
 [Response Header]
@@ -108,16 +117,19 @@ Content-Type:application/json
 | fileCreationDate | String | 証明書ファイルの作成日 |
 | expirationDate | String | 証明書ファイルの有効期限 |
 
-### 証明書ファイルのダウンロード
+<a id="downloading-certificate-files"></a>
+### 証明書ファイルのダウンロード { #downloading-certificate-files }
 
 Certificate Managerに登録した証明書ファイルをダウンロードする時に使用します。
 
+<a id="downloading-certificate-files-request"></a>
 #### リクエスト
 
 ```
 GET https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
 ```
 
+<a id="downloading-certificate-files-success-response"></a>
 #### 成功レスポンス
 
 [Response Header]
@@ -139,6 +151,7 @@ Content-Type:application/octet-stream
 -----END RSA PRIVATE KEY-----
 ```
 
+<a id="downloading-certificate-files-failure-response"></a>
 #### 失敗レスポンス
 [Response Header]
 ```
@@ -158,6 +171,7 @@ Content-Type:application/json
 ```
 
 
+<a id="downloading-certificate-files-for-command-line-interface-cli"></a>
 #### Command Line Interface(CLI)使用時
 
 証明書ファイルダウンロードAPIは`curl`コマンドを使用してリクエストできます。
@@ -175,7 +189,8 @@ curl -OJ 'https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{
 * その他curlコマンドの使用方法は下記のガイドを参照してください。
   * curl command guide : [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)
 
-### レスポンスコード
+<a id="response-codes"></a>
+### レスポンスコード { #response-codes }
 
 | isSuccessful | resultCode | resultMessage | 説明 |
 | ------------ | ---------- | ------------- | --- |

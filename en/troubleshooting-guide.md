@@ -1,6 +1,10 @@
-## Management > Certificate Manager > Troubleshooting Guide 
+<!-- pre-align:aligned sig=aa4052351c5f -->
 
-## Converting Certificate File Formats
+<a id="management-certificate-manager-troubleshooting-guide"></a>
+## Management > Certificate Manager > Troubleshooting Guide { #management-certificate-manager-troubleshooting-guide }
+
+<a id="converting-certificate-file-formats"></a>
+## Converting Certificate File Formats { #converting-certificate-file-formats }
 
 Certificate Manager currently supports only the pem-format certificate files.
 
@@ -8,7 +12,8 @@ Certificate Manager currently supports only the pem-format certificate files.
 
 Following are the available certificate file formats for Certificate Manager.  
 
-### Format of Certificate File (.pem)
+<a id="format-of-certificate-file-pem"></a>
+### Format of Certificate File (.pem) { #format-of-certificate-file-pem }
 
 The filename extension is **.pem**. 
 
@@ -23,12 +28,14 @@ Each file includes certificate (chain) information and private key information.
 -----END RSA PRIVATE KEY-----
 ```
 
-### How to Create PEM Files 
+<a id="how-to-create-pem-files"></a>
+### How to Create PEM Files { #how-to-create-pem-files }
 
 You can create pem files like follows:
 1. Convert certificate information into pem. 
 2. Create a single pem file which includes certificate chain and a private key. 
 
+<a id="how-to-create-pem-files-convert-certificate-information-into-pem"></a>
 #### Convert Certificate Information into PEM
 
 1. In case of a Java JKS or JCEKS certificate, use `keytool` to convert certificate into the `.p12` or `.pks` format. 
@@ -45,6 +52,7 @@ openssl pkcs12 -in my_certificate_input_file.pfx -nodes -nocerts -out my_cert_co
     * java-1.6.0 keytool : [https://linux.die.net/man/1/keytool-java-1.6.0-openjdk](https://linux.die.net/man/1/keytool-java-1.6.0-openjdk)
     * java-1.7.0 keytool : [https://linux.die.net/man/1/keytool-java-1.7.0-openjdk](https://linux.die.net/man/1/keytool-java-1.7.0-openjdk)
 
+<a id="how-to-create-pem-files-optional-convert-into-rsa-private-key-type"></a>
 #### (Optional) Convert into RSA Private Key Type
 
 If a private key is not in the RSA format, encode it into an RSA private key format.
@@ -61,6 +69,7 @@ openssl rsa -in my_key_not_rsa_input_file.pem -check -out my_key_rsa_converting_
 > Verifying - Enter PEM pass phrase:
 ```
 
+<a id="how-to-create-pem-files-create-single-pem-files-including-certificate-chain-and-private-key"></a>
 #### Create Single PEM Files including Certificate Chain and Private Key
 
 Combine PEM file information of certificate and private key, to create a single PEM file. 
