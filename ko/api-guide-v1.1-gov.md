@@ -8,13 +8,6 @@ Certificate Manager에서는 인증서 목록 조회와 다운로드 API를 제�
 https://certmanager.api.gov-nhncloudservice.com
 ```
 
-#### API 요청 HTTP 헤더
-v1.1에서는 HTTP 헤더에 필수 필드가 추가됩니다.
-```
-X-TC-AUTHENTICATION-ID: {User Access Key ID}
-X-TC-AUTHENTICATION-SECRET: {Secret Access Key}
-```
-
 #### 인증 및 권한
 Certificate Manager는 API 호출 시 인증/인가를 위해 User Access Key 인증을 사용합니다.
 User Access Key는 NHN Cloud 계정 또는 IAM 계정을 기반으로 발급되는 인증 키로, Secret Access Key와 함께 사용하여 API 요청에 대한 인증 수단입니다.

@@ -1,27 +1,44 @@
-## Management > Certificate Manager > API v1.0 Guide
+<!-- pre-align:aligned sig=8eda339a3204 -->
+
+<a id="api-v10-guide"></a>
+## API v1.0 Guide { #api-v10-guide }
+**Management > Certificate Manager > API v1.0 Guide**
 
 Certificate Manager provides APIs to retrieve and download a list of certificates. Clients must register certificates and certificate files on console to use data via APIs. 
 
-### Basic Information
-#### EndPoint
+<a id="certificate-manager-api-common-information"></a>
+## Certificate Manager API Common Information { #certificate-manager-api-common-information }
+
+<a id="api-endpoint"></a>
+### API Endpoint { #api-endpoint }
 ```text
 https://certmanager.api.nhncloudservice.com
 ```
 
-#### Available API Types 
+<a id="authentication-and-authorization"></a>
+### Authentication and Authorization { #authentication-and-authorization }
+
+An Appkey is required to use the Certificate Manager API v1.0.
+
+An Appkey is a unique authentication key issued for each individual NHN Cloud service. For more information on checking and using Appkeys, please refer to the [Appkey](/nhncloud/en/public-api/appkey).
+
+<a id="available-api-types"></a>
+### Available API Types { #available-api-types }
 | Method | URI | Description |
 | ------ | --- | --- |
 | GET | /certmanager/v1.0/appkeys/{appKey}/certificates | Look up the list of certificates. |
 | GET | /certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files | Download certificate files that are registered. |
 
-##### Path Variables of API Request
+<a id="available-api-types-path-variables-of-api-request"></a>
+#### Path Variables of API Request
 
 | Value | Type | Description |
 | --- | --- | --- |
 | appKey | String | Appkey of the NHN Cloud project in which data is saved |
 | certificateName | String | Name of data (certificate) to use |
 
-##### Common Data Header of API Response
+<a id="available-api-types-common-data-header-of-api-response"></a>
+#### Common Data Header of API Response
 
 ```json
 {
@@ -42,10 +59,15 @@ https://certmanager.api.nhncloudservice.com
 | resultMessage | String | Result message of API call |
 | isSuccessful | Boolean | API call successful or not |
 
-### Lookup certificate list
+<a id="certificate-api"></a>
+## Certificate API { #certificate-api }
+
+<a id="lookup-certificate-list"></a>
+### Lookup certificate list { #lookup-certificate-list }
 
 Used to query the list of certificates registered with Certificate Manager.
 
+<a id="lookup-certificate-list-request"></a>
 #### Request
 
 ```
@@ -61,6 +83,7 @@ GET https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{appKey
 
 ※ The values for all and status are case insensitive.
 
+<a id="lookup-certificate-list-response"></a>
 #### Response
 
 [Response Header]
@@ -108,16 +131,19 @@ Content-Type:application/json
 | fileCreationDate | String | Certificate file creation date |
 | expirationDate | String | Certificate file expiration date |
 
-### Downloading Certificate Files 
+<a id="downloading-certificate-files"></a>
+### Downloading Certificate Files { #downloading-certificate-files }
 
 Certificate files registered at Certificate Manager can be downloaded. 
 
+<a id="downloading-certificate-files-request"></a>
 #### Request
 
 ```
 GET https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files
 ```
 
+<a id="downloading-certificate-files-success-response"></a>
 #### Success Response
 
 [Response Header]
@@ -139,6 +165,7 @@ Content-Type:application/octet-stream
 -----END RSA PRIVATE KEY-----
 ```
 
+<a id="downloading-certificate-files-failure-response"></a>
 #### Failure Response
 [Response Header]
 ```
@@ -158,6 +185,7 @@ Content-Type:application/json
 ```
 
 
+<a id="downloading-certificate-files-for-command-line-interface-cli"></a>
 #### For Command Line Interface (CLI) 
 
 Download Certificate File API can be requested by using the `curl` command. 
@@ -175,7 +203,8 @@ curl -OJ 'https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{
 * See the link below on how to use curl command
   * curl command guide : [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)
 
-### Response Codes
+<a id="response-codes"></a>
+## Response Codes { #response-codes }
 
 | isSuccessful | resultCode | resultMessage | Description |
 | ------------ | ---------- | ------------- | --- |

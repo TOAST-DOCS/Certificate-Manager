@@ -1,17 +1,18 @@
-## Management > Certificate Manager > API v1.3 ガイド
+<!-- pre-align:aligned sig=1830bd25c1cb -->
+
+<a id="management-certificate-manager-api-v13-guide"></a>
+## Management > Certificate Manager > API v1.3 ガイド { #management-certificate-manager-api-v13-guide }
 
 Certificate Managerでは、証明書の一覧照会、ダウンロードのためのAPIを提供します。クライアントはコンソールで証明書と証明書ファイルを登録した後、APIを通じてデータを使用できます。
 
-### CertificateManager API共通情報
+<a id="certificatemanager-api-common-information"></a>
+### CertificateManager API共通情報 { #certificatemanager-api-common-information }
+<a id="certificatemanager-api-common-information-api-endpoint"></a>
 #### APIエンドポイント
 ```text
 https://certmanager.api.nhncloudservice.com
 ```
-#### APIリクエストHTTPヘッダ
-```
-X-NHN-AUTHORIZATION: Bearer {発行されたトークン}
-```
-
+<a id="certificatemanager-api-common-information-authentication-and-authorization"></a>
 #### 認証及び権限
 CertificateManagerはAPI呼び出し時、認証/認可のためにUser Access Keyトークンを使用します。 
 User Access Keyトークンは、User Access Keyに基づいて発行されるBearerタイプの一時的なアクセストークンです。 
@@ -20,6 +21,7 @@ User Access Keyトークンの発行及び使用に関する詳細は、[User Ac
 CertificateManager APIは、ロールベースアクセス制御(RBAC)を使用しています。<br>
 ユーザーはAPIを使用するために、**CertificateManager ADMINロール**または**CertificateManager VIEWERロール**を所有している必要があります。 
 
+<a id="certificatemanager-api-common-information-provided-apis"></a>
 #### 提供するAPIの種類
 | メソッド | URI                                                                     | 説明 |
 | ------ |-------------------------------------------------------------------------| --- |
@@ -56,10 +58,12 @@ CertificateManager APIは、ロールベースアクセス制御(RBAC)を使用�
 | resultMessage | String | API呼び出し結果メッセージ |
 | isSuccessful | Boolean | API呼び出し成否 |
 
-### 証明書一覧照会
+<a id="retrieve-a-certificate-list"></a>
+### 証明書一覧照会 { #retrieve-a-certificate-list }
 
 Certificate Managerに登録した証明書一覧を照会する際に使用します。 
 
+<a id="retrieve-a-certificate-list-request"></a>
 #### リクエスト
 
 ```
@@ -75,6 +79,7 @@ GET https://certmanager.api.nhncloudservice.com/certmanager/v1.3/appkeys/{appKey
 
 ※ all、statusの値は大文字・小文字を区別せずに使用できます。
 
+<a id="retrieve-a-certificate-list-response"></a>
 #### レスポンス
 
 [Response Header]
@@ -129,16 +134,19 @@ Content-Type:application/json
 | expirationDate | String | 証明書ファイル有効期限 |
 
 
-### 証明書ファイルのダウンロード(証明書名)
+<a id="download-a-certificate-file-certificate-name"></a>
+### 証明書ファイルのダウンロード(証明書名) { #download-a-certificate-file-certificate-name }
 
 Certificate Managerに登録した証明書ファイルを証明書名でダウンロードする際に使用します。
 
+<a id="download-a-certificate-file-certificate-name-request"></a>
 #### リクエスト
 
 ```
 GET https://certmanager.api.nhncloudservice.com/certmanager/v1.3/appkeys/{appKey}/certificates/{certificateName}/files
 ```
 
+<a id="download-a-certificate-file-certificate-name-success-response"></a>
 #### 成功レスポンス
 
 [Response Header]
@@ -160,6 +168,7 @@ Content-Type:application/octet-stream
 -----END RSA PRIVATE KEY-----
 ```
 
+<a id="download-a-certificate-file-certificate-name-failure-response"></a>
 #### 失敗レスポンス
 [Response Header]
 ```
@@ -179,6 +188,7 @@ Content-Type:application/json
 ```
 
 
+<a id="download-a-certificate-file-certificate-name-using-the-command-line-interface-cli"></a>
 #### Command Line Interface(CLI)使用時
 
 証明書ファイルダウンロードAPIは、curlコマンドを使用してリクエストできます。
@@ -199,17 +209,20 @@ curl -OJ 'https://certmanager.api.nhncloudservice.com/certmanager/v1.3/appkeys/{
 * その他のcurlコマンドの使用方法は、以下のガイドを参照してください。
   * curl command guide: [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)
 
-### 証明書ファイルのダウンロード(証明書ID)
+<a id="download-a-certificate-file-certificate-id"></a>
+### 証明書ファイルのダウンロード(証明書ID) { #download-a-certificate-file-certificate-id }
 
 Certificate Managerに登録した証明書ファイルを証明書IDでダウンロードする際に使用します。
 証明書IDは、証明書一覧照会APIレスポンスのcertificateId値です。
 
+<a id="download-a-certificate-file-certificate-id-request"></a>
 #### リクエスト
 
 ```
 GET https://certmanager.api.nhncloudservice.com/certmanager/v1.3/appkeys/{appKey}/certificates/{certificateId}/certificate-files
 ```
 
+<a id="download-a-certificate-file-certificate-id-success-response"></a>
 #### 成功レスポンス
 
 [Response Header]
@@ -231,6 +244,7 @@ Content-Type:application/octet-stream
 -----END RSA PRIVATE KEY-----
 ```
 
+<a id="download-a-certificate-file-certificate-id-failure-response"></a>
 #### 失敗レスポンス
 [Response Header]
 ```
@@ -251,7 +265,8 @@ Content-Type:application/json
 
 ※失敗レスポンスは、HTTPステータスコード404(Not Found)と共に返されます。
 
-### レスポンスコード
+<a id="response-code"></a>
+### レスポンスコード { #response-code }
 
 | isSuccessful | resultCode | resultMessage | 説明 |
 | ------------ | ---------- | ------------- | --- |

@@ -1,23 +1,30 @@
-## Management > Certificate Manager > 概要
+<!-- pre-align:aligned sig=71a63d528337 -->
+
+<a id="management-certificate-manager-overview"></a>
+## Management > Certificate Manager > 概要 { #management-certificate-manager-overview }
 
 TLS証明書/ドメインの有効期限の延長を忘れてしまった場合、Webサービスに接続できなくなる場合があります。
 Certificate Managerは、有効期限の延長を忘れないように、有効期限が近くなると通知(SMS、メール)を送信するサービスです。
 有効期限が存在するTLS証明書/ドメイン/ユーザーデータ(例：ライセンス)を管理し、有効期限に応じた通知送信ルールと、通知を受け取るユーザーを設定できます。
 
-### 提供機能
+<a id="features"></a>
+### 提供機能 { #features }
 
+<a id="features-manage-tls-certificatedomainuser-data"></a>
 #### TLS証明書/ドメイン/ユーザーデータ管理
 
 * 証明書情報登録、管理、照会
 * 証明書ファイル(pem)のアップロードおよびダウンロード
 * 証明書使用/インストール情報登録、管理、照会
 
+<a id="features-auto-collect-tls-certificate-information"></a>
 #### TLS証明書情報の自動収集
 
 * 証明書ファイルをアップロードするとファイルを読み込み、証明書の作成日、有効期限、署名方式、認証機関を収集
 * 証明書インストール情報の登録時、インストール情報から証明書をダウンロードして有効期限と証明書名を収集
     * 証明書インストール情報のIPが私設IPの場合は、証明書インストール情報を収集しません。
 
+<a id="features-auto-collect-domain-information"></a>
 #### ドメイン情報を自動収集
 
 * 自動収集を使用時、Whoisサーバーからドメインの作成日、有効期限、登録者、登録機関、ネームサーバーを収集
@@ -26,12 +33,14 @@ Certificate Managerは、有効期限の延長を忘れないように、有効�
     * DNSに登録していないサブドメインを登録する場合には、サブドメインping応答失敗の通知を送信しません。
     *（サブドメインのping応答収集は公開されたDNSネームサーバのlookupの結果を対象に行われます。外部の公開されたDNSサーバーでlookupが制限される場合には、サブドメインping応答の収集ができません。）
 
+<a id="features-manage-notification-groups"></a>
 #### 通知グループ管理
 
 * 通知を受け取るユーザーを登録、管理、照会
 * 有効期限通知ポリシーを登録、管理、照会
 * TLS証明書/ドメイン/ユーザーデータの通知グループ指定時、該当通知グループに属しているユーザーに通知を送信
 
+<a id="features-send-notifications"></a>
 #### 通知送信
 
 * 有効期限が近づいたり、自動収集に失敗した場合、ユーザーに通知を送信
@@ -45,11 +54,13 @@ Certificate Managerは、有効期限の延長を忘れないように、有効�
 | 通知失敗による通知グループユーザー確認通知 | 通知グループのADMIN | 10:00 (UTC+09) | 通知グループに属しているユーザーへの通知の送信に失敗した場合、通知グループに属しているADMINに通知グループユーザーの確認を案内する通知 |
 | 通知失敗による通知グループADMIN確認通知 | プロジェクトのADMIN | 11:00 (UTC+09) | 「通知失敗による通知グループユーザー確認通知」送信が全て失敗した場合、プロジェクトに属しているADMINに通知グループのADMIN確認を案内する通知 |
 
-### サービス対象
+<a id="service-targets"></a>
+### サービス対象 { #service-targets }
 
 * 有効期限が存在するデータの有効期限案内通知が必要なユーザー
 
-### 用語説明
+<a id="glossary"></a>
+### 用語説明 { #glossary }
 
 | 用語 | 説明 |
 | --- | --- |

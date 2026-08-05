@@ -1,6 +1,10 @@
-## Management > Certificate Manager > 問題解決ガイド
+<!-- pre-align:aligned sig=aa4052351c5f -->
 
-## 証明書ファイルの形式変換
+<a id="management-certificate-manager-troubleshooting-guide"></a>
+## Management > Certificate Manager > 問題解決ガイド { #management-certificate-manager-troubleshooting-guide }
+
+<a id="converting-certificate-file-formats"></a>
+## 証明書ファイルの形式変換 { #converting-certificate-file-formats }
 
 Certificate Managerでは.pem形式の証明書ファイルのみサポートします。
 
@@ -8,7 +12,8 @@ Certificate Managerでは.pem形式の証明書ファイルのみサポートし
 
 Certificate Managerで使用する証明書ファイルの形式は下記の通りです。
 
-### 証明書ファイル(.pem)形式
+<a id="format-of-certificate-file-pem"></a>
+### 証明書ファイル(.pem)形式 { #format-of-certificate-file-pem }
 
 証明書ファイルの拡張子は**.pem**です。
 
@@ -23,12 +28,14 @@ Certificate Managerで使用する証明書ファイルの形式は下記の通�
 -----END RSA PRIVATE KEY-----
 ```
 
-### 証明書ファイル(.pem)の作成方法
+<a id="how-to-create-pem-files"></a>
+### 証明書ファイル(.pem)の作成方法 { #how-to-create-pem-files }
 
 証明書ファイル(.pem)ファイルの作成手順は次のとおりです。
 1. 証明書情報をPEM形式に変換します。
 2. 証明書チェーンと秘密鍵を含む単一PEMファイルを作成します。
 
+<a id="how-to-create-pem-files-convert-certificate-information-into-pem"></a>
 #### 証明書情報をPEM形式に変換
 
 1. 証明書がJava JKSまたはJCEKS形式の場合は`keytool`を使用し、証明書を`.p12`または`.pks`形式に変換します。
@@ -45,6 +52,7 @@ openssl pkcs12 -in my_certificate_input_file.pfx -nodes -nocerts -out my_cert_co
     * java-1.6.0 keytool : [https://linux.die.net/man/1/keytool-java-1.6.0-openjdk](https://linux.die.net/man/1/keytool-java-1.6.0-openjdk)
     * java-1.7.0 keytool : [https://linux.die.net/man/1/keytool-java-1.7.0-openjdk](https://linux.die.net/man/1/keytool-java-1.7.0-openjdk)
 
+<a id="how-to-create-pem-files-optional-convert-into-rsa-private-key-type"></a>
 #### (任意) RSA秘密鍵形式に変換
 
 秘密鍵がRSA形式ではない場合、RSA秘密鍵形式で暗号化します。
@@ -61,6 +69,7 @@ openssl rsa -in my_key_not_rsa_input_file.pem -check -out my_key_rsa_converting_
 > Verifying - Enter PEM pass phrase:
 ```
 
+<a id="how-to-create-pem-files-create-single-pem-files-including-certificate-chain-and-private-key"></a>
 #### 証明書チェーンと秘密鍵を含む単一PEMファイルを作成
 
 証明書PEMファイルおよび秘密鍵PEMファイルにある情報を結合し、単一PEMファイルを作成します。

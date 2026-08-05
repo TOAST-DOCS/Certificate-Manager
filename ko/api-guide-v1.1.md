@@ -1,20 +1,19 @@
-## Management > Certificate Manager > API v1.1 가이드
+<!-- pre-align:aligned sig=2c9270a88b89 -->
+
+<a id="management-certificate-manager-api-v11-guide"></a>
+## Management > Certificate Manager > API v1.1 가이드 { #management-certificate-manager-api-v11-guide }
 
 Certificate Manager에서는 인증서 목록 조회와 다운로드 API를 제공합니다. 클라이언트는 콘솔에서 인증서와 인증서 파일을 등록한 후 API로 데이터를 사용할 수 있습니다.
 
-### Certificate Manager API 공통 정보
+<a id="common-certificate-manager-api-information"></a>
+### Certificate Manager API 공통 정보 { #common-certificate-manager-api-information }
+<a id="common-certificate-manager-api-information-api-endpoint"></a>
 #### API 엔드포인트
 ```text
 https://certmanager.api.nhncloudservice.com
 ```
 
-#### API 요청 HTTP 헤더
-v1.1에서는 HTTP 헤더에 필수 필드가 추가됩니다.
-```
-X-TC-AUTHENTICATION-ID: {User Access Key ID}
-X-TC-AUTHENTICATION-SECRET: {Secret Access Key}
-```
-
+<a id="common-certificate-manager-api-information-authentication-and-authorization"></a>
 #### 인증 및 권한
 Certificate Manager는 API 호출 시 인증/인가를 위해 User Access Key 인증을 사용합니다.
 User Access Key는 NHN Cloud 계정 또는 IAM 계정을 기반으로 발급되는 인증 키로, Secret Access Key와 함께 사용하여 API 요청에 대한 인증 수단입니다.
@@ -23,6 +22,7 @@ User Access Key 사용에 대한 자세한 내용은 [User Access Key 인증](/n
 Certificate Manager API는 역할 기반 접근 제어(RBAC)를 사용합니다.<br>
 사용자는 API 사용을 위해 **Certificate Manager ADMIN 역할** 또는 **Certificate Manager VIEWER 역할**을 소유해야 합니다.
 
+<a id="common-certificate-manager-api-information-supported-api-types"></a>
 #### 제공하는 API 종류
 | 메서드 | URI                                                                     | 설명 |
 | ------ |-------------------------------------------------------------------------| --- |
@@ -57,10 +57,12 @@ Certificate Manager API는 역할 기반 접근 제어(RBAC)를 사용합니다.
 | resultMessage | String | API 호출 결과 메시지 |
 | isSuccessful | Boolean | API 호출 성공 여부 |
 
-### 인증서 목록 조회
+<a id="list-certificates"></a>
+### 인증서 목록 조회 { #list-certificates }
 
 Certificate Manager에 등록한 인증서 목록을 조회할 때 사용합니다.
 
+<a id="list-certificates-request"></a>
 #### 요청
 
 ```
@@ -76,6 +78,7 @@ GET https://certmanager.api.nhncloudservice.com/certmanager/v1.1/appkeys/{appKey
 
 ※ all, status의 값은 대소문자 구분 없이 사용할 수 있습니다.
 
+<a id="list-certificates-response"></a>
 #### 응답
 
 [Response Header]
@@ -124,16 +127,19 @@ Content-Type:application/json
 | expirationDate | String | 인증서 파일 만료일 |
 
 
-### 인증서 파일 다운로드
+<a id="download-certificate-file"></a>
+### 인증서 파일 다운로드 { #download-certificate-file }
 
 Certificate Manager에 등록한 인증서 파일을 다운로드할 때 사용합니다.
 
+<a id="download-certificate-file-request"></a>
 #### 요청
 
 ```
 GET https://certmanager.api.nhncloudservice.com/certmanager/v1.1/appkeys/{appKey}/certificates/{certificateName}/files
 ```
 
+<a id="download-certificate-file-success-response"></a>
 #### 성공 응답
 
 [Response Header]
@@ -156,6 +162,7 @@ Content-Type:application/octet-stream
 ```
 
 
+<a id="download-certificate-file-failure-response"></a>
 #### 실패 응답
 [Response Header]
 ```
@@ -175,6 +182,7 @@ Content-Type:application/json
 ```
 
 
+<a id="download-certificate-file-for-command-line-interface-cli"></a>
 #### Command Line Interface(CLI) 사용 시
 
 인증서 파일 다운로드 API는 `curl` 명령어를 사용해 요청할 수 있습니다.
@@ -200,7 +208,8 @@ curl -OJ \
 * 기타 curl 명령어 사용법은 아래 가이드를 참고하세요.
   * curl command guide: [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)
 
-### 응답 코드
+<a id="response-codes"></a>
+### 응답 코드 { #response-codes }
 
 | isSuccessful | resultCode | resultMessage | 설명 |
 | ------------ | ---------- | ------------- | --- |

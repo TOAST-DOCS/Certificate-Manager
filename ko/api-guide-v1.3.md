@@ -1,17 +1,18 @@
-## Management > Certificate Manager > API v1.3 가이드
+<!-- pre-align:aligned sig=1830bd25c1cb -->
+
+<a id="management-certificate-manager-api-v13-guide"></a>
+## Management > Certificate Manager > API v1.3 가이드 { #management-certificate-manager-api-v13-guide }
 
 Certificate Manager에서는 인증서 목록 조회, 다운로드를 위한 API를 제공합니다. 클라이언트는 콘솔에서 인증서와 인증서 파일을 등록한 후 API를 통해 데이터를 사용할 수 있습니다.
 
-### CertificateManager API 공통 정보
+<a id="certificatemanager-api-common-information"></a>
+### CertificateManager API 공통 정보 { #certificatemanager-api-common-information }
+<a id="certificatemanager-api-common-information-api-endpoint"></a>
 #### API 엔드포인트
 ```text
 https://certmanager.api.nhncloudservice.com
 ```
-#### API 요청 HTTP 헤더
-```
-X-NHN-AUTHORIZATION: Bearer {발급 받은 토큰}
-```
-
+<a id="certificatemanager-api-common-information-authentication-and-authorization"></a>
 #### 인증 및 권한
 CertificateManager는 API 호출 시 인증/인가를 위해 User Access Key 토큰을 사용합니다. 
 User Access Key 토큰은 User Access Key를 기반으로 발급되는 Bearer 타입의 일시적 액세스 토큰입니다. 
@@ -20,6 +21,7 @@ User Access Key 토큰 발급 및 사용에 대한 자세한 내용은 [User Acc
 CertificateManager API는 역할 기반 접근 제어(RBAC)를 사용하고 있습니다.<br>
 사용자는 API 사용을 위해 **CertificateManager ADMIN 역할** 또는 **CertificateManager VIEWER 역할** 소유해야합니다. 
 
+<a id="certificatemanager-api-common-information-provided-apis"></a>
 #### 제공하는 API 종류
 | 메서드 | URI                                                                     | 설명 |
 | ------ |-------------------------------------------------------------------------| --- |
@@ -56,10 +58,12 @@ CertificateManager API는 역할 기반 접근 제어(RBAC)를 사용하고 있�
 | resultMessage | String | API 호출 결과 메시지 |
 | isSuccessful | Boolean | API 호출 성공 여부 |
 
-### 인증서 목록 조회
+<a id="retrieve-a-certificate-list"></a>
+### 인증서 목록 조회 { #retrieve-a-certificate-list }
 
 Certificate Manager에 등록한 인증서 목록을 조회할 때 사용합니다. 
 
+<a id="retrieve-a-certificate-list-request"></a>
 #### 요청
 
 ```
@@ -75,6 +79,7 @@ GET https://certmanager.api.nhncloudservice.com/certmanager/v1.3/appkeys/{appKey
 
 ※ all, status의 값은 대소문자 구분 없이 사용할 수 있습니다.
 
+<a id="retrieve-a-certificate-list-response"></a>
 #### 응답
 
 [Response Header]
@@ -129,16 +134,19 @@ Content-Type:application/json
 | expirationDate | String | 인증서 파일 만료일 |
 
 
-### 인증서 파일 다운로드(인증서 이름)
+<a id="download-a-certificate-file-certificate-name"></a>
+### 인증서 파일 다운로드(인증서 이름) { #download-a-certificate-file-certificate-name }
 
 Certificate Manager에 등록한 인증서 파일을 인증서 이름으로 다운로드할 때 사용합니다.
 
+<a id="download-a-certificate-file-certificate-name-request"></a>
 #### 요청
 
 ```
 GET https://certmanager.api.nhncloudservice.com/certmanager/v1.3/appkeys/{appKey}/certificates/{certificateName}/files
 ```
 
+<a id="download-a-certificate-file-certificate-name-success-response"></a>
 #### 성공 응답
 
 [Response Header]
@@ -160,6 +168,7 @@ Content-Type:application/octet-stream
 -----END RSA PRIVATE KEY-----
 ```
 
+<a id="download-a-certificate-file-certificate-name-failure-response"></a>
 #### 실패 응답
 [Response Header]
 ```
@@ -179,6 +188,7 @@ Content-Type:application/json
 ```
 
 
+<a id="download-a-certificate-file-certificate-name-using-the-command-line-interface-cli"></a>
 #### Command Line Interface(CLI) 사용 시
 
 인증서 파일 다운로드 API는 curl 명령어를 사용해 요청할 수 있습니다.
@@ -199,17 +209,20 @@ curl -OJ 'https://certmanager.api.nhncloudservice.com/certmanager/v1.3/appkeys/{
 * 기타 curl 명령어 사용법은 아래 가이드를 참고하세요.
   * curl command guide: [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)
 
-### 인증서 파일 다운로드(인증서 ID)
+<a id="download-a-certificate-file-certificate-id"></a>
+### 인증서 파일 다운로드(인증서 ID) { #download-a-certificate-file-certificate-id }
 
 Certificate Manager에 등록한 인증서 파일을 인증서 ID로 다운로드할 때 사용합니다.
 인증서 ID는 인증서 목록 조회 API 응답의 certificateId 값입니다.
 
+<a id="download-a-certificate-file-certificate-id-request"></a>
 #### 요청
 
 ```
 GET https://certmanager.api.nhncloudservice.com/certmanager/v1.3/appkeys/{appKey}/certificates/{certificateId}/certificate-files
 ```
 
+<a id="download-a-certificate-file-certificate-id-success-response"></a>
 #### 성공 응답
 
 [Response Header]
@@ -231,6 +244,7 @@ Content-Type:application/octet-stream
 -----END RSA PRIVATE KEY-----
 ```
 
+<a id="download-a-certificate-file-certificate-id-failure-response"></a>
 #### 실패 응답
 [Response Header]
 ```
@@ -251,7 +265,8 @@ Content-Type:application/json
 
 ※ 실패 응답은 HTTP 상태 코드 404(Not Found)와 함께 반환됩니다.
 
-### 응답 코드
+<a id="response-code"></a>
+### 응답 코드 { #response-code }
 
 | isSuccessful | resultCode | resultMessage | 설명 |
 | ------------ | ---------- | ------------- | --- |
