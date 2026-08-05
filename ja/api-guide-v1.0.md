@@ -1,33 +1,44 @@
 <!-- pre-align:aligned sig=8eda339a3204 -->
 
-<a id="management-certificate-manager-api-v10-guide"></a>
-## Management > Certificate Manager > API v1.0ガイド { #management-certificate-manager-api-v10-guide }
+<a id="api-v10-guide"></a>
+## API v1.0ガイド { #api-v10-guide }
+**Management > Certificate Manager > API v1.0ガイド**
 
 Certificate Manager は、証明書リスト検索、またはダウンロード用の API を提供します。クライアントはコンソールで証明書と証明書ファイルを登録した後、APIを通してデータを使用できます。
 
-<a id="basic-information"></a>
-### 基本情報 { #basic-information }
-<a id="basic-information-endpoint"></a>
-#### EndPoint
+<a id="certificate-manager-api-common-information"></a>
+## Certificate Manager API共通情報 { #certificate-manager-api-common-information }
+
+<a id="api-endpoint"></a>
+### APIエンドポイント { #api-endpoint }
 ```text
 https://certmanager.api.nhncloudservice.com
 ```
 
-<a id="basic-information-available-api-types"></a>
-#### 提供するAPI種類
+<a id="authentication-and-authorization"></a>
+### 認証および権限 { #authentication-and-authorization }
+
+Certificate Manager API v1.0を使用するにはAppkeyが必要です。
+
+Appkeyは、NHN Cloudの各サービスごとに発行される固有の認証キーです。Appkeyの確認及び使用に関する詳細は、[Appkey](/nhncloud/ja/public-api/appkey)を参照してください。
+
+<a id="available-api-types"></a>
+### 提供するAPI種類 { #available-api-types }
 | メソッド | URI | 説明 |
 | ------ | --- | --- |
 | GET | /certmanager/v1.0/appkeys/{appKey}/certificates | 証明書のリストを検索します。 |
 | GET | /certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files | 登録された証明書ファイルをダウンロードします。 |
 
-##### APIリクエストのパス変数
+<a id="available-api-types-path-variables-of-api-request"></a>
+#### APIリクエストのパス変数
 
 | 値 | タイプ | 説明 |
 | --- | --- | --- |
 | appKey | String | 使用するデータを保存しているNHN Cloudプロジェクトのアプリキー |
 | certificateName | String | 使用するデータ(証明書)の名前 |
 
-##### APIレスポンスのデータ共通ヘッダ
+<a id="available-api-types-common-data-header-of-api-response"></a>
+#### APIレスポンスのデータ共通ヘッダ
 
 ```json
 {
@@ -47,6 +58,9 @@ https://certmanager.api.nhncloudservice.com
 | resultCode | Number | API呼び出し結果コード値 |
 | resultMessage | String | API呼び出し結果メッセージ |
 | isSuccessful | Boolean | API呼び出し成否 |
+
+<a id="certificate-api"></a>
+## 証明書API { #certificate-api }
 
 <a id="lookup-certificate-list"></a>
 ### 証明書の検索リスト { #lookup-certificate-list }
@@ -190,7 +204,7 @@ curl -OJ 'https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{
   * curl command guide : [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)
 
 <a id="response-codes"></a>
-### レスポンスコード { #response-codes }
+## レスポンスコード { #response-codes }
 
 | isSuccessful | resultCode | resultMessage | 説明 |
 | ------------ | ---------- | ------------- | --- |

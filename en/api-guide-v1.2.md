@@ -13,6 +13,13 @@ Certificate Manager provides an API for viewing and downloading certificate list
 https://certmanager.api.nhncloudservice.com
 ```
 
+<a id="basic-information-authentication-and-authorization"></a>
+#### Authentication and Authorization
+
+An Appkey is required to use the Certificate Manager API v1.2.
+
+An Appkey is a unique authentication key issued for each individual NHN Cloud service. For more information on checking and using Appkeys, please refer to the [Appkey](/nhncloud/en/public-api/appkey).
+
 <a id="basic-information-apis-provided"></a>
 #### APIs Provided
 | Method | URI                                                                     | Description |

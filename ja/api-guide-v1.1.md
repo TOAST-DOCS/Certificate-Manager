@@ -13,14 +13,6 @@ Certificate Managerは、証明書一覧の照会とダウンロードAPIを提�
 https://certmanager.api.nhncloudservice.com
 ```
 
-<a id="common-certificate-manager-api-information-api-request-http-header"></a>
-#### APIリクエストHTTPヘッダ
-v1.1ではHTTPヘッダーに必須フィールドが追加されます。
-```
-X-TC-AUTHENTICATION-ID: {User Access Key ID}
-X-TC-AUTHENTICATION-SECRET: {Secret Access Key}
-```
-
 <a id="common-certificate-manager-api-information-authentication-and-authorization"></a>
 #### 認証及び権限
 Certificate Managerは、API呼び出し時の認証/認可のためにUser Access Key認証を使用します。

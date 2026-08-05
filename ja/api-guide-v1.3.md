@@ -12,12 +12,6 @@ Certificate Managerでは、証明書の一覧照会、ダウンロードのた�
 ```text
 https://certmanager.api.nhncloudservice.com
 ```
-<a id="certificatemanager-api-common-information-api-request-http-header"></a>
-#### APIリクエストHTTPヘッダ
-```
-X-NHN-AUTHORIZATION: Bearer {発行されたトークン}
-```
-
 <a id="certificatemanager-api-common-information-authentication-and-authorization"></a>
 #### 認証及び権限
 CertificateManagerはAPI呼び出し時、認証/認可のためにUser Access Keyトークンを使用します。 

@@ -8,11 +8,6 @@ Certificate Manager에서는 인증서 목록 조회, 다운로드를 위한 API
 https://certmanager.api.gov-nhncloudservice.com
 ```
 
-#### API 요청 HTTP 헤더
-```
-X-NHN-AUTHORIZATION: Bearer {발급 받은 토큰}
-```
-
 #### 인증 및 권한
 CertificateManager는 API 호출 시 인증/인가를 위해 User Access Key 토큰을 사용합니다. 
 User Access Key 토큰은 User Access Key를 기반으로 발급되는 Bearer 타입의 일시적 액세스 토큰입니다. 

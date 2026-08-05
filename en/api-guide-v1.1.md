@@ -13,14 +13,6 @@ Certificate Manager provides APIs for viewing and downloading a list of certific
 https://certmanager.api.nhncloudservice.com
 ```
 
-<a id="common-certificate-manager-api-information-api-request-http-header"></a>
-#### API Request HTTP Header 
-Required fields are added to the HTTP header in v1.1.
-```
-X-TC-AUTHENTICATION-ID: {User Access Key ID}
-X-TC-AUTHENTICATION-SECRET: {Secret Access Key}
-```
-
 <a id="common-certificate-manager-api-information-authentication-and-authorization"></a>
 #### Authentication and Authorization
 Certificate Manager uses User Access Key authentication for authentication and authorization when calling APIs.

@@ -12,12 +12,6 @@ Certificate Manager provides APIs for retrieving certificate lists and downloadi
 ```text
 https://certmanager.api.nhncloudservice.com
 ```
-<a id="certificatemanager-api-common-information-api-request-http-header"></a>
-#### API Request HTTP Header
-```
-X-NHN-AUTHORIZATION: Bearer {issued token}
-```
-
 <a id="certificatemanager-api-common-information-authentication-and-authorization"></a>
 #### Authentication and Authorization
 CertificateManager uses User Access Key tokens for authentication and authorization when making API calls. 
