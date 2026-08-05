@@ -1,33 +1,44 @@
 <!-- pre-align:aligned sig=8eda339a3204 -->
 
-<a id="management-certificate-manager-api-v10-guide"></a>
-## Management > Certificate Manager > API v1.0 Guide { #management-certificate-manager-api-v10-guide }
+<a id="api-v10-guide"></a>
+## API v1.0 Guide { #api-v10-guide }
+**Management > Certificate Manager > API v1.0 Guide**
 
 Certificate Manager provides APIs to retrieve and download a list of certificates. Clients must register certificates and certificate files on console to use data via APIs. 
 
-<a id="basic-information"></a>
-### Basic Information { #basic-information }
-<a id="basic-information-endpoint"></a>
-#### EndPoint
+<a id="certificate-manager-api-common-information"></a>
+## Certificate Manager API Common Information { #certificate-manager-api-common-information }
+
+<a id="api-endpoint"></a>
+### API Endpoint { #api-endpoint }
 ```text
 https://certmanager.api.nhncloudservice.com
 ```
 
-<a id="basic-information-available-api-types"></a>
-#### Available API Types 
+<a id="authentication-and-authorization"></a>
+### Authentication and Authorization { #authentication-and-authorization }
+
+An Appkey is required to use the Certificate Manager API v1.0.
+
+An Appkey is a unique authentication key issued for each individual NHN Cloud service. For more information on checking and using Appkeys, please refer to the [Appkey](/nhncloud/en/public-api/appkey).
+
+<a id="available-api-types"></a>
+### Available API Types { #available-api-types }
 | Method | URI | Description |
 | ------ | --- | --- |
 | GET | /certmanager/v1.0/appkeys/{appKey}/certificates | Look up the list of certificates. |
 | GET | /certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files | Download certificate files that are registered. |
 
-##### Path Variables of API Request
+<a id="available-api-types-path-variables-of-api-request"></a>
+#### Path Variables of API Request
 
 | Value | Type | Description |
 | --- | --- | --- |
 | appKey | String | Appkey of the NHN Cloud project in which data is saved |
 | certificateName | String | Name of data (certificate) to use |
 
-##### Common Data Header of API Response
+<a id="available-api-types-common-data-header-of-api-response"></a>
+#### Common Data Header of API Response
 
 ```json
 {
@@ -47,6 +58,9 @@ https://certmanager.api.nhncloudservice.com
 | resultCode | Number | Result code value of API call |
 | resultMessage | String | Result message of API call |
 | isSuccessful | Boolean | API call successful or not |
+
+<a id="certificate-api"></a>
+## Certificate API { #certificate-api }
 
 <a id="lookup-certificate-list"></a>
 ### Lookup certificate list { #lookup-certificate-list }
@@ -190,7 +204,7 @@ curl -OJ 'https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{
   * curl command guide : [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)
 
 <a id="response-codes"></a>
-### Response Codes { #response-codes }
+## Response Codes { #response-codes }
 
 | isSuccessful | resultCode | resultMessage | Description |
 | ------------ | ---------- | ------------- | --- |

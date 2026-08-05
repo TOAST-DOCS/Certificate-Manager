@@ -1,27 +1,36 @@
-## Management > Certificate Manager > API v1.0 가이드
+## API v1.0 가이드
+**Management > Certificate Manager > API v1.0 가이드**
 
 Certificate Manager에서는 인증서 목록 조회, 다운로드를 위한 API를 제공합니다. 클라이언트는 콘솔에서 인증서와 인증서 파일을 등록한 후 API를 통해 데이터를 사용할 수 있습니다.
 
-### 기본 정보
-#### EndPoint
-```text
-https://certmanager.api.gov-nhncloudservice.com
-```
+## Certificate Manager API 공통 정보
 
-#### 제공하는 API 종류
+### API 엔드포인트
+
+| 리전 | 엔드포인트 |
+|---|---|
+| Global | https://certmanager.api.gov-nhncloudservice.com |
+
+### 인증 및 권한
+
+Certificate Manager API v1.0을 사용하려면 Appkey가 필요합니다.
+
+Appkey는 NHN Cloud의 각 서비스별로 발급되는 고유 인증 키입니다. Appkey 확인 및 사용에 대한 자세한 내용은 [Appkey](/nhncloud/ko/public-api/appkey)를 참고하세요.
+
+### 제공하는 API 종류
 | 메서드 | URI | 설명 |
 | ------ | --- | --- |
 | GET | /certmanager/v1.0/appkeys/{appKey}/certificates | 인증서 목록을 조회합니다. |
 | GET | /certmanager/v1.0/appkeys/{appKey}/certificates/{certificateName}/files | 등록된 인증서 파일을 다운로드합니다. |
 
-##### API 요청의 경로 변수
+#### API 요청의 경로 변수
 
 | 값 | 타입 | 설명 |
 | --- | --- | --- |
 | appKey | String | 사용할 데이터를 저장하고 있는 NHN Cloud 프로젝트의 앱키 |
 | certificateName | String | 사용할 데이터(인증서)의 이름 |
 
-##### API 응답의 데이터 공통 헤더
+#### API 응답의 데이터 공통 헤더
 
 ```json
 {
@@ -42,9 +51,11 @@ https://certmanager.api.gov-nhncloudservice.com
 | resultMessage | String | API 호출 결과 메시지 |
 | isSuccessful | Boolean | API 호출 성공 여부 |
 
+## 인증서 API
+
 ### 인증서 목록 조회
 
-Certificate Manager에 등록한 인증서 목록을 조회할 때 사용합니다. 
+Certificate Manager에 등록한 인증서 목록을 조회할 때 사용합니다.
 
 #### 요청
 
@@ -57,7 +68,7 @@ GET https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.0/appkeys/{ap
 | pageSize | Number | 페이지 크기 | 10(default) |
 | pageNum | Number | 페이지 번호 | 1(default) |
 | all | Boolean | 전체 조회 여부 | true, false(default) |
-| status | String | 인증서 상태 | ALL, EXPIRED, UNEXPIRED(default) | 
+| status | String | 인증서 상태 | ALL, EXPIRED, UNEXPIRED(default) |
 
 ※ all, status의 값은 대소문자 구분 없이 사용할 수 있습니다.
 
@@ -175,7 +186,7 @@ curl -OJ 'https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.0/appke
 * 기타 curl 명령어 사용법은 아래 가이드를 참고하십시오.
   * curl command guide : [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)
 
-### 응답 코드
+## 응답 코드
 
 | isSuccessful | resultCode | resultMessage | 설명 |
 | ------------ | ---------- | ------------- | --- |

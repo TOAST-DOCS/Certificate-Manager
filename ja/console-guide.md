@@ -91,11 +91,11 @@ Certificate Managerに登録した証明書の有効期限より、自動収集�
     * 特殊記号は(-, _, ., *)のみ使用できます。
 4. **証明書登録**で証明書ファイルを登録します。<br>
    証明書は必須項目です。
-    * サポートする証明書ファイル(.pem)形式は[**問題解決ガイド > 証明書ファイルフォーマット変換**](http://docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)をご覧ください。
+    * サポートする証明書ファイル(.pem)形式は[**問題解決ガイド > 証明書ファイルフォーマット変換**](/Management/Certificate%20Manager/ja/troubleshooting-guide/#converting-certificate-file-formats)をご覧ください。
     * 証明書ファイルは最大512KBまでアップロードできます。
 5. **パスフレーズ**(passphrase)に、証明書ファイル内に含まれる秘密鍵の**パスフレーズ**を入力します。
 6. **追加**ボタンをクリックします。
-7. [Network > Load Balancer](https://toast.com/kr/service/network/load-balancer) サービスと連携する場合は、証明書ファイルの**パスフレーズ**を削除する必要があります。
+7. [Network > Load Balancer](/Network/Load%20Balancer/ja/overview) サービスと連携する場合は、証明書ファイルの**パスフレーズ**を削除する必要があります。
    * 次のコマンドを使用してパスフレーズを削除できます。
     ```bash
     openssl rsa -in my_private_input.key -out my_private_output.key

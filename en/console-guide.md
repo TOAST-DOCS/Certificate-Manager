@@ -92,11 +92,11 @@ On the main page of certificate, you can find list of certificates and remaining
 4. Register the certificate file in **Register Certificate**.
    A certificate is the required value.
     * A certificate (.pem) is a pem file comprised of a private key and a certificate. 
-    * For supported type of certificate file (.pem), see '[Troubleshooting Guide > Converting Certificate File Formats](http://docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)'.
+    * For supported type of certificate file (.pem), see '[Troubleshooting Guide > Converting Certificate File Formats](/Management/Certificate%20Manager/en/troubleshooting-guide/#converting-certificate-file-formats)'.
     * The maximum uploadable certificate is 512KB. 
 5. Enter **Passphrase** of the private key included within certificate file. 
 6. Click **Add**. 
-7. In order to integrate with [Network > Load Balancer](https://toast.com/kr/service/network/load-balancer), **passphrase** of the certificate file must be deleted. 
+7. In order to integrate with [Network > Load Balancer](/Network/Load%20Balancer/en/overview), **passphrase** of the certificate file must be deleted. 
     * Use the following command to delete **passphrase**. 
     ```bash
     openssl rsa -in my_private_input.key -out my_private_output.key

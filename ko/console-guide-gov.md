@@ -81,15 +81,15 @@ Certificate Manager에 등록한 인증서의 만료일보다 자동 수집한 �
 4. **인증서 등록**에서 인증서 파일을 등록합니다.<br>
    인증서는 필수 값입니다.
     * 인증서는 개인 키와 인증서로 구성된 .pem 형식의 파일입니다.
-    * 지원하는 인증서 파일(.pem) 형식은 [**문제 해결 가이드 > 인증서 파일 포맷 변환**](http://gov-docs.toast.com/ko/Management/Certificate%20Manager/ko/troubleshooting-guide/#_1)을 참고하세요.
+    * 지원하는 인증서 파일(.pem) 형식은 [**문제 해결 가이드 > 인증서 파일 포맷 변환**](/Management/Certificate%20Manager/ko/troubleshooting-guide/#converting-certificate-file-formats)을 참고하세요.
     * 인증서 파일은 최대 512KB까지 업로드할 수 있습니다.
 5. **패스프레이즈**(passphrase, 비밀 문구)에 인증서 파일 내에 포함된 개인 키의 **패스프레이즈**를 입력합니다.
 6. **추가** 버튼을 클릭합니다.
-7. [Network > Load Balancer](https://gov.toast.com/kr/service/network/load-balancer) 서비스와 연동 시에는 인증서 파일의 **패스프레이즈**를 삭제해야 합니다.
+7. [Network > Load Balancer](/Network/Load%20Balancer/ko/overview) 서비스와 연동 시에는 인증서 파일의 **패스프레이즈**를 삭제해야 합니다.
     * **패스프레이즈**는 다음 명령을 사용해 삭제할 수 있습니다.
     ```bash
     openssl rsa -in my_private_input.key -out my_private_output.key
-    ``` 
+    ```
 
 
 
@@ -163,8 +163,8 @@ DNS의 최상위 도메인 이름(예: toast.com)과 만료일을 입력하면 �
 2. **도메인 추가** 창에서 연동할 알림 그룹을 선택합니다. 알림 그룹이 없으면 목록에 나타나지 않으며 도메인을 생성할 수 없습니다.
 3. **상위 도메인 정보** 아래 **이름**에 상위 도메인 이름을 입력합니다. 상위 도메인 이름은 중복으로 등록할 수 없습니다.
 4. **만료일**에 도메인의 만료일을 입력합니다.
-5. **유형**에서 원하는 유형을 선택합니다. 
-    * **서비스용**은 DNS 서버에 도메인을 등록해 서비스에서 사용하는 경우입니다. 
+5. **유형**에서 원하는 유형을 선택합니다.
+    * **서비스용**은 DNS 서버에 도메인을 등록해 서비스에서 사용하는 경우입니다.
     * **방어용**은 실 서비스에서 사용하진 않지만 서비스의 신뢰성 등의 목적으로 도메인을 구매하여 확보하는 경우입니다.
 6. **알림 사용 여부**를 선택합니다. 해당 도메인에 대한 알림을 발송할지 선택합니다. **미사용**을 선택하면 해당 도메인에 대한 알림이 모두 발송되지 않습니다.
 7. **자동 수집**에서 항목을 자동으로 수집할지 선택합니다. **사용**을 선택하면 whois 서버로부터 아래 항목들을 수집합니다.
@@ -197,7 +197,7 @@ DNS의 최상위 도메인 이름(예: toast.com)과 만료일을 입력하면 �
 ### 메인 화면
 
 기존에 등록한 사용자 데이터의 목록을 확인하거나 검색할 수 있습니다. 만료일까지 남은 날짜를 확인할 수 있습니다.
-오늘 날짜 기준으로 만료일이 지난 데이터는 빨간색으로, 만료일까지 남은 날짜가 30일 이하인 데이터는 주황색으로 표시됩니다. 
+오늘 날짜 기준으로 만료일이 지난 데이터는 빨간색으로, 만료일까지 남은 날짜가 30일 이하인 데이터는 주황색으로 표시됩니다.
 
 ![userdata-1.png](http://static.toastoven.net/prod_certificate_manager/202002/userdata-1.png)
 
@@ -220,26 +220,3 @@ DNS의 최상위 도메인 이름(예: toast.com)과 만료일을 입력하면 �
 **수정** 버튼을 클릭하여 사용자 데이터의 정보를 수정할 수 있습니다.
 
 ![userdata-3.png](http://static.toastoven.net/prod_certificate_manager/202002/userdata-3.png)
-
-## 인증서 조회/다운로드 API 자격 관련
-
-#### User Access Key ID, Secret Access Key 생성
-
-콘솔 우측 상단의 ID 영역을 클릭하면 다음과 같은 **API 보안 설정** 메뉴를 확인할 수 있습니다.
-
-![console-guide-api1](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403/console-guide-api1.png)
-
-**API 보안 설정**에서 **User Access Key ID 생성**을 클릭하여 CertificateManager API 헤더에 입력해야 하는 **User Access Key ID**와 **Secret Access Key**를 생성할 수 있습니다.
-
-![console-guide-api2](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403/console-guide-api2.png)
-
-![console-guide-api3](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403/console-guide-api3.png)
-
-**User Access Key ID**, **Secret Access Key**를 생성하면 아래와 같이 **비밀 키 발급 완료** 화면이 표시됩니다. 비밀 키는 해당 팝업 화면에서 한 번만 알려주므로 이 값을 잘 기록하여 사용합니다.
-
-![console-guide-api4](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403/console-guide-api4.png)
-
-API 요청 시 필요한 **User Access Key ID**는 비밀 키 발급 완료 팝업을 닫으면 확인할 수 있습니다.
-
-![console-guide-api5](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403/console-guide-api5.png)
-

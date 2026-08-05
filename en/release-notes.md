@@ -37,7 +37,7 @@
     * Domains information is automatically collected when uploading a certificate file.
 * Removed certificate types (Single, Wildcard, SAN).
 * Modified certificate list and details UI.
-* For more information, you can check the contents in the [Console User Guide](/Management/Certificate%20Manager/ko/console-guide/). 
+* For more information, you can check the contents in the [Console User Guide](/Management/Certificate%20Manager/en/console-guide/). 
 
 <a id="march-26-2024"></a>
 ### March 26, 2024 { #march-26-2024 }

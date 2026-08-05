@@ -13,6 +13,13 @@ Certificate Managerでは、証明書の一覧照会、ダウンロードのた�
 https://certmanager.api.nhncloudservice.com
 ```
 
+<a id="basic-information-authentication-and-authorization"></a>
+#### 認証及び権限
+
+Certificate Manager API v1.2を使用するにはAppkeyが必要です。
+
+Appkeyは、NHN Cloudの各サービスごとに発行される固有の認証キーです。Appkeyの確認及び使用に関する詳細は、[Appkey](/nhncloud/ja/public-api/appkey)を参照してください。
+
 <a id="basic-information-apis-provided"></a>
 #### 提供するAPIの種類
 | メソッド | URI                                                                     | 説明 |
