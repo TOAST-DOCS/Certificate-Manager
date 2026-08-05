@@ -37,7 +37,7 @@
     * Domains情報は、証明書ファイルのアップロード時に自動で収集されます。
 * 証明書タイプ(Single, Wildcard, SAN)が削除されました。
 * 証明書一覧及び詳細情報のUIが変更されました。
-* 詳細については、[コンソール利用ガイド](/Management/Certificate%20Manager/ko/console-guide/)で確認できます。
+* 詳細については、[コンソール利用ガイド](/Management/Certificate%20Manager/ja/console-guide/)で確認できます。
 
 <a id="march-26-2024"></a>
 ### 2024. 03. 26. { #march-26-2024 }
