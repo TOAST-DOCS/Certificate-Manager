@@ -126,7 +126,6 @@ Content-Type:application/json
 | fileCreationDate | Token ID | Certificate file creation date |
 | expirationDate | Token ID | Certificate file expiration date |
 
-
 <a id="download-certificate-file"></a>
 ### Download Certificate File { #download-certificate-file }
 
@@ -161,7 +160,6 @@ Content-Type:application/octet-stream
 -----END RSA PRIVATE KEY-----
 ```
 
-
 <a id="download-certificate-file-failure-response"></a>
 #### Failure Response
 [Response Header]
@@ -181,11 +179,10 @@ Content-Type:application/json
 }
 ```
 
-
 <a id="download-certificate-file-for-command-line-interface-cli"></a>
-#### For Command Line Interface (CLI) 
+#### For Command Line Interface (CLI)
 
-Download Certificate File API can be requested by using the `curl` command. 
+Download Certificate File API can be requested by using the `curl` command.
 
 ```bash
 #Write to File

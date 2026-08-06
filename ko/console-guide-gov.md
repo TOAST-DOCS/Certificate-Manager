@@ -91,8 +91,6 @@ Certificate Manager에 등록한 인증서의 만료일보다 자동 수집한 �
     openssl rsa -in my_private_input.key -out my_private_output.key
     ```
 
-
-
 ### 상세 화면
 
 1. 인증서 메인 화면에서 **상세 정보** 버튼을 클릭하면 인증서 파일 정보를 확인할 수 있습니다.

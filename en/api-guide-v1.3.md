@@ -14,12 +14,12 @@ https://certmanager.api.nhncloudservice.com
 ```
 <a id="certificatemanager-api-common-information-authentication-and-authorization"></a>
 #### Authentication and Authorization
-CertificateManager uses User Access Key tokens for authentication and authorization when making API calls. 
+CertificateManager uses User Access Key tokens for authentication and authorization when making API calls.
 The User Access Key token is a temporary, Bearer-type access token issued from a User Access Key.
 For more information on issuing and using User Access Key tokens, please refer to the [User Access Key Token](/nhncloud/en/public-api/user-access-key-token).
 
 CertificateManager API uses role-based access (RBAC).<br>
-Users must have either the **CertificateManager ADMIN role** or **CertificateManager VIEWER role** to use the API. 
+Users must have either the **CertificateManager ADMIN role** or **CertificateManager VIEWER role** to use the API.
 
 <a id="certificatemanager-api-common-information-provided-apis"></a>
 #### Provided APIs
@@ -61,7 +61,7 @@ Users must have either the **CertificateManager ADMIN role** or **CertificateMan
 <a id="retrieve-a-certificate-list"></a>
 ### Retrieve a Certificate List { #retrieve-a-certificate-list }
 
-You can use it to retrieve the certificate lists registered in the Certificate Manager. 
+You can use it to retrieve the certificate lists registered in the Certificate Manager.
 
 <a id="retrieve-a-certificate-list-request"></a>
 #### Request
@@ -75,7 +75,7 @@ GET https://certmanager.api.nhncloudservice.com/certmanager/v1.3/appkeys/{appKey
 | pageSize | Number | Page size | 10 (default) |
 | pageNum | Number | Page number | 1 (default) |
 | all | Boolean | Whether to retrieve all | true, false (default) |
-| status | String | Certificate status | ALL, EXPIRED, UNEXPIRED (default) | 
+| status | String | Certificate status | ALL, EXPIRED, UNEXPIRED (default) |
 
 ※ The values for all, status are case-insensitive.
 
@@ -133,7 +133,6 @@ Content-Type:application/json
 | fileCreationDate | String | Certificate file creation date |
 | expirationDate | String | Certificate file expiration date |
 
-
 <a id="download-a-certificate-file-certificate-name"></a>
 ### Download a Certificate File (Certificate Name) { #download-a-certificate-file-certificate-name }
 
@@ -186,7 +185,6 @@ Content-Type:application/json
     "body": {}
 }
 ```
-
 
 <a id="download-a-certificate-file-certificate-name-using-the-command-line-interface-cli"></a>
 #### Using the Command Line Interface (CLI)

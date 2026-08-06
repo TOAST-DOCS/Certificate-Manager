@@ -102,8 +102,6 @@ Certificate Manager에 등록한 인증서의 만료일보다 자동 수집한 �
     openssl rsa -in my_private_input.key -out my_private_output.key
     ```
 
-
-
 <a id="certificate-detail-page"></a>
 ### 상세 화면 { #certificate-detail-page }
 

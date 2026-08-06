@@ -131,7 +131,6 @@ Content-Type:application/json
 | fileCreationDate | String | 인증서 파일 생성일 |
 | expirationDate | String | 인증서 파일 만료일 |
 
-
 <a id="downloading-certificate-files"></a>
 ### 인증서 파일 다운로드 { #downloading-certificate-files }
 
@@ -184,7 +183,6 @@ Content-Type:application/json
     "body": {}
 }
 ```
-
 
 <a id="downloading-certificate-files-for-command-line-interface-cli"></a>
 #### Command Line Interface(CLI) 사용 시

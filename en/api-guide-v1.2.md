@@ -128,7 +128,6 @@ Content-Type:application/json
 | fileCreationDate | String | Certificate file creation date |
 | expirationDate | String | Certificate file expiration date |
 
-
 <a id="download-certificate-file"></a>
 ### Download Certificate File { #download-certificate-file }
 
@@ -181,7 +180,6 @@ Content-Type:application/json
     "body": {}
 }
 ```
-
 
 <a id="download-certificate-file-when-using-command-line-interfacecli"></a>
 #### When Using Command Line Interface(CLI)

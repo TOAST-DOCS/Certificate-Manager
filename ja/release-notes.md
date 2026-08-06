@@ -24,17 +24,17 @@
 ### 2026. 03. 10. { #march-10-2026 }
 <a id="march-10-2026-added-a-api-version"></a>
 #### APIバージョンの追加
-* トークン認証方式をサポートするCertificate Manager API v1.3が追加されました。 
-  <br> 詳細はAPI v1.3ガイドで確認できます。
-  
+* トークン認証方式をサポートするCertificate Manager API v1.3が追加されました。
+  <br> 詳細はAPI v1.3ガイドで確認できます。
+
 <a id="november-25-2025"></a>
 ### 2025. 11. 25. { #november-25-2025 }
 <a id="november-25-2025-feature-updates"></a>
 #### 機能改善
 * 証明書名の制約が変更され、旧証明書と新規証明書を一緒に管理できるようになりました。
-    * 証明書名が証明書ファイルのCN(CommonName)値と同一でなくても、プロジェクト内で一意の名前であれば登録できます。
+    * 証明書名が証明書ファイルのCN(CommonName)値と同一でなくても、プロジェクト内で一意の名前であれば登録できます。
 * 証明書のDomains [CN(CommonName) + SAN(SubjectAlternativeNames)]項目が追加されました。
-    * Domains情報は、証明書ファイルのアップロード時に自動で収集されます。
+    * Domains情報は、証明書ファイルのアップロード時に自動で収集されます。
 * 証明書タイプ(Single, Wildcard, SAN)が削除されました。
 * 証明書一覧及び詳細情報のUIが変更されました。
 * 詳細については、[コンソール利用ガイド](/Management/Certificate%20Manager/ja/console-guide/)で確認できます。
@@ -42,7 +42,7 @@
 <a id="march-26-2024"></a>
 ### 2024. 03. 26. { #march-26-2024 }
 <a id="march-26-2024-add-a-new-api-version"></a>
-#### APIバージョン追加 
+#### APIバージョン追加
 * Certificate ManagerのAPI v1.1が追加されました。 <br>詳細はAPI v1.1ガイドでご確認ください。
 
 <a id="february-27-2024"></a>

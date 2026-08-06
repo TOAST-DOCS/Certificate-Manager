@@ -58,7 +58,7 @@ Appkey는 NHN Cloud의 각 서비스별로 발급되는 고유 인증 키입니�
 <a id="retrieve-certificate-list"></a>
 ### 인증서 목록 조회 { #retrieve-certificate-list }
 
-Certificate Manager에 등록한 인증서 목록을 조회할 때 사용합니다. 
+Certificate Manager에 등록한 인증서 목록을 조회할 때 사용합니다.
 
 <a id="retrieve-certificate-list-request"></a>
 #### 요청
@@ -72,7 +72,7 @@ GET https://certmanager.api.nhncloudservice.com/certmanager/v1.2/appkeys/{appKey
 | pageSize | Number | 페이지 크기 | 10(기본값) |
 | pageNum | Number | 페이지 번호 | 1(기본값) |
 | all | Boolean | 전체 조회 여부 | true, false(기본값) |
-| status | String | 인증서 상태 | ALL, EXPIRED, UNEXPIRED(기본값) | 
+| status | String | 인증서 상태 | ALL, EXPIRED, UNEXPIRED(기본값) |
 
 ※ all, status의 값은 대소문자 구분 없이 사용할 수 있습니다.
 
@@ -128,7 +128,6 @@ Content-Type:application/json
 | fileCreationDate | String | 인증서 파일 생성일 |
 | expirationDate | String | 인증서 파일 만료일 |
 
-
 <a id="download-certificate-file"></a>
 ### 인증서 파일 다운로드 { #download-certificate-file }
 
@@ -181,7 +180,6 @@ Content-Type:application/json
     "body": {}
 }
 ```
-
 
 <a id="download-certificate-file-when-using-command-line-interfacecli"></a>
 #### Command Line Interface(CLI) 사용 시

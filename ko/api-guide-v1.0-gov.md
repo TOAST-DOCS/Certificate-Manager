@@ -168,7 +168,6 @@ Content-Type:application/json
 }
 ```
 
-
 #### Command Line Interface(CLI) 사용 시
 
 인증서 파일 다운로드 API는 `curl` 명령어를 사용해 요청할 수 있습니다.

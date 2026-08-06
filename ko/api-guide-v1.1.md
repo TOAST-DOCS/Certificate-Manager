@@ -126,7 +126,6 @@ Content-Type:application/json
 | fileCreationDate | String | 인증서 파일 생성일 |
 | expirationDate | String | 인증서 파일 만료일 |
 
-
 <a id="download-certificate-file"></a>
 ### 인증서 파일 다운로드 { #download-certificate-file }
 
@@ -161,7 +160,6 @@ Content-Type:application/octet-stream
 -----END RSA PRIVATE KEY-----
 ```
 
-
 <a id="download-certificate-file-failure-response"></a>
 #### 실패 응답
 [Response Header]
@@ -180,7 +178,6 @@ Content-Type:application/json
     "body": {}
 }
 ```
-
 
 <a id="download-certificate-file-for-command-line-interface-cli"></a>
 #### Command Line Interface(CLI) 사용 시

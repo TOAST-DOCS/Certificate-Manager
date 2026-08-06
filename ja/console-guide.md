@@ -86,11 +86,12 @@ Certificate Managerに登録した証明書の有効期限より、自動収集�
 ![certificate-2.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-2-en.png)
 2. **通知グループ**で連携する通知グループを選択します。作成された通知グループがない時はリストに表示されず、証明書を作成できません。
 3. **名前**に証明書名を入力します。
-    * 証明書名は、プロジェクト内で重複して登録できません。
-    * 証明書名は、英字、日本語、数字を組み合わせて自由に構成できます。
-    * 特殊記号は(-, _, ., *)のみ使用できます。
+    * 証明書名は、プロジェクト内で重複して登録できません。
+    * 証明書名は、英字、日本語、数字を組み合わせて自由に構成できます。
+    * 特殊記号は(-, _, ., *)のみ使用できます。
 4. **証明書登録**で証明書ファイルを登録します。<br>
-   証明書は必須項目です。
+   証明書は必須項目です。
+    * 証明書は、秘密鍵と証明書で構成された.pem形式のファイルです。
     * サポートする証明書ファイル(.pem)形式は[**問題解決ガイド > 証明書ファイルフォーマット変換**](/Management/Certificate%20Manager/ja/troubleshooting-guide/#converting-certificate-file-formats)をご覧ください。
     * 証明書ファイルは最大512KBまでアップロードできます。
 5. **パスフレーズ**(passphrase)に、証明書ファイル内に含まれる秘密鍵の**パスフレーズ**を入力します。
@@ -101,8 +102,6 @@ Certificate Managerに登録した証明書の有効期限より、自動収集�
     openssl rsa -in my_private_input.key -out my_private_output.key
     ```
 
-
-
 <a id="certificate-detail-page"></a>
 ### 詳細画面 { #certificate-detail-page }
 
@@ -111,8 +110,8 @@ Certificate Managerに登録した証明書の有効期限より、自動収集�
       ![certificate-3-1.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-3-1-en.png)
 2. **修正**ボタンをクリックすると、証明書情報の修正や、証明書ファイルのアップロードを行うことができます。
     * 証明書名は修正できません。証明書名を修正するには、登録している証明書を削除して新たに作成する必要があります。
-    * 1つの証明書には、1つの証明書ファイルのみアップロードできます。
-    * 既存の証明書ファイルを更新する場合、新しい証明書ファイルのDomains [CN(CommonName) + SAN(SubjectAlternativeNames)]が、既存の証明書ファイルのDomainsと同一である必要があります。
+    * 1つの証明書には、1つの証明書ファイルのみアップロードできます。
+    * 既存の証明書ファイルを更新する場合、新しい証明書ファイルのDomains [CN(CommonName) + SAN(SubjectAlternativeNames)]が、既存の証明書ファイルのDomainsと同一である必要があります。
       ![certificate-3-2.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-3-2-en.png)
 
 <a id="creating-certificate-usageinstallation-information"></a>
@@ -123,19 +122,19 @@ Certificate Managerに登録した証明書の有効期限より、自動収集�
 2. **修正**ボタンをクリックすると、次のような画面を確認できます。
 ![certificate-5.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-2-en.png)
 3. 証明書の使用情報を追加する方法は、次の2つがあります。
-    * **ユーザー追加**: 右上にある**+ 追加**ボタンをクリックすると、情報を入力できるフィールドが表示されます。
+    * **ユーザー追加**: 右上にある**+ 追加**ボタンをクリックすると、情報を入力できるフィールドが表示されます。
 ![certificate-6.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-3-en.png)
-    * **読み込み**: 右上にある**読み込み**ボタンをクリックして、他の証明書の使用情報を読み込むことができます。
-        1. **読み込み**ボタンをクリックすると、証明書検索ウィンドウが表示されます。
+    * **読み込み**: 右上にある**読み込み**ボタンをクリックして、他の証明書の使用情報を読み込むことができます。
+        1. **読み込み**ボタンをクリックすると、証明書検索ウィンドウが表示されます。
 ![certificate-9.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-4-en.png)
-        2. 検索ウィンドウで、読み込む証明書名を検索します。
+        2. 検索ウィンドウで、読み込む証明書名を検索します。
 ![certificate-10.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-5-en.png)
-        3. **確認**を押すと、該当の証明書の使用情報一覧が自動的に読み込まれます。
+        3. **確認**を押すと、該当の証明書の使用情報一覧が自動的に読み込まれます。
 ![certificate-11.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-6-en.png)
 4. 証明書使用情報の名前を入力します。
-    * 使用情報のドメイン名は、証明書ファイルのアップロード時に自動登録されたDomains [CN(CommonName) + SAN(SubjectAlternativeNames)]に含まれている必要があります。
+    * 使用情報のドメイン名は、証明書ファイルのアップロード時に自動登録されたDomains [CN(CommonName) + SAN(SubjectAlternativeNames)]に含まれている必要があります。
 5. **通知使用有無**で証明書使用情報の通知を使用するかどうかを選択します。
-6. 証明書インストール情報を入力するには証明書インストール情報の横にある**+追加**ボタンをクリックします。 
+6. 証明書インストール情報を入力するには証明書インストール情報の横にある**+追加**ボタンをクリックします。
 ![certificate-7.png](http://static.toastoven.net/prod_certificate_manager/202511/certificate-4-8-en.png)
     * **IPアドレス**と**ポート番号**を入力します。証明書の自動収集を使用する場合、入力したIPアドレスとポート番号で証明書をダウンロードして有効期限を比較します。
     * IPアドレスがプライベートIP(例：192.168.0.1, 172.20.0.1, 10.0.0.1)の場合、証明書をダウンロードできず、自動収集失敗通知が送信される場合があります。
@@ -179,8 +178,8 @@ DNSの最上位ドメイン名(例：toast.com)と有効期限を入力すると
 2. **ドメイン追加**ウィンドウで連携する通知グループを選択します。通知グループがない場合はリストに表示されず、ドメインを作成できません。
 3. **上位ドメイン情報**の下の**名前**に上位ドメイン名を入力します。上位ドメイン名は重複して登録できません。
 4. **有効期限**にドメインの有効期限を入力します。
-5. **タイプ**でタイプを選択します。 
-    * **サービス用**はDNSサーバーにドメインを登録してサービスで使用する場合です。 
+5. **タイプ**でタイプを選択します。
+    * **サービス用**はDNSサーバーにドメインを登録してサービスで使用する場合です。
     * **防御用**は、実サービスで使用しないが、サービスの信頼性などの目的でドメインを購入して確保する場合です。
 6. **通知使用有無**を選択します。該当ドメインの通知を送信するかどうかを選択します。**未使用**を選択すると該当ドメインの通知が全て送信されません。
 7. **自動収集**で項目を自動的に収集するかどうかを選択します。**使用**を選択するとwhoisサーバーから下記の項目を収集します。
@@ -241,27 +240,3 @@ DNSの最上位ドメイン名(例：toast.com)と有効期限を入力すると
 **修正**ボタンをクリックしてユーザーデータの情報を修正できます。
 
 ![userdata-3.png](http://static.toastoven.net/prod_certificate_manager/202002/userdata-3.png)
-
-<a id="authorization-for-retrievedownload-certificates-api"></a>
-## 証明書照会/ダウンロードAPI資格関連 { #authorization-for-retrievedownload-certificates-api }
-
-<a id="authorization-for-retrievedownload-certificates-api-create-user-access-key-id-and-secret-access-key"></a>
-#### User Access Key ID, Secret Access Key作成
-
-コンソール右上のID領域をクリックすると、次のような**APIセキュリティ設定**メニューを確認できます。
-
-![console-guide-api1](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403_en/console-guide-api1.png)
-
-**APIセキュリティ設定**で**User Access Key ID生成**をクリックしてCertificateManager APIヘッダに入力しなければならない **User Access Key ID**と **Secret Access Key**を生成できます。
-
-![console-guide-api2](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403_en/console-guide-api2.png)
-
-![console-guide-api3](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403_en/console-guide-api3.png)
-
-**User Access Key ID**、**Secret Access Key**を生成すると、下記のように**秘密鍵発行完了**画面が表示されます。秘密鍵は該当ポップアップ画面で一度だけ表示されるるので、この値を記録して使います。
-
-![console-guide-api4](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403_en/console-guide-api4.png)
-
-API リクエスト時に必要な**User Access Key ID**は、秘密鍵発行完了ポップアップを閉じると確認できます。
-
-![console-guide-api5](https://kr1-api-object-storage.nhncloudservice.com/v1/AUTH_2acdfabf4efe4efc8a04c00b348110c9/cdn_origin/prod_certificate_manager/202403_en/console-guide-api5.png)
