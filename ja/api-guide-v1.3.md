@@ -14,12 +14,12 @@ https://certmanager.api.nhncloudservice.com
 ```
 <a id="certificatemanager-api-common-information-authentication-and-authorization"></a>
 #### 認証及び権限
-CertificateManagerはAPI呼び出し時、認証/認可のためにUser Access Keyトークンを使用します。 
-User Access Keyトークンは、User Access Keyに基づいて発行されるBearerタイプの一時的なアクセストークンです。 
+CertificateManagerはAPI呼び出し時、認証/認可のためにUser Access Keyトークンを使用します。
+User Access Keyトークンは、User Access Keyに基づいて発行されるBearerタイプの一時的なアクセストークンです。
 User Access Keyトークンの発行及び使用に関する詳細は、[User Access Keyトークン](/nhncloud/ja/public-api/user-access-key-token)を参照してください。
 
 CertificateManager APIは、ロールベースアクセス制御(RBAC)を使用しています。<br>
-ユーザーはAPIを使用するために、**CertificateManager ADMINロール**または**CertificateManager VIEWERロール**を所有している必要があります。 
+ユーザーはAPIを使用するために、**CertificateManager ADMINロール**または**CertificateManager VIEWERロール**を所有している必要があります。
 
 <a id="certificatemanager-api-common-information-provided-apis"></a>
 #### 提供するAPIの種類
@@ -61,7 +61,7 @@ CertificateManager APIは、ロールベースアクセス制御(RBAC)を使用�
 <a id="retrieve-a-certificate-list"></a>
 ### 証明書一覧照会 { #retrieve-a-certificate-list }
 
-Certificate Managerに登録した証明書一覧を照会する際に使用します。 
+Certificate Managerに登録した証明書一覧を照会する際に使用します。
 
 <a id="retrieve-a-certificate-list-request"></a>
 #### リクエスト
@@ -75,7 +75,7 @@ GET https://certmanager.api.nhncloudservice.com/certmanager/v1.3/appkeys/{appKey
 | pageSize | Number | ページサイズ | 10(デフォルト値) |
 | pageNum | Number | ページ番号 | 1(デフォルト値) |
 | all | Boolean | 全体照会の有無 | true、false(デフォルト値) |
-| status | String | 証明書の状態 | ALL、EXPIRED、UNEXPIRED(デフォルト値) | 
+| status | String | 証明書の状態 | ALL、EXPIRED、UNEXPIRED(デフォルト値) |
 
 ※ all、statusの値は大文字・小文字を区別せずに使用できます。
 
@@ -133,7 +133,6 @@ Content-Type:application/json
 | fileCreationDate | String | 証明書ファイル作成日 |
 | expirationDate | String | 証明書ファイル有効期限 |
 
-
 <a id="download-a-certificate-file-certificate-name"></a>
 ### 証明書ファイルのダウンロード(証明書名) { #download-a-certificate-file-certificate-name }
 
@@ -187,7 +186,6 @@ Content-Type:application/json
 }
 ```
 
-
 <a id="download-a-certificate-file-certificate-name-using-the-command-line-interface-cli"></a>
 #### Command Line Interface(CLI)使用時
 
@@ -196,15 +194,15 @@ Content-Type:application/json
 ```bash
 #ファイルに書き込み
 curl 'https://certmanager.api.nhncloudservice.com/certmanager/v1.3/appkeys/{appKey}/certificates/{certificateName}/files' \
-    -H "X-NHN-AUTHORIZATION: Bearer {発行されたトークン}" > cert.pem
+    -H "X-NHN-AUTHORIZATION: Bearer {発行されたトークン}" > cert.pem
 
 #ファイル名指定
 curl -o cert.pem 'https://certmanager.api.nhncloudservice.com/certmanager/v1.3/appkeys/{appKey}/certificates/{certificateName}/files' \
-    -H "X-NHN-AUTHORIZATION: Bearer {発行されたトークン}"
+    -H "X-NHN-AUTHORIZATION: Bearer {発行されたトークン}"
 
 #アップロードしたファイル名を維持
 curl -OJ 'https://certmanager.api.nhncloudservice.com/certmanager/v1.3/appkeys/{appKey}/certificates/{certificateName}/files' \
-    -H "X-NHN-AUTHORIZATION: Bearer {発行されたトークン}"
+    -H "X-NHN-AUTHORIZATION: Bearer {発行されたトークン}"
 ```
 * その他のcurlコマンドの使用方法は、以下のガイドを参照してください。
   * curl command guide: [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)

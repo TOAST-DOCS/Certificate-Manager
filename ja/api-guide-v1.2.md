@@ -128,7 +128,6 @@ Content-Type:application/json
 | fileCreationDate | String | 証明書ファイル作成日 |
 | expirationDate | String | 証明書ファイル失効日 |
 
-
 <a id="download-certificate-file"></a>
 ### 証明書ファイルのダウンロード { #download-certificate-file }
 
@@ -181,7 +180,6 @@ Content-Type:application/json
     "body": {}
 }
 ```
-
 
 <a id="download-certificate-file-when-using-command-line-interfacecli"></a>
 #### Command Line Interface(CLI)を使用する場合

@@ -4,7 +4,7 @@
 ## API v1.0 Guide { #api-v10-guide }
 **Management > Certificate Manager > API v1.0 Guide**
 
-Certificate Manager provides APIs to retrieve and download a list of certificates. Clients must register certificates and certificate files on console to use data via APIs. 
+Certificate Manager provides APIs to retrieve and download a list of certificates. Clients must register certificates and certificate files on console to use data via APIs.
 
 <a id="certificate-manager-api-common-information"></a>
 ## Certificate Manager API Common Information { #certificate-manager-api-common-information }
@@ -79,7 +79,7 @@ GET https://certmanager.api.nhncloudservice.com/certmanager/v1.0/appkeys/{appKey
 | pageSize | Number | Page size | 10(default) |
 | pageNum | Number | Page number | 1(default) |
 | all | Boolean | Full lookup | true, false(default) |
-| status | String | Certificate expiration status | ALL, EXPIRED, UNEXPIRED(default) | 
+| status | String | Certificate expiration status | ALL, EXPIRED, UNEXPIRED(default) |
 
 ※ The values for all and status are case insensitive.
 
@@ -134,7 +134,7 @@ Content-Type:application/json
 <a id="downloading-certificate-files"></a>
 ### Downloading Certificate Files { #downloading-certificate-files }
 
-Certificate files registered at Certificate Manager can be downloaded. 
+Certificate files registered at Certificate Manager can be downloaded.
 
 <a id="downloading-certificate-files-request"></a>
 #### Request
@@ -184,11 +184,10 @@ Content-Type:application/json
 }
 ```
 
-
 <a id="downloading-certificate-files-for-command-line-interface-cli"></a>
-#### For Command Line Interface (CLI) 
+#### For Command Line Interface (CLI)
 
-Download Certificate File API can be requested by using the `curl` command. 
+Download Certificate File API can be requested by using the `curl` command.
 
 ```bash
 #Write to File

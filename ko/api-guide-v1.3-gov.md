@@ -9,12 +9,12 @@ https://certmanager.api.gov-nhncloudservice.com
 ```
 
 #### 인증 및 권한
-CertificateManager는 API 호출 시 인증/인가를 위해 User Access Key 토큰을 사용합니다. 
-User Access Key 토큰은 User Access Key를 기반으로 발급되는 Bearer 타입의 일시적 액세스 토큰입니다. 
+CertificateManager는 API 호출 시 인증/인가를 위해 User Access Key 토큰을 사용합니다.
+User Access Key 토큰은 User Access Key를 기반으로 발급되는 Bearer 타입의 일시적 액세스 토큰입니다.
 User Access Key 토큰 발급 및 사용에 대한 자세한 내용은 [User Access Key 토큰](/nhncloud/ko/public-api/user-access-key-token-gov)을 참고하세요.
 
 CertificateManager API는 역할 기반 접근 제어(RBAC)를 사용하고 있습니다.<br>
-사용자는 API 사용을 위해 **CertificateManager ADMIN 역할** 또는 **CertificateManager VIEWER 역할** 소유해야합니다. 
+사용자는 API 사용을 위해 **CertificateManager ADMIN 역할** 또는 **CertificateManager VIEWER 역할** 소유해야합니다.
 
 #### 제공하는 API 종류
 | 메서드 | URI                                                                     | 설명 |
@@ -54,7 +54,7 @@ CertificateManager API는 역할 기반 접근 제어(RBAC)를 사용하고 있�
 
 ### 인증서 목록 조회
 
-Certificate Manager에 등록한 인증서 목록을 조회할 때 사용합니다. 
+Certificate Manager에 등록한 인증서 목록을 조회할 때 사용합니다.
 
 #### 요청
 
@@ -67,7 +67,7 @@ GET https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.3/appkeys/{ap
 | pageSize | Number | 페이지 크기 | 10(기본값) |
 | pageNum | Number | 페이지 번호 | 1(기본값) |
 | all | Boolean | 전체 조회 여부 | true, false(기본값) |
-| status | String | 인증서 상태 | ALL, EXPIRED, UNEXPIRED(기본값) | 
+| status | String | 인증서 상태 | ALL, EXPIRED, UNEXPIRED(기본값) |
 
 ※ all, status의 값은 대소문자 구분 없이 사용할 수 있습니다.
 
@@ -172,7 +172,6 @@ Content-Type:application/json
     "body": {}
 }
 ```
-
 
 #### Command Line Interface(CLI) 사용 시
 

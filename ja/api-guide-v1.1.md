@@ -74,7 +74,7 @@ GET https://certmanager.api.nhncloudservice.com/certmanager/v1.1/appkeys/{appKey
 | pageSize | Number | ページサイズ | 10(default) |
 | pageNum | Number | ページ番号 | 1(default) |
 | all | Boolean | 全体検索 | true, false(default) |
-| status | String | 証明書の有効期限ステータス | ALL, EXPIRED, UNEXPIRED(default) | 
+| status | String | 証明書の有効期限ステータス | ALL, EXPIRED, UNEXPIRED(default) |
 
 ※ all、statusの値は大文字/小文字を区別せずに使用できます。
 
@@ -126,7 +126,6 @@ Content-Type:application/json
 | fileCreationDate | String | 証明書ファイルの作成日 |
 | expirationDate | String | 証明書ファイルの有効期限 |
 
-
 <a id="download-certificate-file"></a>
 ### 証明書ファイルのダウンロード { #download-certificate-file }
 
@@ -161,7 +160,6 @@ Content-Type:application/octet-stream
 -----END RSA PRIVATE KEY-----
 ```
 
-
 <a id="download-certificate-file-failure-response"></a>
 #### 失敗レスポンス
 [Response Header]
@@ -180,7 +178,6 @@ Content-Type:application/json
     "body": {}
 }
 ```
-
 
 <a id="download-certificate-file-for-command-line-interface-cli"></a>
 #### Command Line Interface(CLI)使用時

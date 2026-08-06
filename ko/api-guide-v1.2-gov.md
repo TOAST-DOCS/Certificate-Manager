@@ -50,7 +50,7 @@ Appkey는 NHN Cloud의 각 서비스별로 발급되는 고유 인증 키입니�
 
 ### 인증서 목록 조회
 
-Certificate Manager에 등록한 인증서 목록을 조회할 때 사용합니다. 
+Certificate Manager에 등록한 인증서 목록을 조회할 때 사용합니다.
 
 #### 요청
 
@@ -63,7 +63,7 @@ GET https://certmanager.api.gov-nhncloudservice.com/certmanager/v1.2/appkeys/{ap
 | pageSize | Number | 페이지 크기 | 10(기본값) |
 | pageNum | Number | 페이지 번호 | 1(기본값) |
 | all | Boolean | 전체 조회 여부 | true, false(기본값) |
-| status | String | 인증서 상태 | ALL, EXPIRED, UNEXPIRED(기본값) | 
+| status | String | 인증서 상태 | ALL, EXPIRED, UNEXPIRED(기본값) |
 
 ※ all, status의 값은 대소문자 구분 없이 사용할 수 있습니다.
 
@@ -166,7 +166,6 @@ Content-Type:application/json
     "body": {}
 }
 ```
-
 
 #### Command Line Interface(CLI) 사용 시
 

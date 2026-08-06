@@ -23,7 +23,7 @@
 <a id="march-10-2026"></a>
 ### March 10, 2026 { #march-10-2026 }
 <a id="march-10-2026-added-a-api-version"></a>
-#### Added a API version 
+#### Added a API version
 * Added Certificate Manager API v1.3 supporting token authentication method.
   <br> For more information, refer to API v1.3 Guide.
 
@@ -37,7 +37,7 @@
     * Domains information is automatically collected when uploading a certificate file.
 * Removed certificate types (Single, Wildcard, SAN).
 * Modified certificate list and details UI.
-* For more information, you can check the contents in the [Console User Guide](/Management/Certificate%20Manager/en/console-guide/). 
+* For more information, you can check the contents in the [Console User Guide](/Management/Certificate%20Manager/en/console-guide/).
 
 <a id="march-26-2024"></a>
 ### March 26, 2024 { #march-26-2024 }
@@ -91,7 +91,7 @@
 <a id="december-27-2022-feature-updates"></a>
 #### Feature Updates
 * Improved so that, when you click the **Initialize** button on the search bar, all options are selected.
-* Improved so that, even when you select a search option and close the dropdown list without clicking the **Apply** button, the selected option is applied. 
+* Improved so that, even when you select a search option and close the dropdown list without clicking the **Apply** button, the selected option is applied.
 * Improved so that, when the auto-collection feature does not work in the domain, `-` is displayed on the registrar and registering institution items.
 * Added an organization name to SMS notifications, and shortened guide messages.
 <a id="december-27-2022-bug-fixes"></a>
@@ -120,13 +120,13 @@
 <a id="march-24-2020"></a>
 ### March 24, 2020 { #march-24-2020 }
 <a id="march-24-2020-added-features"></a>
-#### Added Features 
+#### Added Features
 Added API to list certificates that have been registered for Certificate Manager.
-* [API] Added List Certificates API 
+* [API] Added List Certificates API
 
 <a id="january-21-2020"></a>
 ### January 21, 2020 { #january-21-2020 }
 <a id="january-21-2020-new-releases"></a>
-#### New Releases 
+#### New Releases
 Certificate Manager sends notifications (via SMS or email) when you near the expiration date so that you can extend the date timely.
 Certificatae Manager manages TLS certificates, domains, or user data (e.g. licenses) that have expiration dates, by specifying notification delivery rules and recipient users.

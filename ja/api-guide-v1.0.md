@@ -184,7 +184,6 @@ Content-Type:application/json
 }
 ```
 
-
 <a id="downloading-certificate-files-for-command-line-interface-cli"></a>
 #### Command Line Interface(CLI)使用時
 
