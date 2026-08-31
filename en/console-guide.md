@@ -92,7 +92,7 @@ On the main page of certificate, you can find list of certificates and remaining
 4. Register the certificate file in **Register Certificate**.
    A certificate is the required value.
     * A certificate (.pem) is a pem file comprised of a private key and a certificate.
-    * For supported type of certificate file (.pem), see '[Troubleshooting Guide > Converting Certificate File Formats](/Management/Certificate%20Manager/en/troubleshooting-guide/#converting-certificate-file-formats)'.
+    * For supported type of certificate file (.pem), see '[Troubleshooting Guide > Converting Certificate File Formats](./troubleshooting-guide/#converting-certificate-file-formats)'.
     * The maximum uploadable certificate is 512KB.
 5. Enter **Passphrase** of the private key included within certificate file.
 6. Click **Add**.
