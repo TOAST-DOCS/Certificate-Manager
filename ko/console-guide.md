@@ -92,7 +92,7 @@ Certificate Manager에 등록한 인증서의 만료일보다 자동 수집한 �
 4. **인증서 등록**에서 인증서 파일을 등록합니다.<br>
    인증서는 필수 값입니다.
    * 인증서는 개인 키와 인증서로 구성된 .pem 형식의 파일입니다.
-   * 지원하는 인증서 파일(.pem) 형식은 [**문제 해결 가이드 > 인증서 파일 포맷 변환**](/Management/Certificate%20Manager/ko/troubleshooting-guide/#converting-certificate-file-formats)을 참고하세요.
+   * 지원하는 인증서 파일(.pem) 형식은 [**문제 해결 가이드 > 인증서 파일 포맷 변환**](./troubleshooting-guide.md#converting-certificate-file-formats)을 참고하세요.
    * 인증서 파일은 최대 512KB까지 업로드할 수 있습니다.
 5. **패스프레이즈**(passphrase, 비밀 문구)에 인증서 파일 내에 포함된 개인 키의 **패스프레이즈**를 입력합니다.
 6. **추가** 버튼을 클릭합니다.

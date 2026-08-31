@@ -9,7 +9,7 @@
 #### Feature Updates
 * Added the certificate ID to the response of the certificate list retrieval API in Certificate Manager API v1.3.
 * Added an API to download certificates using a certificate ID in Certificate Manager API v1.3.
-  * For more information, see the [API v1.3 Guide](/Management/Certificate%20Manager/en/api-guide-v1.3).
+  * For more information, see the [API v1.3 Guide](./api-guide-v1.3.md).
 * Migrated Notification Group > Receiving group to **Notification Receiver Group Management**.
 
 <a id="april-14-2026"></a>
@@ -18,7 +18,7 @@
 #### API v1.1 Authentication and Permission Updates
 * Updated the authentication and permission information in the Certificate Manager API v1.1 guide.
     * The **Certificate Manager ADMIN** role or **Certificate Manager VIEWER** role is required to use the API.
-    * For more information, refer to the [API v1.1 guide](/Management/Certificate%20Manager/en/api-guide-v1.1).
+    * For more information, refer to the [API v1.1 guide](./api-guide-v1.1.md).
 
 <a id="march-10-2026"></a>
 ### March 10, 2026 { #march-10-2026 }
@@ -37,7 +37,7 @@
     * Domains information is automatically collected when uploading a certificate file.
 * Removed certificate types (Single, Wildcard, SAN).
 * Modified certificate list and details UI.
-* For more information, you can check the contents in the [Console User Guide](/Management/Certificate%20Manager/en/console-guide/).
+* For more information, you can check the contents in the [Console User Guide](./console-guide.md).
 
 <a id="march-26-2024"></a>
 ### March 26, 2024 { #march-26-2024 }

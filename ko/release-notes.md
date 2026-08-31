@@ -9,7 +9,7 @@
 #### 기능 개선
 * Certificate Manager API v1.3 인증서 목록 조회 API의 응답에 인증서 ID가 추가되었습니다.
 * Certificate Manager API v1.3에 인증서 ID를 이용한 인증서 다운로드 API가 추가되었습니다.
-    * 자세한 내용은 [API v1.3 가이드](/Management/Certificate%20Manager/ko/api-guide-v1.3)에서 확인할 수 있습니다.
+    * 자세한 내용은 [API v1.3 가이드](./api-guide-v1.3.md)에서 확인할 수 있습니다.
 * 알림 그룹 > 수신 그룹이 **알림 수신 그룹 관리**로 마이그레이션되었습니다.
 
 <a id="april-14-2026"></a>
@@ -18,7 +18,7 @@
 #### API v1.1 인증 및 권한 수정
 * Certificate Manager API v1.1 가이드의 인증 및 권한 정보가 수정되었습니다.
     * API 사용을 위해 **Certificate Manager ADMIN 역할** 또는 **Certificate Manager VIEWER 역할**이 필요합니다.
-    * 자세한 내용은 [API v1.1 가이드](/Management/Certificate%20Manager/ko/api-guide-v1.1)에서 확인할 수 있습니다.
+    * 자세한 내용은 [API v1.1 가이드](./api-guide-v1.1.md)에서 확인할 수 있습니다.
 
 <a id="march-10-2026"></a>
 ### 2026. 03. 10. { #march-10-2026 }
@@ -37,7 +37,7 @@
     * Domains 정보는 인증서 파일 업로드 시 자동으로 수집됩니다.
 * 인증서 타입(Single, Wildcard, SAN)이 제거되었습니다.
 * 인증서 목록 및 상세 정보 UI가 변경되었습니다.
-* 자세한 내용은 [콘솔 사용 가이드](/Management/Certificate%20Manager/ko/console-guide/)에서 확인할 수 있습니다.
+* 자세한 내용은 [콘솔 사용 가이드](./console-guide.md)에서 확인할 수 있습니다.
 
 <a id="march-26-2024"></a>
 ### 2024. 03. 26. { #march-26-2024 }

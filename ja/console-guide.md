@@ -92,7 +92,7 @@ Certificate Managerに登録した証明書の有効期限より、自動収集�
 4. **証明書登録**で証明書ファイルを登録します。<br>
    証明書は必須項目です。
     * 証明書は、秘密鍵と証明書で構成された.pem形式のファイルです。
-    * サポートする証明書ファイル(.pem)形式は[**問題解決ガイド > 証明書ファイルフォーマット変換**](/Management/Certificate%20Manager/ja/troubleshooting-guide/#converting-certificate-file-formats)をご覧ください。
+    * サポートする証明書ファイル(.pem)形式は[**問題解決ガイド > 証明書ファイルフォーマット変換**](./troubleshooting-guide.md#converting-certificate-file-formats)をご覧ください。
     * 証明書ファイルは最大512KBまでアップロードできます。
 5. **パスフレーズ**(passphrase)に、証明書ファイル内に含まれる秘密鍵の**パスフレーズ**を入力します。
 6. **追加**ボタンをクリックします。

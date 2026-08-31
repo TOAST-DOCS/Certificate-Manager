@@ -9,7 +9,7 @@
 #### 機能改善
 * Certificate Manager API v1.3の証明書一覧照会APIのレスポンスに証明書IDが追加されました。
 * Certificate Manager API v1.3に証明書IDを利用した証明書ダウンロードAPIが追加されました。
-    * 詳細は[API v1.3ガイド](/Management/Certificate%20Manager/ja/api-guide-v1.3)で確認できます。
+    * 詳細は[API v1.3ガイド](./api-guide-v1.3.md)で確認できます。
 * 通知グループ > 受信グループが**通知受信グループ管理**に移行されました。
 
 <a id="april-14-2026"></a>
@@ -18,7 +18,7 @@
 #### API v1.1 認証及び権限の修正
 * Certificate Manager API v1.1 ガイドの認証及び権限情報が修正されました。
 * APIを使用するためには、**Certificate Manager ADMINロール**または**Certificate Manager VIEWERロール**が必要です。
-* 詳細は[API v1.1 ガイド](/Management/Certificate%20Manager/ja/api-guide-v1.1)で確認できます。
+* 詳細は[API v1.1 ガイド](./api-guide-v1.1.md)で確認できます。
 
 <a id="march-10-2026"></a>
 ### 2026. 03. 10. { #march-10-2026 }
@@ -37,7 +37,7 @@
     * Domains情報は、証明書ファイルのアップロード時に自動で収集されます。
 * 証明書タイプ(Single, Wildcard, SAN)が削除されました。
 * 証明書一覧及び詳細情報のUIが変更されました。
-* 詳細については、[コンソール利用ガイド](/Management/Certificate%20Manager/ja/console-guide/)で確認できます。
+* 詳細については、[コンソール利用ガイド](./console-guide.md)で確認できます。
 
 <a id="march-26-2024"></a>
 ### 2024. 03. 26. { #march-26-2024 }
